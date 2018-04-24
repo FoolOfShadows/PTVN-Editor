@@ -115,6 +115,10 @@ extension String {
         
         return newTextArray.joined(separator: "\n")
     }
+    
+    func prependDashToLine() -> String {
+        return "- \(self)"
+    }
 	
 	func copyToPasteboard() {
 		let myPasteboard = NSPasteboard.general
@@ -147,31 +151,5 @@ extension String {
     }
 }
 
-//extension NSView {
-//	func clearControllers() {
-//		func clearChecksTextfields(theView: NSView) {
-//			for item in theView.subviews {
-//				switch item {
-//				case is NSButton: let checkbox = item as? NSButton
-//				checkbox?.state = .off
-//				case is NSTextField: let textfield = item as? NSTextField
-//				if (textfield?.isEditable)!{
-//					textfield?.stringValue = ""
-//					}
-//				case is NSTextView: let textview = item as? NSTextView
-//				if (textview?.isEditable)! {
-//					textview?.string = ""
-//					}
-//				case is NSTabView: let tabView = item as? NSTabView
-//				for tabItem in (tabView?.tabViewItems)! {
-//					clearChecksTextfields(theView: tabItem.view!)
-//					}
-//				case is NSView: clearChecksTextfields(theView: item)
-//    default: continue
-//				}
-//			}
-//		}
-//		clearChecksTextfields(theView: self)
-//	}
-//}
+
 

@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7906DEE8208E123900CD11A1 /* ROSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE6208E123900CD11A1 /* ROSModel.swift */; };
+		7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE7208E123900CD11A1 /* ROSViewController.swift */; };
+		7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */; };
+		7906DEED208E16A800CD11A1 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEEB208E16A700CD11A1 /* DoctorModel.swift */; };
 		7913205C2077C85100CB1537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205B2077C85100CB1537 /* AppDelegate.swift */; };
 		7913205E2077C85100CB1537 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205D2077C85100CB1537 /* ViewController.swift */; };
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
 		791320622077C85200CB1537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791320612077C85200CB1537 /* Assets.xcassets */; };
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
+		7964A234208F7D1B00B5790A /* CurrentAssessmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */; };
+		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		79DDB9E9208786A500E01853 /* PTVNModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9E8208786A500E01853 /* PTVNModel.swift */; };
 		79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */; };
 		79DDB9EE208786BE00E01853 /* RedGreenCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9EB208786BE00E01853 /* RedGreenCheckbox.swift */; };
-		79DDB9EF208786BE00E01853 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9EC208786BE00E01853 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7906DEE6208E123900CD11A1 /* ROSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSModel.swift; sourceTree = "<group>"; };
+		7906DEE7208E123900CD11A1 /* ROSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSViewController.swift; sourceTree = "<group>"; };
+		7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		7906DEEB208E16A700CD11A1 /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		791320582077C85100CB1537 /* PTVN Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PTVN Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7913205B2077C85100CB1537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7913205D2077C85100CB1537 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,10 +36,11 @@
 		791320642077C85200CB1537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
+		7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentAssessmentController.swift; sourceTree = "<group>"; };
+		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		79DDB9E8208786A500E01853 /* PTVNModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTVNModel.swift; sourceTree = "<group>"; };
 		79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		79DDB9EB208786BE00E01853 /* RedGreenCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedGreenCheckbox.swift; sourceTree = "<group>"; };
-		79DDB9EC208786BE00E01853 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +77,18 @@
 				7913205D2077C85100CB1537 /* ViewController.swift */,
 				7913205F2077C85100CB1537 /* Document.swift */,
 				79DDB9E8208786A500E01853 /* PTVNModel.swift */,
+				7906DEEB208E16A700CD11A1 /* DoctorModel.swift */,
+				7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */,
+				7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */,
+				7906DEE6208E123900CD11A1 /* ROSModel.swift */,
+				7906DEE7208E123900CD11A1 /* ROSViewController.swift */,
 				791320612077C85200CB1537 /* Assets.xcassets */,
 				791320632077C85200CB1537 /* Main.storyboard */,
 				791320662077C85200CB1537 /* Info.plist */,
 				791320672077C85200CB1537 /* PTVN_Editor.entitlements */,
 				79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */,
 				79DDB9EB208786BE00E01853 /* RedGreenCheckbox.swift */,
-				79DDB9EC208786BE00E01853 /* StringExtensions.swift */,
+				7964A237208F7DFF00B5790A /* StringExtensions.swift */,
 			);
 			path = "PTVN Editor";
 			sourceTree = "<group>";
@@ -153,13 +168,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */,
 				79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */,
+				7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */,
 				79DDB9E9208786A500E01853 /* PTVNModel.swift in Sources */,
 				79DDB9EE208786BE00E01853 /* RedGreenCheckbox.swift in Sources */,
-				79DDB9EF208786BE00E01853 /* StringExtensions.swift in Sources */,
+				7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */,
 				7913205E2077C85100CB1537 /* ViewController.swift in Sources */,
+				7964A234208F7D1B00B5790A /* CurrentAssessmentController.swift in Sources */,
 				7913205C2077C85100CB1537 /* AppDelegate.swift in Sources */,
+				7906DEE8208E123900CD11A1 /* ROSModel.swift in Sources */,
 				791320602077C85100CB1537 /* Document.swift in Sources */,
+				7906DEED208E16A800CD11A1 /* DoctorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

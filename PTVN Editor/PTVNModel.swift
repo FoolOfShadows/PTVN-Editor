@@ -63,7 +63,7 @@ struct PTVN {
     var theText:String
     private let currentDate = Date()
     private let formatter = DateFormatter()
-    var messageDate:String {
+    private var messageDate:String {
         formatter.dateStyle = DateFormatter.Style.short
         return formatter.string(from: currentDate)
     }
@@ -87,6 +87,9 @@ struct PTVN {
     var family = String()
     var diagnoses = String()
     var ros = String()
+    var assessment = String()
+    var objective = String()
+    var subjective = String()
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
@@ -107,6 +110,9 @@ struct PTVN {
         self.family = theText.simpleRegExMatch(Regexes().family).cleanTheTextOf([SectionDelimiters.familyStart.rawValue, SectionDelimiters.familyEnd.rawValue])
         self.diagnoses = theText.simpleRegExMatch(Regexes().diagnoses).cleanTheTextOf([SectionDelimiters.diagnosisStart.rawValue, SectionDelimiters.diagnosisEnd.rawValue])
         self.ros = theText.simpleRegExMatch(Regexes().ros).cleanTheTextOf([SectionDelimiters.rosStart.rawValue, SectionDelimiters.rosEnd.rawValue])
+        self.assessment = theText.simpleRegExMatch(Regexes().assessment).cleanTheTextOf([SectionDelimiters.assessmentStart.rawValue, SectionDelimiters.assessmentEND.rawValue])
+        self.objective = theText.simpleRegExMatch(Regexes().objective).cleanTheTextOf([SectionDelimiters.objectiveStart.rawValue, SectionDelimiters.objectiveEnd.rawValue])
+        self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue])
     }
     
     var saveValue:String {return """
@@ -149,6 +155,18 @@ struct PTVN {
         \(SectionDelimiters.rosStart.rawValue)
         \(ros)
         \(SectionDelimiters.rosEnd.rawValue)
+        
+        \(SectionDelimiters.assessmentStart.rawValue)
+        \(assessment)
+        \(SectionDelimiters.assessmentEND.rawValue)
+        
+        \(SectionDelimiters.objectiveStart.rawValue)
+        \(objective)
+        \(SectionDelimiters.objectiveEnd.rawValue)
+        
+        \(SectionDelimiters.subjectiveStart.rawValue)
+        \(subjective)
+        \(SectionDelimiters.subjectiveEnd.rawValue)
         """
         
 //        \(SectionDelimiters.patientNameStart.rawValue)
@@ -188,6 +206,9 @@ struct PTVN {
         let psh = "(?s)\(SectionDelimiters.pshStart.rawValue).*\(SectionDelimiters.pshEnd.rawValue)"
         let preventive = "(?s)\(SectionDelimiters.preventiveStart.rawValue).*\(SectionDelimiters.preventiveEnd.rawValue)"
         let ros = "(?s)\(SectionDelimiters.rosStart.rawValue).*\(SectionDelimiters.rosEnd.rawValue)"
+        let assessment = "(?s)\(SectionDelimiters.assessmentStart.rawValue).*\(SectionDelimiters.assessmentEND.rawValue)"
+        let objective = "(?s)\(SectionDelimiters.objectiveStart.rawValue).*\(SectionDelimiters.objectiveEnd.rawValue)"
+        let subjective = "(?s)\(SectionDelimiters.subjectiveStart.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
     }
 
     

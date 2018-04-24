@@ -8,7 +8,11 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate {
+protocol ptvnDelegate: class {
+    func returnPTVNValues(sender: NSViewController)
+}
+
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, ptvnDelegate {
 
     @IBOutlet weak var ccView: NSTextField!
     @IBOutlet var rosView: NSTextView!
@@ -26,7 +30,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate 
     @IBOutlet var diagnosesView: NSTextView!
     @IBOutlet var planView: NSTextView!
     
-    
+    //weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
     
     
@@ -34,7 +38,12 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate 
         super.viewDidLoad()
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        allergyView.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
+        
+        
+        let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, vitalsView, objectiveView, pshView, diagnosesView, planView]
+        theTextViews.forEach { view in
+            view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
+        }
         
         ccView.delegate = self
         medsView.delegate = self
@@ -52,7 +61,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate 
         pshView.delegate = self
         diagnosesView.delegate = self
         planView.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -60,11 +69,42 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate 
         let document = self.view.window?.windowController?.document as! Document
         theData = document.theData
         print("Prev: \(theData.preventive)")
+        updateView()
+        
+    }
+
+    func textDidChange(_ notification: Notification) {
+        guard let theView = notification.object as? NSTextView else { return }
+        updateVarForView(theView)
+        //print("\(theView) updated")
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier?.rawValue == "showDoctor" {
+            if let toViewController = segue.destinationController as? DoctorViewController {
+                //For the delegate to work, it needs to be assigned here
+                //rather than in view did load.  Because it's a modal window?
+                toViewController.currentPTVNDelegate = self
+                toViewController.theData = theData
+            }
+        } else if segue.identifier?.rawValue == "showROS" {
+            if let toViewController = segue.destinationController as? ROSViewController {
+                toViewController.currentPTVNDelegate = self
+                toViewController.theData = theData
+            }
+        }
+    }
+    
+    func returnPTVNValues(sender: NSViewController) {
+        updateView()
+    }
+    
+    func updateView() {
         medsView.string = theData.medicines
         allergyView.string = theData.allergies
         //ccView..string = theData.
         rosView.string = theData.ros
-        //subjectiveView.string = theData.
+        subjectiveView.string = theData.subjective
         print(theData.preventive)
         preventiveView.string = theData.preventive
         pmhView.string = theData.pmh
@@ -77,11 +117,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate 
         //diagnosesView..string = theData.
         //planView..string = theData.
     }
-
-    func textDidChange(_ notification: Notification) {
-        guard let theView = notification.object as? NSTextView else { return }
-        updateVarForView(theView)
-    }
+    
     
     func updateVarForView(_ view:NSTextView) {
         switch view {
@@ -90,8 +126,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate 
             print(theData.medicines)
         case rosView:
             theData.ros = rosView.string
-//        case subjectiveView:
-//            theData.ros = rosView.string
+        case subjectiveView:
+            theData.subjective = subjectiveView.string
         case preventiveView:
             theData.preventive = preventiveView.string
         case pmhView:

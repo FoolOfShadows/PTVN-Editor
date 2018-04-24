@@ -161,13 +161,35 @@ extension NSView {
         } else {
             theView = self.superview?.getContainingBox()
         }
-        
         return theView as? NSBox
     }
+    
+    func getListOfButtons() -> [NSButton] {
+        var results = [NSButton]()
+        for item in self.subviews {
+            if let item = item as? NSButton {
+                results.append(item)
+            } else {
+                results += item.getListOfButtons()
+            }
+        }
+        return results
+    }
+    
 }
 
 extension NSButton {
     
+}
+
+extension String {
+    mutating func addToExistingText(_ text:String) {
+        if !self.isEmpty {
+            self += "\n\(text)"
+        } else {
+            self = text
+        }
+    }
 }
 
 extension NSTextView {
