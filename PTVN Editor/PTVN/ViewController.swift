@@ -80,17 +80,86 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier?.rawValue == "showDoctor" {
-            if let toViewController = segue.destinationController as? DoctorViewController {
-                //For the delegate to work, it needs to be assigned here
-                //rather than in view did load.  Because it's a modal window?
-                toViewController.currentPTVNDelegate = self
-                toViewController.theData = theData
-            }
-        } else if segue.identifier?.rawValue == "showROS" {
-            if let toViewController = segue.destinationController as? ROSViewController {
-                toViewController.currentPTVNDelegate = self
-                toViewController.theData = theData
+        if let theSegue = segue.identifier?.rawValue {
+            switch theSegue {
+            case "showDoctor":
+                if let toViewController = segue.destinationController as? DoctorViewController {
+                    //For the delegate to work, it needs to be assigned here
+                    //rather than in view did load.  Because it's a modal window?
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showROS":
+                if let toViewController = segue.destinationController as? ROSViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showRadRef":
+                if let toViewController = segue.destinationController as? RadRefViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showLab":
+                if let toViewController = segue.destinationController as? LabsViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showHPI":
+                if let toViewController = segue.destinationController as? HPIViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showPain":
+                if let toViewController = segue.destinationController as? PainViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showDiabetes":
+                if let toViewController = segue.destinationController as? DMViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showProcInj":
+                if let toViewController = segue.destinationController as? ProcInjViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showWWE":
+                if let toViewController = segue.destinationController as? WWEViewController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showPEGen":
+                if let toViewController = segue.destinationController as? GenPsychHEENTNeck_VC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showPECV":
+                if let toViewController = segue.destinationController as? CVChestGILymph_VC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showExtremeties":
+                if let toViewController = segue.destinationController as? Extremities_VC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showSkin":
+                if let toViewController = segue.destinationController as? SkinGynGUDRE_VC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showBreast":
+                if let toViewController = segue.destinationController as? Breast_VC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showNeuro":
+                if let toViewController = segue.destinationController as? NeuroMSK_VC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            default: return
             }
         }
     }
@@ -112,10 +181,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         socialView.string = theData.social
         familyView.string = theData.family
         //vitalsView.string = theData.
-        //objectiveView.string = theData.
+        objectiveView.string = theData.objective
         pshView.string = theData.psh
         //diagnosesView..string = theData.
-        //planView..string = theData.
+        planView.string = theData.plan
     }
     
     
@@ -142,14 +211,14 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.allergies = allergyView.string
 //        case vitalsView:
 //            theData.ros = rosView.string
-//        case objectiveView:
-//            theData.ros = rosView.string
+        case objectiveView:
+            theData.objective = objectiveView.string
         case pshView:
             theData.psh = pshView.string
 //        case diagnosesView:
 //            theData.ros = rosView.string
-//        case planView:
-//            theData.ros = rosView.string
+        case planView:
+            theData.plan = planView.string
         default: return
         }
     }

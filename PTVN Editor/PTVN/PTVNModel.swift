@@ -90,6 +90,7 @@ struct PTVN {
     var assessment = String()
     var objective = String()
     var subjective = String()
+    var plan = String()
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
@@ -113,6 +114,7 @@ struct PTVN {
         self.assessment = theText.simpleRegExMatch(Regexes().assessment).cleanTheTextOf([SectionDelimiters.assessmentStart.rawValue, SectionDelimiters.assessmentEND.rawValue])
         self.objective = theText.simpleRegExMatch(Regexes().objective).cleanTheTextOf([SectionDelimiters.objectiveStart.rawValue, SectionDelimiters.objectiveEnd.rawValue])
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue])
+        self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
     }
     
     var saveValue:String {return """
@@ -167,6 +169,10 @@ struct PTVN {
         \(SectionDelimiters.subjectiveStart.rawValue)
         \(subjective)
         \(SectionDelimiters.subjectiveEnd.rawValue)
+        
+        \(SectionDelimiters.planStart.rawValue)
+        \(plan)
+        \(SectionDelimiters.planEnd.rawValue)
         """
         
 //        \(SectionDelimiters.patientNameStart.rawValue)
@@ -209,6 +215,7 @@ struct PTVN {
         let assessment = "(?s)\(SectionDelimiters.assessmentStart.rawValue).*\(SectionDelimiters.assessmentEND.rawValue)"
         let objective = "(?s)\(SectionDelimiters.objectiveStart.rawValue).*\(SectionDelimiters.objectiveEnd.rawValue)"
         let subjective = "(?s)\(SectionDelimiters.subjectiveStart.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
+        let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
     }
 
     

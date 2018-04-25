@@ -267,6 +267,36 @@ func getButtonsInView(_ view:NSView) -> [NSButton] {
 	return results
 }
 
+func getButtonsIn(view: NSView) -> [(Int, String?)]{
+    var results = [(Int, String?)]()
+    for item in view.subviews {
+        //print(item.tag)
+        if let isButton = item as? NSButton {
+            //if item is NSButton {
+            if isButton.state == .on {
+                switch isButton {
+                case is NSPopUpButton:
+                    if !(isButton as! NSPopUpButton).titleOfSelectedItem!.isEmpty {
+                        results.append((isButton.tag, (isButton as! NSPopUpButton).titleOfSelectedItem))
+                    }
+                default:
+                    results.append((item.tag, nil))
+                }
+            } else if isButton.state == .mixed {
+                results.append((item.tag + 20, nil))
+            }
+            //If we don't check tags here we end up with an entry for the NSBox and it's title
+        } else if item is NSTextField && item.tag > 0 {
+            if (item as! NSTextField).stringValue != "" {
+                results.append((item.tag, (item as! NSTextField).stringValue))
+            }
+        } else {
+            results += getButtonsIn(view: item)
+        }
+    }
+    return results.sorted(by: {$0.0 < $1.0})
+}
+
 func getActiveButtonInfoIn(view: NSView) -> [(Int, String?)]{
     var results = [(Int, String?)]()
     for item in view.subviews {
