@@ -14,6 +14,9 @@ protocol ptvnDelegate: class {
 
 class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, ptvnDelegate {
 
+    @IBOutlet weak var ptNameView: NSTextField!
+    @IBOutlet weak var ptDOBView: NSTextField!
+    @IBOutlet weak var ptVisitView: NSTextField!
     @IBOutlet weak var ccView: NSTextField!
     @IBOutlet var rosView: NSTextView!
     @IBOutlet var subjectiveView: NSTextView!
@@ -30,21 +33,23 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var diagnosesView: NSTextView!
     @IBOutlet var planView: NSTextView!
     
-    //weak var currentPTVNDelegate: ptvnDelegate?
+    //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
+    var document = Document()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        
-        
         let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, vitalsView, objectiveView, pshView, diagnosesView, planView]
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
         }
         
+        //Set up delegation for the text views and fields to be able to respond to typing
         ccView.delegate = self
         medsView.delegate = self
         rosView.delegate = self
@@ -61,22 +66,22 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         pshView.delegate = self
         diagnosesView.delegate = self
         planView.delegate = self
-        
-        // Do any additional setup after loading the view.
     }
     
+    
     override func viewWillAppear() {
-        let document = self.view.window?.windowController?.document as! Document
+        //Populate the view with existing data when loading a file
+        //Needs to be here rather than viewDidLoad
+        document = self.view.window?.windowController?.document as! Document
         theData = document.theData
-        print("Prev: \(theData.preventive)")
         updateView()
         
     }
 
+    //Update the PTVN instance variables as the user is typing into the associated fields
     func textDidChange(_ notification: Notification) {
         guard let theView = notification.object as? NSTextView else { return }
         updateVarForView(theView)
-        //print("\(theView) updated")
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -164,11 +169,22 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
     
+    //When one of the form views exits after updating the instance of the PTVN
+    //update the document's main view
     func returnPTVNValues(sender: NSViewController) {
+        //Because the document's not catching changes returned from the forms
+        //it's change count has to be manually updated here to trigger
+        //save on closing notice
+        document.updateChangeCount(.changeDone)
         updateView()
     }
     
+    //Update the main view of the document with data from the PTVN instance
     func updateView() {
+        ptNameView.stringValue = theData.ptName
+        print(theData.ptName)
+        ptDOBView.stringValue = "\(theData.ptDOB)   (\(theData.ptAge))"
+        ptVisitView.stringValue = theData.visitDate
         medsView.string = theData.medicines
         allergyView.string = theData.allergies
         //ccView..string = theData.
@@ -187,7 +203,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         planView.string = theData.plan
     }
     
-    
+    //Update the instance of the PTVN with data being entered into the main document view
     func updateVarForView(_ view:NSTextView) {
         switch view {
         case medsView:
@@ -222,6 +238,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         default: return
         }
     }
+    
+    //Don't know what this does
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.

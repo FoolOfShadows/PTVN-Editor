@@ -236,6 +236,7 @@ class RadRefViewController: NSViewController {
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
+        firstVC.view.window?.isDocumentEdited = true
         self.dismiss(self)
 		
 	}

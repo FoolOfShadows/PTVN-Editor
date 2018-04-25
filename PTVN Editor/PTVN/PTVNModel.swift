@@ -97,7 +97,7 @@ struct PTVN {
     init(theText: String) {
         self.theText = theText
         self.visitDate = theText.simpleRegExMatch(Regexes().visitDate).cleanTheTextOf([SectionDelimiters.visitDateStart.rawValue, SectionDelimiters.visitDateEnd.rawValue])
-        self.ptName = theText.simpleRegExMatch(Regexes().allergies).cleanTheTextOf([SectionDelimiters.allergiesStart.rawValue, SectionDelimiters.allergiesEnd.rawValue])
+        self.ptName = theText.simpleRegExMatch(Regexes().name).cleanTheTextOf([SectionDelimiters.patientNameStart.rawValue, SectionDelimiters.patientNameEnd.rawValue])
         //var ptLabelName:String {return getFileLabellingName(ptInnerName)}
         self.ptAge = theText.simpleRegExMatch(Regexes().age).cleanTheTextOf([SectionDelimiters.patientAgeStart.rawValue, SectionDelimiters.patientAgeEnd.rawValue])
         self.ptDOB = theText.simpleRegExMatch(Regexes().dob).cleanTheTextOf([SectionDelimiters.patientDOBStart.rawValue, SectionDelimiters.patientDOBEnd.rawValue])
@@ -118,6 +118,22 @@ struct PTVN {
     }
     
     var saveValue:String {return """
+        \(SectionDelimiters.patientNameStart.rawValue)
+        \(ptName)
+        \(SectionDelimiters.patientNameEnd.rawValue)
+        
+        \(SectionDelimiters.patientDOBStart.rawValue)
+        \(ptDOB)
+        \(SectionDelimiters.patientDOBEnd.rawValue)
+        
+        \(SectionDelimiters.patientAgeStart.rawValue)
+        \(ptAge)
+        \(SectionDelimiters.patientAgeEnd.rawValue)
+        
+        \(SectionDelimiters.visitDateStart.rawValue)
+        \(visitDate)
+        \(SectionDelimiters.visitDateEnd.rawValue)
+        
         \(SectionDelimiters.medStart.rawValue)
         \(medicines)
         \(SectionDelimiters.medEnd.rawValue)

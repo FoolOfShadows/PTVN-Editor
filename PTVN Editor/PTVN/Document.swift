@@ -21,8 +21,10 @@ class Document: NSDocument {
         // Add your subclass-specific initialization here.
     }
 
+    //Setting this to false so the document requests approval for saving after
+    //any changes are made to it.
     override class var autosavesInPlace: Bool {
-        return true
+        return false
     }
 
     override func makeWindowControllers() {
@@ -37,19 +39,13 @@ class Document: NSDocument {
         if let theData = viewController?.theData.saveValue, let contents = theData.data(using: String.Encoding.utf8) {
                 return contents
         }
-        
-        //let rangeLength = theData.count
-        //let textRange = NSRange(location: 0, length: rangeLength)
-       
-        
-        
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 
     override func read(from data: Data, ofType typeName: String) throws {
         //Load data from file
         if let contents = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) {
-            theData = PTVN(theText: contents) //Call function to create and populate a main class instance
+            theData = PTVN(theText: contents)
         }
         //throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }

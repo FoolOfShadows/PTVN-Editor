@@ -165,11 +165,11 @@
 				79CCA6B82090BC4400909285 /* WWE */,
 				79CCA6C92090D17A00909285 /* Gen-Psych-HE-ENT-Neck */,
 				79CCA6D42090D4AA00909285 /* CV-Chest-GI-Lymph */,
-				791320612077C85200CB1537 /* Assets.xcassets */,
 				79CCA6DD2090D5FC00909285 /* Extremeties */,
 				79CCA6E82090DA4800909285 /* Skin-Gyn_GU-DRE */,
-				79CCA6F42090DC5700909285 /* Neuro-MSK */,
 				79CCA6ED2090DB8D00909285 /* Breast */,
+				79CCA6F42090DC5700909285 /* Neuro-MSK */,
+				791320612077C85200CB1537 /* Assets.xcassets */,
 				791320662077C85200CB1537 /* Info.plist */,
 				791320672077C85200CB1537 /* PTVN_Editor.entitlements */,
 				79CCA6BA2090BCFC00909285 /* Extensions Etc */,
@@ -244,8 +244,8 @@
 		79CCA6B72090BC3A00909285 /* RadRef */ = {
 			isa = PBXGroup;
 			children = (
-				79CCA69E2090B73E00909285 /* RadRefModel.swift */,
 				79CCA6952090B73D00909285 /* RadRefViewController.swift */,
+				79CCA69E2090B73E00909285 /* RadRefModel.swift */,
 			);
 			path = RadRef;
 			sourceTree = "<group>";
