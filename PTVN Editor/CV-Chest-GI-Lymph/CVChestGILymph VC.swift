@@ -49,7 +49,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
 	
 	@IBAction func processCVTab(_ sender: Any) {
 		let results = processTab()
-        theData.subjective.addToExistingText(results)
+        theData.objective.addToExistingText(results)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

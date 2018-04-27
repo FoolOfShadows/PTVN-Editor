@@ -138,7 +138,7 @@ class LabsViewController: NSViewController {
             }
         }
 
-        theData.objective.addToExistingText(resultsArray.joined(separator: "\n"))
+        theData.plan.addToExistingText(resultsArray.joined(separator: "\n"))
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

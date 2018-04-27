@@ -191,22 +191,6 @@ struct PTVN {
         \(SectionDelimiters.planEnd.rawValue)
         """
         
-//        \(SectionDelimiters.patientNameStart.rawValue)
-//        \(ptName)
-//        \(SectionDelimiters.patientNameEnd.rawValue)
-//
-//        \(SectionDelimiters.patientDOBStart.rawValue)
-//        \(ptDOB)
-//        \(SectionDelimiters.patientDOBEnd.rawValue)
-//
-//        \(SectionDelimiters.patientAgeStart.rawValue)
-//        \(ptAge)
-//        \(SectionDelimiters.patientAgeEnd.rawValue)
-//
-//        \(SectionDelimiters.visitDateStart.rawValue)
-//        \(visitDate)
-//        \(SectionDelimiters.visitDateEnd.rawValue)
-//
 //        \(SectionDelimiters.otherStart.rawValue)
 //        \(messageDate)
 //        \(SectionDelimiters.otherEnd.rawValue)

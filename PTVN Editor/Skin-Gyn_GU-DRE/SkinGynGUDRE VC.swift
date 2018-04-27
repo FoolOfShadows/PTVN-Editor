@@ -34,7 +34,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
 	
 	@IBAction func processSkinTab(_ sender: Any) {
 		let results = processTab()
-        theData.subjective.addToExistingText(results)
+        theData.objective.addToExistingText(results)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

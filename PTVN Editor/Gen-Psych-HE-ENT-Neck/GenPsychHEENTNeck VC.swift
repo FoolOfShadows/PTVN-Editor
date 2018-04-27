@@ -34,7 +34,7 @@ class GenPsychHEENTNeck_VC: NSViewController, ProcessTabProtocol {
 	@IBAction func processGenTab(_ sender: Any) {
 		let results = processTab()
 		//print(results)
-        theData.subjective.addToExistingText(results)
+        theData.objective.addToExistingText(results)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

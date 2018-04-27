@@ -25,7 +25,7 @@ class Breast_VC: NSViewController, ProcessTabProtocol {
     
     @IBAction func processBreastTab(_ sender: Any) {
         let results = processTab()
-        theData.subjective.addToExistingText(results)
+        theData.objective.addToExistingText(results)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

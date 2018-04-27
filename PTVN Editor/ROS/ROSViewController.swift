@@ -10,6 +10,7 @@ import Cocoa
 
 
 
+
 class ROSViewController: NSViewController {
     
     @IBOutlet weak var rosView: NSView!
@@ -58,12 +59,12 @@ class ROSViewController: NSViewController {
         rosView.clearControllers()
     }
     
-    @IBAction func processAndContinueToHPI(_ sender: Any) {
-        processROS(self)
-        //TrackingTabs.newTab = 1
-        nc.post(name: NSNotification.Name("SwitchTabs"), object: nil)
-        processAndContinue()
-    }
+//    @IBAction func processAndContinueToHPI(_ sender: Any) {
+//        processROS(self)
+//        //TrackingTabs.newTab = 1
+//        nc.post(name: NSNotification.Name("SwitchTabs"), object: nil)
+//        processAndContinue()
+//    }
     
     func getListOfButtons(_ view:NSView) -> [NSButton] {
         var results = [NSButton]()

@@ -178,7 +178,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 	
 	@IBAction func processNeuroMSKTab(_ sender: Any) {
 		let results = processTab()
-        theData.subjective.addToExistingText(results)
+        theData.objective.addToExistingText(results)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

@@ -108,7 +108,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let filteredResultsArray = resultsArray.filter{!$0.isEmpty}
         let results = filteredResultsArray.joined(separator: "\n")
         
-        theData.subjective.addToExistingText(results)
+        theData.plan.addToExistingText(results)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData

@@ -59,7 +59,7 @@
 		79CCA6F32090DC4E00909285 /* NeuroMSK VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6F02090DC4E00909285 /* NeuroMSK VC.swift */; };
 		79DDB9E9208786A500E01853 /* PTVNModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9E8208786A500E01853 /* PTVNModel.swift */; };
 		79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */; };
-		79DDB9EE208786BE00E01853 /* RedGreenCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9EB208786BE00E01853 /* RedGreenCheckbox.swift */; };
+		79DDB9EE208786BE00E01853 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDB9EB208786BE00E01853 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,7 +118,7 @@
 		79CCA6F02090DC4E00909285 /* NeuroMSK VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NeuroMSK VC.swift"; sourceTree = "<group>"; };
 		79DDB9E8208786A500E01853 /* PTVNModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTVNModel.swift; sourceTree = "<group>"; };
 		79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
-		79DDB9EB208786BE00E01853 /* RedGreenCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedGreenCheckbox.swift; sourceTree = "<group>"; };
+		79DDB9EB208786BE00E01853 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +180,8 @@
 		79CCA6B02090BBC600909285 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
-				7906DEEB208E16A700CD11A1 /* DoctorModel.swift */,
 				7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */,
+				7906DEEB208E16A700CD11A1 /* DoctorModel.swift */,
 				7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */,
 			);
 			path = Doctor;
@@ -208,8 +208,8 @@
 		79CCA6B32090BC1900909285 /* HPI */ = {
 			isa = PBXGroup;
 			children = (
-				79CCA6982090B73D00909285 /* HPIModel.swift */,
 				79CCA6962090B73D00909285 /* HPIViewController.swift */,
+				79CCA6982090B73D00909285 /* HPIModel.swift */,
 			);
 			path = HPI;
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 		79CCA6B42090BC2000909285 /* Lab */ = {
 			isa = PBXGroup;
 			children = (
-				79CCA69B2090B73E00909285 /* LabsModel.swift */,
 				79CCA69F2090B73E00909285 /* LabsViewController.swift */,
+				79CCA69B2090B73E00909285 /* LabsModel.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 		79CCA6B52090BC2900909285 /* Pain */ = {
 			isa = PBXGroup;
 			children = (
-				79CCA6942090B73D00909285 /* PainModel.swift */,
 				79CCA6972090B73D00909285 /* PainViewController.swift */,
+				79CCA6942090B73D00909285 /* PainModel.swift */,
 			);
 			path = Pain;
 			sourceTree = "<group>";
@@ -235,8 +235,8 @@
 		79CCA6B62090BC3000909285 /* ProcInj */ = {
 			isa = PBXGroup;
 			children = (
-				79CCA69C2090B73E00909285 /* ProcInjModel.swift */,
 				79CCA6992090B73D00909285 /* ProcInjViewController.swift */,
+				79CCA69C2090B73E00909285 /* ProcInjModel.swift */,
 			);
 			path = ProcInj;
 			sourceTree = "<group>";
@@ -253,8 +253,8 @@
 		79CCA6B82090BC4400909285 /* WWE */ = {
 			isa = PBXGroup;
 			children = (
-				79CCA69D2090B73E00909285 /* WWEModel.swift */,
 				79CCA6A02090B73E00909285 /* WWEViewController.swift */,
+				79CCA69D2090B73E00909285 /* WWEModel.swift */,
 			);
 			path = WWE;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */,
-				79DDB9EB208786BE00E01853 /* RedGreenCheckbox.swift */,
+				79DDB9EB208786BE00E01853 /* Buttons.swift */,
 				7964A237208F7DFF00B5790A /* StringExtensions.swift */,
 			);
 			path = "Extensions Etc";
@@ -431,7 +431,7 @@
 				79CCA6D22090D49F00909285 /* GI Model.swift in Sources */,
 				79CCA6E42090DA4200909285 /* GU Model.swift in Sources */,
 				79CCA6EB2090DB7D00909285 /* Breast VC.swift in Sources */,
-				79DDB9EE208786BE00E01853 /* RedGreenCheckbox.swift in Sources */,
+				79DDB9EE208786BE00E01853 /* Buttons.swift in Sources */,
 				79CCA6AF2090B73F00909285 /* DMModel.swift in Sources */,
 				7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */,
 				79CCA6C52090D16500909285 /* HeadEye Model.swift in Sources */,
