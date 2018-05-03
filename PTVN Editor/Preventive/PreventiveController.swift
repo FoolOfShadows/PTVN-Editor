@@ -63,12 +63,12 @@ class PreventiveController: NSViewController {
 	
 	var measures = [PreventiveMeasure]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+    weak var currentPTVNDelegate: ptvnDelegate?
+    var theData = PTVN(theText: "")
+    
  
-	override func awakeFromNib() {
+override func viewDidLoad() {
+        super.viewDidLoad()
 		let pnvMeasure = PreventiveMeasure(measure: "Pneumococcal vaccination", date: pnvTextView, notDue: pnvNotDue)
 		let fluMeasure = PreventiveMeasure(measure: "Influenza vaccination", date: fluTextView, notDue: fluNotDue)
 		let hepBMeasure = PreventiveMeasure(measure: "Hepatitis B vaccination", date: hepBTextView, notDue: hepBNotDue)
@@ -107,10 +107,12 @@ class PreventiveController: NSViewController {
 	@IBAction func processPreventiveMeasures(_ sender: NSButton) {
 		let results = prepareMeasures()
 		if !results.isEmpty {
-            let pasteBoard = NSPasteboard.general
-			pasteBoard.clearContents()
-            pasteBoard.setString(results, forType: NSPasteboard.PasteboardType.string)
-			Swift.print(results)
+            theData.objective.addToExistingText(results)
+            
+            let firstVC = presenting as! ViewController
+            firstVC.theData = theData
+            currentPTVNDelegate?.returnPTVNValues(sender: self)
+            self.dismiss(self)
 		}
 	}
 	

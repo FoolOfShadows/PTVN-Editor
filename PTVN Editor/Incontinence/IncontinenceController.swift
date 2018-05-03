@@ -56,6 +56,9 @@ class IncontinenceController: NSViewController {
 	var leakArray: [NSButton] {return [leakNever, leakOccasionally, leakSometimes, leakMostly, leakAlways]}
 	var leakBotherArray: [NSButton] {return [leakBother0, leakBother1, leakBother2, leakBother3, leakBother4]}
     
+    weak var currentPTVNDelegate: ptvnDelegate?
+    var theData = PTVN(theText: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +66,7 @@ class IncontinenceController: NSViewController {
     
     
 	@IBAction func takeClear(_ sender: NSButton) {
+        self.view.clearControllers()
 	}
 	
 	@IBAction func takeProcess(_ sender: NSButton) {
@@ -74,13 +78,16 @@ class IncontinenceController: NSViewController {
 		resultsArray.append(processQuestion(question: .Leak, answers: leakArray, bothered: leakBotherArray))
 		
 		if !resultsArray.isEmpty && resultsArray != ["","","",""] {
-			results = "Urinary incontinence screening.  Patient reports:\n" + resultsArray.joined(separator: "\n")
+            print(resultsArray)
+            results = "Urinary incontinence screening.  Patient reports:\n" + resultsArray.filter {$0 != ""}.joined(separator: "\n")
 		}
 		
-        let pasteBoard = NSPasteboard.general
-		pasteBoard.clearContents()
-        pasteBoard.setString(results, forType: NSPasteboard.PasteboardType.string)
-		Swift.print(results)
+        theData.objective.addToExistingText(results)
+        
+        let firstVC = presenting as! ViewController
+        firstVC.theData = theData
+        currentPTVNDelegate?.returnPTVNValues(sender: self)
+        self.dismiss(self)
 		
 	}
 	

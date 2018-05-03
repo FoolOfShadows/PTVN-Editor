@@ -24,7 +24,7 @@ class PreventiveMeasure {
 		
 		if self.suggestedDate.stringValue != "" {
 			result = "\(self.measure): \(self.suggestedDate.stringValue)."
-		} else if self.notDue.state == NSOnState {
+		} else if self.notDue.state == .on {
 			result = "\(self.measure): not due."
 		}
 		
@@ -33,7 +33,7 @@ class PreventiveMeasure {
 	
 	func clearMeasure() {
 		suggestedDate.stringValue = String()
-		notDue.state = NSOffState
+		notDue.state = .off
 	}
 	
 }

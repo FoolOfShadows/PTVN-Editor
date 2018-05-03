@@ -69,6 +69,9 @@ class ESSController: NSViewController {
 	
 	
 	@IBOutlet weak var scoreLabel: NSTextField!
+    
+    weak var currentPTVNDelegate: ptvnDelegate?
+    var theData = PTVN(theText: "")
 	
 	private var displayedTotal:Int {
 		get {
@@ -90,7 +93,7 @@ class ESSController: NSViewController {
 	}
 	
 	func getCheckboxValueFromStackView(stackView:NSStackView) -> Int? {
-		var positiveTag:Int
+		//var positiveTag:Int
 		for item in stackView.subviews {
 			if item is NSButton {
 				let checkbox = item as? NSButton
@@ -116,10 +119,13 @@ class ESSController: NSViewController {
 		if !stackResults.isEmpty {
 			results = "Epworth Sleepiness Scale result is \(scoreLabel.stringValue).\n\(stackResults)"
 		}
-        let pasteBoard = NSPasteboard.general
-		pasteBoard.clearContents()
-        pasteBoard.setString(results, forType: NSPasteboard.PasteboardType.string)
-		Swift.print(results)
+        
+        theData.objective.addToExistingText(results)
+        
+        let firstVC = presenting as! ViewController
+        firstVC.theData = theData
+        currentPTVNDelegate?.returnPTVNValues(sender: self)
+        self.dismiss(self)
 	}
 	
 	func getResultFromStackStringTuple(stacks:[(NSStackView, String)]) -> String {

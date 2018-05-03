@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Quartz
 
 protocol ptvnDelegate: class {
     func returnPTVNValues(sender: NSViewController)
@@ -164,6 +165,36 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
                 }
+            case "showMWE":
+                if let toViewController = segue.destinationController as? MWEController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showESS":
+                if let toViewController = segue.destinationController as? ESSController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showIncont":
+                if let toViewController = segue.destinationController as? IncontinenceController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showMemory":
+                if let toViewController = segue.destinationController as? MemoryController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showPHQ9":
+                if let toViewController = segue.destinationController as? PHQ9Controller {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
+            case "showPreventive":
+                if let toViewController = segue.destinationController as? PreventiveController {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
             default: return
             }
         }
@@ -187,7 +218,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         ptVisitView.stringValue = theData.visitDate
         medsView.string = theData.medicines
         allergyView.string = theData.allergies
-        //ccView..string = theData.
+        //ccView.string = theData.
         rosView.string = theData.ros
         subjectiveView.string = theData.subjective
         print(theData.preventive)
@@ -238,6 +269,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         default: return
         }
     }
+    
     
     //Don't know what this does
     override var representedObject: Any? {

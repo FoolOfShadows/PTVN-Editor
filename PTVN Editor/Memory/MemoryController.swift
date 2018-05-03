@@ -58,6 +58,9 @@ class MemoryController: NSViewController {
 	var disease:YesNoQuestion {return YesNoQuestion(question: .Disease, yesButton: chronicDiseaseYes, noButton: chronicDiseaseNo, dontKnowButton: nil)}
 	var medications:YesNoQuestion {return YesNoQuestion(question: .Medication, yesButton: certainMedsYes, noButton: certainMedsNo, dontKnowButton: nil)}
 	var yesNoQuestionArray:[YesNoQuestion] {return [forgettingNames, recentEvents, searchingForWords, misplacingItems, familyHistory, smoking, drinking, coffeDrinking, disease, medications]}
+    
+    weak var currentPTVNDelegate: ptvnDelegate?
+    var theData = PTVN(theText: "")
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +84,13 @@ class MemoryController: NSViewController {
 		
 		if !finalResultsArray.isEmpty {
 			let finalResult = "Memory screen results:\n\(finalResultsArray.joined(separator: "\n"))"
-            let pasteBoard = NSPasteboard.general
-			pasteBoard.clearContents()
-            pasteBoard.setString(finalResult, forType: NSPasteboard.PasteboardType.string)
-			Swift.print(finalResult)
+            
+            theData.objective.addToExistingText(finalResult)
+            
+            let firstVC = presenting as! ViewController
+            firstVC.theData = theData
+            currentPTVNDelegate?.returnPTVNValues(sender: self)
+            self.dismiss(self)
 		}
 	}
     

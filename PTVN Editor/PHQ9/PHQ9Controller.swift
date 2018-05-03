@@ -205,6 +205,9 @@ class PHQ9Controller: NSViewController {
 		}
 		displayedTotal = currentValue
 	}
+    
+    weak var currentPTVNDelegate: ptvnDelegate?
+    var theData = PTVN(theText: "")
 	
 	@IBAction func takeProcess(_ sender: NSButton) {
 		var finalResult = "The patient's PHQ-9 score is: \(totalView.stringValue)"
@@ -220,10 +223,12 @@ class PHQ9Controller: NSViewController {
 			finalResult = finalResult + "\n\(resultDifficultyLevel)"
 		}
 		
-        let pasteBoard = NSPasteboard.general
-		pasteBoard.clearContents()
-        pasteBoard.setString(finalResult, forType: NSPasteboard.PasteboardType.string)
-		Swift.print(finalResult)
+        theData.objective.addToExistingText(finalResult)
+        
+        let firstVC = presenting as! ViewController
+        firstVC.theData = theData
+        currentPTVNDelegate?.returnPTVNValues(sender: self)
+        self.dismiss(self)
 	}
 	
 	@IBAction func takeClear(_ sender: NSButton) {

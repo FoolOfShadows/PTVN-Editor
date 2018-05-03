@@ -9,6 +9,14 @@
 import Cocoa
 
 extension String {
+    mutating func addToExistingText(_ text:String) {
+        if !self.isEmpty {
+            self += "\n\n\(text)"
+        } else {
+            self = text
+        }
+    }
+    
 	func findRegexMatchFrom(_ start: String, to end:String) -> String? {
 		if self.contains(start) && self.contains(end) {
 			guard let startRegex = try? NSRegularExpression(pattern: start, options: []) else { return nil }

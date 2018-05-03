@@ -49,6 +49,8 @@ class MWEController: NSViewController {
 	var advancedDirective:AdvanceDirective {return AdvanceDirective(want: adDirWantsCheckbox, notWant: adDirDoesNotWantCheckbox, notSure: adDirNotSureCheckbox, agree: adDirAgreesCheckbox, disagree: adDirDisagreesCheckbox)}
 	var phq2Screening:PHQ2Screen {return PHQ2Screen(downYes: depressedYesCheckbox, downNo: depressedNoCheckbox, interestYes: littleInterestYesCheckbox, interestNo: littleInterestNoCheckbox)}
 	
+    weak var currentPTVNDelegate: ptvnDelegate?
+    var theData = PTVN(theText: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,16 +97,19 @@ class MWEController: NSViewController {
 			finalResults = finalResultsArray.joined(separator: "\n")
 		}
 		
-        let pasteBoard = NSPasteboard.general
-		pasteBoard.clearContents()
-        pasteBoard.setString(finalResults, forType: NSPasteboard.PasteboardType.string)
-		Swift.print(finalResults)
+        theData.objective.addToExistingText(finalResults)
+        
+        let firstVC = presenting as! ViewController
+        firstVC.theData = theData
+        currentPTVNDelegate?.returnPTVNValues(sender: self)
+        self.dismiss(self)
 	}
 	
 	@IBAction func clearWWEForm(_ sender: AnyObject) {
-		visualAcuity.clearAcuity()
-		hearingAssessment.clearHearing()
-		phq2Screening.clearPHQ2()
-		clearControllersOnWWEForm(buttons: buttonsArray, fields: textArray)
+        self.view.clearControllers()
+//        visualAcuity.clearAcuity()
+//        hearingAssessment.clearHearing()
+//        phq2Screening.clearPHQ2()
+//        clearControllersOnWWEForm(buttons: buttonsArray, fields: textArray)
 	}
 }

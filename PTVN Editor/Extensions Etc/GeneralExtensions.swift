@@ -182,15 +182,6 @@ extension NSButton {
     
 }
 
-extension String {
-    mutating func addToExistingText(_ text:String) {
-        if !self.isEmpty {
-            self += "\n\(text)"
-        } else {
-            self = text
-        }
-    }
-}
 
 extension NSTextView {
 	func addToViewsExistingText(_ text:String) {
