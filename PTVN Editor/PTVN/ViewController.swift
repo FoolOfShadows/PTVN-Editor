@@ -85,6 +85,12 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         updateVarForView(theView)
     }
     
+    override func controlTextDidChange(_ obj: Notification) {
+        guard let theView = obj.object as? NSTextField else { return }
+        updateVarForField(theView)
+        document.updateChangeCount(.changeDone)
+    }
+    
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let theSegue = segue.identifier?.rawValue {
             switch theSegue {
@@ -218,7 +224,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         ptVisitView.stringValue = theData.visitDate
         medsView.string = theData.medicines
         allergyView.string = theData.allergies
-        //ccView.string = theData.
+        ccView.stringValue = theData.cc
         rosView.string = theData.ros
         subjectiveView.string = theData.subjective
         print(theData.preventive)
@@ -239,7 +245,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         switch view {
         case medsView:
             theData.medicines = medsView.string
-            print(theData.medicines)
+            //print(theData.medicines)
         case rosView:
             theData.ros = rosView.string
         case subjectiveView:
@@ -268,6 +274,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.plan = planView.string
         default: return
         }
+    }
+    
+    func updateVarForField(_ field:NSTextField) {
+        theData.cc = ccView.stringValue
     }
     
     

@@ -77,6 +77,7 @@ struct PTVN {
     //var ptLabelName:String {return getFileLabellingName(ptInnerName)}
     var ptAge = String()
     var ptDOB = String()
+    var cc = String()
     var allergies = String()
     var medicines = String()
     var preventive = String()
@@ -101,6 +102,7 @@ struct PTVN {
         //var ptLabelName:String {return getFileLabellingName(ptInnerName)}
         self.ptAge = theText.simpleRegExMatch(Regexes().age).cleanTheTextOf([SectionDelimiters.patientAgeStart.rawValue, SectionDelimiters.patientAgeEnd.rawValue])
         self.ptDOB = theText.simpleRegExMatch(Regexes().dob).cleanTheTextOf([SectionDelimiters.patientDOBStart.rawValue, SectionDelimiters.patientDOBEnd.rawValue])
+        self.cc = theText.simpleRegExMatch(Regexes().cc).cleanTheTextOf([SectionDelimiters.ccStart.rawValue, SectionDelimiters.ccEnd.rawValue])
         self.allergies = theText.simpleRegExMatch(Regexes().allergies).cleanTheTextOf([SectionDelimiters.allergiesStart.rawValue, SectionDelimiters.allergiesEnd.rawValue])
         self.medicines = theText.simpleRegExMatch(Regexes().medications).cleanTheTextOf([SectionDelimiters.medStart.rawValue, SectionDelimiters.medEnd.rawValue])
         self.preventive = theText.simpleRegExMatch(Regexes().preventive).cleanTheTextOf([SectionDelimiters.preventiveStart.rawValue, SectionDelimiters.preventiveEnd.rawValue])
@@ -118,6 +120,7 @@ struct PTVN {
     }
     
     var saveValue:String {return """
+        #PTVNFILE#
         \(SectionDelimiters.patientNameStart.rawValue)
         \(ptName)
         \(SectionDelimiters.patientNameEnd.rawValue)
@@ -133,6 +136,10 @@ struct PTVN {
         \(SectionDelimiters.visitDateStart.rawValue)
         \(visitDate)
         \(SectionDelimiters.visitDateEnd.rawValue)
+        
+        \(SectionDelimiters.ccStart.rawValue)
+        \(cc)
+        \(SectionDelimiters.ccEnd.rawValue)
         
         \(SectionDelimiters.medStart.rawValue)
         \(medicines)
@@ -201,7 +208,7 @@ struct PTVN {
         let dob = "(?s)\(SectionDelimiters.patientDOBStart.rawValue).*\(SectionDelimiters.patientDOBEnd.rawValue)"
         let age = "(?s)\(SectionDelimiters.patientAgeStart.rawValue).*\(SectionDelimiters.patientAgeEnd.rawValue)"
         let visitDate = "(?s)\(SectionDelimiters.visitDateStart.rawValue).*\(SectionDelimiters.visitDateEnd.rawValue)"
-        
+        let cc = "(?s)\(SectionDelimiters.ccStart.rawValue).*\(SectionDelimiters.ccEnd.rawValue)"
         let social = "(?s)\(SectionDelimiters.socialStart.rawValue).*\(SectionDelimiters.socialEnd.rawValue)"
         let family = "(?s)\(SectionDelimiters.familyStart.rawValue).*\(SectionDelimiters.familyEnd.rawValue)"
         let nutrition = "(?s)\(SectionDelimiters.nutritionStart.rawValue).*\(SectionDelimiters.nutritionEnd.rawValue)"

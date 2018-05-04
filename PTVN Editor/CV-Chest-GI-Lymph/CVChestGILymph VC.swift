@@ -76,7 +76,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
 	func clearCV() {
 		self.view.clearControllers()
 		cvBox.populateSelectionsInViewUsing(Cardiovascular())
-		chestBox.populateSelectionsInViewUsing(Chest())
+		//chestBox.populateSelectionsInViewUsing(Chest())
 		giBox.populateSelectionsInViewUsing(GI())
 	}
 	
@@ -146,9 +146,17 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
                 default: return
                 }
             case "Chest":
+                theButtons.filter({$0.tag == 2})[0].state = .off
                 switch sender.tag {
-                case 100:
-                    theButtons.filter({$0.tag == 1})[0].state = .off
+                case 10...16:
+                    theButtons.filter({$0.tag == 3})[0].state = .off
+                    //clear.state = .off
+                case 20...26:
+                    theButtons.filter({$0.tag == 5})[0].state = .off
+                case 30...36:
+                    theButtons.filter({$0.tag == 4})[0].state = .off
+                case 40...46:
+                    theButtons.filter({$0.tag == 7})[0].state = .off
                 default: return
                 }
             case "GI":

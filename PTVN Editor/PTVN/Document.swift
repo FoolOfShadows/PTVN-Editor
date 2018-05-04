@@ -45,7 +45,11 @@ class Document: NSDocument {
     override func read(from data: Data, ofType typeName: String) throws {
         //Load data from file
         if let contents = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) {
-            theData = PTVN(theText: contents)
+            if contents.contains("#PTVNFILE#") {
+                theData = PTVN(theText: contents)
+            } else {
+                theData.subjective = "You have tried to open an older style PTVN file or a non-PTVN text file."
+            }
         }
         //throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
