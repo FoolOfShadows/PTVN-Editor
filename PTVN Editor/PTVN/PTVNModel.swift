@@ -56,6 +56,12 @@ enum SectionDelimiters:String {
     case otherEnd = "OTHER#"
 }
 
+enum SOAPSections {
+    case objective
+    case subjective
+    case assessment
+    case plan
+}
 
 
 struct PTVN {
@@ -117,6 +123,21 @@ struct PTVN {
         self.objective = theText.simpleRegExMatch(Regexes().objective).cleanTheTextOf([SectionDelimiters.objectiveStart.rawValue, SectionDelimiters.objectiveEnd.rawValue])
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
+    }
+    
+    func returnSOAPSection(_ section: SOAPSections) -> String {
+        switch section {
+        case .subjective:
+            let subjectives = [cc, subjective, ros, medicines, allergies, preventive, pmh, psh, nutrition, social, family]
+            let filtered = subjectives.filter { !$0.isEmpty }
+            return filtered.joined(separator: "\n")
+        case .objective:
+            return objective
+        case .assessment:
+            return assessment
+        case .plan:
+            return plan
+        }
     }
     
     var saveValue:String {return """

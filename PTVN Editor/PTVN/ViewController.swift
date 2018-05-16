@@ -31,7 +31,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var vitalsView: NSTextView!
     @IBOutlet var objectiveView: NSTextView!
     @IBOutlet var pshView: NSTextView!
-    @IBOutlet var diagnosesView: NSTextView!
+    @IBOutlet var assessmentView: NSTextView!
     @IBOutlet var planView: NSTextView!
     
     //Instantiate a PTVN instance
@@ -45,7 +45,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, vitalsView, objectiveView, pshView, diagnosesView, planView]
+        let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, vitalsView, objectiveView, pshView, assessmentView, planView]
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
         }
@@ -65,7 +65,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         vitalsView.delegate = self
         objectiveView.delegate = self
         pshView.delegate = self
-        diagnosesView.delegate = self
+        assessmentView.delegate = self
         planView.delegate = self
     }
     
@@ -236,7 +236,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //vitalsView.string = theData.
         objectiveView.string = theData.objective
         pshView.string = theData.psh
-        //diagnosesView..string = theData.
+        assessmentView.string = theData.assessment
         planView.string = theData.plan
     }
     
@@ -268,8 +268,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.objective = objectiveView.string
         case pshView:
             theData.psh = pshView.string
-//        case diagnosesView:
-//            theData.ros = rosView.string
+        case assessmentView:
+            theData.assessment = assessmentView.string
         case planView:
             theData.plan = planView.string
         default: return
@@ -280,6 +280,21 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         theData.cc = ccView.stringValue
     }
     
+    @IBAction func copyObjective(_ sender: Any) {
+        theData.returnSOAPSection(.objective).copyToPasteboard()
+    }
+    
+    @IBAction func copySubjective(_ sender: Any) {
+        theData.returnSOAPSection(.subjective).copyToPasteboard()
+    }
+    
+    @IBAction func copyAssessment(_ sender: Any) {
+        theData.returnSOAPSection(.assessment).copyToPasteboard()
+    }
+    
+    @IBAction func copyPlan(_ sender: Any) {
+        theData.returnSOAPSection(.plan).copyToPasteboard()
+    }
     
     //Don't know what this does
     override var representedObject: Any? {
