@@ -28,7 +28,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var familyView: NSTextView!
     @IBOutlet var allergyView: NSTextView!
     @IBOutlet var medsView: NSTextView!
-    @IBOutlet var vitalsView: NSTextView!
+    //@IBOutlet var vitalsView: NSTextView!
     @IBOutlet var objectiveView: NSTextView!
     @IBOutlet var pshView: NSTextView!
     @IBOutlet var assessmentView: NSTextView!
@@ -45,7 +45,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, vitalsView, objectiveView, pshView, assessmentView, planView]
+        let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
         }
@@ -62,7 +62,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         familyView.delegate = self
         allergyView.delegate = self
         medsView.delegate = self
-        vitalsView.delegate = self
+        //vitalsView.delegate = self
         objectiveView.delegate = self
         pshView.delegate = self
         assessmentView.delegate = self

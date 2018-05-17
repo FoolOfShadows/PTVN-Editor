@@ -142,6 +142,22 @@ struct PTVN {
     
     var saveValue:String {return """
         #PTVNFILE#
+        \(SectionDelimiters.assessmentStart.rawValue)
+        \(assessment)
+        \(SectionDelimiters.assessmentEND.rawValue)
+        
+        \(SectionDelimiters.planStart.rawValue)
+        \(plan)
+        \(SectionDelimiters.planEnd.rawValue)
+        
+        \(SectionDelimiters.subjectiveStart.rawValue)
+        \(subjective)
+        \(SectionDelimiters.subjectiveEnd.rawValue)
+        
+        \(SectionDelimiters.objectiveStart.rawValue)
+        \(objective)
+        \(SectionDelimiters.objectiveEnd.rawValue)
+        
         \(SectionDelimiters.patientNameStart.rawValue)
         \(ptName)
         \(SectionDelimiters.patientNameEnd.rawValue)
@@ -201,22 +217,6 @@ struct PTVN {
         \(SectionDelimiters.rosStart.rawValue)
         \(ros)
         \(SectionDelimiters.rosEnd.rawValue)
-        
-        \(SectionDelimiters.assessmentStart.rawValue)
-        \(assessment)
-        \(SectionDelimiters.assessmentEND.rawValue)
-        
-        \(SectionDelimiters.objectiveStart.rawValue)
-        \(objective)
-        \(SectionDelimiters.objectiveEnd.rawValue)
-        
-        \(SectionDelimiters.subjectiveStart.rawValue)
-        \(subjective)
-        \(SectionDelimiters.subjectiveEnd.rawValue)
-        
-        \(SectionDelimiters.planStart.rawValue)
-        \(plan)
-        \(SectionDelimiters.planEnd.rawValue)
         """
         
 //        \(SectionDelimiters.otherStart.rawValue)
