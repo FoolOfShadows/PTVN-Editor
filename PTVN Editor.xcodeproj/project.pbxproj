@@ -30,6 +30,7 @@
 		798BBB5420939C20002A28AA /* MWEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB5220939C20002A28AA /* MWEModel.swift */; };
 		798BBB582093A000002A28AA /* PreventiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB5620939FFF002A28AA /* PreventiveModel.swift */; };
 		798BBB592093A000002A28AA /* PreventiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB572093A000002A28AA /* PreventiveController.swift */; };
+		799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */; };
 		79CCA6A22090B73F00909285 /* PainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6942090B73D00909285 /* PainModel.swift */; };
 		79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6952090B73D00909285 /* RadRefViewController.swift */; };
 		79CCA6A42090B73F00909285 /* HPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6962090B73D00909285 /* HPIViewController.swift */; };
@@ -101,6 +102,7 @@
 		798BBB5220939C20002A28AA /* MWEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWEModel.swift; sourceTree = "<group>"; };
 		798BBB5620939FFF002A28AA /* PreventiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveModel.swift; sourceTree = "<group>"; };
 		798BBB572093A000002A28AA /* PreventiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveController.swift; sourceTree = "<group>"; };
+		799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabSetUpPrintViewController.swift; sourceTree = "<group>"; };
 		79CCA6942090B73D00909285 /* PainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainModel.swift; sourceTree = "<group>"; };
 		79CCA6952090B73D00909285 /* RadRefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadRefViewController.swift; sourceTree = "<group>"; };
 		79CCA6962090B73D00909285 /* HPIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPIViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				79CCA69F2090B73E00909285 /* LabsViewController.swift */,
 				79CCA69B2090B73E00909285 /* LabsModel.swift */,
+				799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				7906DEED208E16A800CD11A1 /* DoctorModel.swift in Sources */,
 				79CCA6A22090B73F00909285 /* PainModel.swift in Sources */,
 				79CCA6DA2090D5F600909285 /* LimbAssessment.swift in Sources */,
+				799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */,
 				79CCA6D92090D5F600909285 /* DigitAssessment.swift in Sources */,
 				79CCA6E72090DA4200909285 /* DRE Model.swift in Sources */,
 				798BBB4C20939617002A28AA /* IncontinenceModel.swift in Sources */,

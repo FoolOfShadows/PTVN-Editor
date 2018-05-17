@@ -166,18 +166,20 @@ class LabsViewController: NSViewController {
     }
     
     
-//    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-//        if segue.identifier!.rawValue == "setUpPrintLabs" {
-//            if let toViewController = segue.destinationController as? LabSetUpPrintViewController {
-//                let processedLabs = processLabsForNote()
-//                if !processedLabs.isEmpty {
-//                    toViewController.labPrintVersion = processLabsForPrint().joined(separator: "\n")
-//                    toViewController.labNoteVersion = "Labs ordered: \(processedLabs.joined(separator: ", "))"
-//                    toViewController.addOnResult = addOnCheck.state.rawValue
-//                }
-//            }
-//        }
-//    }
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier!.rawValue == "setUpPrintLabs" {
+            if let toViewController = segue.destinationController as? LabSetUpPrintViewController {
+                let processedLabs = processLabsForNote()
+                if !processedLabs.isEmpty {
+                    toViewController.labPrintVersion = processLabsForPrint().joined(separator: "\n")
+                    toViewController.labNoteVersion = "Labs ordered: \(processedLabs.joined(separator: ", "))"
+                    toViewController.addOnResult = addOnCheck.state.rawValue
+                    toViewController.ptDOB = theData.ptDOB
+                    toViewController.ptName = theData.ptName
+                }
+            }
+        }
+    }
     
     func processLabsForNote() -> [String] {
         var results = Labs().processLabDataForNote(labFields)
