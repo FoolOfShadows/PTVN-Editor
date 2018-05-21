@@ -168,7 +168,7 @@ struct Injections {
             case 5: resultArray.append("Phenergan 25 mg")
             case 6: resultArray.append("Toradol (Ketoralac)")
             case 7: resultArray.append("Testosterone Cypionate 200 mg/1 ml")
-            case 6: resultArray.append("Toradol (Ketoralac)")
+            //case 6: resultArray.append("Toradol (Ketoralac)")
             case 8: resultArray.append("Estradiol Cypionate 5 mg/1ml")
             case 20: resultArray.append(getSiteSpecificArthroVerbiageFrom(item.1!))
             case 9: resultArray.append("PPD (Purified Protein Derivative) Mantoux TB Skin Test 0.1 ml/5 TU")

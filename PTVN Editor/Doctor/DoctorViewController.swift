@@ -31,6 +31,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
 	
 	var assessmentString = String()
     var assessmentList = [String]()
+    let problemBadBits = ["Problems\\*\\*", "\\*problems\\*"]
     
     let nc = NotificationCenter.default
     
@@ -75,6 +76,12 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         self.assessmentTableView.delegate = self
         self.assessmentTableView.dataSource = self
         clearDrTab(self)
+        
+        //Populate assessmentTableView with Problems subsection of the Subjective section
+        let problems = theData.subjective.simpleRegExMatch("(?s)(Problems\\*\\*).*(\\*problems\\*)").cleanTheTextOf(problemBadBits)
+        assessmentList = problems.convertListToArray()
+        self.assessmentTableView.reloadData()
+        
     }
     
     @IBAction func addMed(_ sender: Any) {
@@ -130,6 +137,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         return result
     }
     
+    //Gonna get rid of this and the selection view.  Populate the table in viewDidLoad()
     @IBAction func getMedsFromFile(_ sender: NSButton) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true

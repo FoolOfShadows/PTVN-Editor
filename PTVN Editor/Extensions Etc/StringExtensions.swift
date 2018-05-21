@@ -157,6 +157,14 @@ extension String {
         }
         return result
     }
+    
+    func convertListToArray() -> [String] {
+        let baseArray = self.components(separatedBy: "\n")
+        for var item in baseArray {
+            item = item.cleanTheTextOf(["-  "])
+        }
+        return baseArray
+    }
 }
 
 

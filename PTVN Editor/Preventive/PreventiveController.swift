@@ -11,7 +11,7 @@ import Cocoa
 class PreventiveController: NSViewController {
 	
 	@IBOutlet weak var winPrint: NSWindow!
-	@IBOutlet var printTextView: NSTextView!
+	//@IBOutlet var printTextView: NSTextView!
 	
 	
 	@IBOutlet weak var pnvTextView: NSTextField!
@@ -139,18 +139,19 @@ override func viewDidLoad() {
 		
 		results = "Medicare Wellness Visit\nVisit Date:\(currentDate)\n\n\(ptNameView.stringValue.capitalized)\n\n\(results)"
 		
-		self.printTextView.string = results
-		self.printTextView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
+        let printTextView = NSTextView()
+        printTextView.setFrameSize(NSSize(width: 680, height: 0))
+		printTextView.string = results
+		printTextView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
 
 		
         let myPrintInfo = NSPrintInfo.shared
 
-		myPrintInfo.leftMargin = 0
-		myPrintInfo.rightMargin = 0
-		myPrintInfo.topMargin = 0
-		myPrintInfo.bottomMargin = 0
+		myPrintInfo.leftMargin = 40
+		myPrintInfo.bottomMargin = 40
+        myPrintInfo.isVerticallyCentered = false
 	
-		let myPrintOperation = NSPrintOperation(view: self.printTextView, printInfo: myPrintInfo)
+		let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
 		myPrintOperation.run()
 	}
 	

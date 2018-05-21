@@ -37,6 +37,7 @@ class DigitAssessment {
 			array.append(item)
 		}
 		
+        //Should look at putting together an enum for the choices her to get rid of the need for the unused defaults
 		func whereDoesItGo(_ item: String, forLeftSide left:Bool, andAll all:Bool) {
 			switch (left, all) {
 			case (true, false): switch (sectionHeading, appendage) {
