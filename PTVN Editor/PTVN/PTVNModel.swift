@@ -125,12 +125,47 @@ struct PTVN {
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
     }
     
+    //Fix this to format the output correctly for adding to PF
     func returnSOAPSection(_ section: SOAPSections) -> String {
         switch section {
         case .subjective:
-            let subjectives = [cc, subjective, ros, medicines, allergies, preventive, pmh, psh, nutrition, social, family]
-            let filtered = subjectives.filter { !$0.isEmpty }
-            return filtered.joined(separator: "\n")
+            var subjectives = [String]()
+            if !cc.isEmpty {
+                subjectives.append("CHEIF COMPLAINT:\n\(cc)")
+            }
+            if !subjective.isEmpty {
+                var subjTemp = subjective.replacingOccurrences(of: "Problems**", with: "PROBLEMS:")
+                subjTemp = subjTemp.replacingOccurrences(of: "*problems*", with: "")
+                subjectives.append("SUBJECTIVE:\n\(subjTemp)")
+            }
+            if !ros.isEmpty {
+                subjectives.append("REVIEW OF SYSTEMS: \(ros)")
+            }
+            if !medicines.isEmpty {
+                subjectives.append("CURRENT MEDICATIONS:\n\(medicines)")
+            }
+            if !allergies.isEmpty {
+                subjectives.append("ALLERGIES:\n\(allergies)")
+            }
+            if !preventive.isEmpty {
+                subjectives.append("PREVENTIVE CARE:\n\(preventive)")
+            }
+            if !pmh.isEmpty {
+                subjectives.append("PAST MEDICAL HISTORY:\n\(pmh)")
+            }
+            if !psh.isEmpty {
+                subjectives.append("PAST SURGICAL HISTORY:\n\(psh)")
+            }
+            if !social.isEmpty {
+                subjectives.append("SOCIAL HISTORY:\n\(social)")
+            }
+            if !nutrition.isEmpty {
+                subjectives.append("NUTRITION:\n\(nutrition)")
+            }
+            if !family.isEmpty {
+                subjectives.append("FAMILY HEALTH HISTORY:\n\(family)")
+            }
+            return subjectives.joined(separator: "\n\n")
         case .objective:
             return objective
         case .assessment:
@@ -142,41 +177,29 @@ struct PTVN {
     
     var saveValue:String {return """
         #PTVNFILE#
-        \(SectionDelimiters.assessmentStart.rawValue)
-        \(assessment)
-        \(SectionDelimiters.assessmentEND.rawValue)
-        
         \(SectionDelimiters.planStart.rawValue)
         \(plan)
         \(SectionDelimiters.planEnd.rawValue)
         
-        \(SectionDelimiters.subjectiveStart.rawValue)
-        \(subjective)
-        \(SectionDelimiters.subjectiveEnd.rawValue)
+        \(SectionDelimiters.assessmentStart.rawValue)
+        \(assessment)
+        \(SectionDelimiters.assessmentEND.rawValue)
         
         \(SectionDelimiters.objectiveStart.rawValue)
         \(objective)
         \(SectionDelimiters.objectiveEnd.rawValue)
         
-        \(SectionDelimiters.patientNameStart.rawValue)
-        \(ptName)
-        \(SectionDelimiters.patientNameEnd.rawValue)
-        
-        \(SectionDelimiters.patientDOBStart.rawValue)
-        \(ptDOB)
-        \(SectionDelimiters.patientDOBEnd.rawValue)
-        
-        \(SectionDelimiters.patientAgeStart.rawValue)
-        \(ptAge)
-        \(SectionDelimiters.patientAgeEnd.rawValue)
-        
-        \(SectionDelimiters.visitDateStart.rawValue)
-        \(visitDate)
-        \(SectionDelimiters.visitDateEnd.rawValue)
-        
         \(SectionDelimiters.ccStart.rawValue)
         \(cc)
         \(SectionDelimiters.ccEnd.rawValue)
+        
+        \(SectionDelimiters.subjectiveStart.rawValue)
+        \(subjective)
+        \(SectionDelimiters.subjectiveEnd.rawValue)
+        
+        \(SectionDelimiters.rosStart.rawValue)
+        \(ros)
+        \(SectionDelimiters.rosEnd.rawValue)
         
         \(SectionDelimiters.medStart.rawValue)
         \(medicines)
@@ -213,15 +236,23 @@ struct PTVN {
         \(SectionDelimiters.diagnosisStart.rawValue)
         \(diagnoses)
         \(SectionDelimiters.diagnosisEnd.rawValue)
+
+        \(SectionDelimiters.patientNameStart.rawValue)
+        \(ptName)
+        \(SectionDelimiters.patientNameEnd.rawValue)
         
-        \(SectionDelimiters.rosStart.rawValue)
-        \(ros)
-        \(SectionDelimiters.rosEnd.rawValue)
+        \(SectionDelimiters.patientDOBStart.rawValue)
+        \(ptDOB)
+        \(SectionDelimiters.patientDOBEnd.rawValue)
+        
+        \(SectionDelimiters.patientAgeStart.rawValue)
+        \(ptAge)
+        \(SectionDelimiters.patientAgeEnd.rawValue)
+        
+        \(SectionDelimiters.visitDateStart.rawValue)
+        \(visitDate)
+        \(SectionDelimiters.visitDateEnd.rawValue)
         """
-        
-//        \(SectionDelimiters.otherStart.rawValue)
-//        \(messageDate)
-//        \(SectionDelimiters.otherEnd.rawValue)
 }
     
     struct Regexes {

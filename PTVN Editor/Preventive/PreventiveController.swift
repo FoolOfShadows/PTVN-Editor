@@ -58,7 +58,8 @@ class PreventiveController: NSViewController {
 	@IBOutlet weak var hivNotDue: NSButton!
 	@IBOutlet weak var nextMWVTextView: NSTextField!
 	
-	@IBOutlet weak var ptNameView: NSTextField!
+    @IBOutlet var previousPrevView: NSTextView!
+    
 	
 	
 	var measures = [PreventiveMeasure]()
@@ -67,31 +68,34 @@ class PreventiveController: NSViewController {
     var theData = PTVN(theText: "")
     
  
-override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-		let pnvMeasure = PreventiveMeasure(measure: "Pneumococcal vaccination", date: pnvTextView, notDue: pnvNotDue)
-		let fluMeasure = PreventiveMeasure(measure: "Influenza vaccination", date: fluTextView, notDue: fluNotDue)
-		let hepBMeasure = PreventiveMeasure(measure: "Hepatitis B vaccination", date: hepBTextView, notDue: hepBNotDue)
-		let mamMeasure = PreventiveMeasure(measure: "Mammogram", date: mamTextView, notDue: mamNotDue)
-		let papMeasure = PreventiveMeasure(measure: "PAP smear", date: papTextView, notDue: papNotDue)
-		let dreMeasure = PreventiveMeasure(measure: "Digital rectal exam", date: dreTextView, notDue: dreNotDue)
-		let psaMeasure = PreventiveMeasure(measure: "PSA lab", date: psaTextView, notDue: psaNotDue)
-		let guaMeasure = PreventiveMeasure(measure: "Stool occult blood test", date: guaTextView, notDue: guaNotDue)
-		let flexSigMeasure = PreventiveMeasure(measure: "Flexible sigmoidoscopy exam", date: flexSigTextView, notDue: flexSigNotDue)
-		let clnMeasure = PreventiveMeasure(measure: "Screening colonoscopy", date: clnTextView, notDue: clnNotDue)
-		let enemaMeasure = PreventiveMeasure(measure: "Barium enema", date: enemaTextView, notDue: enemaNotDue)
-		let diabetesTrainingMeasure = PreventiveMeasure(measure: "Diabetes self-management training", date: diabetesTrainingTextView, notDue: diabetesTrainingNotDue)
-		let bmdMeasure = PreventiveMeasure(measure: "Bone mineral density test", date: bmdTextView, notDue: bmdNotDue)
-		let glaucomaMeasure = PreventiveMeasure(measure: "Glaucoma exam", date: glaucomaTextView, notDue: glaucomaNotDue)
-		let nutritionTherapyMeasure = PreventiveMeasure(measure: "Medical nutrition therapy for diabetes or renal disease", date: nutritionTherapyTextView, notDue: nutritionTherapyNotDue)
-		let cholesterolMeasure = PreventiveMeasure(measure: "Total cholesterol lab", date: cholesterolTextView, notDue: cholesterolNotDue)
-		let hdlMeasure = PreventiveMeasure(measure: "HDL lab", date: hdlTextView, notDue: hdlNotDue)
-		let triglyceridesMeasure = PreventiveMeasure(measure: "Triglycerides lab", date: triglyceridesTextView, notDue: triglyceridesNotDue)
-		let glucoseToleranceMeasure = PreventiveMeasure(measure: "Glucose tolerance test", date: glucoseToleranceTextView, notDue: glucoseToleranceNotDue)
-		let abUSNDMeasure = PreventiveMeasure(measure: "Abdominal aortic aneurysm screening", date: abUSNDTextView, notDue: abUSNDNotDue)
-		let hivMeasure = PreventiveMeasure(measure: "HIV screening", date: hivTextView, notDue: hivNotDue)
-		measures = [pnvMeasure, fluMeasure, hepBMeasure, mamMeasure, papMeasure, dreMeasure, psaMeasure, guaMeasure, flexSigMeasure, clnMeasure, enemaMeasure, diabetesTrainingMeasure, bmdMeasure, glaucomaMeasure, nutritionTherapyMeasure, cholesterolMeasure, hdlMeasure, triglyceridesMeasure, glucoseToleranceMeasure, abUSNDMeasure, hivMeasure]
-	}
+        let pnvMeasure = PreventiveMeasure(measure: "Pneumococcal vaccination", date: pnvTextView, notDue: pnvNotDue)
+        let fluMeasure = PreventiveMeasure(measure: "Influenza vaccination", date: fluTextView, notDue: fluNotDue)
+        let hepBMeasure = PreventiveMeasure(measure: "Hepatitis B vaccination", date: hepBTextView, notDue: hepBNotDue)
+        let mamMeasure = PreventiveMeasure(measure: "Mammogram", date: mamTextView, notDue: mamNotDue)
+        let papMeasure = PreventiveMeasure(measure: "PAP smear", date: papTextView, notDue: papNotDue)
+        let dreMeasure = PreventiveMeasure(measure: "Digital rectal exam", date: dreTextView, notDue: dreNotDue)
+        let psaMeasure = PreventiveMeasure(measure: "PSA lab", date: psaTextView, notDue: psaNotDue)
+        let guaMeasure = PreventiveMeasure(measure: "Stool occult blood test", date: guaTextView, notDue: guaNotDue)
+        let flexSigMeasure = PreventiveMeasure(measure: "Flexible sigmoidoscopy exam", date: flexSigTextView, notDue: flexSigNotDue)
+        let clnMeasure = PreventiveMeasure(measure: "Screening colonoscopy", date: clnTextView, notDue: clnNotDue)
+        let enemaMeasure = PreventiveMeasure(measure: "Barium enema", date: enemaTextView, notDue: enemaNotDue)
+        let diabetesTrainingMeasure = PreventiveMeasure(measure: "Diabetes self-management training", date: diabetesTrainingTextView, notDue: diabetesTrainingNotDue)
+        let bmdMeasure = PreventiveMeasure(measure: "Bone mineral density test", date: bmdTextView, notDue: bmdNotDue)
+        let glaucomaMeasure = PreventiveMeasure(measure: "Glaucoma exam", date: glaucomaTextView, notDue: glaucomaNotDue)
+        let nutritionTherapyMeasure = PreventiveMeasure(measure: "Medical nutrition therapy for diabetes or renal disease", date: nutritionTherapyTextView, notDue: nutritionTherapyNotDue)
+        let cholesterolMeasure = PreventiveMeasure(measure: "Total cholesterol lab", date: cholesterolTextView, notDue: cholesterolNotDue)
+        let hdlMeasure = PreventiveMeasure(measure: "HDL lab", date: hdlTextView, notDue: hdlNotDue)
+        let triglyceridesMeasure = PreventiveMeasure(measure: "Triglycerides lab", date: triglyceridesTextView, notDue: triglyceridesNotDue)
+        let glucoseToleranceMeasure = PreventiveMeasure(measure: "Glucose tolerance test", date: glucoseToleranceTextView, notDue: glucoseToleranceNotDue)
+        let abUSNDMeasure = PreventiveMeasure(measure: "Abdominal aortic aneurysm screening", date: abUSNDTextView, notDue: abUSNDNotDue)
+        let hivMeasure = PreventiveMeasure(measure: "HIV screening", date: hivTextView, notDue: hivNotDue)
+        measures = [pnvMeasure, fluMeasure, hepBMeasure, mamMeasure, papMeasure, dreMeasure, psaMeasure, guaMeasure, flexSigMeasure, clnMeasure, enemaMeasure, diabetesTrainingMeasure, bmdMeasure, glaucomaMeasure, nutritionTherapyMeasure, cholesterolMeasure, hdlMeasure, triglyceridesMeasure, glucoseToleranceMeasure, abUSNDMeasure, hivMeasure]
+        setFontSizeOf(16, forFields: [previousPrevView])
+        //previousPrevView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
+        previousPrevView.string = getPrevDataFrom(theData.preventive)
+    }
 	
 	func prepareMeasures() -> String {
 		var results = processMeasures(measures: measures)
@@ -107,7 +111,7 @@ override func viewDidLoad() {
 	@IBAction func processPreventiveMeasures(_ sender: NSButton) {
 		let results = prepareMeasures()
 		if !results.isEmpty {
-            theData.objective.addToExistingText(results)
+            theData.plan.addToExistingText(results)
             
             let firstVC = presenting as! ViewController
             firstVC.theData = theData
@@ -119,7 +123,6 @@ override func viewDidLoad() {
 	@IBAction func processClear(_ sender: AnyObject) {
 		processClearMeasures(measures: measures)
 		nextMWVTextView.stringValue = String()
-		ptNameView.stringValue = String()
 	}
 
 	
@@ -137,7 +140,7 @@ override func viewDidLoad() {
 		dateFormatter.dateFormat = "MM/dd/YYYY"
 		let currentDate = dateFormatter.string(from: Date())
 		
-		results = "Medicare Wellness Visit\nVisit Date:\(currentDate)\n\n\(ptNameView.stringValue.capitalized)\n\n\(results)"
+		results = "Medicare Wellness Visit\nVisit Date:\(currentDate)\n\n\(theData.ptName)\n\n\(results)"
 		
         let printTextView = NSTextView()
         printTextView.setFrameSize(NSSize(width: 680, height: 0))

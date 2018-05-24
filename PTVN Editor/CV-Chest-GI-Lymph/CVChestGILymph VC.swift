@@ -41,6 +41,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
         clearCV()
         //let nc = NotificationCenter.default
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
+        selectAllNormsInView()
         
 //        GlobalControlls_VC.recognizer.delegate = self
 //        GlobalControlls_VC.recognizer.commands = commands

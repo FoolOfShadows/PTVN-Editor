@@ -42,6 +42,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 		clearMSKTab()
         //let nc = NotificationCenter.default
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
+        selectAllNormsInView()
     }
     
 	@IBAction func setMSKSelections(_ sender: NSPopUpButton) {

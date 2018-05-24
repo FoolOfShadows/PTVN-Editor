@@ -370,4 +370,47 @@ extension Date {
     }
 }
 
+func getDateFromString(_ date: [String]) -> [Date]? {
+    var results = [Date]()
+    
+    for item in date {
+        if !item.contains("/") {
+            return nil
+        }
+        
+        var components = item.components(separatedBy: "/")
+        if components.count < 3 {
+            components.insert("01", at: 1)
+        }
+        
+        if components[0].count == 1 {
+            components[0] = "0" + components[0]
+        }
+        if components[1].count == 1 {
+            components[1] = "0" + components[1]
+        }
+        if components[2].count == 2 {
+            components[2] = "20" + components[2]
+        }
+        let workingDate = components.joined(separator: "/")
+        //print(workingDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        guard let theDate = dateFormatter.date(from: workingDate) else { continue }
+        let calendar = Calendar.current
+        let calendarComponents = calendar.dateComponents([.year, .month, .day], from: theDate)
+        results.append(calendar.date(from: calendarComponents)!)
+    }
+    
+    return results
+}
+
+func setFontSizeOf(_ size: CGFloat, forFields textFields: [NSTextView]) {
+    let theUserFont:NSFont = NSFont.systemFont(ofSize: size)
+    let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
+    //let fontAttributes = NSDictionary(object: theUserFont, forKey: NSFontAttributeName as NSCopying)
+    for field in textFields {
+        field.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
+    }
+}
 

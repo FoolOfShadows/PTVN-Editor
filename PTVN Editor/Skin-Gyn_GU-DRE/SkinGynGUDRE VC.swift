@@ -30,6 +30,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
         clearSkin()
         //let nc = NotificationCenter.default
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
+        selectAllNormsInView()
     }
 	
 	@IBAction func processSkinTab(_ sender: Any) {

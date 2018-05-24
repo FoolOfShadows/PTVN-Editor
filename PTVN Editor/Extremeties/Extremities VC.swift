@@ -53,6 +53,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/
         //let nc = NotificationCenter.default
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
         //nc.addObserver(self, selector: #selector(heardCommand), name: NSNotification.Name(rawValue: "callus right"), object: nil)
+        selectAllNormsInView()
         
         (lCRCombo as NSTextField).delegate = self
         (rCRCombo as NSTextField).delegate = self
