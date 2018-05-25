@@ -67,6 +67,21 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         pshView.delegate = self
         assessmentView.delegate = self
         planView.delegate = self
+        
+        //Set up selections in lists with data from text file
+        if let fluList = getSectionDataStartingFrom("START FLU", andEndingWith: "END FLU") {
+            fluTypeList = [""] + fluList
+        }
+        if let medsList = getSectionDataStartingFrom("START COMMON MEDS", andEndingWith: "END COMMON MEDS") {
+            commonMedsList = [""] + medsList
+        }
+        if let whereFluList = getSectionDataStartingFrom("START WHERE FLU", andEndingWith: "END WHERE FLU") {
+            whereFlu = [""] + whereFluList
+        }
+        if let declinesFluList = getSectionDataStartingFrom("START DECLINES FLU", andEndingWith: "END DECLINES FLU") {
+            print("\n\n\n\(declinesFluList)\n\n\n")
+            declinesFlu = [""] + declinesFluList
+        }
     }
     
     

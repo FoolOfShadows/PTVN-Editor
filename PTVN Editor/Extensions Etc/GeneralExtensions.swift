@@ -414,3 +414,30 @@ func setFontSizeOf(_ size: CGFloat, forFields textFields: [NSTextView]) {
     }
 }
 
+func getPrefDataFrom(_ filePath:String) -> String? {
+    var data = String()
+    
+    do {
+        data = try String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
+    } catch {
+        let theAlert = NSAlert()
+        theAlert.messageText = "Could not import the cleaning text from file at \(filePath)."
+        theAlert.alertStyle = NSAlert.Style.warning
+        theAlert.addButton(withTitle: "OK")
+        theAlert.runModal()
+        return nil
+    }
+    
+    return data
+}
+
+func getSectionDataStartingFrom(_ start:String, andEndingWith stop:String) -> [String]? {
+    var returnData = [String]()
+    guard let rawData = getPrefDataFrom("\(NSHomeDirectory())/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/LIROSPrefFile.txt") else {return nil}
+    if let sectionData = rawData.findRegexMatchBetween(start, and: stop) {
+        let cleanData = sectionData.removeWhiteSpace()
+        returnData = cleanData.components(separatedBy: "\n")
+    }
+    return returnData
+}
+

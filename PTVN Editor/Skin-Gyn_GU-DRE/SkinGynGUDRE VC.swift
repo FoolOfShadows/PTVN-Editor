@@ -153,6 +153,14 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
         
     }
     
+    //Trying to get the norm buttons to turn off as soon as Dawn
+    //starts editing the field.  Not working
+//    override func controlTextDidBeginEditing(_ obj: Notification) {
+//        if let sender = obj.object as? NSTextField {
+//            textSwitchNormOff(sender)
+//        }
+//    }
+    
     @IBAction func textSwitchNormOff(_ sender: NSTextField) {
         if !sender.stringValue.isEmpty {
         let sendingBox = (sender as NSView).getContainingBox()
