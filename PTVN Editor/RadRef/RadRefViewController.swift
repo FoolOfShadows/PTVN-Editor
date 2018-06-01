@@ -180,7 +180,7 @@ class RadRefViewController: NSViewController {
 		if !existingRads.isEmpty {
 			existingRads = existingRads + "\n"
 		}
-		var result = "\(existingRads)\(type) - \(area)"
+		var result = "\(existingRads)••\(type) - \(area)"
 		if let side = radSidePopup.titleOfSelectedItem {
 			result += " \(side)"
 		}
@@ -212,7 +212,7 @@ class RadRefViewController: NSViewController {
 		if !existingRefs.isEmpty {
 			existingRefs = existingRefs + "\n"
 		}
-		var result = "\(existingRefs)\(type)"
+		var result = "\(existingRefs)••\(type)"
 		if !refReasonView.stringValue.isEmpty {
 			result += " for \(refReasonView.stringValue)"
 		}

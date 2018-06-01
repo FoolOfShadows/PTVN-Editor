@@ -216,6 +216,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
                 }
+            case "showCurrentMeds":
+                if let toViewController = segue.destinationController as? MedicineReviewVC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
             default: return
             }
         }

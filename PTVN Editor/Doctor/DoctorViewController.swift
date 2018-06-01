@@ -9,11 +9,11 @@
 import Cocoa
 
 //Protocol to set up for accepting data back from the CurrentAssessmentController
-protocol assessmentTableDelegate: class {
-    func currentAssessmentWillBeDismissed(sender: CurrentAssessmentController)
-}
+//protocol assessmentTableDelegate: class {
+//    func currentAssessmentWillBeDismissed(sender: CurrentAssessmentController)
+//}
 
-class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, assessmentTableDelegate {
+class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     @IBOutlet var doctorTabView: NSView!
     @IBOutlet weak var dataReviewView: NSBox!
@@ -22,7 +22,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var educationView: NSBox!
     @IBOutlet weak var injectionsView: NSBox!
     @IBOutlet weak var commonMedsPopup: NSPopUpButton!
-    @IBOutlet weak var medicationView: NSTextField!
+    @IBOutlet weak var medicationView: NSTextView!
     @IBOutlet weak var arthPopup: NSPopUpButton!
     @IBOutlet weak var synvPopup: NSPopUpButton!
     @IBOutlet weak var assessmentTableView: NSTableView!
@@ -31,6 +31,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
 	
 	var assessmentString = String()
     var assessmentList = [String]()
+    var chosenAssessmentList = [String]()
     let problemBadBits = ["Problems\\*\\*", "\\*problems\\*"]
     
     let nc = NotificationCenter.default
@@ -86,8 +87,8 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     @IBAction func addMed(_ sender: Any) {
         if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
-            let currentMeds = medicationView.stringValue
-            medicationView.stringValue = commonMedsPopup.titleOfSelectedItem! + "\n" + currentMeds
+            let currentMeds = medicationView.string
+            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
         }
     }
     
@@ -109,13 +110,14 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         
         var resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults]
         
-        if !medicationView.stringValue.isEmpty {
-            resultsArray.append("Medications:\n\(medicationView.stringValue)")
+        if !medicationView.string.isEmpty {
+            resultsArray.append("Medications:\n\(medicationView.string)")
         }
         let filteredResultsArray = resultsArray.filter{!$0.isEmpty}
         let results = filteredResultsArray.joined(separator: "\n")
         
         theData.plan.addToExistingText(results)
+        processAssessmentTable(self)
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
@@ -168,31 +170,42 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         return medications
     }
     
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier!.rawValue == "showCurrentAssessment" {
-            if let toViewController = segue.destinationController as? CurrentAssessmentController {
-                //For the delegate to work, it needs to be assigned here
-                //rather than in view did load.  Because it's a modal window?
-                toViewController.assessmentReloadDelegate = self
-                toViewController.assessmentString = assessmentString
-            }
-        }
-    }
+//    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+//        if segue.identifier!.rawValue == "showCurrentAssessment" {
+//            if let toViewController = segue.destinationController as? CurrentAssessmentController {
+//                //For the delegate to work, it needs to be assigned here
+//                //rather than in view did load.  Because it's a modal window?
+//                toViewController.assessmentReloadDelegate = self
+//                toViewController.assessmentString = assessmentString
+//            }
+//        }
+//    }
     
     //When the modal window dismisses, it needs to tell the main view to update
     //the assessment table with the data it passes back using delegation
-    func currentAssessmentWillBeDismissed(sender: CurrentAssessmentController) {
-        self.assessmentTableView.reloadData()
-    }
+//    func currentAssessmentWillBeDismissed(sender: CurrentAssessmentController) {
+//        self.assessmentTableView.reloadData()
+//    }
     
 	@IBAction func processAssessmentTable(_ sender: Any) {
 		
-		let results = Assessment().processAssessmentUsingArray(assessmentList, and: visitLevelStack.getListOfButtons().filter {$0.state == .on}.map {$0.title})
+		let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelStack.getListOfButtons().filter {$0.state == .on}.map {$0.title})
 		
-		let myPasteboard = NSPasteboard.general
-		myPasteboard.clearContents()
-		myPasteboard.setString(results, forType: NSPasteboard.PasteboardType.string)
+        theData.assessment.addToExistingText(results)
+        
+//        let myPasteboard = NSPasteboard.general
+//        myPasteboard.clearContents()
+//        myPasteboard.setString(results, forType: NSPasteboard.PasteboardType.string)
 	}
+    
+    @IBAction func getDataFromSelectedRow(_ sender:Any) {
+        let currentRow = assessmentTableView.row(for: sender as! NSView)
+        if (sender as! NSButton).state == .on {
+            chosenAssessmentList.append(assessmentList[currentRow])
+        } else if (sender as! NSButton).state == .off {
+            chosenAssessmentList = chosenAssessmentList.filter { $0 != assessmentList[currentRow] }
+        }
+    }
     
     //Adds a blank line to the table and selects it, also adding a corresponding
     //empty string item to the data source array

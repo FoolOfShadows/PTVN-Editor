@@ -101,6 +101,8 @@ struct PTVN {
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
+    let prefixes = ["••", "~~", "^^"]
+    
     init(theText: String) {
         self.theText = theText
         self.visitDate = theText.simpleRegExMatch(Regexes().visitDate).cleanTheTextOf([SectionDelimiters.visitDateStart.rawValue, SectionDelimiters.visitDateEnd.rawValue])
@@ -142,36 +144,36 @@ struct PTVN {
                 subjectives.append("REVIEW OF SYSTEMS: \(ros)")
             }
             if !medicines.isEmpty {
-                subjectives.append("CURRENT MEDICATIONS:\n\(medicines)")
+                subjectives.append("CURRENT MEDICATIONS:\n\(medicines.cleanTheTextOf(prefixes))")
             }
             if !allergies.isEmpty {
-                subjectives.append("ALLERGIES:\n\(allergies)")
+                subjectives.append("ALLERGIES:\n\(allergies.cleanTheTextOf(prefixes))")
             }
             if !preventive.isEmpty {
-                subjectives.append("PREVENTIVE CARE:\n\(preventive)")
+                subjectives.append("PREVENTIVE CARE:\n\(preventive.cleanTheTextOf(prefixes))")
             }
             if !pmh.isEmpty {
-                subjectives.append("PAST MEDICAL HISTORY:\n\(pmh)")
+                subjectives.append("PAST MEDICAL HISTORY:\n\(pmh.cleanTheTextOf(prefixes))")
             }
             if !psh.isEmpty {
-                subjectives.append("PAST SURGICAL HISTORY:\n\(psh)")
+                subjectives.append("PAST SURGICAL HISTORY:\n\(psh.cleanTheTextOf(prefixes))")
             }
             if !social.isEmpty {
-                subjectives.append("SOCIAL HISTORY:\n\(social)")
+                subjectives.append("SOCIAL HISTORY:\n\(social.cleanTheTextOf(prefixes))")
             }
             if !nutrition.isEmpty {
-                subjectives.append("NUTRITION:\n\(nutrition)")
+                subjectives.append("NUTRITION:\n\(nutrition.cleanTheTextOf(prefixes))")
             }
             if !family.isEmpty {
-                subjectives.append("FAMILY HEALTH HISTORY:\n\(family)")
+                subjectives.append("FAMILY HEALTH HISTORY:\n\(family.cleanTheTextOf(prefixes))")
             }
             return subjectives.joined(separator: "\n\n")
         case .objective:
-            return objective
+            return objective.cleanTheTextOf(prefixes)
         case .assessment:
-            return assessment
+            return assessment.cleanTheTextOf(prefixes)
         case .plan:
-            return plan
+            return plan.cleanTheTextOf(prefixes)
         }
     }
     

@@ -111,3 +111,48 @@ func processROSSectionsFor(_ sectionName:String, with list:[(title:String, state
 	print(positiveResults, negativeResults)
 	return (positives: positiveResults, negatives: negativeResults)
 }
+
+struct Vitals {
+    var weight = String()
+    var height = String()
+    var temp = String()
+    var bpSite = String()
+    var systolic = String()
+    var diastolic = String()
+    var pulse = String()
+    var resp = String()
+    var pulseOx = String()
+    var poType = String()
+    
+    func getVitalsOutput() -> String {
+        return "Wt: \(weight) lb;     Ht: \(height) in;     T: \(temp) F;     BP: \(systolic)/\(diastolic) \(getVitalsVerbiageFrom(bpSite)) sitting;     P: \(pulse);     R: \(resp);     Pulse Ox: \(pulseOx)% \(getVitalsVerbiageFrom(poType))"
+    }
+    
+    func getVitalsVerbiageFrom(_ raw:String) -> String {
+        switch raw {
+        case "RA":
+            return "right arm"
+        case "LA":
+            return "left arm"
+        case "RW":
+            return "right wrist"
+        case "LW":
+            return "left wrist"
+        case "RM":
+            return "room air"
+        case "2":
+            return "on 2L NC O2"
+        case "2.5":
+            return "on 2.5L NC O2"
+        case "3":
+            return "on 3L NC O2"
+        case "3.5":
+            return "on 3.5L NC O2"
+        case "4":
+            return "on 4L NC O2"
+        default:
+            return ""
+        }
+    }
+    
+}

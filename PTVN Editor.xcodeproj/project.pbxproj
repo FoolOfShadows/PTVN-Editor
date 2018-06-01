@@ -16,7 +16,6 @@
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
 		791320622077C85200CB1537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791320612077C85200CB1537 /* Assets.xcassets */; };
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
-		7964A234208F7D1B00B5790A /* CurrentAssessmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */; };
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		798BBB4520939617002A28AA /* ESSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3D20939613002A28AA /* ESSController.swift */; };
 		798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3E20939613002A28AA /* IncontinenceController.swift */; };
@@ -30,7 +29,10 @@
 		798BBB5420939C20002A28AA /* MWEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB5220939C20002A28AA /* MWEModel.swift */; };
 		798BBB582093A000002A28AA /* PreventiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB5620939FFF002A28AA /* PreventiveModel.swift */; };
 		798BBB592093A000002A28AA /* PreventiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB572093A000002A28AA /* PreventiveController.swift */; };
+		798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */; };
 		799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */; };
+		79AFDF5120C04B33007FAB5C /* LineContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5020C04B33007FAB5C /* LineContainingView.swift */; };
+		79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */; };
 		79CCA6A22090B73F00909285 /* PainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6942090B73D00909285 /* PainModel.swift */; };
 		79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6952090B73D00909285 /* RadRefViewController.swift */; };
 		79CCA6A42090B73F00909285 /* HPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6962090B73D00909285 /* HPIViewController.swift */; };
@@ -88,7 +90,6 @@
 		791320642077C85200CB1537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
-		7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentAssessmentController.swift; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
 		798BBB3E20939613002A28AA /* IncontinenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncontinenceController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,10 @@
 		798BBB5220939C20002A28AA /* MWEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWEModel.swift; sourceTree = "<group>"; };
 		798BBB5620939FFF002A28AA /* PreventiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveModel.swift; sourceTree = "<group>"; };
 		798BBB572093A000002A28AA /* PreventiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveController.swift; sourceTree = "<group>"; };
+		798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineReviewVC.swift; sourceTree = "<group>"; };
 		799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabSetUpPrintViewController.swift; sourceTree = "<group>"; };
+		79AFDF5020C04B33007FAB5C /* LineContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineContainingView.swift; sourceTree = "<group>"; };
+		79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxContainingView.swift; sourceTree = "<group>"; };
 		79CCA6942090B73D00909285 /* PainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainModel.swift; sourceTree = "<group>"; };
 		79CCA6952090B73D00909285 /* RadRefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadRefViewController.swift; sourceTree = "<group>"; };
 		79CCA6962090B73D00909285 /* HPIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPIViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,9 @@
 				791320662077C85200CB1537 /* Info.plist */,
 				791320672077C85200CB1537 /* PTVN_Editor.entitlements */,
 				79CCA6BA2090BCFC00909285 /* Extensions Etc */,
+				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
+				79AFDF5020C04B33007FAB5C /* LineContainingView.swift */,
+				79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */,
 			);
 			path = "PTVN Editor";
 			sourceTree = "<group>";
@@ -268,7 +275,6 @@
 			children = (
 				7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */,
 				7906DEEB208E16A700CD11A1 /* DoctorModel.swift */,
-				7964A233208F7D1B00B5790A /* CurrentAssessmentController.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */,
 				79CCA6C32090D16500909285 /* ENT Model.swift in Sources */,
 				79CCA6F32090DC4E00909285 /* NeuroMSK VC.swift in Sources */,
+				79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */,
 				79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */,
 				7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */,
 				79DDB9E9208786A500E01853 /* PTVNModel.swift in Sources */,
@@ -518,6 +525,7 @@
 				79CCA6D22090D49F00909285 /* GI Model.swift in Sources */,
 				79CCA6E42090DA4200909285 /* GU Model.swift in Sources */,
 				79CCA6EB2090DB7D00909285 /* Breast VC.swift in Sources */,
+				79AFDF5120C04B33007FAB5C /* LineContainingView.swift in Sources */,
 				79DDB9EE208786BE00E01853 /* Buttons.swift in Sources */,
 				79CCA6AF2090B73F00909285 /* DMModel.swift in Sources */,
 				7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */,
@@ -529,12 +537,12 @@
 				79CCA6A42090B73F00909285 /* HPIViewController.swift in Sources */,
 				79CCA6DC2090D5F600909285 /* Extremties Model.swift in Sources */,
 				7913205E2077C85100CB1537 /* ViewController.swift in Sources */,
-				7964A234208F7D1B00B5790A /* CurrentAssessmentController.swift in Sources */,
 				79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */,
 				79CCA6AB2090B73F00909285 /* WWEModel.swift in Sources */,
 				79CCA6F12090DC4E00909285 /* MSK Model.swift in Sources */,
 				79CCA6E62090DA4200909285 /* SkinGynGUDRE VC.swift in Sources */,
 				79CCA6AD2090B73F00909285 /* LabsViewController.swift in Sources */,
+				798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */,
 				79CCA6A62090B73F00909285 /* HPIModel.swift in Sources */,
 				798BBB4B20939617002A28AA /* MemoryModel.swift in Sources */,
 				798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */,

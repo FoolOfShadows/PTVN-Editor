@@ -127,6 +127,10 @@ extension String {
     func prependDashToLine() -> String {
         return "- \(self)"
     }
+    
+    func prependCharacter(_ character:String) -> String {
+        return "\(character)\(self)"
+    }
 	
 	func copyToPasteboard() {
 		let myPasteboard = NSPasteboard.general
@@ -160,10 +164,11 @@ extension String {
     
     func convertListToArray() -> [String] {
         let baseArray = self.components(separatedBy: "\n")
-        for var item in baseArray {
-            item = item.cleanTheTextOf(["-  "])
-        }
-        return baseArray
+        let newArray = baseArray.map { $0.cleanTheTextOf(["-  "]) }
+//        for var item in baseArray {
+//            item = item.cleanTheTextOf(["-  ", "- "])
+//        }
+        return newArray
     }
 }
 

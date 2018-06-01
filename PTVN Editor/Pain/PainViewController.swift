@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PainViewController: NSViewController {
+class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate {
 
 	@IBOutlet var painTabView: NSView!
 	@IBOutlet weak var locationBox: NSBox!
@@ -23,8 +23,11 @@ class PainViewController: NSViewController {
 	@IBOutlet weak var durationQtyView: NSTextField!
 	@IBOutlet weak var durationPeriodPopup: NSPopUpButton!
 	
-	@IBOutlet weak var severityAmountView: NSTextField!
-	@IBOutlet weak var severityEstimationPopup: NSPopUpButton!
+	@IBOutlet weak var painSeverityAmountView: NSTextField!
+    @IBOutlet weak var painJoyAmountView: NSTextField!
+    @IBOutlet weak var painActivityAmountView: NSTextField!
+    @IBOutlet weak var pegScoreView: NSTextField!
+    
 	
 	@IBOutlet weak var contextStatusPopup: NSPopUpButton!
 	@IBOutlet weak var contextCauseView: NSTextField!
@@ -40,21 +43,71 @@ class PainViewController: NSViewController {
     var theData = PTVN(theText: "")
 	
 	let nc = NotificationCenter.default
+    
+//    private var displayedTotal:Double {
+//        get {
+//            return Double(pegScoreView.stringValue)!
+//        }
+//        set {
+//            pegScoreView.stringValue = String(newValue)
+//        }
+//    }
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
+        painSeverityAmountView.delegate = self
+        painJoyAmountView.delegate = self
+        painActivityAmountView.delegate = self
+        
         clearPain(self)
     }
 	
+    override func controlTextDidChange(_ obj: Notification) {
+        //calculatePEGScore()
+    }
 	
-
+    func calculatePEGScore() -> String {
+        var painResults = [String]()
+        if !painSeverityAmountView.stringValue.isEmpty {
+            painResults.append("Pain level over the last week = \(painSeverityAmountView.stringValue)/10")
+        }
+        if !painJoyAmountView.stringValue.isEmpty {
+            painResults.append("Pain interference with enjoyment of life = \(painJoyAmountView.stringValue)/10")
+        }
+        if !painActivityAmountView.stringValue.isEmpty {
+            painResults.append("Pain interference with activity = \(painActivityAmountView.stringValue)/10")
+        }
+        
+        if let weeklyValue = Double(painSeverityAmountView.stringValue), let enjoymentValue = Double(painJoyAmountView.stringValue), let activityValue = Double(painActivityAmountView.stringValue) {
+            let totalSum = weeklyValue + enjoymentValue + activityValue
+            painResults.append("PEG PAIN SCORE = \(String(format: "%.1f", totalSum/3))/10")
+        }
+        
+        return painResults.joined(separator: "\n")
+    }
+    
+    @IBAction func takeAverageWeeklySlider(_ sender: NSSlider) {
+        painSeverityAmountView.doubleValue = sender.doubleValue
+        //calculatePEGScore()
+    }
+    
+    @IBAction func takeEnjoymentSlider(_ sender: NSSlider) {
+        painJoyAmountView.doubleValue = sender.doubleValue
+        //calculatePEGScore()
+    }
+    
+    @IBAction func takeActivitySlider(_ sender: NSSlider) {
+        painActivityAmountView.doubleValue = sender.doubleValue
+        //calculatePEGScore()
+    }
 	
 	
 	@IBAction func clearPain(_ sender: Any) {
 		painTabView.clearControllers()
 		mobileWithPopup.clearPopUpButton(menuItems: mobilityList)
 		durationPeriodPopup.clearPopUpButton(menuItems: durationList)
-		severityEstimationPopup.clearPopUpButton(menuItems: painSeverityList)
+		//severityEstimationPopup.clearPopUpButton(menuItems: painSeverityList)
 		contextStatusPopup.clearPopUpButton(menuItems: painContextList)
 		qolMeasurePopup.clearPopUpButton(menuItems: qolList)
 	}
@@ -62,7 +115,7 @@ class PainViewController: NSViewController {
 	@IBAction func processPain(_ sender: Any) {
 		let locationResults = Location().processSectionData(getButtonsIn(view: locationBox))
 		let durationResults = getDurationInfo()
-		let severityResults = getSeverityInfo()
+		let severityResults = calculatePEGScore()
 		let qualityResults = Quality().processSectionData(getButtonsIn(view: qualityBox))
 		let timingResults = Timing().processSectionData(getButtonsIn(view: timingBox))
 		let contextResults = getContextInfo()
@@ -99,11 +152,11 @@ class PainViewController: NSViewController {
 	
 	func getSeverityInfo() -> String {
 		var results = String()
-		if !severityAmountView.stringValue.isEmpty {
-			results = "Severity: \(severityAmountView.stringValue)/10."
-		} else if severityEstimationPopup.titleOfSelectedItem != "" {
+		if !painSeverityAmountView.stringValue.isEmpty {
+			results = "Severity: \(painSeverityAmountView.stringValue)/10."
+		} /*else if severityEstimationPopup.titleOfSelectedItem != "" {
 			results = "Severity: \(severityEstimationPopup.titleOfSelectedItem!)."
-		}
+		}*/
 		return results
 	}
 	
