@@ -58,7 +58,13 @@ class PreventiveController: NSViewController {
 	@IBOutlet weak var hivNotDue: NSButton!
 	@IBOutlet weak var nextMWVTextView: NSTextField!
 	
-    @IBOutlet var previousPrevView: NSTextView!
+    //@IBOutlet var previousPrevView: NSTextView!
+    @IBOutlet weak var previousPrevScroll: NSScrollView!
+    var previousPrevView: NSTextView {
+        get {
+            return previousPrevScroll.contentView.documentView as! NSTextView
+        }
+    }
     
 	
 	

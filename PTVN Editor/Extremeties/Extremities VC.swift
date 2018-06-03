@@ -13,13 +13,17 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/
 	
 
 	@IBOutlet weak var edemaView: NSView!
-	@IBOutlet var edemaTextView: NSTextView!
+	//@IBOutlet var edemaTextView: NSTextView!
+    @IBOutlet weak var edemaScroll: NSScrollView!
 	@IBOutlet weak var pulsesView: NSView!
-	@IBOutlet var pulsesTextView: NSTextView!
+	//@IBOutlet var pulsesTextView: NSTextView!
+    @IBOutlet weak var pulsesScroll: NSScrollView!
 	@IBOutlet weak var digitAssessmentView: NSView!
-	@IBOutlet var digitAssessmentTextView: NSTextView!
+	//@IBOutlet var digitAssessmentTextView: NSTextView!
+    @IBOutlet weak var digitAssessmentScroll: NSScrollView!
 	@IBOutlet weak var limbAssessmentView: NSView!
-	@IBOutlet weak var limbAssessmentTextView: NSTextView!
+	//@IBOutlet var limbAssessmentTextView: NSTextView!
+    @IBOutlet weak var limbAssessmentScroll: NSScrollView!
 	@IBOutlet weak var bunionView: NSStackView!
 	@IBOutlet weak var callusView: NSStackView!
 	@IBOutlet weak var limbView: NSView!
@@ -32,6 +36,28 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/
 	@IBOutlet weak var rAreaPulsesCombo: NSComboBox!
 	@IBOutlet weak var lCRCombo: NSComboBox!
 	@IBOutlet weak var rCRCombo: NSComboBox!
+    
+    var edemaTextView: NSTextView {
+        get {
+            return edemaScroll.contentView.documentView as! NSTextView
+        }
+    }
+    var pulsesTextView: NSTextView {
+        get {
+            return pulsesScroll.contentView.documentView as! NSTextView
+        }
+    }
+    var digitAssessmentTextView: NSTextView {
+        get {
+            return digitAssessmentScroll.contentView.documentView as! NSTextView
+        }
+    }
+    var limbAssessmentTextView: NSTextView {
+        get {
+            return limbAssessmentScroll.contentView.documentView as! NSTextView
+        }
+    }
+    
 	
 	var digitAssessment = DigitAssessment()
 	var limbAssessment = LimbAssessment()

@@ -34,7 +34,14 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 	
 	let mskAssessmentSection = MSK()
 	
-	@IBOutlet weak var mskResultsTextView: NSTextView!
+	//@IBOutlet weak var mskResultsTextView: NSTextView!
+    @IBOutlet weak var mskResultsScroll: NSScrollView!
+    var mskResultsTextView: NSTextView {
+        get {
+            return mskResultsScroll.contentView.documentView as! NSTextView
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
 		//loadedViewControllers.append(self)

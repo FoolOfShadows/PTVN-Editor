@@ -22,12 +22,19 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var educationView: NSBox!
     @IBOutlet weak var injectionsView: NSBox!
     @IBOutlet weak var commonMedsPopup: NSPopUpButton!
-    @IBOutlet weak var medicationView: NSTextView!
+    //@IBOutlet weak var medicationView: NSTextView!
+    @IBOutlet weak var medicationScroll: NSScrollView!
     @IBOutlet weak var arthPopup: NSPopUpButton!
     @IBOutlet weak var synvPopup: NSPopUpButton!
     @IBOutlet weak var assessmentTableView: NSTableView!
     
 	@IBOutlet weak var visitLevelStack: NSStackView!
+    
+    var medicationView: NSTextView {
+        get {
+            return medicationScroll.contentView.documentView as! NSTextView
+        }
+    }
 	
 	var assessmentString = String()
     var assessmentList = [String]()

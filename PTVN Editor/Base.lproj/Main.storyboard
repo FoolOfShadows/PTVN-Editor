@@ -757,12 +757,12 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Subjective" identifier="" id="B5W-I8-wch">
-                                        <view key="view" id="2hT-7x-9Hg">
-                                            <rect key="frame" x="32" y="7" width="1113" height="640"/>
+                                        <view key="view" ambiguous="YES" id="2hT-7x-9Hg">
+                                            <rect key="frame" x="32" y="7" width="0.0" height="316"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="geP-f4-Adu">
-                                                    <rect key="frame" x="1" y="453" width="72" height="17"/>
+                                                    <rect key="frame" x="1" y="129" width="72" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Subjective:" id="Lsj-bR-Unz">
                                                         <font key="font" metaFont="system"/>
@@ -825,7 +825,7 @@
                                                     </scroller>
                                                 </scrollView>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfq-YL-2QJ">
-                                                    <rect key="frame" x="1" y="603" width="27" height="17"/>
+                                                    <rect key="frame" x="1" y="279" width="27" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CC:" id="grA-M7-cF5">
                                                         <font key="font" metaFont="system"/>
@@ -834,7 +834,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNz-W6-OkC">
-                                                    <rect key="frame" x="34" y="601" width="1053" height="27"/>
+                                                    <rect key="frame" x="34" y="277" width="1053" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="NEn-2E-QGx">
                                                         <font key="font" metaFont="system" size="18"/>
@@ -843,7 +843,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ap-h3-7xC">
-                                                    <rect key="frame" x="1" y="576" width="35" height="17"/>
+                                                    <rect key="frame" x="1" y="252" width="35" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ROS:" id="7ns-yg-qC3">
                                                         <font key="font" metaFont="system"/>
@@ -852,7 +852,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DzP-7u-Svj">
-                                                    <rect key="frame" x="-3" y="10" width="139" height="32"/>
+                                                    <rect key="frame" x="-3" y="-314" width="139" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="Copy Subjective" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4sE-6q-tPD">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -875,7 +875,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="Q7u-g0-0ps">
                                                         <rect key="frame" x="1" y="1" width="255" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="8JL-k1-BAS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="255" height="569"/>
@@ -893,7 +893,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="MKx-Wm-sdj">
-                                                        <rect key="frame" x="256" y="1" width="15" height="569"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -902,7 +902,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="uXv-s6-0Bj">
                                                         <rect key="frame" x="1" y="1" width="231" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="nTW-NE-gtd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="231" height="569"/>
@@ -920,7 +920,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RxQ-LY-544">
-                                                        <rect key="frame" x="232" y="1" width="15" height="569"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -947,7 +947,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="aVC-7s-OHb">
                                                         <rect key="frame" x="1" y="1" width="257" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="YHr-O0-8pL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="257" height="569"/>
@@ -965,7 +965,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="NFM-rz-QIH">
-                                                        <rect key="frame" x="258" y="1" width="15" height="569"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -983,7 +983,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="pnt-mM-8YW">
                                                         <rect key="frame" x="1" y="1" width="223" height="113"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="TtB-0u-9aE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="113"/>
@@ -1001,7 +1001,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jSX-Wk-8dZ">
-                                                        <rect key="frame" x="224" y="1" width="15" height="113"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1010,7 +1010,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="3hU-pW-XTi">
                                                         <rect key="frame" x="1" y="1" width="223" height="194"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="1A5-Y6-x72">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="194"/>
@@ -1028,7 +1028,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cIS-YA-bMs">
-                                                        <rect key="frame" x="224" y="1" width="15" height="194"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1037,7 +1037,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="vbI-R0-86e">
                                                         <rect key="frame" x="1" y="1" width="223" height="192"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ap2-Mi-pnS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="192"/>
@@ -1055,7 +1055,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="k5C-Fb-06J">
-                                                        <rect key="frame" x="224" y="1" width="15" height="192"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1099,7 +1099,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="yUs-6m-qou">
                                                         <rect key="frame" x="1" y="1" width="1062" height="538"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="w8l-bE-lDr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1062" height="538"/>
@@ -1117,7 +1117,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Xvb-gc-3t3">
-                                                        <rect key="frame" x="1063" y="1" width="15" height="538"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1154,7 +1154,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="9sE-BL-XR6">
                                                         <rect key="frame" x="1" y="1" width="450" height="554"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="55Z-3a-wRD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="554"/>
@@ -1172,7 +1172,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Of3-ds-Wh7">
-                                                        <rect key="frame" x="451" y="1" width="15" height="554"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1181,7 +1181,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="HP4-nl-CLf">
                                                         <rect key="frame" x="1" y="1" width="551" height="554"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ubd-KL-0zL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="551" height="554"/>
@@ -1199,7 +1199,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Z1v-GH-YeO">
-                                                        <rect key="frame" x="552" y="1" width="15" height="554"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1247,7 +1247,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Medications" identifier="" id="0a4-Rz-Dg2">
-                                        <view key="view" ambiguous="YES" id="P2p-LK-jon">
+                                        <view key="view" id="P2p-LK-jon">
                                             <rect key="frame" x="32" y="7" width="1113" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1256,7 +1256,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="aRX-OO-FBg">
                                                         <rect key="frame" x="1" y="1" width="593" height="596"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ugn-VY-b3t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="593" height="596"/>
@@ -1274,7 +1274,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IrC-90-g2e">
-                                                        <rect key="frame" x="594" y="1" width="15" height="596"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1292,7 +1292,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" id="ZMG-ir-MT8">
                                                         <rect key="frame" x="1" y="1" width="444" height="596"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Kmn-zf-umM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="444" height="596"/>
@@ -1310,7 +1310,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VFv-Ro-6oW">
-                                                        <rect key="frame" x="445" y="1" width="15" height="596"/>
+                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -2812,7 +2812,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="58G-h8-FmF">
-                                                            <rect key="frame" x="48.5" y="1" width="204" height="20"/>
+                                                            <rect key="frame" x="49" y="1" width="204" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tey-cz-D2m">
@@ -2894,6 +2894,7 @@ Gw
                         <outlet property="educationView" destination="Pxs-Xm-AJZ" id="eva-A1-u0K"/>
                         <outlet property="injectionsView" destination="5eF-Dw-XnO" id="6yf-Th-Vpp"/>
                         <outlet property="labView" destination="tBT-i2-zN5" id="Fpm-0S-sfp"/>
+                        <outlet property="medicationScroll" destination="YOn-Fc-1yG" id="gmz-Eq-WRd"/>
                         <outlet property="medicationView" destination="dLB-fB-s2w" id="9Qb-2t-HYJ"/>
                         <outlet property="proceduresView" destination="vL3-6A-jNr" id="z0D-ry-Bt3"/>
                         <outlet property="synvPopup" destination="Js6-Ql-OwV" id="r55-nm-TAm"/>
@@ -18656,18 +18657,22 @@ Gw
                         <outlet property="bunionView" destination="NZf-Ou-Ywe" id="WXk-Sa-TRP"/>
                         <outlet property="callusView" destination="Ymx-mG-vBT" id="OJ1-oY-Pf3"/>
                         <outlet property="clubbingView" destination="utg-ql-pSE" id="nai-Z7-i5G"/>
+                        <outlet property="digitAssessmentScroll" destination="Cf5-R5-kq9" id="149-wf-K8q"/>
                         <outlet property="digitAssessmentTextView" destination="Onl-77-1AB" id="RQv-xY-7ZA"/>
                         <outlet property="digitAssessmentView" destination="ypF-yt-Z2M" id="oew-9Q-Ywe"/>
+                        <outlet property="edemaScroll" destination="Uhe-zs-Fw2" id="zEj-pu-QTT"/>
                         <outlet property="edemaTextView" destination="dFY-v9-MC9" id="VNc-As-6xq"/>
                         <outlet property="edemaView" destination="X2d-MR-N2S" id="PZh-m9-dPK"/>
                         <outlet property="lAreaPulsesCombo" destination="PnN-uF-ePK" id="ULQ-Wh-ubi"/>
                         <outlet property="lCRCombo" destination="Bn2-W0-F3n" id="HU4-iJ-yXF"/>
                         <outlet property="lQtyPulsesPopup" destination="0HK-6q-fc9" id="Q5x-oO-hqn"/>
+                        <outlet property="limbAssessmentScroll" destination="qeF-H4-cMV" id="aOc-ee-p2i"/>
                         <outlet property="limbAssessmentTextView" destination="Vnz-zH-dLk" id="kI1-vr-Q2U"/>
                         <outlet property="limbAssessmentView" destination="F8c-SA-z0N" id="eaf-z9-gX8"/>
                         <outlet property="limbDecAbView" destination="V1y-cE-e7M" id="o8h-KX-T3c"/>
                         <outlet property="limbSideView" destination="CBO-PR-uTj" id="jQe-YG-Ynx"/>
                         <outlet property="limbView" destination="1nT-8A-qlM" id="QDn-lo-Xq6"/>
+                        <outlet property="pulsesScroll" destination="RtH-ni-czx" id="Nyr-Qe-Fkv"/>
                         <outlet property="pulsesTextView" destination="X13-5e-tnm" id="r24-ud-sFj"/>
                         <outlet property="pulsesView" destination="rlp-7b-QJa" id="O8f-Vf-ecW"/>
                         <outlet property="rAreaPulsesCombo" destination="3t3-hn-u4g" id="1Bn-HN-mQZ"/>
@@ -24633,6 +24638,7 @@ Gw
                         <outlet property="mskBox" destination="8ch-gC-Sgq" id="EGD-oM-PZq"/>
                         <outlet property="mskRangeDegreesPopup" destination="G64-su-OcZ" id="yg3-Ny-MW5"/>
                         <outlet property="mskRangeDirectionPopup" destination="6sF-8F-cW8" id="21U-Cj-P0o"/>
+                        <outlet property="mskResultsScroll" destination="16z-3r-o6j" id="Kzb-hp-Dpe"/>
                         <outlet property="mskResultsTextView" destination="4HH-7F-tho" id="TPX-qo-136"/>
                         <outlet property="mskSelectionsPopup" destination="vlV-BB-E8s" id="6to-vR-69q"/>
                         <outlet property="mskSidesPopup" destination="yZ5-Ti-z13" id="ukt-Hk-7Ha"/>
@@ -26082,6 +26088,7 @@ Gw
                         <outlet property="papTextView" destination="NAE-ns-4GD" id="8td-bn-UUA"/>
                         <outlet property="pnvNotDue" destination="AYU-tz-W5A" id="7PB-a4-Aq1"/>
                         <outlet property="pnvTextView" destination="FhL-rl-UfD" id="Og0-uu-ejk"/>
+                        <outlet property="previousPrevScroll" destination="yXk-ZD-2h7" id="WQR-EA-zF1"/>
                         <outlet property="previousPrevView" destination="xn7-iC-7CX" id="S9t-Rr-meD"/>
                         <outlet property="psaNotDue" destination="kga-WL-Q5i" id="zaW-ph-umM"/>
                         <outlet property="psaTextView" destination="eIM-WB-lej" id="k7q-0a-xz4"/>
@@ -26311,7 +26318,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="48.5" y="1" width="647" height="20"/>
+                                                            <rect key="frame" x="49" y="1" width="647" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
