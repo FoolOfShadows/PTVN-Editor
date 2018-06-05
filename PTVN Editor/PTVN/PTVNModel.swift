@@ -101,7 +101,7 @@ struct PTVN {
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
-    let prefixes = ["••", "~~", "^^"]
+    let prefixes = ["••", "~~", "^^", "(done dmw)"]
     
     init(theText: String) {
         self.theText = theText
@@ -281,8 +281,5 @@ struct PTVN {
 
     
 }
-
-
-    
 
 

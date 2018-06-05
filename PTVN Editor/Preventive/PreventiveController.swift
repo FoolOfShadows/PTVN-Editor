@@ -139,7 +139,7 @@ class PreventiveController: NSViewController {
             let pasteBoard = NSPasteboard.general
 			pasteBoard.clearContents()
             pasteBoard.setString(results, forType: NSPasteboard.PasteboardType.string)
-			Swift.print(results)
+			//Swift.print(results)
 		}
 		
 		let dateFormatter = DateFormatter()

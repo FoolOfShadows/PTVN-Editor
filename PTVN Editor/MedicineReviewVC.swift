@@ -11,6 +11,7 @@ import Cocoa
 class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     @IBOutlet weak var currentMedsTableView: NSTableView!
+    @IBOutlet weak var pharmacyCombo: NSComboBox!
     
     var medListArray = [String]()
     var chosenMeds = [String]()
@@ -23,6 +24,7 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         print(theData.medicines)
         medListArray = getArrayFrom(theData.medicines)
         print(medListArray)
+        pharmacyCombo.clearComboBox(menuItems: pharmacies)
         self.currentMedsTableView.reloadData()
     }
     
@@ -67,8 +69,8 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         let currentRow = currentMedsTableView.row(for: sender as! NSView)
         let currentCellView = currentMedsTableView.rowView(atRow: currentRow, makeIfNecessary: false)?.view(atColumn: 1) as! NSTableCellView
         guard let currentText = currentCellView.textField?.stringValue else { return }
-        
-        
+
+
         if (sender as! NSButton).state == .on {
             chosenMeds.append(currentText)
             //chosenMeds.append(medListArray[currentRow])
@@ -80,8 +82,14 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     @IBAction func returnResults(_ sender:Any) {
         let firstVC = presenting as! ViewController
-        let results = medListArray.filter { !chosenMeds.contains($0) }
-        theData.medicines = "\(results.joined(separator: "\n"))\n\n DISCONTINUED THIS VIST:\n\(chosenMeds.joined(separator: "\n"))"
+        var results = medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n")
+        if !chosenMeds.isEmpty {
+            results += "\n\n DISCONTINUED THIS VIST:\n\(chosenMeds.joined(separator: "\n"))"
+        }
+        theData.medicines = results
+        if !pharmacyCombo.stringValue.isEmpty {
+            theData.plan.addToExistingText(pharmacyCombo.stringValue)
+        }
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)
@@ -90,12 +98,19 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     @IBAction func getRefills(_ sender: Any?) {
         let firstVC = presenting as! ViewController
         if !chosenMeds.isEmpty {
-            let refillItems = chosenMeds.map { $0.prependCharacter("~~") }
+            var refillItems = [String]()
+            for item in chosenMeds {
+                refillItems.append("~~\(item)")
+            }
+            //let refillItems = chosenMeds.map { $0.prependCharacter("~~") }
+            
             theData.plan.addToExistingText("REFILLS REQUESTED:\n\(refillItems.joined(separator: "\n"))")
             firstVC.theData = theData
             currentPTVNDelegate?.returnPTVNValues(sender: self)
         }
         self.dismiss(self)
     }
+    
+    let pharmacies = ["", "Krogers", "Matthewsons", "Walgreens", "Super1", "Walmart", "CVS", "Killions", "Humana", "Express Scripts", "Optum Rx", "Walmart (Carthage)", "Super1 (Tyler)", "Krogers (Longview)", "City Drug", "Well Dynamix", "Davita Rx", "Walmart (4th St.)", "Written script"]
     
 }

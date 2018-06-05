@@ -94,8 +94,9 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     @IBAction func addMed(_ sender: Any) {
         if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
-            let currentMeds = medicationView.string
-            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
+            medicationView.addToViewsExistingText(commonMedsPopup.titleOfSelectedItem!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
+//            let currentMeds = medicationView.string
+//            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
         }
     }
     
@@ -118,7 +119,10 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         var resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults]
         
         if !medicationView.string.isEmpty {
-            resultsArray.append("Medications:\n\(medicationView.string)")
+            let medArray = medicationView.string.convertListToArray()
+            print(medArray)
+            //resultsArray.append("Medications:\n\(medicationView.string)")
+            resultsArray.append("Prescribed this visit:\n\(medArray.map {$0.prependCharacter("~~")}.joined(separator: "\n"))")
         }
         let filteredResultsArray = resultsArray.filter{!$0.isEmpty}
         let results = filteredResultsArray.joined(separator: "\n")
@@ -147,22 +151,22 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
     
     //Gonna get rid of this and the selection view.  Populate the table in viewDidLoad()
-    @IBAction func getMedsFromFile(_ sender: NSButton) {
-        let panel = NSOpenPanel()
-        panel.canChooseDirectories = true
-        panel.canChooseFiles = true
-        panel.allowedFileTypes = ["txt"]
-        
-        panel.beginSheetModal(for: self.view.window!, completionHandler: {(returnCode) -> Void in
-            if returnCode == NSApplication.ModalResponse.OK {
-                let message = panel.url?.path
-                self.assessmentString = self.processAssessmentFromNoteAt(message)
-                self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showCurrentAssessment"), sender: nil)
-            }
-        })
-        
-        
-    }
+//    @IBAction func getMedsFromFile(_ sender: NSButton) {
+//        let panel = NSOpenPanel()
+//        panel.canChooseDirectories = true
+//        panel.canChooseFiles = true
+//        panel.allowedFileTypes = ["txt"]
+//
+//        panel.beginSheetModal(for: self.view.window!, completionHandler: {(returnCode) -> Void in
+//            if returnCode == NSApplication.ModalResponse.OK {
+//                let message = panel.url?.path
+//                self.assessmentString = self.processAssessmentFromNoteAt(message)
+//                self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showCurrentAssessment"), sender: nil)
+//            }
+//        })
+//
+//
+//    }
     
     func processAssessmentFromNoteAt(_ url: String?) -> String {
         var fullText = String()

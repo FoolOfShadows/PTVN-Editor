@@ -192,7 +192,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
     }
     
     @objc func selectAllNormsInView() {
-        let normButtons = skinBox.getButtonsInView() /*self.view.getNormalButtonsInView()*/
+        let normButtons = skinBox.getNormalButtonsInView() /*self.view.getNormalButtonsInView()*/
         for button in normButtons {
             button.state = .on
             selectNorms(button)

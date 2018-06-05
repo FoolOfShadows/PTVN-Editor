@@ -31,6 +31,7 @@
 		798BBB592093A000002A28AA /* PreventiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB572093A000002A28AA /* PreventiveController.swift */; };
 		798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */; };
 		799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */; };
+		799C221B20C6D57900DC9993 /* PTVNWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C221A20C6D57900DC9993 /* PTVNWindowController.swift */; };
 		79AFDF5120C04B33007FAB5C /* LineContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5020C04B33007FAB5C /* LineContainingView.swift */; };
 		79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */; };
 		79CCA6A22090B73F00909285 /* PainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6942090B73D00909285 /* PainModel.swift */; };
@@ -105,6 +106,7 @@
 		798BBB572093A000002A28AA /* PreventiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveController.swift; sourceTree = "<group>"; };
 		798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineReviewVC.swift; sourceTree = "<group>"; };
 		799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabSetUpPrintViewController.swift; sourceTree = "<group>"; };
+		799C221A20C6D57900DC9993 /* PTVNWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVNWindowController.swift; sourceTree = "<group>"; };
 		79AFDF5020C04B33007FAB5C /* LineContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineContainingView.swift; sourceTree = "<group>"; };
 		79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxContainingView.swift; sourceTree = "<group>"; };
 		79CCA6942090B73D00909285 /* PainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainModel.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				7913205B2077C85100CB1537 /* AppDelegate.swift */,
 				791320632077C85200CB1537 /* Main.storyboard */,
+				799C221A20C6D57900DC9993 /* PTVNWindowController.swift */,
 				79CCA6B92090BCE800909285 /* PTVN */,
 				79CCA6B02090BBC600909285 /* Doctor */,
 				79CCA6B12090BBF800909285 /* ROS */,
@@ -574,6 +577,7 @@
 				79CCA6DA2090D5F600909285 /* LimbAssessment.swift in Sources */,
 				799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */,
 				79CCA6D92090D5F600909285 /* DigitAssessment.swift in Sources */,
+				799C221B20C6D57900DC9993 /* PTVNWindowController.swift in Sources */,
 				79CCA6E72090DA4200909285 /* DRE Model.swift in Sources */,
 				798BBB4C20939617002A28AA /* IncontinenceModel.swift in Sources */,
 				798BBB4720939617002A28AA /* PHQ9Controller.swift in Sources */,

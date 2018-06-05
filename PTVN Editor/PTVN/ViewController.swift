@@ -18,7 +18,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
     @IBOutlet weak var ptVisitView: NSTextField!
-    @IBOutlet weak var ccView: NSTextField!
+    @IBOutlet weak var ccScroll: NSScrollView!
+    //@IBOutlet weak var ccView: NSTextField!
     @IBOutlet var rosView: NSTextView!
     @IBOutlet var subjectiveView: NSTextView!
     @IBOutlet var preventiveView: NSTextView!
@@ -34,6 +35,12 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var assessmentView: NSTextView!
     @IBOutlet var planView: NSTextView!
     
+    var ccView: NSTextView {
+        get {
+            return ccScroll.contentView.documentView as! NSTextView
+        }
+    }
+    
     //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
     var document = Document()
@@ -45,7 +52,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
+        let theTextViews = [ccView, medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
         }
@@ -244,7 +251,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         ptVisitView.stringValue = theData.visitDate
         medsView.string = theData.medicines
         allergyView.string = theData.allergies
-        ccView.stringValue = theData.cc
+        ccView.string = theData.cc
         rosView.string = theData.ros
         subjectiveView.string = theData.subjective
         print(theData.preventive)
@@ -282,8 +289,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.family = familyView.string
         case allergyView:
             theData.allergies = allergyView.string
-//        case vitalsView:
-//            theData.ros = rosView.string
+        case ccView:
+            theData.cc = ccView.string
         case objectiveView:
             theData.objective = objectiveView.string
         case pshView:
@@ -297,7 +304,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     func updateVarForField(_ field:NSTextField) {
-        theData.cc = ccView.stringValue
+        theData.cc = ccView.string
     }
     
     @IBAction func copyObjective(_ sender: Any) {
@@ -323,6 +330,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
 
-
+    @IBAction func markAsCharged(_ sender: Any) {
+        assessmentView.addToViewsExistingText("(done dmw)")
+    }
+    
 }
 

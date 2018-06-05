@@ -84,8 +84,8 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
 	@IBAction func selectNorms(_ sender: NSButton) {
 		func normalButtonRangesForSection(_ section:String) -> [Int] {
 			switch section {
-			case "lymph":
-				return [Int](1...4)
+            case "lymph":
+                return [Int](1...4)
 			case "chest":
 				return [Int](1...8)
 			case "cv", "gi":
@@ -251,7 +251,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
 	}
     
     @objc func selectAllNormsInView() {
-        let normButtons = self.view.getNormalButtonsInView()
+        let normButtons = chestBox.getNormalButtonsInView() + cvBox.getNormalButtonsInView() + giBox.getNormalButtonsInView()
         for button in normButtons {
             button.state = .on
             selectNorms(button)
