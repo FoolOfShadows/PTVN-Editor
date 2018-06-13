@@ -52,7 +52,7 @@ class ROSViewController: NSViewController {
         rosView.clearControllers()
     }
     
-    @IBAction func processROS(_ sender: Any) {
+    @IBAction func processROS(_ sender: NSButton) {
         let results = processROSForm([genList, psychList, eyeList, heentList, cardioList, respList, giList, guList, endoList, neuroList, mskList, hemoList, dermList])
         let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
         
@@ -62,7 +62,14 @@ class ROSViewController: NSViewController {
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
+        
+        if sender.title == "Process & Continue" {
+        FormButtons.formName = "HPI"
         self.dismiss(self)
+        nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
+        } else {
+            self.dismiss(self)
+        }
     }
     
     

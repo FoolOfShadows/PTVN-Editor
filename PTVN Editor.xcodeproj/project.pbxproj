@@ -29,9 +29,11 @@
 		798BBB5420939C20002A28AA /* MWEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB5220939C20002A28AA /* MWEModel.swift */; };
 		798BBB582093A000002A28AA /* PreventiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB5620939FFF002A28AA /* PreventiveModel.swift */; };
 		798BBB592093A000002A28AA /* PreventiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB572093A000002A28AA /* PreventiveController.swift */; };
+		798BD5A220D15FA500FD089B /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BD5A120D15FA500FD089B /* CheckOutVC.swift */; };
 		798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */; };
 		799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */; };
 		799C221B20C6D57900DC9993 /* PTVNWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C221A20C6D57900DC9993 /* PTVNWindowController.swift */; };
+		799C221D20C6F89B00DC9993 /* PTVNTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C221C20C6F89B00DC9993 /* PTVNTabView.swift */; };
 		79AFDF5120C04B33007FAB5C /* LineContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5020C04B33007FAB5C /* LineContainingView.swift */; };
 		79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */; };
 		79CCA6A22090B73F00909285 /* PainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6942090B73D00909285 /* PainModel.swift */; };
@@ -104,9 +106,11 @@
 		798BBB5220939C20002A28AA /* MWEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWEModel.swift; sourceTree = "<group>"; };
 		798BBB5620939FFF002A28AA /* PreventiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveModel.swift; sourceTree = "<group>"; };
 		798BBB572093A000002A28AA /* PreventiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreventiveController.swift; sourceTree = "<group>"; };
+		798BD5A120D15FA500FD089B /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineReviewVC.swift; sourceTree = "<group>"; };
 		799C11BB20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabSetUpPrintViewController.swift; sourceTree = "<group>"; };
 		799C221A20C6D57900DC9993 /* PTVNWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVNWindowController.swift; sourceTree = "<group>"; };
+		799C221C20C6F89B00DC9993 /* PTVNTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTVNTabView.swift; sourceTree = "<group>"; };
 		79AFDF5020C04B33007FAB5C /* LineContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineContainingView.swift; sourceTree = "<group>"; };
 		79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxContainingView.swift; sourceTree = "<group>"; };
 		79CCA6942090B73D00909285 /* PainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainModel.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				7913205B2077C85100CB1537 /* AppDelegate.swift */,
 				791320632077C85200CB1537 /* Main.storyboard */,
 				799C221A20C6D57900DC9993 /* PTVNWindowController.swift */,
+				799C221C20C6F89B00DC9993 /* PTVNTabView.swift */,
 				79CCA6B92090BCE800909285 /* PTVN */,
 				79CCA6B02090BBC600909285 /* Doctor */,
 				79CCA6B12090BBF800909285 /* ROS */,
@@ -215,6 +220,7 @@
 				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
 				79AFDF5020C04B33007FAB5C /* LineContainingView.swift */,
 				79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */,
+				798BD5A120D15FA500FD089B /* CheckOutVC.swift */,
 			);
 			path = "PTVN Editor";
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */,
 				79CCA6C32090D16500909285 /* ENT Model.swift in Sources */,
 				79CCA6F32090DC4E00909285 /* NeuroMSK VC.swift in Sources */,
+				798BD5A220D15FA500FD089B /* CheckOutVC.swift in Sources */,
 				79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */,
 				79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */,
 				7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */,
@@ -543,6 +550,7 @@
 				79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */,
 				79CCA6AB2090B73F00909285 /* WWEModel.swift in Sources */,
 				79CCA6F12090DC4E00909285 /* MSK Model.swift in Sources */,
+				799C221D20C6F89B00DC9993 /* PTVNTabView.swift in Sources */,
 				79CCA6E62090DA4200909285 /* SkinGynGUDRE VC.swift in Sources */,
 				79CCA6AD2090B73F00909285 /* LabsViewController.swift in Sources */,
 				798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */,

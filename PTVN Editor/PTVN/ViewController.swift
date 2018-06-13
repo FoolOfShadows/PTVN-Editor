@@ -34,6 +34,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var pshView: NSTextView!
     @IBOutlet var assessmentView: NSTextView!
     @IBOutlet var planView: NSTextView!
+    @IBOutlet weak var pharmacyView: NSTextField!
     
     var ccView: NSTextView {
         get {
@@ -74,6 +75,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         pshView.delegate = self
         assessmentView.delegate = self
         planView.delegate = self
+        pharmacyView.delegate = self
         
         //Set up selections in lists with data from text file
         if let fluList = getSectionDataStartingFrom("START FLU", andEndingWith: "END FLU") {
@@ -89,6 +91,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             print("\n\n\n\(declinesFluList)\n\n\n")
             declinesFlu = [""] + declinesFluList
         }
+        
+        //Set up notification center for switching forms
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(switchForm), name: Notification.Name("SwitchForm"), object: nil)
     }
     
     
@@ -228,6 +234,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
                 }
+            case "showCheckOut":
+                if let toViewController = segue.destinationController as? CheckOutVC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
             default: return
             }
         }
@@ -265,6 +276,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         pshView.string = theData.psh
         assessmentView.string = theData.assessment
         planView.string = theData.plan
+        pharmacyView.stringValue = theData.pharmacy
     }
     
     //Update the instance of the PTVN with data being entered into the main document view
@@ -299,12 +311,14 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.assessment = assessmentView.string
         case planView:
             theData.plan = planView.string
+//        case pharmacyView:
+//            theData.pharmacy = pharmacyView.stringValue
         default: return
         }
     }
     
     func updateVarForField(_ field:NSTextField) {
-        theData.cc = ccView.string
+        theData.pharmacy = pharmacyView.stringValue
     }
     
     @IBAction func copyObjective(_ sender: Any) {
@@ -332,6 +346,25 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
 
     @IBAction func markAsCharged(_ sender: Any) {
         assessmentView.addToViewsExistingText("(done dmw)")
+        updateVarForView(assessmentView)
+        document.updateChangeCount(.changeDone)
+    }
+    
+    @objc func switchForm() {
+        print("Notification received")
+        let buttons = self.view.getListOfButtons()
+        let button = buttons.filter { $0.title == FormButtons.formName }[0]
+        button.performClick(self)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+//            button.performClick(self)
+//            print("button pressed?")
+//        }
+        
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
 }

@@ -107,7 +107,7 @@ class HPIViewController: NSViewController {
 		phlegmColorCombo.clearComboBox(menuItems: phlegmColors)
 	}
 	
-	@IBAction func processHPI(_ sender: Any) {
+	@IBAction func processHPI(_ sender: NSButton) {
 		var resultsArray = [String]()
 		var results = String()
 		//process Complaints box
@@ -133,7 +133,14 @@ class HPIViewController: NSViewController {
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        self.dismiss(self)
+        
+        if sender.title == "Process & Continue" {
+            FormButtons.formName = "Pain"
+            self.dismiss(self)
+            nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
+        } else {
+            self.dismiss(self)
+        }
 		
 	}
 	

@@ -89,6 +89,9 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let problems = theData.subjective.simpleRegExMatch("(?s)(Problems\\*\\*).*(\\*problems\\*)").cleanTheTextOf(problemBadBits)
         assessmentList = problems.convertListToArray()
         self.assessmentTableView.reloadData()
+        chosenAssessmentList = assessmentList
+        
+        
         
     }
     

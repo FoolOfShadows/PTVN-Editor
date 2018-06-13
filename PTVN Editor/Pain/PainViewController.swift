@@ -112,7 +112,7 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
 		qolMeasurePopup.clearPopUpButton(menuItems: qolList)
 	}
 	
-	@IBAction func processPain(_ sender: Any) {
+	@IBAction func processPain(_ sender: NSButton) {
 		let locationResults = Location().processSectionData(getButtonsIn(view: locationBox))
 		let durationResults = getDurationInfo()
 		let severityResults = calculatePEGScore()
@@ -131,7 +131,14 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        self.dismiss(self)
+        
+        if sender.title == "Process & Continue" {
+            FormButtons.formName = "Diabetes"
+            self.dismiss(self)
+            nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
+        } else {
+            self.dismiss(self)
+        }
 
 	}
 	

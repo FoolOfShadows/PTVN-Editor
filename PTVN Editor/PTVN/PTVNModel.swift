@@ -52,6 +52,8 @@ enum SectionDelimiters:String {
     case rosEnd = "ROS#"
     case visitDateStart = "#VISITDATE"
     case visitDateEnd = "VISITDATE#"
+    case pharmacyStart = "#PHARMACY"
+    case pharmacyEnd = "PHARMACY#"
     case otherStart = "#OTHER"
     case otherEnd = "OTHER#"
 }
@@ -98,10 +100,12 @@ struct PTVN {
     var objective = String()
     var subjective = String()
     var plan = String()
+    var pharmacy = String()
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
     let prefixes = ["••", "~~", "^^", "(done dmw)"]
+    let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE"]
     
     init(theText: String) {
         self.theText = theText
@@ -125,6 +129,7 @@ struct PTVN {
         self.objective = theText.simpleRegExMatch(Regexes().objective).cleanTheTextOf([SectionDelimiters.objectiveStart.rawValue, SectionDelimiters.objectiveEnd.rawValue])
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
+        self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
     }
     
     //Fix this to format the output correctly for adding to PF
@@ -171,7 +176,10 @@ struct PTVN {
         case .objective:
             return objective.cleanTheTextOf(prefixes)
         case .assessment:
-            return assessment.cleanTheTextOf(prefixes)
+            var results = assessment.cleanTheTextOf(prefixes)
+            results = results.replaceRegexPattern("(?s)Lvl \\d\\s*", with: "")
+            results = results.replaceRegexPattern("Lvl WE\\s*", with: "")
+            return results.removeWhiteSpace() /*assessment.cleanTheTextOf(prefixes)*/
         case .plan:
             return plan.cleanTheTextOf(prefixes)
         }
@@ -182,6 +190,10 @@ struct PTVN {
         \(SectionDelimiters.planStart.rawValue)
         \(plan)
         \(SectionDelimiters.planEnd.rawValue)
+        
+        \(SectionDelimiters.pharmacyStart.rawValue)
+        \(pharmacy)
+        \(SectionDelimiters.pharmacyEnd.rawValue)
         
         \(SectionDelimiters.assessmentStart.rawValue)
         \(assessment)
@@ -277,9 +289,13 @@ struct PTVN {
         let objective = "(?s)\(SectionDelimiters.objectiveStart.rawValue).*\(SectionDelimiters.objectiveEnd.rawValue)"
         let subjective = "(?s)\(SectionDelimiters.subjectiveStart.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
+        let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
     }
 
     
 }
 
+struct FormButtons {
+    static var formName = String()
+}
 

@@ -24,7 +24,7 @@ class Document: NSDocument {
     //Setting this to false so the document requests approval for saving after
     //any changes are made to it.
     override class var autosavesInPlace: Bool {
-        return false
+        return true
     }
 
     override func makeWindowControllers() {

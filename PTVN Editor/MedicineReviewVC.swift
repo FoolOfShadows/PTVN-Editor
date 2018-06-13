@@ -26,6 +26,9 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         print(medListArray)
         pharmacyCombo.clearComboBox(menuItems: pharmacies)
         self.currentMedsTableView.reloadData()
+        if !theData.pharmacy.isEmpty {
+            pharmacyCombo.stringValue = theData.pharmacy
+        }
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -87,8 +90,8 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             results += "\n\n DISCONTINUED THIS VIST:\n\(chosenMeds.joined(separator: "\n"))"
         }
         theData.medicines = results
-        if !pharmacyCombo.stringValue.isEmpty {
-            theData.plan.addToExistingText(pharmacyCombo.stringValue)
+        if !pharmacyCombo.stringValue.isEmpty && pharmacyCombo.stringValue != theData.pharmacy {
+            theData.pharmacy = pharmacyCombo.stringValue
         }
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
@@ -97,17 +100,17 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     @IBAction func getRefills(_ sender: Any?) {
         let firstVC = presenting as! ViewController
-        if !chosenMeds.isEmpty {
-            var refillItems = [String]()
-            for item in chosenMeds {
-                refillItems.append("~~\(item)")
-            }
-            //let refillItems = chosenMeds.map { $0.prependCharacter("~~") }
+//        if !chosenMeds.isEmpty {
+//            var refillItems = [String]()
+//            for item in chosenMeds {
+//                refillItems.append("~~\(item)")
+//            }
+            let refillItems = chosenMeds.map { $0.prependCharacter("~~") }
             
             theData.plan.addToExistingText("REFILLS REQUESTED:\n\(refillItems.joined(separator: "\n"))")
             firstVC.theData = theData
             currentPTVNDelegate?.returnPTVNValues(sender: self)
-        }
+        //}
         self.dismiss(self)
     }
     

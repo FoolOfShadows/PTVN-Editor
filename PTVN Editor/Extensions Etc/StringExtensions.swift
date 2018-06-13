@@ -76,10 +76,26 @@ extension String {
         }
         return theResult
     }
+    
+    func replaceRegexPattern(_ pattern:String, with goodBit:String) -> String {
+        let regex = try? NSRegularExpression(pattern: pattern)
+        if let results = regex?.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0,length: self.count), withTemplate: goodBit) {
+            return results
+        }
+        
+        return ""
+    }
 	
 	
     func removeWhiteSpace() -> String {
         return self.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+    }
+    
+    //Simple regex replace
+    func replaceRegexPattern(_ pattern:String, with goodBit:String) {
+        let regex = try? NSRegularExpression(pattern: pattern)
+        regex?.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0,length: self.count), withTemplate: goodBit)
+        //regex?.replaceMatches(in: self, options: .reportProgress, range: NSRange(location: 0,length: self.length), withTemplate: goodBit)
     }
     
     //Clean extraneous text from the sections
@@ -89,7 +105,7 @@ extension String {
             //cleanedText = cleanedText.replacingOccurrences(of: theBit, with: "")
             cleanedText = cleanedText.replacingOccurrences(of: theBit, with: "", options: .regularExpression, range: nil)
         }
-        let cleanedArray = cleanedText.components(separatedBy: "\n").filter {!$0.allRegexMatchesFor("[a-zA-Z0-9]").isEmpty}
+        let cleanedArray = cleanedText.components(separatedBy: "\n")/*.filter {!$0.allRegexMatchesFor("[a-zA-Z0-9]").isEmpty}*/
         //let cleanedArray = cleanedText.components(separatedBy: "\n").filter {!$0.ranges(of: "[a-zA-Z0-9]", options: .regularExpression).isEmpty}
         cleanedText = cleanedArray.joined(separator: "\n").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         return cleanedText
@@ -118,7 +134,7 @@ extension String {
         var newTextArray = [String]()
         let textArray = self.components(separatedBy: "\n")
         for line in textArray {
-            newTextArray.append("- \(line)")
+            newTextArray.append("\(theCharacter)\(line)")
         }
         
         return newTextArray.joined(separator: "\n")
@@ -130,6 +146,11 @@ extension String {
     
     func prependCharacter(_ character:String) -> String {
         return "\(character)\(self)"
+    }
+    
+    func getLinesStartingWith(_ prefix:String) -> [String] {
+        let theArray = self.convertListToArray()
+        return theArray.filter { $0.contains(prefix) }
     }
 	
 	func copyToPasteboard() {

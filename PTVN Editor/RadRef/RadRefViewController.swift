@@ -15,13 +15,25 @@ class RadRefViewController: NSViewController {
 	@IBOutlet weak var radAreaPopup: NSPopUpButton!
 	@IBOutlet weak var radSidePopup: NSPopUpButton!
 	@IBOutlet weak var radReasonView: NSTextField!
-	@IBOutlet weak var radOrders: NSTextField!
+	@IBOutlet weak var radScroll: NSScrollView!
+    
+    var radOrders: NSTextView {
+        get {
+            return radScroll.contentView.documentView as! NSTextView
+        }
+    }
 	
 	//Referral Interface
 	@IBOutlet weak var refAreaPopup: NSPopUpButton!
 	@IBOutlet weak var refTypePopup: NSPopUpButton!
 	@IBOutlet weak var refReasonView: NSTextField!
-	@IBOutlet weak var refOrdersView: NSTextField!
+	@IBOutlet weak var refScrollView: NSScrollView!
+    
+    var refOrdersView: NSTextView {
+        get {
+            return refScrollView.contentView.documentView as! NSTextView
+        }
+    }
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
@@ -176,19 +188,19 @@ class RadRefViewController: NSViewController {
 	@IBAction func addRadOrder(_ sender: Any) {
 		guard let type = radTypePopup.titleOfSelectedItem else { return }
 		guard let area = radAreaPopup.titleOfSelectedItem else { return }
-		var existingRads = radOrders.stringValue
+		var existingRads = radOrders.string
 		if !existingRads.isEmpty {
 			existingRads = existingRads + "\n"
 		}
-		var result = "\(existingRads)••\(type) - \(area)"
-		if let side = radSidePopup.titleOfSelectedItem {
+		var result = "\(existingRads)\(type) - \(area)"
+        if let side = radSidePopup.titleOfSelectedItem, side != "" {
 			result += " \(side)"
 		}
 		if !radReasonView.stringValue.isEmpty {
 			result += " for \(radReasonView.stringValue)"
 		}
 		
-		radOrders.stringValue = result
+		radOrders.string = result
 		radReasonView.stringValue = ""
 		
 	}
@@ -208,43 +220,44 @@ class RadRefViewController: NSViewController {
 	
 	@IBAction func addRefOrder(_ sender: Any) {
 		guard let type = refTypePopup.titleOfSelectedItem else { return }
-		var existingRefs = refOrdersView.stringValue
+		var existingRefs = refOrdersView.string
 		if !existingRefs.isEmpty {
 			existingRefs = existingRefs + "\n"
 		}
-		var result = "\(existingRefs)••\(type)"
+		var result = "\(existingRefs)\(type)"
 		if !refReasonView.stringValue.isEmpty {
 			result += " for \(refReasonView.stringValue)"
 		}
-		refOrdersView.stringValue = result
+		refOrdersView.string = result
 		refReasonView.stringValue = ""
 	}
 	
 	
 	@IBAction func processRadRef(_ sender: Any) {
 		var finalResults = [String]()
-		if !radOrders.stringValue.isEmpty {
-			finalResults.append("Tests ordered:\n\(radOrders.stringValue)")
+		if !radOrders.string.isEmpty {
+			finalResults.append("Tests ordered:\n\(radOrders.string.addCharacterToBeginningOfEachLine("••"))")
 		}
-		if !refOrdersView.stringValue.isEmpty {
-			finalResults.append("Referrals made to:\n\(refOrdersView.stringValue)")
+		if !refOrdersView.string.isEmpty {
+			finalResults.append("Referrals made to:\n\(refOrdersView.string.addCharacterToBeginningOfEachLine("••"))")
 		}
 		
-        
+        //print(finalResults)
         theData.plan.addToExistingText(finalResults.joined(separator: "\n"))
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        firstVC.view.window?.isDocumentEdited = true
+        //I don't know why I added this, but I dont' seem to need it
+        //firstVC.view.window?.isDocumentEdited = true
         self.dismiss(self)
 		
 	}
 	
 	
 	@IBAction func clearRadRef(_ sender: Any) {
-		radOrders.stringValue = ""
-		refOrdersView.stringValue = ""
+		radOrders.string = ""
+		refOrdersView.string = ""
 		radReasonView.stringValue = ""
 		refReasonView.stringValue = ""
 	}
