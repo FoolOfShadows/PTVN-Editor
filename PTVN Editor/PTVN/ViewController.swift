@@ -362,6 +362,22 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
     }
     
+    @IBAction func clearMeds(_ sender: Any) {
+        if theData.plan.contains("~~"){
+            theData.plan = theData.plan.cleanTheTextOf(["~~"])
+            updateView()
+            document.updateChangeCount(.changeDone)
+        }
+    }
+    
+    @IBAction func clearRads(_ sender: Any) {
+        if theData.plan.contains("••"){
+            theData.plan = theData.plan.replacingOccurrences(of: "••", with: "DONE - ")
+            updateView()
+            document.updateChangeCount(.changeDone)
+        }
+    }
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)

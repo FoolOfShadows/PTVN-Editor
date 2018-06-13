@@ -910,7 +910,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="PMH" identifier="" id="RnS-Z1-Ovw">
-                                        <view key="view" ambiguous="YES" id="SWQ-qF-ljj">
+                                        <view key="view" id="SWQ-qF-ljj">
                                             <rect key="frame" x="32" y="7" width="1113" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1197,7 +1197,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Assessment &amp; Plan" identifier="" id="8FD-VC-MOy">
-                                        <view key="view" id="yv2-gU-qId">
+                                        <view key="view" ambiguous="YES" id="yv2-gU-qId">
                                             <rect key="frame" x="32" y="7" width="1113" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1206,7 +1206,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="9sE-BL-XR6">
                                                         <rect key="frame" x="1" y="1" width="450" height="554"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="55Z-3a-wRD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="554"/>
@@ -1224,7 +1224,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Of3-ds-Wh7">
-                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
+                                                        <rect key="frame" x="451" y="1" width="15" height="554"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1233,7 +1233,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="HP4-nl-CLf">
                                                         <rect key="frame" x="1" y="1" width="551" height="524"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ubd-KL-0zL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="551" height="524"/>
@@ -1251,7 +1251,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Z1v-GH-YeO">
-                                                        <rect key="frame" x="1" y="1" width="15" height="0.0"/>
+                                                        <rect key="frame" x="552" y="1" width="15" height="524"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1324,6 +1324,28 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPB-at-XUv">
+                                                    <rect key="frame" x="713" y="10" width="109" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Clear Meds" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ao2-IH-Zi7">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="clearMeds:" target="5gI-5U-AMq" id="6f7-aU-ZM5"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-Nq-iJZ">
+                                                    <rect key="frame" x="822" y="10" width="124" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Clear Rad/Ref" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XFp-4b-DIC">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="clearRads:" target="5gI-5U-AMq" id="mNs-YZ-M8r"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
