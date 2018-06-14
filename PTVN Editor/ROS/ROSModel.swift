@@ -124,8 +124,15 @@ struct Vitals {
     var pulseOx = String()
     var poType = String()
     
+    var bmi:String { if let numWeight = Double(weight), let numHeight = Double(height) {
+        return String(format: "%.1f",(numWeight/(numHeight * numHeight)) * 703)
+        }
+        return "NC"
+    }
+    
     func getVitalsOutput() -> String {
-        return "Wt: \(weight) lb;     Ht: \(height) in;     T: \(temp) F;     BP: \(systolic)/\(diastolic) \(getVitalsVerbiageFrom(bpSite)) sitting;     P: \(pulse);     R: \(resp);     Pulse Ox: \(pulseOx)% \(getVitalsVerbiageFrom(poType))"
+        
+        return "Wt: \(weight) lb;     Ht: \(height) in;     BMI: \(bmi)     T: \(temp) F;     BP: \(systolic)/\(diastolic) \(getVitalsVerbiageFrom(bpSite)) sitting;     P: \(pulse);     R: \(resp);     Pulse Ox: \(pulseOx)% \(getVitalsVerbiageFrom(poType))"
     }
     
     func getVitalsVerbiageFrom(_ raw:String) -> String {

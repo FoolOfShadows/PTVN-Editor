@@ -26,8 +26,8 @@ class CheckOutVC: NSViewController {
         super.viewDidLoad()
         
         demoView.stringValue = """
-        \(theData.ptName)
-        \(theData.ptDOB)
+        \(theData.ptName) (\(theData.ptDOB))
+        Visit date: \(theData.visitDate)
 """
 notesView.string = prepDataForView()
     }
@@ -63,6 +63,8 @@ Patient Visit Summary
         var medValues = String()
         var refillValues = String()
         var radValues = String()
+        var assessmentValues = String()
+        var vitalsValues = String()
         
         if !theData.medicines.isEmpty {
             medValues = "Medications for this visit:\n\(theData.medicines)"
@@ -75,8 +77,22 @@ Patient Visit Summary
         if !refrad.isEmpty {
             radValues = "Referrals/Radiology being ordered:\n\(refrad)"
         }
+        let assessment = theData.assessment.removeWhiteSpace()
+        if !assessment.isEmpty {
+            assessmentValues = "Diagnoses this visit:\n\(assessment)"
+        }
+        let objective = theData.objective
+        //if !objective.isEmpty {
+        let objectiveArray = objective.convertListToArray()
+        for line in objectiveArray {
+            if line.contains("T:") && line.contains("P:") {
+                vitalsValues = "Vitals this visit:\n\(line)"
+                break
+            }
+            //}
+        }
         
-        let values = [medValues, refillValues, radValues]
+        let values = [radValues, refillValues, vitalsValues, assessmentValues, medValues]
         let usedValues = values.filter { !$0.isEmpty }
         return usedValues.joined(separator: "\n\n")
     }

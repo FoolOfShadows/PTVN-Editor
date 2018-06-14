@@ -213,14 +213,14 @@
 				798BBB4F20939656002A28AA /* Memory */,
 				798BBB502093965F002A28AA /* PHQ9 */,
 				798BBB5A2093A005002A28AA /* Preventive */,
+				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
+				798BD5A120D15FA500FD089B /* CheckOutVC.swift */,
 				791320612077C85200CB1537 /* Assets.xcassets */,
 				791320662077C85200CB1537 /* Info.plist */,
 				791320672077C85200CB1537 /* PTVN_Editor.entitlements */,
 				79CCA6BA2090BCFC00909285 /* Extensions Etc */,
-				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
 				79AFDF5020C04B33007FAB5C /* LineContainingView.swift */,
 				79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */,
-				798BD5A120D15FA500FD089B /* CheckOutVC.swift */,
 			);
 			path = "PTVN Editor";
 			sourceTree = "<group>";
