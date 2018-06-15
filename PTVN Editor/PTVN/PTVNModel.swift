@@ -105,7 +105,7 @@ struct PTVN {
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
     let prefixes = ["••", "~~", "^^", "(done dmw)"]
-    let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE"]
+    let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW"]
     
     init(theText: String) {
         self.theText = theText
@@ -179,10 +179,33 @@ struct PTVN {
             var results = assessment.cleanTheTextOf(prefixes)
             results = results.replaceRegexPattern("(?s)Lvl \\d\\s*", with: "")
             results = results.replaceRegexPattern("Lvl WE\\s*", with: "")
+            results = results.replaceRegexPattern("Lvl NPW\\s*", with: "")
             return results.removeWhiteSpace() /*assessment.cleanTheTextOf(prefixes)*/
         case .plan:
             return plan.cleanTheTextOf(prefixes)
         }
+    }
+    
+    func getPMHChanges() -> String {
+        func getMarkedLinesFrom(_ section:String, label:String) -> String {
+            var results = String()
+            let changes = section.convertListToArray().filter { $0.starts(with: "^^")}
+            if !changes.isEmpty {
+                results = "\(label)\(changes.joined(separator: "\n"))"
+            }
+            return results
+        }
+        
+        let findChangeArray = [getMarkedLinesFrom(pmh, label: "PMH Changes:\n"),
+         getMarkedLinesFrom(psh, label: "PSH Changes:\n"),
+         getMarkedLinesFrom(preventive, label: "Preventive Changes:\n"),
+         getMarkedLinesFrom(social, label: "Social History Changes:\n"),
+         getMarkedLinesFrom(family, label: "Family History Changes:\n"),
+         getMarkedLinesFrom(nutrition, label: "Nutrition Changes:\n")]
+        
+        let actualChanges = findChangeArray.filter { !$0.isEmpty }
+        
+        return actualChanges.joined(separator: "\n")
     }
     
     var saveValue:String {return """

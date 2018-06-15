@@ -337,11 +337,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         theData.returnSOAPSection(.plan).copyToPasteboard()
     }
     
-    //Don't know what this does
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    @IBAction func getPMHUpdates(_ sender: Any) {
+        let updates = theData.getPMHChanges()
+        print(updates)
     }
 
     @IBAction func markAsCharged(_ sender: Any) {

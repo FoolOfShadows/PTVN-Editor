@@ -16,6 +16,7 @@
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
 		791320622077C85200CB1537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791320612077C85200CB1537 /* Assets.xcassets */; };
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
+		794CAA2E20D41A3700DBB068 /* SurgeryClearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */; };
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		798BBB4520939617002A28AA /* ESSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3D20939613002A28AA /* ESSController.swift */; };
 		798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3E20939613002A28AA /* IncontinenceController.swift */; };
@@ -93,6 +94,7 @@
 		791320642077C85200CB1537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
+		794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryClearanceVC.swift; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
 		798BBB3E20939613002A28AA /* IncontinenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncontinenceController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		7913204F2077C85100CB1537 = {
 			isa = PBXGroup;
 			children = (
+				794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */,
 				7913205A2077C85100CB1537 /* PTVN Editor */,
 				791320592077C85100CB1537 /* Products */,
 			);
@@ -544,6 +547,7 @@
 				79CCA6DB2090D5F600909285 /* Extremities VC.swift in Sources */,
 				79CCA6C72090D16500909285 /* Psychological Model.swift in Sources */,
 				79CCA6C42090D16500909285 /* General Model.swift in Sources */,
+				794CAA2E20D41A3700DBB068 /* SurgeryClearanceVC.swift in Sources */,
 				79CCA6A42090B73F00909285 /* HPIViewController.swift in Sources */,
 				79CCA6DC2090D5F600909285 /* Extremties Model.swift in Sources */,
 				7913205E2077C85100CB1537 /* ViewController.swift in Sources */,

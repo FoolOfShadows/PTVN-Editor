@@ -65,6 +65,7 @@ Patient Visit Summary
         var radValues = String()
         var assessmentValues = String()
         var vitalsValues = String()
+        var planValues = String()
         
         if !theData.medicines.isEmpty {
             medValues = "Medications for this visit:\n\(theData.medicines)"
@@ -92,7 +93,14 @@ Patient Visit Summary
             //}
         }
         
-        let values = [radValues, refillValues, vitalsValues, assessmentValues, medValues]
+        let plan = theData.plan.removeWhiteSpace()
+        if !plan.isEmpty {
+            let badBits = ["Tests ordered:", "Referrals made to:", "••.*", "~~.*", "REFILLS REQUESTED:"]
+            let cleanPlan = plan.cleanTheTextOf(badBits)
+            planValues = cleanPlan
+        }
+        
+        let values = [radValues, refillValues, planValues, vitalsValues, assessmentValues, medValues]
         let usedValues = values.filter { !$0.isEmpty }
         return usedValues.joined(separator: "\n\n")
     }

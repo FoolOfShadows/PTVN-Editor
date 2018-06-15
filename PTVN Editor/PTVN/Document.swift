@@ -19,6 +19,8 @@ class Document: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
+        
+        
     }
 
     //Setting this to false so the document requests approval for saving after

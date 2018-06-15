@@ -209,3 +209,32 @@ struct Assessment {
 		return resultArray.joined(separator: "\n")
 	}
 }
+
+struct PreOp:StructsWithDescriptionOutput {
+    func getOutputFor(_ id:Int) -> String? {
+        switch id {
+        case 1: return "Patient is not currently on any blood thinners."
+        case 2: return "aspirin"
+        case 3: return "Plavix"
+        case 4: return "Coumadin"
+        case 5: return "Xarelto"
+        case 6: return "Eliquis"
+        case 7: return "Pradaxa"
+        default: return nil
+        }
+    }
+    
+    func processSectionData(_ data:[(Int, String?)]) -> String {
+        var finalResult = String()
+        if data[0].0 == 1 {
+            finalResult = "Patient is medically clear for surgery with low cardiac risk. Use standard peri-operative precautions including beta-blocker.  Patient is not currently on any blood thinners."
+        } else {
+            let resultsStrings = getDescriptionOfItem(data, fromStruct: self) ?? [String]()
+            
+            if !resultsStrings.isEmpty {
+                finalResult = "Patient is medically clear for surgery with low cardiac risk. Use standard peri-operative precautions including beta-blocker. May hold blood thinners including: \(resultsStrings.joined(separator: ", "))."
+            }
+        }
+        return finalResult
+    }
+}

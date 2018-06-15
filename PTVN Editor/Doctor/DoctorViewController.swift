@@ -21,6 +21,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var proceduresView: NSBox!
     @IBOutlet weak var educationView: NSBox!
     @IBOutlet weak var injectionsView: NSBox!
+    @IBOutlet weak var preOpView: NSBox!
     @IBOutlet weak var commonMedsPopup: NSPopUpButton!
     //@IBOutlet weak var medicationView: NSTextView!
     @IBOutlet weak var medicationScroll: NSScrollView!
@@ -118,8 +119,10 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let proceduresResults = Procedures().processProceduresUsing(getDataFromView(proceduresView))
         let educationResults = Education().processSectionData(getDataFromView(educationView))
         let injectionResults = Injections().processInjectionsUsing(getDataFromView(injectionsView))
+        let preOpResults = PreOp().processSectionData(getDataFromView(preOpView))
         
-        var resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults]
+        
+        var resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
         
         if !medicationView.string.isEmpty {
             let medArray = medicationView.string.convertListToArray()
@@ -266,4 +269,16 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
 			}
 		}
 	}
+    
+    @IBAction func thinnerOrNot(_ sender:NSButton) {
+        let boxes = preOpView.getListOfButtons()
+        for box in boxes {
+            if sender.tag != 1 {
+                let noneBox = boxes.filter { $0.tag == 1 }
+                noneBox[0].state = .off
+            } else if box.title != sender.title {
+                box.state = .off
+            }
+        }
+    }
 }
