@@ -39,7 +39,7 @@ func processHPISection(_ section:HPITypes, usingData data:(title: String, positi
 	}
 	
 	if !result.isEmpty && data.title != "" {
-		print(data.title)
+		//print(data.title)
 		result += "  Onset reported as \(data.title)."
 	}
 	

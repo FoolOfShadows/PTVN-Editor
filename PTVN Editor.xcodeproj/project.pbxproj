@@ -94,7 +94,7 @@
 		791320642077C85200CB1537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
-		794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryClearanceVC.swift; sourceTree = "<group>"; };
+		794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurgeryClearanceVC.swift; path = ../SurgeryClearanceVC.swift; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
 		798BBB3E20939613002A28AA /* IncontinenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncontinenceController.swift; sourceTree = "<group>"; };
@@ -173,7 +173,6 @@
 		7913204F2077C85100CB1537 = {
 			isa = PBXGroup;
 			children = (
-				794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */,
 				7913205A2077C85100CB1537 /* PTVN Editor */,
 				791320592077C85100CB1537 /* Products */,
 			);
@@ -193,6 +192,7 @@
 				7913205B2077C85100CB1537 /* AppDelegate.swift */,
 				791320632077C85200CB1537 /* Main.storyboard */,
 				799C221A20C6D57900DC9993 /* PTVNWindowController.swift */,
+				794CAA2D20D41A3700DBB068 /* SurgeryClearanceVC.swift */,
 				799C221C20C6F89B00DC9993 /* PTVNTabView.swift */,
 				79CCA6B92090BCE800909285 /* PTVN */,
 				79CCA6B02090BBC600909285 /* Doctor */,

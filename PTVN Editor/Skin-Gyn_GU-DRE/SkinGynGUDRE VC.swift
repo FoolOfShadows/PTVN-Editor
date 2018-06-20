@@ -97,7 +97,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
         if sender.state == .on {
             let sendingBox = (sender as NSView).getContainingBox()
             guard let sendingBoxTitle = sendingBox?.title else { return }
-            print(sendingBoxTitle)
+            //print(sendingBoxTitle)
             guard let theButtons = sendingBox?.getButtonsInView() else { return }
             
             switch sendingBoxTitle {
@@ -165,7 +165,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
         if !sender.stringValue.isEmpty {
         let sendingBox = (sender as NSView).getContainingBox()
         guard let sendingBoxTitle = sendingBox?.title else { return }
-        print(sendingBoxTitle)
+        //print(sendingBoxTitle)
         guard let theButtons = sendingBox?.getButtonsInView() else { return }
             
             switch sendingBoxTitle {

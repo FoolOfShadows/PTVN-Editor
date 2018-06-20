@@ -103,7 +103,7 @@ class GenPsychHEENTNeck_VC: NSViewController, ProcessTabProtocol {
             
             let sendingBox = (sender as NSView).getContainingBox()
             guard let sendingBoxTitle = sendingBox?.title else { return }
-            print(sendingBoxTitle)
+            //print(sendingBoxTitle)
             guard let theButtons = sendingBox?.getButtonsInView() else { return }
             
             switch sendingBoxTitle {

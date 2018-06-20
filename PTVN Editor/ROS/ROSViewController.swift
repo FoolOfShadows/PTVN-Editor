@@ -110,7 +110,7 @@ class ROSViewController: NSViewController {
     func returnTitleAndStateFrom(_ tag:Int) -> [(String, Int)] {
         var results = [(title:String, state:Int)]()
         let buttons = allROSControllers.filter{$0.tag == tag && $0.state != .off}
-        print(buttons)
+        //print(buttons)
         for button in buttons {
             results.append((title:button.title.lowercased(), state:button.state.rawValue))
         }

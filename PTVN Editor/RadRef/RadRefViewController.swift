@@ -61,7 +61,7 @@ class RadRefViewController: NSViewController {
 //	}
     
 	@IBAction func radTypeSelected(_ sender: NSPopUpButton) {
-		print("In the radTypeSelected func")
+		//print("In the radTypeSelected func")
 		switch sender.title {
 		case "XRAY":
 			radAreaPopup.clearPopUpButton(menuItems: radXRAYAreas)

@@ -16,7 +16,7 @@ struct rosSection {
 		var posNegList: (positiveList: [String], negativeList: [String])?
 		var results: (positives: String, negatives: String)?
 		
-		print(sectionTitlesAndStates)
+		//print(sectionTitlesAndStates)
 		
 		for item in sectionTitlesAndStates {
 			if item.state == -1 {
@@ -27,7 +27,7 @@ struct rosSection {
 		}
 		
 		if let theList = posNegList {
-			print("The list is not nil")
+			//print("The list is not nil")
 			if !theList.positiveList.isEmpty {
 				results?.positives = "\(sectionName): \(theList.positiveList.joined(separator: ", "))"
 			}
@@ -59,8 +59,8 @@ func processROSForm(_ sections:[(sectionName:String, list:[(title:String, state:
 		}
 	}
 	
-	print("Positive results array is: \(tempResults.positiveResults)")
-	print("Negative results array is: \(tempResults.negativeResults)")
+	//print("Positive results array is: \(tempResults.positiveResults)")
+	//print("Negative results array is: \(tempResults.negativeResults)")
 	
 	if (tempResults.positiveResults != [""]) && (!tempResults.positiveResults.isEmpty){
 		let filteredPositives = tempResults.positiveResults.filter{ $0 != ""}
@@ -71,8 +71,8 @@ func processROSForm(_ sections:[(sectionName:String, list:[(title:String, state:
 		finalNegatives = "(-) " + filteredNegatives.joined(separator: "; ").replacingOccurrences(of: "\n", with: "") + ".  "
 	}
 	
-	print(finalPositives)
-	print(finalNegatives)
+	//print(finalPositives)
+	//print(finalNegatives)
 	
 	if finalPositives != "" || finalNegatives != "" {
 		finalResults = "REVIEW OF SYSTEMS - ROS as per HPI and:\n" + finalPositives + finalNegatives + "All other systems reviewed and are negative.\nPMH, PSH, SHX, FHX, Meds reviewed."
@@ -108,7 +108,7 @@ func processROSSectionsFor(_ sectionName:String, with list:[(title:String, state
 		negatives = makeFirstCharacterInStringArrayUppercase(negatives)
 		negativeResults = "\(sectionName): " + negatives.joined(separator: ", ")
 	}
-	print(positiveResults, negativeResults)
+	//print(positiveResults, negativeResults)
 	return (positives: positiveResults, negatives: negativeResults)
 }
 

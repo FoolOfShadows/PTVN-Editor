@@ -21,9 +21,9 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(theData.medicines)
+        //print(theData.medicines)
         medListArray = getArrayFrom(theData.medicines)
-        print(medListArray)
+        //print(medListArray)
         pharmacyCombo.clearComboBox(menuItems: pharmacies)
         self.currentMedsTableView.reloadData()
         if !theData.pharmacy.isEmpty {
@@ -32,7 +32,7 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        print("medListArray Count = \(medListArray.count)")
+        //print("medListArray Count = \(medListArray.count)")
         return medListArray.count
     }
     

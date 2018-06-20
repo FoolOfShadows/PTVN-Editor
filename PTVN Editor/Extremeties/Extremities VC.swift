@@ -97,7 +97,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/
 
     override func controlTextDidChange(_ notification: Notification) {
         if !lCRCombo.stringValue.isEmpty || !rCRCombo.stringValue.isEmpty {
-            print("One of these fields has info")
+            //print("One of these fields has info")
             let theButtons = selfView.getButtonsInView()
             theButtons.filter ({$0.tag == 5})[0].state = .off
         }

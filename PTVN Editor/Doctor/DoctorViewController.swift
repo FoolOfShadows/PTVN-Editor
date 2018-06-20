@@ -126,7 +126,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         
         if !medicationView.string.isEmpty {
             let medArray = medicationView.string.convertListToArray()
-            print(medArray)
+            //print(medArray)
             //resultsArray.append("Medications:\n\(medicationView.string)")
             resultsArray.append("Prescribed this visit:\n\(medArray.map {$0.prependCharacter("~~")}.joined(separator: "\n"))")
         }
@@ -239,7 +239,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     //updates the data source array with any changes made to the table items.
     @IBAction func updateArrayWithEdit(_ sender:Any) {
         let currentRow = assessmentTableView.row(for: sender as! NSView)
-        print(currentRow)
+        //print(currentRow)
         
         if let textField = sender as? NSTextField {
             let textValue = textField.stringValue

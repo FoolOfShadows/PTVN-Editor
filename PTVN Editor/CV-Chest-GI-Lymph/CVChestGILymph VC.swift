@@ -123,7 +123,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
     }
     
     override func controlTextDidChange(_ obj: Notification) {
-        print("text change message sent")
+        //print("text change message sent")
         textSwitchNormOff()
     }
     
@@ -132,7 +132,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
             
             let sendingBox = (sender as NSView).getContainingBox()
             guard let sendingBoxTitle = sendingBox?.title else { return }
-            print(sendingBoxTitle)
+            //print(sendingBoxTitle)
             guard let theButtons = sendingBox?.getButtonsInView() else { return }
             
             switch sendingBoxTitle {
@@ -191,7 +191,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
             
             let sendingBox = (sender as NSView).getContainingBox()
             guard let sendingBoxTitle = sendingBox?.title else { return }
-            print(sendingBoxTitle)
+            //print(sendingBoxTitle)
             guard let theButtons = sendingBox?.getButtonsInView() else { return }
             
             switch sendingBoxTitle {

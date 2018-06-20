@@ -88,7 +88,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             whereFlu = [""] + whereFluList
         }
         if let declinesFluList = getSectionDataStartingFrom("START DECLINES FLU", andEndingWith: "END DECLINES FLU") {
-            print("\n\n\n\(declinesFluList)\n\n\n")
+            //print("\n\n\n\(declinesFluList)\n\n\n")
             declinesFlu = [""] + declinesFluList
         }
         
@@ -257,7 +257,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     //Update the main view of the document with data from the PTVN instance
     func updateView() {
         ptNameView.stringValue = theData.ptName
-        print(theData.ptName)
+        //print(theData.ptName)
         ptDOBView.stringValue = "\(theData.ptDOB)   (\(theData.ptAge))"
         ptVisitView.stringValue = theData.visitDate
         medsView.string = theData.medicines
@@ -265,7 +265,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         ccView.string = theData.cc
         rosView.string = theData.ros
         subjectiveView.string = theData.subjective
-        print(theData.preventive)
+        //print(theData.preventive)
         preventiveView.string = theData.preventive
         pmhView.string = theData.pmh
         nutritionView.string = theData.nutrition
@@ -277,6 +277,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         assessmentView.string = theData.assessment
         planView.string = theData.plan
         pharmacyView.stringValue = theData.pharmacy
+        //document.updateChangeCount(.changeDone)
     }
     
     //Update the instance of the PTVN with data being entered into the main document view
@@ -315,6 +316,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
 //            theData.pharmacy = pharmacyView.stringValue
         default: return
         }
+        //document.updateChangeCount(.changeDone)
     }
     
     func updateVarForField(_ field:NSTextField) {
@@ -339,7 +341,33 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     @IBAction func getPMHUpdates(_ sender: Any) {
         let updates = theData.getPMHChanges()
-        print(updates)
+        let printTextView = NSTextView()
+        printTextView.setFrameSize(NSSize(width: 680, height: 0))
+        printTextView.string = "\(theData.ptName):\n\(updates)"
+        printTextView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
+        
+        
+        let myPrintInfo = NSPrintInfo.shared
+        
+        myPrintInfo.leftMargin = 40
+        myPrintInfo.bottomMargin = 40
+        myPrintInfo.isVerticallyCentered = false
+        
+        let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
+        myPrintOperation.run()
+        //print(updates)
+    }
+    
+    @IBAction func clearPMHPrefixes(_ sender: Any) {
+        let badBits = ["\\^\\^"]
+        theData.preventive = theData.preventive.cleanTheTextOf(badBits)
+        theData.pmh = theData.pmh.cleanTheTextOf(badBits)
+        theData.psh = theData.psh.cleanTheTextOf(badBits)
+        theData.nutrition = theData.nutrition.cleanTheTextOf(badBits)
+        theData.social = theData.social.cleanTheTextOf(badBits)
+        theData.family = theData.family.cleanTheTextOf(badBits)
+        updateView()
+        document.updateChangeCount(.changeDone)
     }
 
     @IBAction func markAsCharged(_ sender: Any) {
@@ -349,7 +377,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @objc func switchForm() {
-        print("Notification received")
+        //print("Notification received")
         let buttons = self.view.getListOfButtons()
         let button = buttons.filter { $0.title == FormButtons.formName }[0]
         button.performClick(self)

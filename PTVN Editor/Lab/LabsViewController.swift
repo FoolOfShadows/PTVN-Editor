@@ -75,7 +75,7 @@ class LabsViewController: NSViewController {
     @IBAction func clearLabs(_ sender: Any) {
         labView.clearControllers()
         populateComboboxSelectionsIn(labBox, Using: LabDxValues())
-        print("\n\n\n\(declinesFlu)\n\n\n")
+        //print("\n\n\n\(declinesFlu)\n\n\n")
         populateComboboxSelectionsIn(fluBox, Using: FluComboboxValues())
     }
     

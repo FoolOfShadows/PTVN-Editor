@@ -78,7 +78,7 @@ class IncontinenceController: NSViewController {
 		resultsArray.append(processQuestion(question: .Leak, answers: leakArray, bothered: leakBotherArray))
 		
 		if !resultsArray.isEmpty && resultsArray != ["","","",""] {
-            print(resultsArray)
+            //print(resultsArray)
             results = "Urinary incontinence screening.  Patient reports:\n" + resultsArray.filter {$0 != ""}.joined(separator: "\n")
 		}
 		

@@ -226,7 +226,7 @@ struct PreOp:StructsWithDescriptionOutput {
     
     func processSectionData(_ data:[(Int, String?)]) -> String {
         var finalResult = String()
-        if data[0].0 == 1 {
+        if data.count > 0 && data[0].0 == 1 {
             finalResult = "Patient is medically clear for surgery with low cardiac risk. Use standard peri-operative precautions including beta-blocker.  Patient is not currently on any blood thinners."
         } else {
             let resultsStrings = getDescriptionOfItem(data, fromStruct: self) ?? [String]()
