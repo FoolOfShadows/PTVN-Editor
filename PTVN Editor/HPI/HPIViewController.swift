@@ -78,9 +78,9 @@ class HPIViewController: NSViewController {
 		let activeButtons = getListOfButtons(view).filter {$0.state != .off}
 		for button in activeButtons {
 			if button.state == .mixed {
-				positiveResults.append(button.title.lowercased())
+				positiveResults.append(button.title.lowercased().replacingOccurrences(of: "\n", with: ""))
 			} else if button.state == .on {
-				negativeResults.append(button.title.lowercased())
+				negativeResults.append(button.title.lowercased().replacingOccurrences(of: "\n", with: ""))
 			}
 		}
 		

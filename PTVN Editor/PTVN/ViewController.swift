@@ -239,6 +239,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
                 }
+            case "showMood":
+                if let toViewController = segue.destinationController as? MoodVC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
             default: return
             }
         }
@@ -359,6 +364,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func clearPMHPrefixes(_ sender: Any) {
+        //Because the cleanTheTextOf methods has the regex option on
+        //the carots have to be escaped in the badBits or they won't
+        //be recognized
         let badBits = ["\\^\\^"]
         theData.preventive = theData.preventive.cleanTheTextOf(badBits)
         theData.pmh = theData.pmh.cleanTheTextOf(badBits)

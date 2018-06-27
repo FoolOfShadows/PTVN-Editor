@@ -29,7 +29,7 @@ class ROSViewController: NSViewController {
     
     var allROSControllers:[NSButton] { return  getListOfButtons(rosView)}
 
-    //var genSection:rosSection {return rosSection(sectionName: "GEN", sectionTitlesAndStates: returnTitleAndStateFrom(1))}
+    
     var genList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GEN", returnTitleAndStateFrom(1))}
     var giList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GI", returnTitleAndStateFrom(2))}
     var psychList:(sectionName: String, list: [(title:String, state:Int)]) {return ("PSYCH", returnTitleAndStateFrom(3))}
