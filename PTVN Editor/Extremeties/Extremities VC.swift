@@ -133,7 +133,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/
 		
 		resultArray = resultArray.filter {!$0.isEmpty}
 		if !resultArray.isEmpty {
-			return "EXTREMITIES: \(resultArray.filter {$0 != ""}.joined(separator: "\n"))"
+			return "EXTREMITIES: \(resultArray.filter {$0 != ""}.joined(separator: ", "))"
 			
 		}
 		return ""

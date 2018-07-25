@@ -106,6 +106,8 @@ struct PTVN {
     
     let prefixes = ["••", "~~", "^^", "(done dmw)"]
     let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW"]
+    let objectiveBadBits = ["\n\nCV:", "\n\nEXTREMITIES:", "\n\nNEURO:", "\n\nSKIN:"]
+    let objectiveGoodBits = ["\nCV:", "\nEXTREMITIES:", "\nNEURO:", "\nSKIN:"]
     
     init(theText: String) {
         self.theText = theText
@@ -138,7 +140,7 @@ struct PTVN {
         case .subjective:
             var subjectives = [String]()
             if !cc.isEmpty {
-                subjectives.append("CHEIF COMPLAINT:\n\(cc)")
+                subjectives.append("CHIEF COMPLAINT:\n\(cc)")
             }
             if !subjective.isEmpty {
                 var subjTemp = subjective.replacingOccurrences(of: "Problems**", with: "PROBLEMS:")
@@ -146,7 +148,7 @@ struct PTVN {
                 subjectives.append("SUBJECTIVE:\n\(subjTemp)")
             }
             if !ros.isEmpty {
-                subjectives.append("REVIEW OF SYSTEMS: \(ros)")
+                subjectives.append("\(ros)")
             }
             if !medicines.isEmpty {
                 subjectives.append("CURRENT MEDICATIONS:\n\(medicines.cleanTheTextOf(prefixes))")
@@ -174,7 +176,11 @@ struct PTVN {
             }
             return subjectives.joined(separator: "\n\n")
         case .objective:
-            return objective.cleanTheTextOf(prefixes)
+            var workingObjective = objective.replacingOccurrences(of: "\n\n\n", with: "\n\n")
+            if let cleanObjective = workingObjective.relaceOccurencesOfItems(objectiveBadBits, with: objectiveGoodBits) {
+                workingObjective = cleanObjective
+            }
+            return workingObjective.cleanTheTextOf(prefixes)
         case .assessment:
             var results = assessment.cleanTheTextOf(prefixes)
             results = results.replaceRegexPattern("(?s)Lvl \\d\\s*", with: "")
@@ -182,7 +188,11 @@ struct PTVN {
             results = results.replaceRegexPattern("Lvl NPW\\s*", with: "")
             return results.removeWhiteSpace() /*assessment.cleanTheTextOf(prefixes)*/
         case .plan:
-            return plan.cleanTheTextOf(prefixes)
+            var results = plan
+            if !pharmacy.isEmpty {
+                results = results.replacingOccurrences(of: "REFILLS REQUESTED:\n", with: "REFILLS REQUESTED:\nPharmacy: \(pharmacy)\n")
+            }
+            return results.cleanTheTextOf(prefixes)
         }
     }
     

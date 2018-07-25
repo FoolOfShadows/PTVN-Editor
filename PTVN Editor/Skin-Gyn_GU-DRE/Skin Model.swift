@@ -22,6 +22,7 @@ struct Skin {
 			case 4: resultArray.append("no lesions")
 			case 5: resultArray.append("normal turgor")
 			case 6: resultArray.append("decreased skin turgor")
+            case 7: resultArray.append("rosacea with rhynophyma")
 			case 10: resultArray.append("Acne: \(item.1!)")
 			case 11: resultArray.append("Rash: \(item.1!)")
 			case 12: resultArray.append("Lump: \(item.1!)")

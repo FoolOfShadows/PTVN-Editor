@@ -36,7 +36,7 @@ struct ENT {
 		}
 		earResults = earResults.filter {!$0.isEmpty}
 		if !earResults.isEmpty {
-			resultArray.append("EARS: \(earResults.joined(separator: "\n"))")
+			resultArray.append("EARS: \(earResults.joined(separator: ", "))")
 		}
 		
 		noseResults.append(processENTSubSectionsFrom(data.filter {20...24 ~= $0.0}.map {$0.0}))

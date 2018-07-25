@@ -47,7 +47,7 @@ struct GI:PopulateComboBoxProtocol {
 		}
 		
 		if !resultArray.isEmpty {
-			results = "GI: \(resultArray.joined(separator: ", "))"
+            results = "GI: ABDOMEN: \(resultArray.joined(separator: ", "))"
 		}
 		
 		return results

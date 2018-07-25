@@ -92,11 +92,11 @@ extension String {
     }
     
     //Simple regex replace
-    func replaceRegexPattern(_ pattern:String, with goodBit:String) {
-        let regex = try? NSRegularExpression(pattern: pattern)
-        regex?.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0,length: self.count), withTemplate: goodBit)
-        //regex?.replaceMatches(in: self, options: .reportProgress, range: NSRange(location: 0,length: self.length), withTemplate: goodBit)
-    }
+//    func replaceRegexPattern(_ pattern:String, with goodBit:String) {
+//        let regex = try? NSRegularExpression(pattern: pattern)
+//        regex?.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0,length: self.count), withTemplate: goodBit)
+//        //regex?.replaceMatches(in: self, options: .reportProgress, range: NSRange(location: 0,length: self.length), withTemplate: goodBit)
+//    }
     
     //Clean extraneous text from the sections
     func cleanTheTextOf(_ badBits:[String]) -> String {
@@ -109,6 +109,20 @@ extension String {
         //let cleanedArray = cleanedText.components(separatedBy: "\n").filter {!$0.ranges(of: "[a-zA-Z0-9]", options: .regularExpression).isEmpty}
         cleanedText = cleanedArray.joined(separator: "\n").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         return cleanedText
+    }
+    
+    func relaceOccurencesOfItems(_ badBits:[String], with replacements:[String]) -> String? {
+        if badBits.count != replacements.count {
+            print("Number of items in the replaceOccurencesOfItems arrays do not match")
+            return nil
+        }
+        
+        var text = self
+        for (index, bit) in badBits.enumerated() {
+            text = text.replacingOccurrences(of: bit, with: replacements[index])
+        }
+        
+        return text
     }
 	
 	func removeRegexCharactersFromString() -> String {

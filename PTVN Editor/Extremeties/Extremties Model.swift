@@ -132,7 +132,7 @@ struct CapillaryRefill {
 		}
 		
 		if !resultArray.isEmpty {
-			results = "Capillary refill \(resultArray.joined(separator: ", "))."
+			results = "Capillary refill \(resultArray.joined(separator: ", "))"
 		}
 		return results
 	}
@@ -188,8 +188,8 @@ struct Callus {
 			let theItem = data[0]
 			if let title = theItem.1 {
 				switch title {
-				case "Right", "Left": results = "Callus: \(title.lowercased()) foot."
-				case "Bilateral": results = "Calluses: both feet."
+				case "Right", "Left": results = "Callus: \(title.lowercased()) foot"
+				case "Bilateral": results = "Calluses: both feet"
 				default: break
 				}
 			}
