@@ -255,8 +255,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Because the document's not catching changes returned from the forms
         //it's change count has to be manually updated here to trigger
         //save on closing notice
-        document.updateChangeCount(.changeDone)
         updateView()
+        document.updateChangeCount(.changeDone)
     }
     
     //Update the main view of the document with data from the PTVN instance

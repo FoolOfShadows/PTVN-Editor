@@ -199,7 +199,7 @@ extension String {
     
     func convertListToArray() -> [String] {
         let baseArray = self.components(separatedBy: "\n")
-        let newArray = baseArray.map { $0.cleanTheTextOf(["-  "]) }
+        let newArray = baseArray.map { $0.cleanTheTextOf(["-  ", "- "]) }
 //        for var item in baseArray {
 //            item = item.cleanTheTextOf(["-  ", "- "])
 //        }

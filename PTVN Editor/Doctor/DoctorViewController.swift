@@ -156,23 +156,6 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         return result
     }
     
-    //Gonna get rid of this and the selection view.  Populate the table in viewDidLoad()
-//    @IBAction func getMedsFromFile(_ sender: NSButton) {
-//        let panel = NSOpenPanel()
-//        panel.canChooseDirectories = true
-//        panel.canChooseFiles = true
-//        panel.allowedFileTypes = ["txt"]
-//
-//        panel.beginSheetModal(for: self.view.window!, completionHandler: {(returnCode) -> Void in
-//            if returnCode == NSApplication.ModalResponse.OK {
-//                let message = panel.url?.path
-//                self.assessmentString = self.processAssessmentFromNoteAt(message)
-//                self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showCurrentAssessment"), sender: nil)
-//            }
-//        })
-//
-//
-//    }
     
     func processAssessmentFromNoteAt(_ url: String?) -> String {
         var fullText = String()
@@ -187,32 +170,12 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         return medications
     }
     
-//    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-//        if segue.identifier!.rawValue == "showCurrentAssessment" {
-//            if let toViewController = segue.destinationController as? CurrentAssessmentController {
-//                //For the delegate to work, it needs to be assigned here
-//                //rather than in view did load.  Because it's a modal window?
-//                toViewController.assessmentReloadDelegate = self
-//                toViewController.assessmentString = assessmentString
-//            }
-//        }
-//    }
-    
-    //When the modal window dismisses, it needs to tell the main view to update
-    //the assessment table with the data it passes back using delegation
-//    func currentAssessmentWillBeDismissed(sender: CurrentAssessmentController) {
-//        self.assessmentTableView.reloadData()
-//    }
     
 	@IBAction func processAssessmentTable(_ sender: Any) {
 		
 		let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelStack.getListOfButtons().filter {$0.state == .on}.map {$0.title})
 		
         theData.assessment.addToExistingText(results)
-        
-//        let myPasteboard = NSPasteboard.general
-//        myPasteboard.clearContents()
-//        myPasteboard.setString(results, forType: NSPasteboard.PasteboardType.string)
 	}
     
     @IBAction func getDataFromSelectedRow(_ sender:Any) {

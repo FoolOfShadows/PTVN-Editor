@@ -16,7 +16,7 @@ let retinopathyExamList = ["", "No", "Yes", "Unknown"]
 let glucometerIssuesList = ["", "Poor vision", "Blindness", "Dexterity"]
 let umalbList = ["", "Normal", "Abnormal"]
 let dmTypeList = ["", "I", "II", "II, Insulin requiring"]
-let dmModifierList = ["", "Controlled on diet", "Controlled on meds", "Controlled on insulin", "Uncontrolled"]
+let dmModifierList = ["", "Controlled on diet", "Treated with meds", "Treated with insulin", "Uncontrolled"]
 let prognosisList = ["", "Stable", "Fair", "Poor", "Declining", "Improving"]
 let retinopathyHxList = ["", "Vision Loss", "Poor Vision", "Laser Treatment", "Injection Treatment"]
 

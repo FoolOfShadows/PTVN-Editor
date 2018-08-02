@@ -100,64 +100,66 @@ class RedGreenCheckbox: NSButtonCell {
     }
 }
 
-@IBDesignable class customButton: NSButton {
-    @IBInspectable var bgColor:NSColor = NSColor.purple {
-        didSet {
-            self.layer?.backgroundColor = bgColor.cgColor
-            self.title = title
-        }
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        self.layer?.backgroundColor = bgColor.cgColor
-        self.title = title
-    }
-    
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        self.layer?.backgroundColor = bgColor.cgColor
-        bgColor.setFill()
-        dirtyRect.fill()
-        //NSRectFill(dirtyRect)
-    }
-}
+//@IBDesignable class customButton: NSButton {
+//    @IBInspectable var bgColor:NSColor = NSColor.purple {
+//        didSet {
+//            self.layer?.backgroundColor = bgColor.cgColor
+//            self.title = title
+//        }
+//    }
+//    
+//    override func prepareForInterfaceBuilder() {
+//        self.layer?.backgroundColor = bgColor.cgColor
+//        self.title = title
+//    }
+//    
+//    override func draw(_ dirtyRect: NSRect) {
+//        super.draw(dirtyRect)
+//        self.layer?.backgroundColor = bgColor.cgColor
+//        bgColor.setFill()
+//        dirtyRect.fill()
+//        //NSRectFill(dirtyRect)
+//    }
+//}
 
 
-@IBDesignable class ColorBlockView: NSButton {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        sharedInit()
-    }
-    
-    @IBInspectable var cornerRounding: CGFloat = 10 {
-        didSet {
-            layer?.cornerRadius = cornerRounding
-        }
-    }
-    
-    @IBInspectable var blockColor: NSColor = NSColor.red {
-        didSet {
-            layer?.backgroundColor = blockColor.cgColor
-        }
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        sharedInit()
+//@IBDesignable class ColorBlockView: NSButton {
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//        sharedInit()
+//    }
+//
+//    @IBInspectable var cornerRounding: CGFloat = 10 {
+//        didSet {
+//            layer?.cornerRadius = cornerRounding
+//        }
+//    }
+//
+//    @IBInspectable var blockColor: NSColor = NSColor.red {
+//        didSet {
+//            layer?.backgroundColor = blockColor.cgColor
+//        }
+//    }
+//
+//    override func prepareForInterfaceBuilder() {
+//        sharedInit()
 //        layer?.backgroundColor = blockColor.cgColor
 //        layer?.cornerRadius = cornerRounding
-    }
-    
-    override func awakeFromNib() {
-        sharedInit()
-    }
-    
-    func sharedInit() {
-        self.isBordered = false
-        self.wantsLayer = true
-        layer?.backgroundColor = blockColor.cgColor
-        layer?.cornerRadius = cornerRounding
-    }
-}
+//    }
+//
+//    override func awakeFromNib() {
+//        sharedInit()
+//    }
+//
+//    func sharedInit() {
+//        self.isBordered = false
+//        self.wantsLayer = true
+//        layer?.backgroundColor = blockColor.cgColor
+//        layer?.cornerRadius = cornerRounding
+//    }
+//}
+
+
 //@IBDesignable
 //class RedCheckbox: NSButtonCell {
 //    @IBInspectable
@@ -276,7 +278,7 @@ internal extension NSColor {
     }
 }
 
-open class FlatButton: NSButton, CALayerDelegate {
+@objcMembers @IBDesignable open class FlatButton: NSButton, CALayerDelegate {
     
     internal var containerLayer = CALayer()
     internal var iconLayer = CAShapeLayer()
