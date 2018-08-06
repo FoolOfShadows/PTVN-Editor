@@ -63,6 +63,10 @@ class ROSViewController: NSViewController {
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         
+        //This code is supposed to save the document, I was trying to use it as a backup
+        //incase of a crash, but it doesn't seem to do what I need
+        //NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
+        
         if sender.title == "Process & Continue" {
         FormButtons.formName = "HPI"
         self.dismiss(self)
