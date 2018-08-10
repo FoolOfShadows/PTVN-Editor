@@ -85,12 +85,12 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     @IBAction func returnResults(_ sender:Any) {
         let firstVC = presenting as! ViewController
-        var results = (medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n"))
+        var results = medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n")
         if !results.isEmpty {
-            results = "\n\n DISCONTINUED THIS VIST:\n\(results)"
+            results = "\n\n DISCONTINUED THIS VIST:\n\(results.addCharacterToBeginningOfEachLine("- "))"
         }
         if !chosenMeds.isEmpty {
-            results = "\(chosenMeds.joined(separator: "\n"))\n\(results)"
+            results = "\(chosenMeds.joined(separator: "\n").addCharacterToBeginningOfEachLine("- "))\n\(results)"
         }
         theData.medicines = results
         if !pharmacyCombo.stringValue.isEmpty && pharmacyCombo.stringValue != theData.pharmacy {
