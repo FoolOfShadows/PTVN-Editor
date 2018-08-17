@@ -53,6 +53,10 @@ class ROSViewController: NSViewController {
     }
     
     @IBAction func processROS(_ sender: NSButton) {
+        //This code is supposed to save the document, I was trying to use it as a backup
+        //incase of a crash, but it doesn't seem to do what I need
+        NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
+        
         let results = processROSForm([genList, psychList, eyeList, heentList, cardioList, respList, giList, guList, endoList, neuroList, mskList, hemoList, dermList])
         let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
         
@@ -63,9 +67,6 @@ class ROSViewController: NSViewController {
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         
-        //This code is supposed to save the document, I was trying to use it as a backup
-        //incase of a crash, but it doesn't seem to do what I need
-        //NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
         
         if sender.title == "Process & Continue" {
         FormButtons.formName = "HPI"
