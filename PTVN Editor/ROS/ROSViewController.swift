@@ -58,10 +58,10 @@ class ROSViewController: NSViewController {
         NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
         
         let results = processROSForm([genList, psychList, eyeList, heentList, cardioList, respList, giList, guList, endoList, neuroList, mskList, hemoList, dermList])
-        let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
+//        let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
         
         theData.ros.addToExistingText(results)
-        theData.objective.addToExistingText(currentVitals.getVitalsOutput())
+        //theData.objective.addToExistingText(currentVitals.getVitalsOutput())
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
@@ -69,7 +69,7 @@ class ROSViewController: NSViewController {
         
         
         if sender.title == "Process & Continue" {
-        FormButtons.formName = "HPI"
+        FormButtons.formName = "Pain"
         self.dismiss(self)
         nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
         } else {
@@ -89,15 +89,15 @@ class ROSViewController: NSViewController {
 //        processAndContinue()
 //    }
     
-    @IBAction func selectOnlyOne(_ sender: NSButton) {
-        if let buttons = sender.superview?.subviews as? [NSButton] {
-            for button in buttons {
-                if button.title != sender.title {
-                    button.state = .off
-                }
-            }
-        }
-    }
+//    @IBAction func selectOnlyOne(_ sender: NSButton) {
+//        if let buttons = sender.superview?.subviews as? [NSButton] {
+//            for button in buttons {
+//                if button.title != sender.title {
+//                    button.state = .off
+//                }
+//            }
+//        }
+//    }
     
     func getListOfButtons(_ view:NSView) -> [NSButton] {
         var results = [NSButton]()

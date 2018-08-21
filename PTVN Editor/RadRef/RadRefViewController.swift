@@ -8,13 +8,12 @@
 
 import Cocoa
 
-class RadRefViewController: NSViewController {
+class RadRefViewController: NSViewController, NSTextFieldDelegate {
 	@IBOutlet var radiologyView: NSView!
-	//Radiology Interface
-	@IBOutlet weak var radTypePopup: NSPopUpButton!
-	@IBOutlet weak var radAreaPopup: NSPopUpButton!
-	@IBOutlet weak var radSidePopup: NSPopUpButton!
-	@IBOutlet weak var radReasonView: NSTextField!
+    @IBOutlet weak var typeView: NSView!
+    @IBOutlet weak var areaView: NSView!
+    @IBOutlet weak var sideView: NSView!
+	@IBOutlet weak var reasonView: NSTextField!
 	@IBOutlet weak var radScroll: NSScrollView!
     
     var radOrders: NSTextView {
@@ -22,18 +21,9 @@ class RadRefViewController: NSViewController {
             return radScroll.contentView.documentView as! NSTextView
         }
     }
-	
-	//Referral Interface
-	@IBOutlet weak var refAreaPopup: NSPopUpButton!
-	@IBOutlet weak var refTypePopup: NSPopUpButton!
-	@IBOutlet weak var refReasonView: NSTextField!
-	@IBOutlet weak var refScrollView: NSScrollView!
     
-    var refOrdersView: NSTextView {
-        get {
-            return refScrollView.contentView.documentView as! NSTextView
-        }
-    }
+    let caseLists = enumLists()
+
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
@@ -42,205 +32,135 @@ class RadRefViewController: NSViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-		radTypePopup.clearPopUpButton(menuItems: radTypeChoices)
-		radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-		radTypeSelected(radTypePopup)
-		radAreaSelected(radAreaPopup)
+        
+        self.reasonView.delegate = self
 		
-		refAreaPopup.clearPopUpButton(menuItems: refAreaChoices)
-		refTypePopup.clearPopUpButton(menuItems: radEmptySide)
-		refAreaSelected(refAreaPopup)
     }
 	
-//	override func viewWillAppear() {
-//		super.viewWillAppear()
-//		print(self)
-//		self.view.window?.makeFirstResponder(radTypePopup)
-//		radTypePopup.becomeFirstResponder()
-//	}
+    override func controlTextDidEndEditing(_ obj: Notification) {
+        addOrderToView(self)
+    }
     
-	@IBAction func radTypeSelected(_ sender: NSPopUpButton) {
-		//print("In the radTypeSelected func")
-		switch sender.title {
-		case "XRAY":
-			radAreaPopup.clearPopUpButton(menuItems: radXRAYAreas)
-		case "MRI":
-			radAreaPopup.clearPopUpButton(menuItems: radMRIAreas)
-		case "MRA":
-			radAreaPopup.clearPopUpButton(menuItems: radMRAAreas)
-		case "CT":
-			radAreaPopup.clearPopUpButton(menuItems: radCTAreas)
-		case "Ultrasound":
-			radAreaPopup.clearPopUpButton(menuItems: radUSNDAreas)
-		case "MAM":
-			radAreaPopup.clearPopUpButton(menuItems: radMAMAreas)
-		case "BMD":
-			radAreaPopup.clearPopUpButton(menuItems: radBMDAreas)
-		case "NUC":
-			radAreaPopup.clearPopUpButton(menuItems: radNUCAreas)
-		case "Neuro":
-			radAreaPopup.clearPopUpButton(menuItems: radNeuroAreas)
-		case "Resp":
-			radAreaPopup.clearPopUpButton(menuItems: radRespAreas)
-		case "GI":
-			radAreaPopup.clearPopUpButton(menuItems: radGIAreas)
-		case "Cardio":
-			radAreaPopup.clearPopUpButton(menuItems: radCardioAreas)
-		default:
-			radAreaPopup.clearPopUpButton(menuItems: ["Selected rad type not recognized"])
-		}
-		radAreaSelected(radAreaPopup)
-	}
-	
-	@IBAction func radAreaSelected(_ sender: NSPopUpButton) {
-		switch radTypePopup.title {
-		case "MRI":
-			switch sender.title {
-			case "brain", "chest", "orbits", "neck", "pelvis":
-				radSidePopup.clearPopUpButton(menuItems: radContrast)
-			case "spine":
-				radSidePopup.clearPopUpButton(menuItems: radSpineSide)
-			case "abdomen":
-				radSidePopup.clearPopUpButton(menuItems: radMRIAbSides)
-			case "extremity":
-				radSidePopup.clearPopUpButton(menuItems: radExtremetiesContrast)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "Ultrasound":
-			switch sender.title {
-			case "venous doppler", "arterial doppler":
-				radSidePopup.clearPopUpButton(menuItems: radUSNDSidesDoppler)
-			case "breast":
-				radSidePopup.clearPopUpButton(menuItems: radRLBSides)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "XRAY":
-			switch sender.title {
-			case "rib series", "shoulder series", "knee series with standing film", "hip", "femur", "tib fib", "ankle", "foot", "elbow", "wrist", "hand":
-				radSidePopup.clearPopUpButton(menuItems: radRLBSides)
-			case "spine":
-				radSidePopup.clearPopUpButton(menuItems: radXraySpineSide)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "MAM":
-			switch sender.title {
-			case "diagnostic":
-				radSidePopup.clearPopUpButton(menuItems: radRLBSides)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "CT":
-			switch sender.title {
-			case "chest", "orbits", "neck", "head":
-				radSidePopup.clearPopUpButton(menuItems: radContrast)
-			case "abdomen":
-				radSidePopup.clearPopUpButton(menuItems: radCTAbSides)
-			case "myelogram":
-				radSidePopup.clearPopUpButton(menuItems: radSpineSide)
-			case "extremity":
-				radSidePopup.clearPopUpButton(menuItems: radExtremeties)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "MRA":
-			switch sender.title {
-			case "brain":
-				radSidePopup.clearPopUpButton(menuItems: radContrast)
-			case "extremities":
-				radSidePopup.clearPopUpButton(menuItems: radMRAExSides)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "Resp":
-			switch sender.title {
-			case "sleep study":
-				radSidePopup.clearPopUpButton(menuItems: radRespSleepSides)
-			case "PFT":
-				radSidePopup.clearPopUpButton(menuItems: radRespPFTSides)
-			case "spirometry":
-				radSidePopup.clearPopUpButton(menuItems: radRespSpiroSides)
-			case "ABG":
-				radSidePopup.clearPopUpButton(menuItems: radRespABGSides)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		case "Cardio":
-			switch sender.title {
-			case "ECHO":
-				radSidePopup.clearPopUpButton(menuItems: radCardioECHOSides)
-			case "stress test":
-				radSidePopup.clearPopUpButton(menuItems: radCardioSTSTSides)
-			case "holter monitor":
-				radSidePopup.clearPopUpButton(menuItems: radCardioHLTRSides)
-			default:
-				radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-			}
-		default:
-			radSidePopup.clearPopUpButton(menuItems: radEmptySide)
-		}
-	}
+    @IBAction func setAreaSelections(_ sender:NSButton) {
+        if sender.state == .on {
+            clearAreaSideViews()
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+            switch sender.title {
+            case "XRAY": areaView.addButtonsToViewWithNames(caseLists.xrayCases, andSelector: #selector(setSideSelections))
+            case "MRI": areaView.addButtonsToViewWithNames(caseLists.mriCases, andSelector: #selector(setSideSelections))
+            case "MAM": areaView.addButtonsToViewWithNames(caseLists.mamCases, andSelector: #selector(setSideSelections))
+            case "BMD": areaView.addButtonsToViewWithNames(caseLists.bmdCases, andSelector: #selector(setSideSelections))
+            case "USND": areaView.addButtonsToViewWithNames(caseLists.usndCases, andSelector: #selector(setSideSelections))
+            case "CT": areaView.addButtonsToViewWithNames(caseLists.ctCases, andSelector: #selector(setSideSelections))
+            case "MRA": areaView.addButtonsToViewWithNames(caseLists.mraCases, andSelector: #selector(setSideSelections))
+            case "Cardio": areaView.addButtonsToViewWithNames(caseLists.cardioCases, andSelector: #selector(setSideSelections))
+            case "GI": areaView.addButtonsToViewWithNames(caseLists.giCases, andSelector: #selector(setSideSelections))
+            case "Resp": areaView.addButtonsToViewWithNames(caseLists.respCases, andSelector: #selector(setSideSelections))
+            case "Neuro": areaView.addButtonsToViewWithNames(caseLists.neuroCases, andSelector: #selector(setSideSelections))
+            case "NUC": areaView.addButtonsToViewWithNames(caseLists.nucCases, andSelector: #selector(setSideSelections))
+            case "Med": areaView.addButtonsToViewWithNames(caseLists.refMedSide, andSelector: #selector(setSideSelections))
+            case "Surg": areaView.addButtonsToViewWithNames(caseLists.refSurgSide, andSelector: #selector(setSideSelections))
+            case "Ther": areaView.addButtonsToViewWithNames(caseLists.refTherSide, andSelector: #selector(setSideSelections))
+            default: return
+            }
+        } else if sender.state == .off {
+            clearAreaSideViews()
+        }
+        
+    }
+    
+    @objc func setSideSelections(_ sender:NSButton) {
+        if sender.state == .on {
+            sideView.subviews.forEach({ $0.removeFromSuperview() })
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+            switch sender.title {
+            //Basic sides
+            case radXRAYAreas.ribs.rawValue, radXRAYAreas.kneeStanding.rawValue, radXRAYAreas.hip.rawValue, radXRAYAreas.femur.rawValue, radXRAYAreas.tibFib.rawValue, radXRAYAreas.ankle.rawValue, radXRAYAreas.foot.rawValue, radXRAYAreas.shoulder.rawValue, radXRAYAreas.elbow.rawValue, radXRAYAreas.wrist.rawValue, radXRAYAreas.hand.rawValue, radMAMAreas.diagnostic.rawValue, radUSNDAreas.breast.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radRLBSide, andSelector: nil)
+            case radXRAYAreas.spine.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.spineSide + caseLists.xraySpineSide, andSelector: nil)
+            case radUSNDAreas.vDoppler.rawValue, radUSNDAreas.aDoppler.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radUSNDDopplerSide, andSelector: nil)
+            //Contrast
+            case radCTAreas.head.rawValue, radCTAreas.chest.rawValue, radCTAreas.orbits.rawValue, radMRIAreas.brain.rawValue, radMRIAreas.pelvis.rawValue, radMRIAreas.chest.rawValue, radMRIAreas.orbits.rawValue, radMRAAreas.brain.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.contrast, andSelector: nil)
+            case radCTAreas.abdomen.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radCTAbSide, andSelector: nil)
+            case radCTAreas.extremity.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radExtremitySide, andSelector: nil)
+            case radCTAreas.myelogram.rawValue, radMRIAreas.spine.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.spineSide, andSelector: nil)
+            case radMRIAreas.extremity.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radExtremityContrastSide, andSelector: nil)
+            case radMRIAreas.abdomen.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radMRIAbSide, andSelector: nil)
+            case radMRAAreas.extremities.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radMRAExtremitySide, andSelector: nil)
+            case radCardioAreas.ECHO.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radECHOSide, andSelector: nil)
+            case radCardioAreas.stressTest.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radSTSTSide, andSelector: nil)
+            case radCardioAreas.holter.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radHLTRSide, andSelector: nil)
+            case radRespAreas.sleep.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radSleepSide, andSelector: nil)
+            case radRespAreas.PFT.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radPFTSide, andSelector: nil)
+            case radRespAreas.spirometry.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radSpiroSide, andSelector: nil)
+            case radRespAreas.ABG.rawValue:
+                sideView.addButtonsToViewWithNames(caseLists.radABGside, andSelector: nil)
+                
+            default:
+                return
+            }
+        } else if sender.state == .off {
+            sideView.subviews.forEach({ $0.removeFromSuperview() })
+        }
+    }
 	
 	
-	@IBAction func addRadOrder(_ sender: Any) {
-		guard let type = radTypePopup.titleOfSelectedItem else { return }
-		guard let area = radAreaPopup.titleOfSelectedItem else { return }
-		var existingRads = radOrders.string
-		if !existingRads.isEmpty {
-			existingRads = existingRads + "\n"
-		}
-		var result = "\(existingRads)\(type) - \(area)"
-        if let side = radSidePopup.titleOfSelectedItem, side != "" {
-			result += " \(side)"
-		}
-		if !radReasonView.stringValue.isEmpty {
-			result += " for \(radReasonView.stringValue)"
-		}
-		
-		radOrders.string = result
-		radReasonView.stringValue = ""
-		
+	@IBAction func addOrderToView(_ sender: Any) {
+        var returnValues = [String]()
+        returnValues.append(typeView.getActiveButtonInView())
+        returnValues.append(areaView.getActiveButtonInView())
+        returnValues.append(sideView.getActiveButtonInView())
+        if !reasonView.stringValue.isEmpty {
+            returnValues.append(reasonView.stringValue)
+        }
+        radOrders.addToViewsExistingText(returnValues.filter {$0 != "" }.joined(separator: " - "))
 	}
 	
-	@IBAction func refAreaSelected(_ sender: NSPopUpButton) {
-		switch refAreaPopup.title {
-		case "Medical":
-			refTypePopup.clearPopUpButton(menuItems: refMedChoices)
-		case "Surgical":
-			refTypePopup.clearPopUpButton(menuItems: refSurgChoices)
-		case "Therapy/Ancillary":
-			refTypePopup.clearPopUpButton(menuItems: refTherChoices)
-		default:
-			refTypePopup.clearPopUpButton(menuItems: radEmptySide)
-		}
-	}
+
 	
-	@IBAction func addRefOrder(_ sender: Any) {
-		guard let type = refTypePopup.titleOfSelectedItem else { return }
-		var existingRefs = refOrdersView.string
-		if !existingRefs.isEmpty {
-			existingRefs = existingRefs + "\n"
-		}
-		var result = "\(existingRefs)\(type)"
-		if !refReasonView.stringValue.isEmpty {
-			result += " for \(refReasonView.stringValue)"
-		}
-		refOrdersView.string = result
-		refReasonView.stringValue = ""
-	}
+
 	
 	
 	@IBAction func processRadRef(_ sender: Any) {
 		var finalResults = [String]()
-		if !radOrders.string.isEmpty {
-			finalResults.append("Tests ordered:\n\(radOrders.string.addCharacterToBeginningOfEachLine("••"))")
+        let resultsArray = radOrders.string.components(separatedBy: "\n")
+        print(resultsArray)
+        let radResults = resultsArray.filter { !$0.contains("Med") && !$0.contains("Surg") && !$0.contains("Ther") }
+        let refResults = resultsArray.filter { $0.contains("Med") || $0.contains("Surg") || $0.contains("Ther") }
+        print(refResults)
+		if !radResults.isEmpty {
+			finalResults.append("Tests ordered:\n\(radResults.joined(separator: "\n").addCharacterToBeginningOfEachLine("••"))")
 		}
-		if !refOrdersView.string.isEmpty {
-			finalResults.append("Referrals made to:\n\(refOrdersView.string.addCharacterToBeginningOfEachLine("••"))")
-		}
+        if !refResults.isEmpty {
+            finalResults.append("Referrals made to:\n\(refResults.joined(separator: "\n").cleanTheTextOf(["Med - ", "Surg - ", "Ther - "]).addCharacterToBeginningOfEachLine("••"))")
+        }
 		
         //print(finalResults)
         theData.plan.addToExistingText(finalResults.joined(separator: "\n"))
@@ -254,11 +174,16 @@ class RadRefViewController: NSViewController {
 		
 	}
 	
-	
+    func clearAreaSideViews() {
+        areaView.subviews.forEach({ $0.removeFromSuperview() })
+        sideView.subviews.forEach({ $0.removeFromSuperview() })
+        reasonView.stringValue = ""
+    }
+    
 	@IBAction func clearRadRef(_ sender: Any) {
+        clearAreaSideViews()
+        typeView.turnButtonsInViewOff()
 		radOrders.string = ""
-		refOrdersView.string = ""
-		radReasonView.stringValue = ""
-		refReasonView.stringValue = ""
+		reasonView.stringValue = ""
 	}
 }

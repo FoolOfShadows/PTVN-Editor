@@ -115,6 +115,16 @@ extension NSView {
 			}
 		}
 	}
+    
+    func turnButtonsInViewOff() {
+        for item in self.subviews {
+            if let isButton = item as? NSButton {
+                isButton.state = .off
+            } else {
+                item.turnButtonsInViewOff()
+            }
+        }
+    }
 	
 	func getButtonsInView() -> [NSButton] {
 		var results = [NSButton]()
@@ -127,6 +137,16 @@ extension NSView {
 		}
 		return results
 	}
+    
+    func getActiveButtonInView() -> String {
+        let allButtons = self.getButtonsInView()
+        let activeButtons = allButtons.filter { $0.state == .on }
+        if !activeButtons.isEmpty {
+            let titles = activeButtons.map {$0.title}
+            return titles.joined(separator: ", ")
+        }
+        return ""
+    }
     
     func getNormalButtonsInView() -> [NSButton] {
         var results = [NSButton]()
@@ -174,6 +194,48 @@ extension NSView {
             }
         }
         return results
+    }
+    
+    func addButtonsToViewWithNames(_ names:[String], andSelector theSelector:Selector?) {
+        
+        //        func labelSize(for text: String, fontSize: CGFloat, maxWidth: CGFloat, startingY: CGFloat) -> CGRect{
+        //
+        //            let font = NSFont.systemFont(ofSize: fontSize)//(name: "HelveticaNeue", size: fontSize)!
+        //            let label = NSTextField(frame: CGRect(x: 0, y: startingY, width: maxWidth, height: 18/*CGFloat.leastNonzeroMagnitude*/))
+        //            //label.numberOfLines = numberOfLines
+        //            label.font = font
+        //            label.stringValue = text
+        //
+        //            label.sizeToFit()
+        //            print(label.frame)
+        //            return label.frame
+        //        }
+        
+        var buttonY: Int = Int(self.frame.size.height - 17)
+        print(buttonY)
+        for name in names {
+            //let newButton = NSButton(frame: labelSize(for: name, fontSize: 16, maxWidth: 500, startingY: CGFloat(buttonY)))
+            var nameSize: Int {
+                if name.count > 5 {
+                    return name.count * 15
+                } else {
+                    return name.count * 100
+                }
+            }
+            let newButton = NSButton(frame: CGRect(x: 0, y: buttonY, width: nameSize, height: 18))
+            //let newButton = NSButton(checkboxWithTitle: name, target: self, action: nil)
+            newButton.setButtonType(.switch)
+            let theUserFont:NSFont = NSFont.systemFont(ofSize: 16)
+            let fontAttributes = NSDictionary(object: theUserFont, forKey: NSAttributedString.Key.font as NSCopying)
+            let myAttributedTitle = NSAttributedString(string: name, attributes: fontAttributes as? [NSAttributedString.Key : Any])
+            newButton.attributedTitle = myAttributedTitle
+            if let theSelector = theSelector {
+                newButton.action = theSelector
+            }
+            
+            self.addSubview(newButton)
+            buttonY = buttonY - 20
+        }
     }
     
 }
@@ -441,3 +503,18 @@ func getSectionDataStartingFrom(_ start:String, andEndingWith stop:String) -> [S
     return returnData
 }
 
+extension NSAttributedString {
+    func height(withConstrainedWidth width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+        
+        return ceil(boundingBox.width)
+    }
+}

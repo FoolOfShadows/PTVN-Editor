@@ -18,6 +18,17 @@ class HPIViewController: NSViewController {
 	@IBOutlet weak var htnBox: NSBox!
 	@IBOutlet weak var cholesterolBox: NSBox!
 	@IBOutlet weak var noProblemsCheckbox: NSButton!
+    
+    @IBOutlet weak var weightView: NSTextField!
+    @IBOutlet weak var heightView: NSTextField!
+    @IBOutlet weak var tempView: NSTextField!
+    @IBOutlet weak var bpSysView: NSTextField!
+    @IBOutlet weak var bpDiaView: NSTextField!
+    @IBOutlet weak var pulseView: NSTextField!
+    @IBOutlet weak var respView: NSTextField!
+    @IBOutlet weak var pulseOxView: NSTextField!
+    @IBOutlet weak var bpAreaBox: NSView!
+    @IBOutlet weak var pulseOxBox: NSView!
 	
 	//@IBOutlet weak var onsetView: NSTextField!
 	@IBOutlet weak var phlegmColorCombo: NSComboBox!
@@ -120,6 +131,8 @@ class HPIViewController: NSViewController {
 //		if noProblemsCheckbox.state == .on {
 //			resultsArray.append("Patient reports no new problems or concerns today.")
 //		}
+        
+        let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
 		
 		let hpiResults = resultsArray.filter {$0 != ""}
 		if !hpiResults.isEmpty {
@@ -129,13 +142,14 @@ class HPIViewController: NSViewController {
 		}
         
         theData.subjective.addToExistingText(results)
+        theData.objective.addToExistingText(currentVitals.getVitalsOutput())
         
         let firstVC = presenting as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         
         if sender.title == "Process & Continue" {
-            FormButtons.formName = "Pain"
+            FormButtons.formName = "ROS"
             self.dismiss(self)
             nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
         } else {
@@ -179,4 +193,24 @@ class HPIViewController: NSViewController {
 //        nc.post(name: NSNotification.Name("SwitchTabs"), object: nil)
 //        processAndContinue()
 //    }
+    
+    @IBAction func selectOnlyOne(_ sender: NSButton) {
+        if let buttons = sender.superview?.subviews as? [NSButton] {
+            for button in buttons {
+                if button.title != sender.title {
+                    button.state = .off
+                }
+            }
+        }
+    }
+    
+    func returnActiveButtonTitleFromView(_ view:NSView) -> String {
+        let buttons = view.getButtonsInView()
+        for button in buttons {
+            if button.state == .on {
+                return button.title
+            }
+        }
+        return ""
+    }
 }
