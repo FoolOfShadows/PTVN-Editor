@@ -38,7 +38,11 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate {
     }
 	
     override func controlTextDidEndEditing(_ obj: Notification) {
-        addOrderToView(self)
+        if let sendingKey = obj.userInfo?["NSTextMovement"] as? Int {
+            if sendingKey == NSReturnTextMovement {
+                addOrderToView(self)
+            }
+        }
     }
     
     @IBAction func setAreaSelections(_ sender:NSButton) {
