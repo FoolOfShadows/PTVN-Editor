@@ -67,7 +67,7 @@ class CurrentAssessmentController: NSViewController, NSTableViewDelegate, NSTabl
 	
 	
 	@IBAction func returnResults(_ sender:Any) {
-		let firstVC = presenting as! DoctorViewController
+		let firstVC = presentingViewController as! DoctorViewController
 		firstVC.assessmentList += chosenAssessments
 		assessmentReloadDelegate?.currentAssessmentWillBeDismissed(sender: self)
 		self.dismiss(self)

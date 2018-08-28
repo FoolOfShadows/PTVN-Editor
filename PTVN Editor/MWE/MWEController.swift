@@ -99,7 +99,7 @@ class MWEController: NSViewController {
 		
         theData.objective.addToExistingText(finalResults)
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)

@@ -110,7 +110,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         
         theData.plan.addToExistingText(results)
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)
@@ -140,7 +140,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
             if returnCode == NSApplication.ModalResponse.OK {
                 let message = panel.url?.path
                 self.assessmentString = self.processAssessmentFromNoteAt(message)
-                self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showCurrentAssessment"), sender: nil)
+                self.performSegue(withIdentifier: "showCurrentAssessment", sender: nil)
             }
         })
         
@@ -161,7 +161,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier!.rawValue == "showCurrentAssessment" {
+        if segue.identifier! == "showCurrentAssessment" {
             if let toViewController = segue.destinationController as? CurrentAssessmentController {
                 //For the delegate to work, it needs to be assigned here
                 //rather than in view did load.  Because it's a modal window?

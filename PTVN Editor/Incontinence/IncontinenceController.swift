@@ -84,7 +84,7 @@ class IncontinenceController: NSViewController {
 		
         theData.objective.addToExistingText(results)
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)

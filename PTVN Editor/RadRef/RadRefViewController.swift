@@ -233,7 +233,7 @@ class RadRefViewController: NSViewController {
         
         theData.plan.addToExistingText(finalResults.joined(separator: "\n"))
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         firstVC.view.window?.isDocumentEdited = true

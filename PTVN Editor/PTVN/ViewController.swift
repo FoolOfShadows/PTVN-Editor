@@ -47,7 +47,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
         let theTextViews = [medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, vitalsView, objectiveView, pshView, diagnosesView, planView]
         theTextViews.forEach { view in
-            view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
+            view!.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         }
         
         //Set up delegation for the text views and fields to be able to respond to typing
@@ -86,7 +86,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if let theSegue = segue.identifier?.rawValue {
+        if let theSegue = segue.identifier {
             switch theSegue {
             case "showDoctor":
                 if let toViewController = segue.destinationController as? DoctorViewController {
