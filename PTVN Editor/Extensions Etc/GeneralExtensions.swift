@@ -472,7 +472,7 @@ func setFontSizeOf(_ size: CGFloat, forFields textFields: [NSTextView]) {
     let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
     //let fontAttributes = NSDictionary(object: theUserFont, forKey: NSFontAttributeName as NSCopying)
     for field in textFields {
-        field.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
+        field.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
     }
 }
 

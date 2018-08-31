@@ -128,7 +128,7 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
 		
         theData.subjective.addToExistingText(filteredResults.joined(separator: "\n"))
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         

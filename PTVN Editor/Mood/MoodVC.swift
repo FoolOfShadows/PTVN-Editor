@@ -47,7 +47,7 @@ class MoodVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     }
     
     @IBAction func processMood(_ sender: NSButton) {
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         if !sectionOneAnswersArray.isEmpty {
             finalAnswersArray.insert("Has there ever been a period of time when you were not your usual self and . . .\n\(sectionOneAnswersArray.joined(separator: "\n"))", at: 0)
         }
@@ -66,9 +66,9 @@ class MoodVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBAction func takeSectionTwoAnswer(_ sender: NSButton) {
         if sender.state == .on {
-            finalAnswersArray.append("Have you experienced several of these during the same period of time - YES")
+            finalAnswersArray.append("Have you experienced several of these during the same period of time - \(sender.title.uppercased())")
         } else if sender.state == .off {
-            finalAnswersArray = finalAnswersArray.filter { $0 != "Have you experienced several of these during the same periof of time - YES" }
+            finalAnswersArray = finalAnswersArray.filter { $0 != "Have you experienced several of these during the same periof of time - \(sender.title.uppercased())" }
         }
     }
     

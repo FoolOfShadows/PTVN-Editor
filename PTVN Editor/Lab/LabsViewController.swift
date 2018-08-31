@@ -140,7 +140,7 @@ class LabsViewController: NSViewController {
 
         theData.plan.addToExistingText(resultsArray.joined(separator: "\n"))
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)
@@ -167,7 +167,7 @@ class LabsViewController: NSViewController {
     
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier!.rawValue == "setUpPrintLabs" {
+        if segue.identifier! == "setUpPrintLabs" {
             if let toViewController = segue.destinationController as? LabSetUpPrintViewController {
                 let processedLabs = processLabsForNote()
                 if !processedLabs.isEmpty {

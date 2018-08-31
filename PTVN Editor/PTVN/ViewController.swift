@@ -22,6 +22,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     //@IBOutlet weak var ccView: NSTextField!
     @IBOutlet var rosView: NSTextView!
     @IBOutlet var subjectiveView: NSTextView!
+    @IBOutlet var problemView: NSTextView!
     @IBOutlet var preventiveView: NSTextView!
     @IBOutlet var pmhView: NSTextView!
     @IBOutlet var nutritionView: NSTextView!
@@ -55,7 +56,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
         let theTextViews = [ccView, medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
         theTextViews.forEach { view in
-            view!.typingAttributes = fontAttributes as! [NSAttributedStringKey : Any]
+            view!.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         }
         
         //Set up delegation for the text views and fields to be able to respond to typing
@@ -63,6 +64,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         medsView.delegate = self
         rosView.delegate = self
         subjectiveView.delegate = self
+        problemView.delegate = self
         preventiveView.delegate = self
         pmhView.delegate = self
         nutritionView.delegate = self
@@ -120,7 +122,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if let theSegue = segue.identifier?.rawValue {
+        if let theSegue = segue.identifier {
             switch theSegue {
             case "showDoctor":
                 if let toViewController = segue.destinationController as? DoctorViewController {
@@ -269,6 +271,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         allergyView.string = theData.allergies
         ccView.string = theData.cc
         rosView.string = theData.ros
+        //problemView.string = theData.problem
         subjectiveView.string = theData.subjective
         //print(theData.preventive)
         preventiveView.string = theData.preventive

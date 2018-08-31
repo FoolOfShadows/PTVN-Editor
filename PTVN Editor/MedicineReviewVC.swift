@@ -84,7 +84,7 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     @IBAction func returnResults(_ sender:Any) {
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         var results = medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n")
         if !results.isEmpty {
             results = "\n\n DISCONTINUED THIS VIST:\n\(results.addCharacterToBeginningOfEachLine("- "))"
@@ -102,7 +102,7 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     @IBAction func getRefills(_ sender: Any?) {
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
 //        if !chosenMeds.isEmpty {
 //            var refillItems = [String]()
 //            for item in chosenMeds {

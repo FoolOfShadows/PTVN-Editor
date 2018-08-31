@@ -119,7 +119,7 @@ class PreventiveController: NSViewController {
 		if !results.isEmpty {
             theData.plan.addToExistingText(results)
             
-            let firstVC = presenting as! ViewController
+            let firstVC = presentingViewController as! ViewController
             firstVC.theData = theData
             currentPTVNDelegate?.returnPTVNValues(sender: self)
             self.dismiss(self)

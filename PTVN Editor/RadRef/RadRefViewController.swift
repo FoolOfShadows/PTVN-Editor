@@ -169,7 +169,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate {
         //print(finalResults)
         theData.plan.addToExistingText(finalResults.joined(separator: "\n"))
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         //I don't know why I added this, but I dont' seem to need it
