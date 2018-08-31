@@ -2231,6 +2231,9 @@ Gw
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRG-CK-vIm">
                                         <rect key="frame" x="628" y="10" width="45" height="18"/>
@@ -2239,6 +2242,9 @@ Gw
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </customView>
@@ -2269,10 +2275,13 @@ Gw
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qk-hf-gWo">
                                         <rect key="frame" x="690" y="10" width="41" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="cID-6n-jgt">
+                                        <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </customView>
@@ -3116,7 +3125,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="58G-h8-FmF">
-                                                            <rect key="frame" x="49" y="1" width="203" height="20"/>
+                                                            <rect key="frame" x="48.5" y="1" width="203" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tey-cz-D2m">
@@ -26930,7 +26939,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="49" y="1" width="646" height="20"/>
+                                                            <rect key="frame" x="48.5" y="1" width="646" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
