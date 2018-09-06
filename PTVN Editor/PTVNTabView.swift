@@ -9,13 +9,9 @@
 import Cocoa
 
 class PTVNTabView: NSTabView {
-
-    //@IBOutlet weak var mainTabView: NSTabView!
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
-        // Drawing code here.
     }
     
     @IBAction func switchToTab(_ sender: NSMenuItem) {
