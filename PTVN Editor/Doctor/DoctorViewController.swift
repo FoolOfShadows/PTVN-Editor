@@ -136,7 +136,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         theData.plan.addToExistingText(results)
         processAssessmentTable(self)
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)

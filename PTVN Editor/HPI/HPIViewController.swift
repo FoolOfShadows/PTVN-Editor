@@ -144,7 +144,7 @@ class HPIViewController: NSViewController {
         theData.subjective.addToExistingText(results)
         theData.objective.addToExistingText(currentVitals.getVitalsOutput())
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         

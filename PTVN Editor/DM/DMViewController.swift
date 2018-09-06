@@ -64,7 +64,7 @@ class DMViewController: NSViewController {
 		
         theData.subjective.addToExistingText(filteredResults.joined(separator: "\n"))
         
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)

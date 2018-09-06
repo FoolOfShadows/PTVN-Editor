@@ -47,7 +47,7 @@ class MoodVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     }
     
     @IBAction func processMood(_ sender: NSButton) {
-        let firstVC = presenting as! ViewController
+        let firstVC = presentingViewController as! ViewController
         if !sectionOneAnswersArray.isEmpty {
             finalAnswersArray.insert("Has there ever been a period of time when you were not your usual self and . . .\n\(sectionOneAnswersArray.joined(separator: "\n"))", at: 0)
         }
