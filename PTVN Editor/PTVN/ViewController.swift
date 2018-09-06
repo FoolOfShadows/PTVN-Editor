@@ -97,6 +97,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up notification center for switching forms
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(switchForm), name: Notification.Name("SwitchForm"), object: nil)
+        //nc.addObserver(self, selector: #selector(updateAfterWindowDeminimize), name: Notification.Name("updateView"), object: nil)
+        //nc.addObserver(self, selector: #selector(updateVarsBeforeWindowMinimizes), name: Notification.Name("updateVars"), object: nil)
     }
     
     
@@ -260,6 +262,33 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         updateView()
         document.updateChangeCount(.changeDone)
     }
+    
+//    @objc func updateAfterWindowDeminimize() {
+//        print("Received deminimize message")
+//        updateView()
+//        print(theData.ros)
+//    }
+    
+//    @objc func updateVarsBeforeWindowMinimizes() {
+//        print("Updating the data vars")
+//        theData.medicines = medsView.string
+//        theData.ros = rosView.string
+//        theData.subjective = subjectiveView.string
+//        theData.preventive = preventiveView.string
+//        theData.pmh = pmhView.string
+//        theData.nutrition = nutritionView.string
+//        theData.social = socialView.string
+//        theData.family = familyView.string
+//        theData.allergies = allergyView.string
+//        theData.cc = ccView.string
+//        theData.objective = objectiveView.string
+//        theData.psh = pshView.string
+//        theData.assessment = assessmentView.string
+//        theData.plan = planView.string
+//        theData.pharmacy = pharmacyView.stringValue
+//        NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
+//        print("ROS updated to \(theData.ros)")
+//    }
     
     //Update the main view of the document with data from the PTVN instance
     func updateView() {

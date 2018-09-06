@@ -66,7 +66,7 @@ enum SOAPSections {
 }
 
 
-struct PTVN {
+class PTVN {
     
     var theText:String
     private let currentDate = Date()
