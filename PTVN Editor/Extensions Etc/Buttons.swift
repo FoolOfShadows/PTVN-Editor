@@ -622,9 +622,9 @@ internal extension NSColor {
         }
     }
     
-    override open func layer(_ layer: CALayer, shouldInheritContentsScale newScale: CGFloat, from window: NSWindow) -> Bool {
-        return true
-    }
+//    override open func layer(_ layer: CALayer, shouldInheritContentsScale newScale: CGFloat, from window: NSWindow) -> Bool {
+//        return true
+//    }
     
     override open func draw(_ dirtyRect: NSRect) {
         

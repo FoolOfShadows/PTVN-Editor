@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/*, NSSpeechRecognizerDelegate*/ {
+class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate, NSControlTextEditingDelegate/*, NSSpeechRecognizerDelegate*/ {
 	var selfView = NSView()
 	
 
@@ -95,7 +95,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate/
     }
     
 
-    override func controlTextDidChange(_ notification: Notification) {
+    /*override*/ func controlTextDidChange(_ notification: Notification) {
         if !lCRCombo.stringValue.isEmpty || !rCRCombo.stringValue.isEmpty {
             //print("One of these fields has info")
             let theButtons = selfView.getButtonsInView()

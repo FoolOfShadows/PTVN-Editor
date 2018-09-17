@@ -7,8 +7,9 @@
 //
 
 import Cocoa
+import AppKit
 
-class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol {
+class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate, ProcessTabProtocol {
 	var selfView = NSView()
 	
 
@@ -122,7 +123,8 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtoc
         }
     }
     
-    override func controlTextDidChange(_ obj: Notification) {
+    
+    /*override*/ func controlTextDidChange(_ obj: Notification) {
         //print("text change message sent")
         textSwitchNormOff()
     }

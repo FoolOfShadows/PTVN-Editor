@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ProcInjViewController: NSViewController, NSTextFieldDelegate {
+class ProcInjViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
 	
 	@IBOutlet var procInjTabView: NSView!
 	@IBOutlet weak var injectionsBox: NSBox!
@@ -53,7 +53,7 @@ class ProcInjViewController: NSViewController, NSTextFieldDelegate {
 		rSysBrachView.delegate = self
     }
 	
-	override func controlTextDidChange(_ obj: Notification) {
+	/*override*/ func controlTextDidChange(_ obj: Notification) {
 		if let lAnkle = Double(lSysAnkleView.stringValue), let lBrach = Double(lSysBrachView.stringValue) {
 			lABIIndexView.stringValue = String(format: "%.2f", lAnkle/lBrach)
 		}

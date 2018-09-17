@@ -13,7 +13,7 @@ protocol ptvnDelegate: class {
     func returnPTVNValues(sender: NSViewController)
 }
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, ptvnDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, ptvnDelegate {
 
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
@@ -113,7 +113,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         updateVarForView(theView)
     }
     
-    override func controlTextDidChange(_ obj: Notification) {
+    /*override*/ func controlTextDidChange(_ obj: Notification) {
         guard let theView = obj.object as? NSTextField else { return }
         updateVarForField(theView)
         document.updateChangeCount(.changeDone)

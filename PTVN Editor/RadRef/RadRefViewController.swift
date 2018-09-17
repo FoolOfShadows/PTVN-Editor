@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class RadRefViewController: NSViewController, NSTextFieldDelegate {
+class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
 	@IBOutlet var radiologyView: NSView!
     @IBOutlet weak var typeView: NSView!
     @IBOutlet weak var areaView: NSView!
@@ -37,7 +37,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate {
 		
     }
 	
-    override func controlTextDidEndEditing(_ obj: Notification) {
+    /*override*/ func controlTextDidEndEditing(_ obj: Notification) {
         if let sendingKey = obj.userInfo?["NSTextMovement"] as? Int {
             if sendingKey == NSReturnTextMovement {
                 addOrderToView(self)

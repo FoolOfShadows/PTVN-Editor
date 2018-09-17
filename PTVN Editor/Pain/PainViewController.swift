@@ -63,9 +63,9 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
         clearPain(self)
     }
 	
-    override func controlTextDidChange(_ obj: Notification) {
-        //calculatePEGScore()
-    }
+//    override func controlTextDidChange(_ obj: Notification) {
+//        //calculatePEGScore()
+//    }
 	
     func calculatePEGScore() -> String {
         var painResults = [String]()
