@@ -139,13 +139,17 @@ extension NSView {
 	}
     
     func getActiveButtonInView() -> String {
-        let allButtons = self.getButtonsInView()
-        let activeButtons = allButtons.filter { $0.state == .on }
+        let activeButtons = self.getActiveButtonsInView()
         if !activeButtons.isEmpty {
-            let titles = activeButtons.map {$0.title}
-            return titles.joined(separator: ", ")
+            return activeButtons[0]
         }
         return ""
+    }
+    
+    func getActiveButtonsInView() -> [String] {
+        let allButtons = self.getButtonsInView()
+        let activeButtons = allButtons.filter { $0.state == .on }
+        return activeButtons.map { $0.title }
     }
     
     func getNormalButtonsInView() -> [NSButton] {
@@ -211,8 +215,8 @@ extension NSView {
         //            return label.frame
         //        }
         
-        var buttonY: Int = Int(self.frame.size.height - 17)
-        print(buttonY)
+        var buttonY: Int = Int(self.frame.size.height + 3)
+        //print(buttonY)
         for name in names {
             //let newButton = NSButton(frame: labelSize(for: name, fontSize: 16, maxWidth: 500, startingY: CGFloat(buttonY)))
             var nameSize: Int {
@@ -222,6 +226,7 @@ extension NSView {
                     return name.count * 100
                 }
             }
+            //printView(nameSize)
             let newButton = NSButton(frame: CGRect(x: 0, y: buttonY, width: nameSize, height: 18))
             //let newButton = NSButton(checkboxWithTitle: name, target: self, action: nil)
             newButton.setButtonType(.switch)
@@ -229,6 +234,7 @@ extension NSView {
             let fontAttributes = NSDictionary(object: theUserFont, forKey: NSAttributedString.Key.font as NSCopying)
             let myAttributedTitle = NSAttributedString(string: name, attributes: fontAttributes as? [NSAttributedString.Key : Any])
             newButton.attributedTitle = myAttributedTitle
+            newButton.frame.size = newButton.fittingSize
             if let theSelector = theSelector {
                 newButton.action = theSelector
             }
@@ -238,6 +244,22 @@ extension NSView {
         }
     }
     
+}
+
+extension NSBox {
+    func setUpSectionBoxUsingTitle(title: String, font:NSFont, referenceView view:NSView, andButtonList buttons: [String], inView superView: NSView) {
+        //guard let max = buttons.max(by: {$1.count > $0.count})?.count else { return }
+        self.title = title
+        self.titleFont = font
+        sizeToFit()
+        superView.addSubview(self)
+        
+        self.setFrameOrigin(NSPoint(x: view.frame.maxX + 5, y: superView.frame.height - self.frame.height - 62))
+       
+        //self.setFrameSize(NSSize(width: CGFloat((Double(max) * 10.0) + 4), height: self.frame.height))
+        
+        //Swift.print(self.intrinsicContentSize)
+    }
 }
 
 extension NSButton {

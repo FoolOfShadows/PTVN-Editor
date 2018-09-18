@@ -15,26 +15,33 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 	@IBOutlet weak var neuroBox: NSBox!
 	@IBOutlet weak var mskBox: NSBox!
 	
-	@IBOutlet weak var mskAreaPopup: NSPopUpButton!
-	@IBOutlet weak var mskSelectionsPopup: NSPopUpButton!
-	@IBOutlet weak var mskSidesPopup: NSPopUpButton!
-	@IBOutlet weak var mskTTPCheckbox: NSButton!
-	@IBOutlet weak var mskSwellingPopup: NSPopUpButton!
-	@IBOutlet weak var mskStrengthPopup: NSPopUpButton!
-	@IBOutlet weak var mskRangeDirectionPopup: NSPopUpButton!
-	@IBOutlet weak var mskRangeDegreesPopup: NSPopUpButton!
-	@IBOutlet weak var mskTonePopup: NSPopUpButton!
 	@IBOutlet weak var rSLRCombo: NSComboBox!
 	@IBOutlet weak var lSLRCombo: NSComboBox!
 	@IBOutlet weak var rDTRCombo: NSComboBox!
 	@IBOutlet weak var lDTRCombo: NSComboBox!
+    
+    @IBOutlet weak var typeView: NSBox!
+    @IBOutlet weak var ttpCheckbox: NSButton!
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
 	
 	let mskAssessmentSection = MSK()
 	
-	//@IBOutlet weak var mskResultsTextView: NSTextView!
+    var siteBox = NSBox()
+    var toneBox = NSBox()
+    var sideBox = NSBox()
+    var swellingBox = NSBox()
+    var strengthBox = NSBox()
+    var directionBox = NSBox()
+    var degreeBox = NSBox()
+    
+    var boxes = [NSBox]()
+    
+    let caseLists = mskEnumLists()
+    
+    let defaultFont:NSFont = .systemFont(ofSize: 13)
+    
     @IBOutlet weak var mskResultsScroll: NSScrollView!
     var mskResultsTextView: NSTextView {
         get {
@@ -51,137 +58,10 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
         selectAllNormsInView()
     }
-    
-	@IBAction func setMSKSelections(_ sender: NSPopUpButton) {
-		switch sender.title {
-		case "Head & Spine":
-			mskSelectionsPopup.clearPopUpButton(menuItems: mskAssessmentSection.headSelections)
-		case "Shoulders & Arms":
-			mskSelectionsPopup.clearPopUpButton(menuItems: mskAssessmentSection.shoulderSelections)
-		case "Hands":
-			mskSelectionsPopup.clearPopUpButton(menuItems: mskAssessmentSection.handSelections)
-		case "Hips & Legs":
-			mskSelectionsPopup.clearPopUpButton(menuItems: mskAssessmentSection.hipSelections)
-		case "Feet":
-			mskSelectionsPopup.clearPopUpButton(menuItems: mskAssessmentSection.feetSelections)
-		default:
-			mskSelectionsPopup.clearPopUpButton(menuItems: ["Selected area not recognized"])
-		}
-		setMSKSidesAndROM(mskSelectionsPopup)
-	}
-	
-	@IBAction func setMSKSidesAndROM(_ sender: NSPopUpButton) {
-		let sidesRLB = {self.mskSidesPopup.clearPopUpButton(menuItems: self.mskAssessmentSection.sides);
-			self.mskSidesPopup.isEnabled = true;
-			self.mskStrengthPopup.isEnabled = true;
-			self.mskRangeDirectionPopup.isEnabled = true;
-			self.mskRangeDegreesPopup.isEnabled = true;
-			self.mskTonePopup.isEnabled = true
-		}
-		
-		switch sender.title {
-		case "head":
-			mskSidesPopup.isEnabled = false
-			mskTonePopup.isEnabled = false
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.theRomDirListGen)
-		case "neck":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.neckROMDirList)
-			mskSidesPopup.isEnabled = false
-		case "paraspinal":
-			mskStrengthPopup.isEnabled = false
-			mskRangeDirectionPopup.isEnabled = false
-			mskRangeDegreesPopup.isEnabled = false
-			mskTonePopup.isEnabled = false
-		case "L-spine":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.lspineROMDirList)
-			sidesRLB()
-		case "sacral":
-			mskSidesPopup.isEnabled = false
-			mskStrengthPopup.isEnabled = false
-			mskRangeDirectionPopup.isEnabled = false
-			mskRangeDegreesPopup.isEnabled = false
-			mskTonePopup.isEnabled = false
-		case "shoulder":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.shoulderROMDirList)
-			sidesRLB()
-		case "elbow":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.elbowROMDirList)
-			sidesRLB()
-		case "forearm":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.forearmROMDirList)
-			sidesRLB()
-		case "wrist":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.wristROMDirList)
-			sidesRLB()
-		case "hip":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.hipROMDirList)
-			sidesRLB()
-		case "knee":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.kneeROMDirList)
-			sidesRLB()
-		case "ankle":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.ankleROMDirList)
-			sidesRLB()
-		case "foot":
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.footROMDirList)
-			sidesRLB()
-		case "heel":
-			mskStrengthPopup.isEnabled = false
-			mskRangeDirectionPopup.isEnabled = false
-			mskRangeDegreesPopup.isEnabled = false
-			mskTonePopup.isEnabled = false
-		default:
-			mskRangeDirectionPopup.clearPopUpButton(menuItems: mskAssessmentSection.theRomDirListGen)
-			sidesRLB()
-		}
-		
-	}
-	
-	
-	
-	@IBAction func addSelectionToResults(_ sender: Any) {
-		var resultArray = [String]()
-		
-		guard var site = mskSelectionsPopup.titleOfSelectedItem?.capitalized else {return}
-		if mskSidesPopup.isEnabled && mskSidesPopup.title != "" {
-			site += " \(mskSidesPopup.title)"
-		}
-		
-		if mskTTPCheckbox.state == .on {
-			resultArray.append("tender")
-		}
-		
-		if mskSwellingPopup.isEnabled && mskSwellingPopup.title != "" {
-			resultArray.append("\(mskSwellingPopup.title) swelling")
-		}
-		
-		if mskStrengthPopup.isEnabled && mskStrengthPopup.title != "" {
-			resultArray.append("\(mskStrengthPopup.title) /5 strength")
-		}
-		
-		if mskRangeDirectionPopup.isEnabled && mskRangeDirectionPopup.title != "" {
-			var rom = "range of motion: \(mskRangeDirectionPopup.title)"
-			if mskRangeDegreesPopup.isEnabled && mskRangeDegreesPopup.title != "" {
-				rom += " \(mskRangeDegreesPopup.title) degrees"
-			}
-			resultArray.append(rom)
-		}
-		
-		if mskTonePopup.isEnabled && mskTonePopup.title != "" {
-			resultArray.append("tone \(mskTonePopup.title)")
-		}
-		
-		
-		var existingAssessment = mskResultsTextView.string
-		if !existingAssessment.isEmpty {
-			existingAssessment = existingAssessment + "\n"
-		}
-		
-		mskResultsTextView.string = "\(existingAssessment)\(site): \(resultArray.joined(separator: ", "))."
-	}
 	
 	@IBAction func clearTab(_ sender: Any) {
 		clearMSKTab()
+        clearAllViews()
 	}
 	
 	@IBAction func processNeuroMSKTab(_ sender: Any) {
@@ -206,13 +86,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 	
 	func clearMSKTab() {
 		self.view.clearControllers()
-		mskAreaPopup.clearPopUpButton(menuItems: mskAssessmentSection.generalAreas)
-		setMSKSelections(mskAreaPopup)
-		setMSKSidesAndROM(mskSelectionsPopup)
-		mskSwellingPopup.clearPopUpButton(menuItems: mskAssessmentSection.theSwlLocListGen)
-		mskStrengthPopup.clearPopUpButton(menuItems: mskAssessmentSection.theStrengthList)
-		mskRangeDegreesPopup.clearPopUpButton(menuItems: mskAssessmentSection.theRomList)
-		mskTonePopup.clearPopUpButton(menuItems: mskAssessmentSection.theToneList)
+
 		neuroBox.populateSelectionsInViewUsing(Neuro())
 	}
 	
@@ -298,5 +172,166 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
             button.state = .on
             selectNorms(button)
         }
+    }
+    
+    
+    //MSK section stuff
+    @IBAction func setAreaSelections(_ sender:NSButton) {
+        if sender.state == .on {
+            clearAllViews()
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+            switch sender.title {
+            case "Head & Spine": setupSiteBoxesWithCases(caseLists.headCases)
+            case "Shoulders & Arms": setupSiteBoxesWithCases(caseLists.shoulderCases)
+            case "Hands": setupSiteBoxesWithCases(caseLists.handCases)
+            case "Hips & Legs": setupSiteBoxesWithCases(caseLists.hipCases)
+            case "Feet": setupSiteBoxesWithCases(caseLists.feetCases)
+            default: return
+            }
+        } else if sender.state == .off {
+            clearAllViews()
+            //testBox.isHidden = true
+        }
+        
+    }
+    
+    private func setupSiteBoxesWithCases(_ cases:[String]) {
+        siteBox.addButtonsToViewWithNames(cases, andSelector: #selector(setSiteSelections))
+        siteBox.setUpSectionBoxUsingTitle(title: "Site", font: .systemFont(ofSize: 13), referenceView: typeView, andButtonList: cases, inView: mskBox)
+    }
+    
+    @objc func setSiteSelections(_ sender:NSButton) {
+        clearAreaNonSiteViews()
+        print(sender.title)
+        if sender.state == .on {
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+            switch sender.title {
+            case "head": setUpBoxesForHeadNeckSections(withROMSelection: caseLists.generalROMCases)
+            case "neck": setUpBoxesForHeadNeckSections(withROMSelection: caseLists.neckROMCases)
+            case "traps", "ribs", "Thoracic spine", "pelvis", "sciatic", "deltoid", "bicep", "tricep", "hand", "index finger", "middle finger", "ring finger", "pinky finger", "thumb", "gluteus", "thigh", "quadricep", "hamstring", "calf", "big toe", "2nd toe", "3rd toe", "4th toe", "5th toe":
+                setUpBoxesForGeneralSections(withROMSelection: caseLists.generalROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "shoulder": setUpBoxesForGeneralSections(withROMSelection: caseLists.shoulderROMCases, andDegrees: caseLists.shoulderRomDegrees)
+            case "Lumbar spine": setUpBoxesForGeneralSections(withROMSelection: caseLists.lspineROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "elbow": setUpBoxesForGeneralSections(withROMSelection: caseLists.elbowROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "forearm": setUpBoxesForGeneralSections(withROMSelection: caseLists.forearmROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "wrist": setUpBoxesForGeneralSections(withROMSelection: caseLists.wristROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "hip": setUpBoxesForGeneralSections(withROMSelection: caseLists.hipROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "knee": setUpBoxesForGeneralSections(withROMSelection: caseLists.kneeROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "ankle": setUpBoxesForGeneralSections(withROMSelection: caseLists.ankleROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "foot": setUpBoxesForGeneralSections(withROMSelection: caseLists.footROMCases, andDegrees: caseLists.generalROMDegrees)
+            case "paraspinal", "sacral":
+                setUpBoxesForParaspinalSacralSections()
+            case "heel":
+                setUpBoxesForHeelSection()
+            default:
+                return
+            }
+        } else if sender.state == .off {
+            //sideView.subviews.forEach({ $0.removeFromSuperview() })
+        }
+    }
+    
+    private func setUpBoxesForGeneralSections(withROMSelection rom:[String], andDegrees degrees:[String]) {
+        sideBox.addButtonsToViewWithNames(caseLists.mskSideCases, andSelector: #selector(uniqueSelections))
+        sideBox.setUpSectionBoxUsingTitle(title: "Side", font: defaultFont, referenceView: siteBox, andButtonList: caseLists.mskSideCases, inView: mskBox)
+        swellingBox.addButtonsToViewWithNames(caseLists.swellingCases, andSelector: nil)
+        swellingBox.setUpSectionBoxUsingTitle(title: "Swelling", font: defaultFont, referenceView: sideBox, andButtonList: caseLists.swellingCases, inView: mskBox)
+        strengthBox.addButtonsToViewWithNames(caseLists.strengthCases, andSelector: #selector(uniqueSelections))
+        strengthBox.setUpSectionBoxUsingTitle(title: "Strength", font: defaultFont, referenceView: swellingBox, andButtonList: caseLists.strengthCases, inView: mskBox)
+        directionBox.addButtonsToViewWithNames(rom, andSelector: #selector(uniqueSelections))
+        directionBox.setUpSectionBoxUsingTitle(title: "ROM Direction", font: defaultFont, referenceView: strengthBox, andButtonList: rom, inView: mskBox)
+        degreeBox.addButtonsToViewWithNames(degrees, andSelector: #selector(uniqueSelections))
+        degreeBox.setUpSectionBoxUsingTitle(title: "Deg", font: defaultFont, referenceView: directionBox, andButtonList: degrees, inView: mskBox)
+        toneBox.addButtonsToViewWithNames(caseLists.toneCases, andSelector: nil)
+        toneBox.setUpSectionBoxUsingTitle(title: "Tone", font: .systemFont(ofSize: 13), referenceView: degreeBox, andButtonList: caseLists.toneCases, inView: mskBox)
+    }
+    private func setUpBoxesForHeadNeckSections(withROMSelection rom:[String]) {
+        swellingBox.addButtonsToViewWithNames(caseLists.swellingCases, andSelector: nil)
+        swellingBox.setUpSectionBoxUsingTitle(title: "Swelling", font: defaultFont, referenceView: siteBox, andButtonList: caseLists.swellingCases, inView: mskBox)
+        strengthBox.addButtonsToViewWithNames(caseLists.strengthCases, andSelector: #selector(uniqueSelections))
+        strengthBox.setUpSectionBoxUsingTitle(title: "Strength", font: defaultFont, referenceView: swellingBox, andButtonList: caseLists.strengthCases, inView: mskBox)
+        directionBox.addButtonsToViewWithNames(rom, andSelector: #selector(uniqueSelections))
+        directionBox.setUpSectionBoxUsingTitle(title: "ROM Direction", font: defaultFont, referenceView: strengthBox, andButtonList: rom, inView: mskBox)
+        degreeBox.addButtonsToViewWithNames(caseLists.generalROMDegrees, andSelector: #selector(uniqueSelections))
+        degreeBox.setUpSectionBoxUsingTitle(title: "Deg", font: defaultFont, referenceView: directionBox, andButtonList: caseLists.generalROMDegrees, inView: mskBox)
+    }
+    private func setUpBoxesForParaspinalSacralSections() {
+        swellingBox.addButtonsToViewWithNames(caseLists.swellingCases, andSelector: nil)
+        swellingBox.setUpSectionBoxUsingTitle(title: "Swelling", font: defaultFont, referenceView: siteBox, andButtonList: caseLists.swellingCases, inView: mskBox)
+    }
+    private func setUpBoxesForHeelSection() {
+        sideBox.addButtonsToViewWithNames(caseLists.mskSideCases, andSelector: #selector(uniqueSelections))
+        sideBox.setUpSectionBoxUsingTitle(title: "Side", font: defaultFont, referenceView: siteBox, andButtonList: caseLists.mskSideCases, inView: mskBox)
+        swellingBox.addButtonsToViewWithNames(caseLists.swellingCases, andSelector: nil)
+        swellingBox.setUpSectionBoxUsingTitle(title: "Swelling", font: defaultFont, referenceView: sideBox, andButtonList: caseLists.swellingCases, inView: mskBox)
+    }
+    
+    
+    
+    @objc func uniqueSelections(_ sender:NSButton) {
+        if sender.state == .on {
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func clearRadiology(_ sender: Any) {
+        clearAllViews()
+        typeView.turnButtonsInViewOff()
+        mskResultsTextView.string = String()
+    }
+    
+    private func clearAllViews() {
+        siteBox.subviews.forEach( {$0.removeFromSuperview() } )
+        siteBox.removeFromSuperview()
+        siteBox = NSBox()
+        clearAreaNonSiteViews()
+    }
+    private func clearAreaNonSiteViews() {
+        boxes = [toneBox, sideBox, swellingBox, strengthBox, directionBox, degreeBox]
+        for box in boxes {
+            box.subviews.forEach({ $0.removeFromSuperview() } )
+            box.removeFromSuperview()
+            //box = NSBox()
+        }
+        //sideBox.removeFromSuperview()
+        sideBox = NSBox()
+        swellingBox = NSBox()
+        strengthBox = NSBox()
+        directionBox = NSBox()
+        degreeBox = NSBox()
+        toneBox = NSBox()
+    }
+    
+    @IBAction func addOrderToView(_ sender: Any) {
+        var returnValues = [String]()
+        boxes = [sideBox, swellingBox, strengthBox, directionBox, degreeBox, toneBox]
+        for box in boxes {
+            let selections = box.getActiveButtonsInView()
+            if !selections.isEmpty {
+                returnValues.append("\(box.title): \(selections.joined(separator: ", "))")
+            }
+        }
+        if ttpCheckbox.state == .on {
+            returnValues.append("tender to palpatation")
+        }
+        mskResultsTextView.addToViewsExistingText("\(siteBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
     }
 }
