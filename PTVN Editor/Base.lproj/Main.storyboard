@@ -25036,7 +25036,7 @@ Gw
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <size key="minSize" width="992" height="110"/>
-                                                        <size key="maxSize" width="992" height="10000000"/>
+                                                        <size key="maxSize" width="1009" height="10000000"/>
                                                         <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     </textView>
                                                 </subviews>
@@ -25134,6 +25134,9 @@ Gw
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="turnOffNT:" target="WHj-ca-n6E" id="SQc-Pt-Jig"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>

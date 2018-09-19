@@ -254,7 +254,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         directionBox.setUpSectionBoxUsingTitle(title: "ROM Direction", font: defaultFont, referenceView: strengthBox, andButtonList: rom, inView: mskBox)
         degreeBox.addButtonsToViewWithNames(degrees, andSelector: #selector(uniqueSelections))
         degreeBox.setUpSectionBoxUsingTitle(title: "Deg", font: defaultFont, referenceView: directionBox, andButtonList: degrees, inView: mskBox)
-        toneBox.addButtonsToViewWithNames(caseLists.toneCases, andSelector: nil)
+        toneBox.addButtonsToViewWithNames(caseLists.toneCases, andSelector: #selector(turnToneOff))
         toneBox.setUpSectionBoxUsingTitle(title: "Tone", font: .systemFont(ofSize: 13), referenceView: degreeBox, andButtonList: caseLists.toneCases, inView: mskBox)
     }
     private func setUpBoxesForHeadNeckSections(withROMSelection rom:[String]) {
@@ -281,6 +281,8 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
     
     
     @objc func uniqueSelections(_ sender:NSButton) {
+        let normalButtons = mskBox.getButtonsInView().filter { 1...4 ~= $0.tag  }
+        print(normalButtons.map { $0.title})
         if sender.state == .on {
             if let buttons = sender.superview?.subviews {
                 for button in buttons {
@@ -289,6 +291,29 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
                     }
                 }
             }
+//            print(type(of:sender.superview))
+            if let boxTitle = sender.superview?.superview as? NSBox {
+                print(boxTitle.title)
+                switch boxTitle.title {
+                case "Strength":
+                    normalButtons.filter { $0.title == "STR" }[0].state = .off
+                case "ROM Direction":
+                    normalButtons.filter { $0.title == "ROM" }[0].state = .off
+                default: return
+                }
+            }
+        }
+    }
+    
+    @objc func turnToneOff(_ sender: NSButton) {
+        if sender.state == .on {
+            mskBox.getButtonsInView().filter { $0.title == "Tone" }[0].state = .off
+        }
+    }
+    
+    @IBAction func turnOffNT(_ sender:NSButton) {
+        if sender.state == .on {
+            mskBox.getButtonsInView().filter { $0.title == "NT"}[0].state = .off
         }
     }
     
@@ -333,5 +358,9 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
             returnValues.append("tender to palpatation")
         }
         mskResultsTextView.addToViewsExistingText("\(siteBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
+    }
+    
+    func switchNorms(_ sender:NSButton) {
+        
     }
 }
