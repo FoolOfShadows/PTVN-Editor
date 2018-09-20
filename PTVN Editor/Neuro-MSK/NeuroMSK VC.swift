@@ -351,11 +351,16 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         for box in boxes {
             let selections = box.getActiveButtonsInView()
             if !selections.isEmpty {
-                returnValues.append("\(box.title): \(selections.joined(separator: ", "))")
+                if box == strengthBox {
+                    returnValues.append("\(box.title): \(selections[0])/5")
+                } else {
+                    returnValues.append("\(box.title): \(selections.joined(separator: ", "))")
+                }
             }
         }
         if ttpCheckbox.state == .on {
-            returnValues.append("tender to palpatation")
+            returnValues.insert("tender to palpation", at: 0)
+            //returnValues.append("tender to palpatation")
         }
         mskResultsTextView.addToViewsExistingText("\(siteBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
     }

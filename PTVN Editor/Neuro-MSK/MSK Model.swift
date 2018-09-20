@@ -296,6 +296,7 @@ enum toneList:String, CaseIterable {
     case ratcheting = "ratcheting cog wheel rigidity"
     case laxity = "ligament laxity"
     case subluxation
+    case crepitus
 }
 
 enum effusionList:String, CaseIterable {
@@ -310,7 +311,6 @@ enum neckROMList:String, CaseIterable {
     case leftFlex = "left lateral flexion"
     case rightRotation = "right lateral rotation"
     case leftRotation = "left lateral rotation"
-    case crepitus
 }
 
 enum lspineROMList:String, CaseIterable {
