@@ -182,13 +182,13 @@ struct Injections {
             case 21: resultArray.append("Arthrocentesis \(item.1!) medial flexed knee approach, with injection of 1 cc 1% lidocaine + Synvisc ONE, after cleansed and prepped with betadine and alcohol.  Pt tolerated procedure well. EBL: none. Consent signed.")
             case 22: resultArray.append("Trigger point injection with Lidocaine 1 ml + Celestone 6 mg/1 ml \(item.1!).")
             case 25: resultArray.append("\(item.1!)")
-            case 30: resultArray.append("Prevnax 13: 0.5 ml IM, Rx written and given to patient.")
+            case 30: resultArray.append("Prevnar 13: 0.5 ml IM, Rx written and given to patient.")
             default: continue
             }
         }
         
         if !resultArray.isEmpty {
-            results = "Injection(s) given:\n\(resultArray.joined(separator: "\n"))"
+            results = "Injection(s) given/written:\n\(resultArray.joined(separator: "\n"))"
         }
         
         return results

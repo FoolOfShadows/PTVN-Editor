@@ -16,6 +16,9 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	@IBOutlet weak var reasonView: NSTextField!
 	@IBOutlet weak var radScroll: NSScrollView!
     
+    var areaBox = NSBox()
+    var detailsBox = NSBox()
+    
     var radOrders: NSTextView {
         get {
             return radScroll.contentView.documentView as! NSTextView
@@ -78,6 +81,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
         }
         
     }
+    
     
     @objc func setSideSelections(_ sender:NSButton) {
         if sender.state == .on {

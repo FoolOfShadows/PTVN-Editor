@@ -215,7 +215,7 @@ extension NSView {
         //            return label.frame
         //        }
         
-        var buttonY: Int = Int(self.frame.size.height + 3)
+        var buttonY: Int = Int(self.frame.size.height - 20)
         //print(buttonY)
         for name in names {
             //let newButton = NSButton(frame: labelSize(for: name, fontSize: 16, maxWidth: 500, startingY: CGFloat(buttonY)))
@@ -227,7 +227,7 @@ extension NSView {
                 }
             }
             //printView(nameSize)
-            let newButton = NSButton(frame: CGRect(x: 0, y: buttonY, width: nameSize, height: 18))
+            let newButton = NSButton(frame: CGRect(x: 0, y: buttonY, width: nameSize, height: 16))
             //let newButton = NSButton(checkboxWithTitle: name, target: self, action: nil)
             newButton.setButtonType(.switch)
             let theUserFont:NSFont = NSFont.systemFont(ofSize: 16)
