@@ -112,54 +112,34 @@ func processROSSectionsFor(_ sectionName:String, with list:[(title:String, state
 	return (positives: positiveResults, negatives: negativeResults)
 }
 
-struct Vitals {
-    var weight = String()
-    var height = String()
-    var temp = String()
-    var bpSite = String()
-    var systolic = String()
-    var diastolic = String()
-    var pulse = String()
-    var resp = String()
-    var pulseOx = String()
-    var poType = String()
+func parseExistingROSData(_ data:String) -> [Int:[String]]? {
+    let sectionHeaders = ["GEN":1, "GI":2, "PSYCH":3, "GU":4, "ENDO":5, "ENT":6, "EYE":7, "MSK":8, "HEMO":9, "RESP":10, "NEURO":11, "CARDIO":12, "DERM":13]
     
-    var bmi:String { if let numWeight = Double(weight), let numHeight = Double(height) {
-        return String(format: "%.1f",(numWeight/(numHeight * numHeight)) * 703)
+    var resultDictionary:[Int:[String]] = [:]
+    
+    if data.contains("(+)") {
+            let positiveData = data.simpleRegExMatch("(?s)\\(\\+\\).*?(\\(-\\)|(All\\sother\\ssystems))").cleanTheTextOf(["\\(\\+\\) ", "\\(-\\)", "All\\sother\\ssystems"])
+            //print(positiveData)
+            for entry in sectionHeaders {
+                if positiveData.contains(entry.key) {
+                    let selections = positiveData.simpleRegExMatch("(?s)\(entry.key): .*?(;|(\\(-\\))|(All)|\\z)").cleanTheTextOf(["\(entry.key): ", ";"]).components(separatedBy: ", ")
+                    //print(selections)
+                    if !selections.isEmpty {
+                        resultDictionary[entry.value] = selections
+                    }
+            }
+            
         }
-        return "NC"
     }
     
-    func getVitalsOutput() -> String {
+    if data.contains("(-)") {
         
-        return "Wt: \(weight) lb;     Ht: \(height) in;     BMI: \(bmi)     T: \(temp) F;     BP: \(systolic)/\(diastolic) \(getVitalsVerbiageFrom(bpSite)) sitting;     P: \(pulse);     R: \(resp);     Pulse Ox: \(pulseOx)% \(getVitalsVerbiageFrom(poType))"
     }
-    
-    func getVitalsVerbiageFrom(_ raw:String) -> String {
-        switch raw {
-        case "RA":
-            return "right arm"
-        case "LA":
-            return "left arm"
-        case "RW":
-            return "right wrist"
-        case "LW":
-            return "left wrist"
-        case "RM":
-            return "room air"
-        case "2":
-            return "on 2L NC O2"
-        case "2.5":
-            return "on 2.5L NC O2"
-        case "3":
-            return "on 3L NC O2"
-        case "3.5":
-            return "on 3.5L NC O2"
-        case "4":
-            return "on 4L NC O2"
-        default:
-            return ""
-        }
+    print(resultDictionary)
+    if !resultDictionary.isEmpty {
+        return resultDictionary
+    } else {
+        return nil
     }
     
 }

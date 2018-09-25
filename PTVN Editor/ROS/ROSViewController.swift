@@ -50,6 +50,23 @@ class ROSViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rosView.clearControllers()
+        
+        //Check if there is existing ROS data
+        if !theData.ros.isEmpty {
+            //If there is, parse it out
+            guard let existingROS = parseExistingROSData(theData.ros) else { return }
+            for entry in existingROS {
+                for value in entry.value {
+                    for button in allROSControllers {
+                        if button.tag == entry.key && button.title.lowercased() == value.lowercased() {
+                            button.state = .mixed
+                        }
+                    }
+                }
+            }
+        }
+        
+        //Mark buttons previously selected
     }
     
     @IBAction func processROS(_ sender: NSButton) {
@@ -58,7 +75,6 @@ class ROSViewController: NSViewController {
         NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
         
         let results = processROSForm([genList, psychList, eyeList, heentList, cardioList, respList, giList, guList, endoList, neuroList, mskList, hemoList, dermList])
-//        let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
         
         theData.ros.addToExistingText(results)
         //theData.objective.addToExistingText(currentVitals.getVitalsOutput())
@@ -81,23 +97,7 @@ class ROSViewController: NSViewController {
     @IBAction func clearROS(_ sender: NSButton) {
         rosView.clearControllers()
     }
-    
-//    @IBAction func processAndContinueToHPI(_ sender: Any) {
-//        processROS(self)
-//        //TrackingTabs.newTab = 1
-//        nc.post(name: NSNotification.Name("SwitchTabs"), object: nil)
-//        processAndContinue()
-//    }
-    
-//    @IBAction func selectOnlyOne(_ sender: NSButton) {
-//        if let buttons = sender.superview?.subviews as? [NSButton] {
-//            for button in buttons {
-//                if button.title != sender.title {
-//                    button.state = .off
-//                }
-//            }
-//        }
-//    }
+
     
     func getListOfButtons(_ view:NSView) -> [NSButton] {
         var results = [NSButton]()
