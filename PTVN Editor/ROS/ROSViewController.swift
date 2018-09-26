@@ -56,17 +56,15 @@ class ROSViewController: NSViewController {
             //If there is, parse it out
             guard let existingROS = parseExistingROSData(theData.ros) else { return }
             for entry in existingROS {
-                for value in entry.value {
-                    for button in allROSControllers {
-                        if button.tag == entry.key && button.title.lowercased() == value.lowercased() {
-                            button.state = .mixed
-                        }
+                for button in allROSControllers {
+                    //Mark buttons previously selected
+                    if button.tag == entry.tag && button.title.lowercased().replacingOccurrences(of: "\n", with: "") == entry.title.lowercased() {
+                        button.state = NSControl.StateValue(rawValue: entry.state)
                     }
                 }
             }
         }
         
-        //Mark buttons previously selected
     }
     
     @IBAction func processROS(_ sender: NSButton) {
@@ -76,8 +74,9 @@ class ROSViewController: NSViewController {
         
         let results = processROSForm([genList, psychList, eyeList, heentList, cardioList, respList, giList, guList, endoList, neuroList, mskList, hemoList, dermList])
         
-        theData.ros.addToExistingText(results)
-        //theData.objective.addToExistingText(currentVitals.getVitalsOutput())
+        //Replacing the data instead of adding to it after implementing
+        //the ability to read data back into the form
+        theData.ros = results
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData

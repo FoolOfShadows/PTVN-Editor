@@ -119,6 +119,11 @@ class HPIViewController: NSViewController {
 	}
 	
 	@IBAction func processHPI(_ sender: NSButton) {
+        //This code is supposed to save the document, I was trying to use it as a backup
+        //incase of a crash, but it doesn't seem to do what I need
+        NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
+        
+        
 		var resultsArray = [String]()
 		var results = String()
 		//process Complaints box

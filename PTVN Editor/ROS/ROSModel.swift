@@ -112,20 +112,23 @@ func processROSSectionsFor(_ sectionName:String, with list:[(title:String, state
 	return (positives: positiveResults, negatives: negativeResults)
 }
 
-func parseExistingROSData(_ data:String) -> [Int:[String]]? {
+func parseExistingROSData(_ data:String) -> [(tag:Int, title:String, state:Int)]? {
     let sectionHeaders = ["GEN":1, "GI":2, "PSYCH":3, "GU":4, "ENDO":5, "ENT":6, "EYE":7, "MSK":8, "HEMO":9, "RESP":10, "NEURO":11, "CARDIO":12, "DERM":13]
     
-    var resultDictionary:[Int:[String]] = [:]
+    //var resultDictionary:[Int:[String]] = [:]
+    var results = [(tag:Int, title:String, state:Int)]()
     
     if data.contains("(+)") {
             let positiveData = data.simpleRegExMatch("(?s)\\(\\+\\).*?(\\(-\\)|(All\\sother\\ssystems))").cleanTheTextOf(["\\(\\+\\) ", "\\(-\\)", "All\\sother\\ssystems"])
             //print(positiveData)
             for entry in sectionHeaders {
                 if positiveData.contains(entry.key) {
+                    //positiveData = positiveData.replacingOccurrences(of: ",", with: "&")
                     let selections = positiveData.simpleRegExMatch("(?s)\(entry.key): .*?(;|(\\(-\\))|(All)|\\z)").cleanTheTextOf(["\(entry.key): ", ";"]).components(separatedBy: ", ")
                     //print(selections)
                     if !selections.isEmpty {
-                        resultDictionary[entry.value] = selections
+                        //resultDictionary[entry.value] = selections
+                        results += selections.map { (tag:entry.value, title:$0, state:-1) }
                     }
             }
             
@@ -133,11 +136,24 @@ func parseExistingROSData(_ data:String) -> [Int:[String]]? {
     }
     
     if data.contains("(-)") {
-        
+        print("There is negative data")
+        let negativeData = data.simpleRegExMatch("(?s)\\(-\\).*?(All\\sother\\ssystems)").cleanTheTextOf(["No ", "no ", "\\(-\\)", "All\\sother\\ssystems"])
+        //print("The - data is: \(negativeData)")
+        for entry in sectionHeaders {
+            if negativeData.contains(entry.key) {
+                let selections = negativeData.simpleRegExMatch("(?s)\(entry.key): .*?(;|(All\\sother\\ssystems)|\\z)").cleanTheTextOf(["\(entry.key): ", "All\\sother\\ssystems", ";", "\\."]).components(separatedBy: ", ")
+                //print(selections)
+                if !selections.isEmpty {
+                    //resultDictionary[entry.value] = selections
+                    results += selections.map { (tag:entry.value, title:$0, state:1) }
+                }
+            }
+            
+        }
     }
-    print(resultDictionary)
-    if !resultDictionary.isEmpty {
-        return resultDictionary
+    //print(results)
+    if !results.isEmpty {
+        return results
     } else {
         return nil
     }

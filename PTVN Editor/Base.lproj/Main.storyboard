@@ -4615,7 +4615,7 @@ thoughts</string>
                             <button fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="7Aw-rC-Etg">
                                 <rect key="frame" x="662" y="207" width="139" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Vertigo, spinning" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Bwk-cl-eiz" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                <buttonCell key="cell" type="check" title="Vertigo/Spinning" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Bwk-cl-eiz" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
@@ -4661,9 +4661,9 @@ thoughts</string>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Edm-Z1-r1Q">
-                                <rect key="frame" x="107" y="535" width="127" height="18"/>
+                                <rect key="frame" x="107" y="535" width="123" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Fatigue, Malaise" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Q9B-2f-6DV" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                <buttonCell key="cell" type="check" title="Fatigue/Malaise" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Q9B-2f-6DV" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
@@ -4736,7 +4736,7 @@ thoughts</string>
                             <button fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="Gn6-XT-p1V">
                                 <rect key="frame" x="662" y="227" width="140" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Syncope, fainting" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="LPk-wL-yJu" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                <buttonCell key="cell" type="check" title="Syncope/Fainting" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="LPk-wL-yJu" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
@@ -4882,7 +4882,7 @@ thoughts</string>
                             <button fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="ktb-HZ-uH7">
                                 <rect key="frame" x="867" y="229" width="189" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Dry skin, eyes, or mouth" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="BAB-eD-M5i" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                <buttonCell key="cell" type="check" title="Dry Skin/Eyes/Mouth" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="BAB-eD-M5i" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
@@ -5041,9 +5041,9 @@ thoughts</string>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="rjO-F1-jvE">
-                                <rect key="frame" x="464" y="614" width="194" height="18"/>
+                                <rect key="frame" x="464" y="614" width="166" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Watery, itchy, or red eyes" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="KKn-Hk-ra6" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                <buttonCell key="cell" type="check" title="Watery/Itchy/Red eyes" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="KKn-Hk-ra6" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
