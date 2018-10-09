@@ -247,14 +247,14 @@ extension NSView {
 }
 
 extension NSBox {
-    func setUpSectionBoxUsingTitle(title: String, font:NSFont, referenceView view:NSView, andButtonList buttons: [String], inView superView: NSView) {
+    func setUpSectionBoxUsingTitle(title: String, font:NSFont, referenceView view:NSView, andButtonList buttons: [String], inView superView: NSView, withHeightAdjustment xAdjust:CGFloat = 62) {
         //guard let max = buttons.max(by: {$1.count > $0.count})?.count else { return }
         self.title = title
         self.titleFont = font
         sizeToFit()
         superView.addSubview(self)
         
-        self.setFrameOrigin(NSPoint(x: view.frame.maxX + 5, y: superView.frame.height - self.frame.height - 62))
+        self.setFrameOrigin(NSPoint(x: view.frame.maxX + 5, y: superView.frame.height - self.frame.height - xAdjust))
        
         //self.setFrameSize(NSSize(width: CGFloat((Double(max) * 10.0) + 4), height: self.frame.height))
         

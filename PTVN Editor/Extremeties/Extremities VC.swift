@@ -12,23 +12,15 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	var selfView = NSView()
 	
 
-	@IBOutlet weak var edemaView: NSView!
-	//@IBOutlet var edemaTextView: NSTextView!
-    @IBOutlet weak var edemaScroll: NSScrollView!
+    
+    
+    @IBOutlet weak var extSectionsView: NSView!
+    @IBOutlet weak var issueBox: NSBox!
+    @IBOutlet weak var extScroll: NSScrollView!
 	@IBOutlet weak var pulsesView: NSView!
-	//@IBOutlet var pulsesTextView: NSTextView!
     @IBOutlet weak var pulsesScroll: NSScrollView!
-	@IBOutlet weak var digitAssessmentView: NSView!
-	//@IBOutlet var digitAssessmentTextView: NSTextView!
-    @IBOutlet weak var digitAssessmentScroll: NSScrollView!
-	@IBOutlet weak var limbAssessmentView: NSView!
-	//@IBOutlet var limbAssessmentTextView: NSTextView!
-    @IBOutlet weak var limbAssessmentScroll: NSScrollView!
 	@IBOutlet weak var bunionView: NSStackView!
 	@IBOutlet weak var callusView: NSStackView!
-	@IBOutlet weak var limbView: NSView!
-	@IBOutlet weak var limbSideView: NSStackView!
-	@IBOutlet weak var limbDecAbView: NSStackView!
 	@IBOutlet weak var clubbingView: NSStackView!
 	@IBOutlet weak var lQtyPulsesPopup: NSPopUpButton!
 	@IBOutlet weak var rQtyPulsesPopup: NSPopUpButton!
@@ -37,9 +29,9 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	@IBOutlet weak var lCRCombo: NSComboBox!
 	@IBOutlet weak var rCRCombo: NSComboBox!
     
-    var edemaTextView: NSTextView {
+    var extTextView: NSTextView {
         get {
-            return edemaScroll.contentView.documentView as! NSTextView
+            return extScroll.contentView.documentView as! NSTextView
         }
     }
     var pulsesTextView: NSTextView {
@@ -47,52 +39,50 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             return pulsesScroll.contentView.documentView as! NSTextView
         }
     }
-    var digitAssessmentTextView: NSTextView {
-        get {
-            return digitAssessmentScroll.contentView.documentView as! NSTextView
-        }
-    }
-    var limbAssessmentTextView: NSTextView {
-        get {
-            return limbAssessmentScroll.contentView.documentView as! NSTextView
-        }
-    }
     
-	
-	var digitAssessment = DigitAssessment()
-	var limbAssessment = LimbAssessment()
+    var edemaTypeBox = NSBox()
+    var edemaPittingBox = NSBox()
+    var sideBox = NSBox()
+    var edemaAreaBox = NSBox()
+    var edemaModifierBox = NSBox()
+    var extremitiesBox = NSBox()
+    var leftDigitsBox = NSBox()
+    var rightDigitsBox = NSBox()
+    var leftSenseStrengthBox = NSBox()
+    var rightSenseStrengthBox = NSBox()
+    var leftSenseAreaBox = NSBox()
+    var rightSenseAreaBox = NSBox()
+    
+    var boxes = [NSBox]()
+    
+    let caseLists = extEnumLists()
+    
+    let defaultFont:NSFont = .systemFont(ofSize: 13)
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
     
-    
-    
-    //let recognizer = NSSpeechRecognizer()!
-    //let commands = ["callus right", "callus left", "callus bilateral"]
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		//loadedViewControllers.append(self)
 		selfView = self.view
         clearExtremitiesTab()
         
-        //let nc = NotificationCenter.default
-        //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
-        //nc.addObserver(self, selector: #selector(heardCommand), name: NSNotification.Name(rawValue: "callus right"), object: nil)
         selectAllNormsInView()
         
         (lCRCombo as NSTextField).delegate = self
         (rCRCombo as NSTextField).delegate = self
         
-       //recognizer.delegate = self
-       //recognizer.commands = commands
-    
-        
+        //Set up the font settings for the text views
+        let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
+        let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
+        pulsesTextView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
+        extTextView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
     }
     
-    override func viewDidAppear() {
-        //recognizer.startListening()
-    }
+//    override func viewDidAppear() {
+//        recognizer.startListening()
+//    }
     
 
     /*override*/ func controlTextDidChange(_ notification: Notification) {
@@ -106,7 +96,117 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	
 	@IBAction func clearTab(_ sender: Any) {
 		clearExtremitiesTab()
+        clearAreaNonSiteViews()
 	}
+    
+    
+    private func clearAreaNonSiteViews() {
+        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox]
+        for box in boxes {
+            box.subviews.forEach({ $0.removeFromSuperview() } )
+        }
+        sideBox = NSBox()
+        edemaTypeBox = NSBox()
+        edemaPittingBox = NSBox()
+        edemaAreaBox = NSBox()
+        edemaModifierBox = NSBox()
+        edemaModifierBox = NSBox()
+        extremitiesBox = NSBox()
+        leftDigitsBox = NSBox()
+        rightDigitsBox = NSBox()
+        leftSenseStrengthBox = NSBox()
+        leftSenseAreaBox = NSBox()
+        rightSenseStrengthBox = NSBox()
+        rightSenseAreaBox = NSBox()
+    }
+    
+    @IBAction func setAreaSelections(_ sender:NSButton) {
+        if sender.state == .on {
+            clearAreaNonSiteViews()
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+            switchNormOff(sender)
+            switch sender.title {
+            case "Edema": setUpBoxesForEdema()
+            case "Onychomycosis", "Cyanosis", "Hammer Toes": setUpBoxesForOnchCyHam()
+            case "Vibration Sense", "Monofilament": setUpBoxesForVibMono()
+            case "Spider Veins", "Vericose Veins": setupBoxesForSpiderVericose()
+            default: return
+            }
+        } else if sender.state == .off {
+            clearAreaNonSiteViews()
+        }
+        
+    }
+    
+    private func setUpBoxesForEdema() {
+        edemaTypeBox.addButtonsToViewWithNames(caseLists.edemaTypeCases, andSelector: #selector(uniqueSelections))
+        edemaTypeBox.setUpSectionBoxUsingTitle(title: "Degree", font: defaultFont, referenceView: issueBox, andButtonList: caseLists.edemaTypeCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        edemaPittingBox.addButtonsToViewWithNames(caseLists.edemaPittingCases, andSelector: #selector(uniqueSelections))
+        edemaPittingBox.setUpSectionBoxUsingTitle(title: "Pitting", font: defaultFont, referenceView: edemaTypeBox, andButtonList: caseLists.edemaPittingCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        sideBox.addButtonsToViewWithNames(caseLists.sideCases, andSelector: #selector(uniqueSelections))
+        sideBox.setUpSectionBoxUsingTitle(title: "Side", font: defaultFont, referenceView: edemaPittingBox, andButtonList: caseLists.sideCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        edemaAreaBox.addButtonsToViewWithNames(caseLists.edemaAreaCases, andSelector: #selector(uniqueSelections))
+        edemaAreaBox.setUpSectionBoxUsingTitle(title: "Area", font: defaultFont, referenceView: sideBox, andButtonList: caseLists.edemaAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        edemaModifierBox.addButtonsToViewWithNames(caseLists.edemaModifierCases, andSelector: #selector(uniqueSelections))
+        edemaModifierBox.setUpSectionBoxUsingTitle(title: "Modifier", font: defaultFont, referenceView: edemaAreaBox, andButtonList: caseLists.edemaModifierCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+    }
+    
+    private func setUpBoxesForOnchCyHam() {
+        extremitiesBox.addButtonsToViewWithNames(caseLists.extremitiesCases, andSelector: #selector(uniqueSelections))
+        extremitiesBox.setUpSectionBoxUsingTitle(title: "Extremity", font: defaultFont, referenceView: issueBox, andButtonList: caseLists.extremitiesCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        leftDigitsBox.addButtonsToViewWithNames(caseLists.digitCases, andSelector: nil)
+        leftDigitsBox.setUpSectionBoxUsingTitle(title: "Left", font: defaultFont, referenceView: extremitiesBox, andButtonList: caseLists.digitCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        rightDigitsBox.addButtonsToViewWithNames(caseLists.digitCases, andSelector: nil)
+        rightDigitsBox.setUpSectionBoxUsingTitle(title: "Right", font: defaultFont, referenceView: leftDigitsBox, andButtonList: caseLists.digitCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+    }
+    
+    private func setUpBoxesForVibMono() {
+        leftSenseAreaBox.addButtonsToViewWithNames(caseLists.senseAreaCases, andSelector: #selector(uniqueSelections))
+        leftSenseAreaBox.setUpSectionBoxUsingTitle(title: "Left", font: defaultFont, referenceView: issueBox, andButtonList: caseLists.senseAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        leftSenseStrengthBox.addButtonsToViewWithNames(caseLists.senseStrengthCases, andSelector: #selector(uniqueSelections))
+        leftSenseStrengthBox.setUpSectionBoxUsingTitle(title: "Sense", font: defaultFont, referenceView: leftSenseAreaBox, andButtonList: caseLists.senseStrengthCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        rightSenseAreaBox.addButtonsToViewWithNames(caseLists.senseAreaCases, andSelector: #selector(uniqueSelections))
+        rightSenseAreaBox.setUpSectionBoxUsingTitle(title: "Right", font: defaultFont, referenceView: leftSenseStrengthBox, andButtonList: caseLists.senseAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        rightSenseStrengthBox.addButtonsToViewWithNames(caseLists.senseStrengthCases, andSelector: #selector(uniqueSelections))
+        rightSenseStrengthBox.setUpSectionBoxUsingTitle(title: "Sense", font: defaultFont, referenceView: rightSenseAreaBox, andButtonList: caseLists.senseStrengthCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+    }
+    
+    private func setupBoxesForSpiderVericose() {
+        leftSenseAreaBox.addButtonsToViewWithNames(caseLists.senseAreaCases, andSelector: #selector(uniqueSelections))
+        leftSenseAreaBox.setUpSectionBoxUsingTitle(title: "Left", font: defaultFont, referenceView: issueBox, andButtonList: caseLists.senseAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        rightSenseAreaBox.addButtonsToViewWithNames(caseLists.senseAreaCases, andSelector: #selector(uniqueSelections))
+        rightSenseAreaBox.setUpSectionBoxUsingTitle(title: "Right", font: defaultFont, referenceView: leftSenseAreaBox, andButtonList: caseLists.senseAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+    }
+    
+    @objc func uniqueSelections(_ sender:NSButton) {
+        if sender.state == .on {
+            if let buttons = sender.superview?.subviews {
+                for button in buttons {
+                    if (button as! NSButton).title != sender.title {
+                        (button as! NSButton).state = .off
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func addOrderToView(_ sender: Any) {
+        var returnValues = [String]()
+        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox]
+        for box in boxes {
+            let selections = box.getActiveButtonsInView()
+            if !selections.isEmpty {
+                returnValues.append("\(box.title): \(selections.joined(separator: ", "))")
+            }
+        }
+        extTextView.addToViewsExistingText("\(issueBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
+    }
 	
 	@IBAction func processExtremitiesTab(_ sender: Any) {
 		let results = processTab()
@@ -122,14 +222,12 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	func processTab() -> String {
 		var resultArray = [String]()
 		resultArray.append(Extremities().processSectionFrom(getActiveButtonInfoIn(view: self.view)))
-		resultArray.append(edemaTextView.string)
 		resultArray.append(pulsesTextView.string)
 		resultArray.append(CapillaryRefill().processSectionFrom(getActiveButtonInfoIn(view: self.view)))
 		resultArray.append(Clubbing().processSectionFrom(getActiveButtonInfoIn(view: clubbingView)))
 		resultArray.append(Bunions().processSectionFrom(getActiveButtonInfoIn(view: bunionView)))
 		resultArray.append(Callus().processSectionFrom(getActiveButtonInfoIn(view: callusView)))
-		resultArray.append(digitAssessmentTextView.string)
-		resultArray.append(limbAssessmentTextView.string)
+        resultArray.append(extTextView.string)
 		
 		resultArray = resultArray.filter {!$0.isEmpty}
 		if !resultArray.isEmpty {
@@ -142,7 +240,6 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	func clearExtremitiesTab() {
 		self.view.clearControllers()
 		self.view.populateSelectionsInViewUsing(Extremities())
-		digitAssessment = DigitAssessment()
 	}
 	
 
@@ -213,48 +310,48 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	
 	@IBAction func processSectionsToTextViews(_ sender: NSButton) {
 		switch sender.tag {
-		case 1000: edemaTextView.addToViewsExistingText(Edema().processSectionFrom(getActiveButtonInfoIn(view: edemaView)))
+		//case 1000: edemaTextView.addToViewsExistingText(Edema().processSectionFrom(getActiveButtonInfoIn(view: edemaView)))
 		case 1001: pulsesTextView.addToViewsExistingText(Pulses().processSectionFrom(getActiveButtonInfoIn(view: pulsesView)))
-		case 1002: digitAssessmentTextView.string = (digitAssessment.processSectionFrom(getActiveButtonInfoIn(view: digitAssessmentView)))
-		case 1003: limbAssessmentTextView.addToViewsExistingText(limbAssessment.processSectionFrom(getActiveButtonInfoIn(view: limbAssessmentView)))
+		//case 1002: digitAssessmentTextView.string = (digitAssessment.processSectionFrom(getActiveButtonInfoIn(view: digitAssessmentView)))
+		//case 1003: limbAssessmentTextView.addToViewsExistingText(limbAssessment.processSectionFrom(getActiveButtonInfoIn(view: limbAssessmentView)))
 		default: return
 		}
 		sender.superview?.clearControllers()
 		sender.superview?.populateSelectionsInViewUsing(Extremities())
 	}
 	
-	@IBAction func setPropertiesOfRelatedButtons(_ sender:NSButton) {
-		setPropertiesOfButtonsBasedOnTag(sender.tag)
-	}
+//    @IBAction func setPropertiesOfRelatedButtons(_ sender:NSButton) {
+//        setPropertiesOfButtonsBasedOnTag(sender.tag)
+//    }
 	
-	func setPropertiesOfButtonsBasedOnTag(_ tag:Int) {
-		
-		func makeLimbsExclusive() {
-			for subview in limbView.subviews {
-				if let button = subview as? NSButton {
-					button.action = #selector(selectOnlyOne(_:))
-					button.state = .off
-				}
-			}
-		}
-		func makeLimbsNonexclusive() {
-			for subview in limbView.subviews {
-				if let button = subview as? NSButton {
-					button.action = nil
-					button.state = .off
-				}
-			}
-		}
-		switch tag {
-		case 80, 81:
-			makeLimbsExclusive()
-			limbDecAbView.makeButtonsInViewActive()
-		case 82, 83:
-			makeLimbsNonexclusive()
-			limbDecAbView.makeButtonsInViewInactive()
-		default: return
-		}
-	}
+//    func setPropertiesOfButtonsBasedOnTag(_ tag:Int) {
+//
+//        func makeLimbsExclusive() {
+//            for subview in limbView.subviews {
+//                if let button = subview as? NSButton {
+//                    button.action = #selector(selectOnlyOne(_:))
+//                    button.state = .off
+//                }
+//            }
+//        }
+//        func makeLimbsNonexclusive() {
+//            for subview in limbView.subviews {
+//                if let button = subview as? NSButton {
+//                    button.action = nil
+//                    button.state = .off
+//                }
+//            }
+//        }
+//        switch tag {
+//        case 80, 81:
+//            makeLimbsExclusive()
+//            limbDecAbView.makeButtonsInViewActive()
+//        case 82, 83:
+//            makeLimbsNonexclusive()
+//            limbDecAbView.makeButtonsInViewInactive()
+//        default: return
+//        }
+//    }
 	
 	@IBAction func copyPulsesRight(_ sender: NSButton) {
 		if !lAreaPulsesCombo.stringValue.isEmpty {
@@ -270,31 +367,31 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 		}
 	}
     
-    @objc func heardCommand() {
-        let callusViews = callusView.subviews
-//        switch command {
-//        case "callus right":
-            if let right = callusViews[0] as? NSButton {
-                right.state = .on
-                selectOnlyOne(right)
-            }
-//            print("Heard: \(command) as callus right")
-//        case "callus left":
-//            if let left = callusViews[1] as? NSButton {
-//                left.state = .on
-//                selectOnlyOne(left)
+//    @objc func heardCommand() {
+//        let callusViews = callusView.subviews
+////        switch command {
+////        case "callus right":
+//            if let right = callusViews[0] as? NSButton {
+//                right.state = .on
+//                selectOnlyOne(right)
 //            }
-//            print("Heard: \(command) as callus left")
-//        case "callus bilateral":
-//            if let bilateral = callusViews[2] as? NSButton {
-//                bilateral.state = .on
-//                selectOnlyOne(bilateral)
-//            }
-//            print("Heard: \(command) as callus bilateral")
-//        default:
-//            return
-//        }
-    }
+////            print("Heard: \(command) as callus right")
+////        case "callus left":
+////            if let left = callusViews[1] as? NSButton {
+////                left.state = .on
+////                selectOnlyOne(left)
+////            }
+////            print("Heard: \(command) as callus left")
+////        case "callus bilateral":
+////            if let bilateral = callusViews[2] as? NSButton {
+////                bilateral.state = .on
+////                selectOnlyOne(bilateral)
+////            }
+////            print("Heard: \(command) as callus bilateral")
+////        default:
+////            return
+////        }
+//    }
     
     @objc func selectAllNormsInView() {
         let normButtons = self.view.getNormalButtonsInView()
@@ -304,8 +401,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         }
     }
     
-    override func viewDidDisappear() {
-        //recognizer.stopListening()
-    }
+//    override func viewDidDisappear() {
+//        //recognizer.stopListening()
+//    }
 
 }

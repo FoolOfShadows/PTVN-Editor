@@ -37,6 +37,11 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
         super.viewDidLoad()
         
         self.reasonView.delegate = self
+        
+        //Set up the font settings for the text views
+        let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
+        let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
+        radOrders.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
 		
     }
 	
