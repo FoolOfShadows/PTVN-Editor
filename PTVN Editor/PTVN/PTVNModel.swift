@@ -66,6 +66,8 @@ enum SOAPSections {
 }
 
 
+
+
 class PTVN {
     
     var theText:String
@@ -134,7 +136,7 @@ class PTVN {
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
     }
     
-    //Fix this to format the output correctly for adding to PF
+    //FIXME: Fix this to format the output correctly for adding to PF
     func returnSOAPSection(_ section: SOAPSections) -> String {
         switch section {
         case .subjective:
@@ -180,7 +182,9 @@ class PTVN {
             if let cleanObjective = workingObjective.relaceOccurencesOfItems(objectiveBadBits, with: objectiveGoodBits) {
                 workingObjective = cleanObjective
             }
-            return workingObjective.cleanTheTextOf(prefixes)
+            //TODO:  Pull out Assessment sections, reorganize, compact, and return them.
+            let assessmentBits = PhysicalAssessment(objectiveText: workingObjective)
+            return assessmentBits.cleanAssessmentForXFR().cleanTheTextOf(prefixes)
         case .assessment:
             var results = assessment.cleanTheTextOf(prefixes)
             results = results.replaceRegexPattern("(?s)Lvl \\d\\s*", with: "")

@@ -3754,9 +3754,9 @@ Gw
                                 </subviews>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-yL-g50">
-                                <rect key="frame" x="464" y="238" width="184" height="19"/>
+                                <rect key="frame" x="464" y="238" width="87" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Musculo-Skeletal/Hemo" id="fQI-KS-JjP">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MSK/Hemo" id="fQI-KS-JjP">
                                     <font key="font" metaFont="systemBold" size="15"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -227,7 +227,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 		resultArray.append(Clubbing().processSectionFrom(getActiveButtonInfoIn(view: clubbingView)))
 		resultArray.append(Bunions().processSectionFrom(getActiveButtonInfoIn(view: bunionView)))
 		resultArray.append(Callus().processSectionFrom(getActiveButtonInfoIn(view: callusView)))
-        resultArray.append(extTextView.string)
+        resultArray.append(extTextView.string.components(separatedBy: "\n").joined(separator: ", "))
+        
 		
 		resultArray = resultArray.filter {!$0.isEmpty}
 		if !resultArray.isEmpty {

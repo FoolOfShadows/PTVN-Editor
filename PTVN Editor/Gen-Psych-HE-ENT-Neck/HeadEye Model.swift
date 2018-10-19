@@ -58,7 +58,7 @@ struct HeadEye {
 		
 		
 		if !resultArray.isEmpty {
-			results = resultArray.joined(separator: "\n")
+            results = resultArray.joined(separator: "\n")
 		}
 		
 		return results
