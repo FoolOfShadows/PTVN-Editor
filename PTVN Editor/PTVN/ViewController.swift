@@ -21,6 +21,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var ccScroll: NSScrollView!
     //@IBOutlet weak var ccView: NSTextField!
     @IBOutlet var rosView: NSTextView!
+    @IBOutlet var problemView: NSTextView!
     @IBOutlet var subjectiveView: NSTextView!
     @IBOutlet var preventiveView: NSTextView!
     @IBOutlet var pmhView: NSTextView!
@@ -53,7 +54,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        let theTextViews = [ccView, medsView, rosView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
+        let theTextViews = [ccView, medsView, rosView, problemView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         }
@@ -62,6 +63,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         ccView.delegate = self
         medsView.delegate = self
         rosView.delegate = self
+        problemView.delegate = self
         subjectiveView.delegate = self
         preventiveView.delegate = self
         pmhView.delegate = self
@@ -269,6 +271,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         allergyView.string = theData.allergies
         ccView.string = theData.cc
         rosView.string = theData.ros
+        problemView.string = theData.problems
         subjectiveView.string = theData.subjective
         //print(theData.preventive)
         preventiveView.string = theData.preventive
@@ -287,12 +290,15 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     //Update the instance of the PTVN with data being entered into the main document view
     func updateVarForView(_ view:NSTextView) {
+        
         switch view {
         case medsView:
             theData.medicines = medsView.string
             //print(theData.medicines)
         case rosView:
             theData.ros = rosView.string
+        case problemView:
+            theData.problems = problemView.string
         case subjectiveView:
             theData.subjective = subjectiveView.string
         case preventiveView:
@@ -321,7 +327,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
 //            theData.pharmacy = pharmacyView.stringValue
         default: return
         }
-        //document.updateChangeCount(.changeDone)
+        document.updateChangeCount(.changeDone)
     }
     
     func updateVarForField(_ field:NSTextField) {

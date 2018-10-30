@@ -18,8 +18,10 @@ enum SectionDelimiters:String {
     case patientAgeEnd = "PATIENTAGE#"
     case ccStart = "#CC"
     case ccEnd = "CC#"
-    case problemsStart = "#PROBLEMS"
-    case problemEnd = "PROBLEMS#"
+    case problemsStart = "Problems\\*\\*"
+    case problemsEnd = "\\*problems\\*"
+    case problemsStartForText = "Problems**"
+    case problemsEndForText = "*problems*"
     case subjectiveStart = "#SUBJECTIVE"
     case subjectiveEnd = "SUBJECTIVE#"
     case newPMHStart = "#NEWPMH"
@@ -100,6 +102,7 @@ class PTVN {
     var ros = String()
     var assessment = String()
     var objective = String()
+    var problems = String()
     var subjective = String()
     var plan = String()
     var pharmacy = String()
@@ -110,6 +113,7 @@ class PTVN {
     let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW"]
     let objectiveBadBits = ["\n\nCV:", "\n\nEXTREMITIES:", "\n\nNEURO:", "\n\nSKIN:"]
     let objectiveGoodBits = ["\nCV:", "\nEXTREMITIES:", "\nNEURO:", "\nSKIN:"]
+    let problemBadBits = ["Problems\\*\\*", "\\*problems\\*"]
     
     init(theText: String) {
         self.theText = theText
@@ -131,7 +135,8 @@ class PTVN {
         self.ros = theText.simpleRegExMatch(Regexes().ros).cleanTheTextOf([SectionDelimiters.rosStart.rawValue, SectionDelimiters.rosEnd.rawValue])
         self.assessment = theText.simpleRegExMatch(Regexes().assessment).cleanTheTextOf([SectionDelimiters.assessmentStart.rawValue, SectionDelimiters.assessmentEND.rawValue])
         self.objective = theText.simpleRegExMatch(Regexes().objective).cleanTheTextOf([SectionDelimiters.objectiveStart.rawValue, SectionDelimiters.objectiveEnd.rawValue])
-        self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue])
+        self.problems = theText.simpleRegExMatch(Regexes().problem).cleanTheTextOf([SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
+        self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue, self.problems, SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
     }
@@ -144,6 +149,8 @@ class PTVN {
             if !cc.isEmpty {
                 subjectives.append("CHIEF COMPLAINT:\n\(cc)")
             }
+            
+            //FIXME: Subjective now needs to add in the new problem section when exporting
             if !subjective.isEmpty {
                 var subjTemp = subjective.replacingOccurrences(of: "Problems**", with: "PROBLEMS:")
                 subjTemp = subjTemp.replacingOccurrences(of: "*problems*", with: "")
@@ -245,6 +252,9 @@ class PTVN {
         \(SectionDelimiters.ccEnd.rawValue)
         
         \(SectionDelimiters.subjectiveStart.rawValue)
+        \(SectionDelimiters.problemsStartForText.rawValue)
+        \(problems)
+        \(SectionDelimiters.problemsEndForText.rawValue)
         \(subjective)
         \(SectionDelimiters.subjectiveEnd.rawValue)
         
@@ -324,6 +334,7 @@ class PTVN {
         let ros = "(?s)\(SectionDelimiters.rosStart.rawValue).*\(SectionDelimiters.rosEnd.rawValue)"
         let assessment = "(?s)\(SectionDelimiters.assessmentStart.rawValue).*\(SectionDelimiters.assessmentEND.rawValue)"
         let objective = "(?s)\(SectionDelimiters.objectiveStart.rawValue).*\(SectionDelimiters.objectiveEnd.rawValue)"
+        let problem = "(?s)\(SectionDelimiters.problemsStart.rawValue).*\(SectionDelimiters.problemsEnd.rawValue)"
         let subjective = "(?s)\(SectionDelimiters.subjectiveStart.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
         let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
