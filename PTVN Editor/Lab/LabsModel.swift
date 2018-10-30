@@ -218,7 +218,7 @@ struct LabDxValues: populateComboBoxProtocol {
         case 14/*hsvDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00"]
         case 15/*rprDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00"]
         case 16/*clamDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00"]
-        case 17/*lpdDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00", "E78.4 LpdO", "E78.2 LpdMx", "E78.0 LpdChl", "E11.9 DMII", "E11.65"]
+        case 17/*lpdDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00", "E78.00 PurHC", "E78.49 OthLpd", "E78.2 LpdMx", "E78.0 LpdChl", "E11.9 DMII", "E11.65"]
         case 18/*psaDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00", "Z12.5 PSAScrn", "N40.0", "600.01", "C61"]
         case 19/*udipDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00", "R35.0 U Freq", "R39.15 U Urg", "R30.0 Dysur", "R30.9 PainUr", "788.31", "R35.1 Nocturia", "N39.0 UTI", "R31.0", "R31.2 McrHemU"]
         case 20/*ucxDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00", "N39.0 UTI"]
