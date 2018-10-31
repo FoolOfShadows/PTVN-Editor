@@ -146,15 +146,20 @@ class PTVN {
         switch section {
         case .subjective:
             var subjectives = [String]()
+            var probTemp = String()
             if !cc.isEmpty {
                 subjectives.append("CHIEF COMPLAINT:\n\(cc)")
             }
             
-            //FIXME: Subjective now needs to add in the new problem section when exporting
-            if !subjective.isEmpty {
-                var subjTemp = subjective.replacingOccurrences(of: "Problems**", with: "PROBLEMS:")
-                subjTemp = subjTemp.replacingOccurrences(of: "*problems*", with: "")
-                subjectives.append("SUBJECTIVE:\n\(subjTemp)")
+            if !problems.isEmpty {
+                probTemp = "PROBLEMS:\n\(problems)"
+            }
+            if !subjective.isEmpty && !probTemp.isEmpty {
+                subjectives.append("SUBJECTIVE:\n\(probTemp)\n\(subjective)")
+            } else if !probTemp.isEmpty {
+                subjectives.append("SUBJECTIVE:\n\(probTemp)")
+            } else if !subjective.isEmpty {
+                subjectives.append("SUBJECTIVE:\n\(subjective)")
             }
             if !ros.isEmpty {
                 subjectives.append("\(ros)")

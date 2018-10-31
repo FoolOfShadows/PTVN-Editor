@@ -87,7 +87,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         clearDrTab(self)
         
         //Populate assessmentTableView with Problems subsection of the Subjective section
-        let problems = theData.subjective.simpleRegExMatch("(?s)(Problems\\*\\*).*(\\*problems\\*)").cleanTheTextOf(problemBadBits)
+        let problems = theData.problems/*theData.subjective.simpleRegExMatch("(?s)(Problems\\*\\*).*(\\*problems\\*)").cleanTheTextOf(problemBadBits)*/
         assessmentList = problems.convertListToArray()
         self.assessmentTableView.reloadData()
         chosenAssessmentList = assessmentList

@@ -41,6 +41,7 @@
 		79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */; };
 		79AFE1CE2188A124007F4A5E /* ROS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AFE1CD2188A124007F4A5E /* ROS.storyboard */; };
 		79AFE1D12188A223007F4A5E /* PhysicalExam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AFE1CF2188A223007F4A5E /* PhysicalExam.storyboard */; };
+		79AFE1D32188C646007F4A5E /* BlackLineClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFE1D22188C646007F4A5E /* BlackLineClass.swift */; };
 		79CCA6A22090B73F00909285 /* PainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6942090B73D00909285 /* PainModel.swift */; };
 		79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6952090B73D00909285 /* RadRefViewController.swift */; };
 		79CCA6A42090B73F00909285 /* HPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCA6962090B73D00909285 /* HPIViewController.swift */; };
@@ -124,6 +125,7 @@
 		79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxContainingView.swift; sourceTree = "<group>"; };
 		79AFE1CD2188A124007F4A5E /* ROS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ROS.storyboard; sourceTree = "<group>"; };
 		79AFE1D02188A223007F4A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PTVN Editor/Base.lproj/PhysicalExam.storyboard"; sourceTree = "<group>"; };
+		79AFE1D22188C646007F4A5E /* BlackLineClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackLineClass.swift; sourceTree = "<group>"; };
 		79CCA6942090B73D00909285 /* PainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainModel.swift; sourceTree = "<group>"; };
 		79CCA6952090B73D00909285 /* RadRefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadRefViewController.swift; sourceTree = "<group>"; };
 		79CCA6962090B73D00909285 /* HPIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPIViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				791320672077C85200CB1537 /* PTVN_Editor.entitlements */,
 				79CCA6BA2090BCFC00909285 /* Extensions Etc */,
 				79AFDF5020C04B33007FAB5C /* LineContainingView.swift */,
+				79AFE1D22188C646007F4A5E /* BlackLineClass.swift */,
 				79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */,
 				79349EA721765B420020F88B /* OrderedDictionary.swift */,
 			);
@@ -620,6 +623,7 @@
 				799C221B20C6D57900DC9993 /* PTVNWindowController.swift in Sources */,
 				79CCA6E72090DA4200909285 /* DRE Model.swift in Sources */,
 				798BBB4C20939617002A28AA /* IncontinenceModel.swift in Sources */,
+				79AFE1D32188C646007F4A5E /* BlackLineClass.swift in Sources */,
 				79E60BD920DBF56700BC775B /* MoodVC.swift in Sources */,
 				798BBB4720939617002A28AA /* PHQ9Controller.swift in Sources */,
 				798BBB592093A000002A28AA /* PreventiveController.swift in Sources */,
