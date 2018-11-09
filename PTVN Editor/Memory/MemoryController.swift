@@ -86,6 +86,7 @@ class MemoryController: NSViewController {
 			let finalResult = "Memory screen results:\n\(finalResultsArray.joined(separator: "\n"))"
             
             theData.objective.addToExistingText(finalResult)
+            theData.assessment.addToExistingText("Memory test")
             
             let firstVC = presentingViewController as! ViewController
             firstVC.theData = theData

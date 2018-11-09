@@ -66,7 +66,7 @@ class HPIViewController: NSViewController {
 		return results
 	}
 	
-	func getListOfButtons(_ view:NSView) -> [NSButton] {
+	private func getListOfButtons(_ view:NSView) -> [NSButton] {
 		var results = [NSButton]()
 		for item in view.subviews {
 			if item is NSButton {

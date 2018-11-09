@@ -190,13 +190,17 @@ class PTVN {
             }
             return subjectives.joined(separator: "\n\n")
         case .objective:
+            var returnText = [String]()
             var workingObjective = objective.replacingOccurrences(of: "\n\n\n", with: "\n\n")
             if let cleanObjective = workingObjective.relaceOccurencesOfItems(objectiveBadBits, with: objectiveGoodBits) {
                 workingObjective = cleanObjective
             }
             //TODO:  Pull out Assessment sections, reorganize, compact, and return them.
             let assessmentBits = PhysicalAssessment(objectiveText: workingObjective)
-            return assessmentBits.cleanAssessmentForXFR().cleanTheTextOf(prefixes)
+            returnText.append(assessmentBits.cleanObjectiveOfAssessment(workingObjective).removeWhiteSpace())
+            returnText.append(assessmentBits.cleanAssessmentForXFR().cleanTheTextOf(prefixes))
+            return returnText.joined(separator: "\n")
+            
         case .assessment:
             var results = assessment.cleanTheTextOf(prefixes)
             results = results.replaceRegexPattern("(?s)Lvl \\d\\s*", with: "")

@@ -50,7 +50,7 @@ struct PhysicalAssessment {
     var mskSection:String { return getAssessmentSectionFor(SectionHeadings.MSK.rawValue) }
     var skinSection:String { return getAssessmentSectionFor(SectionHeadings.SKIN.rawValue) }
     
-    
+    var allPASections:[String] { return [genSection, psySection, headSection, eyeSection, entSection, noseSection, throatSection, neckSection, cvSection, chestSection, giSection, lymphSection, vibeSection, monoSection, extSection, neuroSection, mskSection, skinSection]}
     
     func getAssessmentSectionFor(_ header:String) -> String {
         let bitsToClean:[String] = { SectionHeadings.allCases.map {$0.rawValue}.filter {$0 != header && $0 != SectionHeadings.VIBE.rawValue && $0 != SectionHeadings.MONO.rawValue}}()
@@ -73,21 +73,25 @@ struct PhysicalAssessment {
         if !finalNeuro.isEmpty && !finalNeuro.contains("NEURO:") {
             finalNeuro = "NEURO: " + finalNeuro
         }
-        //print(extSection)
-        //print("VIBE: \(vibeSection)\nMONO: \(monoSection)")
+        
         var finalExt = extSection.cleanTheTextOf([vibeSection, monoSection, " ,"])
         if finalExt.last == "," {
             finalExt.popLast()
         }
-        //var finalExt = extSection.replacingOccurrences(of: vibeSection, with: "")
-        //print(finalExt)
-        //finalExt = finalExt.replacingOccurrences(of: monoSection, with: "")
-        //print(finalExt)
+        
         let orderedArray = [genSection, psySection, headSection, eyeSection, entSection, noseSection, throatSection, neckSection, cvSection, chestSection, giSection, lymphSection, finalExt, finalNeuro, mskSection, skinSection]
         
         let finalArray = orderedArray.filter { !$0.isEmpty }
         
         
         return finalArray.joined(separator: "\n")
+    }
+    
+    func cleanObjectiveOfAssessment(_ objectiveText:String) -> String {
+        var objective = objectiveText
+        for section in allPASections {
+            objective = objective.replacingOccurrences(of: section, with: "")
+        }
+        return objective.replaceRegexPattern("\\n{2,}", with: "\n")
     }
 }

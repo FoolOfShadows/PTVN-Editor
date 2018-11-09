@@ -56,6 +56,7 @@ class MoodVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         }
         if !finalAnswersArray.isEmpty {
             theData.subjective.addToExistingText("Mood Questionnaire:\n\(finalAnswersArray.joined(separator: "\n"))")
+            theData.assessment.addToExistingText("Mood test")
         }
         
         print(theData.subjective)

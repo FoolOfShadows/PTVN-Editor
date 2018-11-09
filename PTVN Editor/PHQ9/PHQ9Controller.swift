@@ -224,6 +224,9 @@ class PHQ9Controller: NSViewController {
 		}
 		
         theData.objective.addToExistingText(finalResult)
+        if !finalResult.isEmpty {
+            theData.assessment.addToExistingText("PHQ-9")
+        }
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData

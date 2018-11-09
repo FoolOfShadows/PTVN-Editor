@@ -2932,7 +2932,7 @@ Gw
                                 </connections>
                             </button>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Medications" translatesAutoresizingMaskIntoConstraints="NO" id="i6A-hb-suE">
-                                <rect key="frame" x="275" y="57" width="691" height="234"/>
+                                <rect key="frame" x="275" y="45" width="691" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="eXM-W3-G4x">
                                     <rect key="frame" x="3" y="3" width="685" height="216"/>
