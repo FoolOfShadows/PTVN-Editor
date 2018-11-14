@@ -57,14 +57,16 @@ struct PhysicalAssessment {
         switch header {
         case SectionHeadings.VIBE.rawValue, SectionHeadings.MONO.rawValue:
             return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|,|\\z)").removeWhiteSpace().cleanTheTextOf(bitsToClean + [","])
-        case SectionHeadings.GI.rawValue:
-            return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!ABDOMEN:)").removeWhiteSpace().cleanTheTextOf(bitsToClean)
+//        case SectionHeadings.GI.rawValue:
+//            return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!ABDOMEN:)").removeWhiteSpace().cleanTheTextOf(bitsToClean)
+//        case SectionHeadings.ENT.rawValue:
+//            return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!EARS:)(?<!EAC:)").removeWhiteSpace().cleanTheTextOf(bitsToClean + [", "])
         default:
         //The regex here looks for text matching between the section heading value and either
         //two returns, two or more capital letters together with a colon (the next heading)
         //or the end of the section.  It also includes a negative assertion to ignore the
         //subheading "EARS:"
-        return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!EARS:)").removeWhiteSpace().cleanTheTextOf(bitsToClean)
+        return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!EARS:)(?<!EAC:)(?<!ABDOMEN:)(?<!BS:)").removeWhiteSpace().cleanTheTextOf(bitsToClean)
         }
     }
     

@@ -11,85 +11,14 @@
             <objects>
                 <viewController title="Systems Review" id="oSV-Wn-0MK" customClass="ROSViewController" customModule="PTVN_Editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="urk-v2-Ctb">
-                        <rect key="frame" x="0.0" y="0.0" width="1143" height="717"/>
+                        <rect key="frame" x="0.0" y="0.0" width="962" height="694"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D8i-Ki-zSD">
-                                <rect key="frame" x="645" y="6" width="82" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z6x-b4-Kmj">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="dismissController:" target="oSV-Wn-0MK" id="PMR-NG-Mjq"/>
-                                </connections>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-KX-JFa">
-                                <rect key="frame" x="919" y="72" width="59" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title=" - Yes" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="I12-rj-YGC" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="14"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKw-gk-ZwZ">
-                                <rect key="frame" x="919" y="52" width="132" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title=" - Specifically No" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="CkP-cw-Tq2" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="14"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYU-jG-v35">
-                                <rect key="frame" x="919" y="92" width="55" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title=" - No" bezelStyle="regularSquare" imagePosition="left" enabled="NO" allowsMixedState="YES" inset="2" id="MgA-tg-6mM" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="14"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-6A-x2G">
-                                <rect key="frame" x="727" y="6" width="160" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Process &amp; Continue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jba-YA-AvT">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="processROS:" target="oSV-Wn-0MK" id="gKs-1b-5Cl"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-2e-yAC">
-                                <rect key="frame" x="968" y="6" width="87" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Process" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cyx-7s-FFu">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="processROS:" target="oSV-Wn-0MK" id="LjW-Ld-6yB"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEe-dt-i6L">
-                                <rect key="frame" x="892" y="6" width="73" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xTR-sh-yqY">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="clearROS:" target="oSV-Wn-0MK" id="RtU-Wk-ZYU"/>
-                                </connections>
-                            </button>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="CARDIO" translatesAutoresizingMaskIntoConstraints="NO" id="aAV-Pj-eVs">
-                                <rect key="frame" x="863" y="462" width="156" height="234"/>
+                                <rect key="frame" x="772" y="438" width="173" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="4hI-Zp-axg">
-                                    <rect key="frame" x="3" y="3" width="150" height="213"/>
+                                    <rect key="frame" x="3" y="3" width="167" height="213"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="Va1-4e-pSB">
@@ -211,10 +140,10 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="DERM" translatesAutoresizingMaskIntoConstraints="NO" id="5fi-Km-XpM">
-                                <rect key="frame" x="863" y="126" width="162" height="332"/>
+                                <rect key="frame" x="772" y="102" width="173" height="332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="2qD-qc-EEs">
-                                    <rect key="frame" x="3" y="3" width="156" height="311"/>
+                                    <rect key="frame" x="3" y="3" width="167" height="311"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="Qvi-M3-Qxo">
@@ -364,7 +293,7 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="GEN" translatesAutoresizingMaskIntoConstraints="NO" id="7Az-0k-xyb">
-                                <rect key="frame" x="108" y="493" width="135" height="203"/>
+                                <rect key="frame" x="17" y="469" width="135" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="ekk-8L-i3Y">
                                     <rect key="frame" x="3" y="3" width="129" height="182"/>
@@ -487,7 +416,7 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="GU" translatesAutoresizingMaskIntoConstraints="NO" id="jRO-JJ-Fnh">
-                                <rect key="frame" x="108" y="196" width="135" height="289"/>
+                                <rect key="frame" x="17" y="176" width="135" height="289"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="jvv-HZ-Hik">
                                     <rect key="frame" x="3" y="3" width="129" height="268"/>
@@ -560,7 +489,7 @@ Gw
                                         <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="ozz-vg-wGy">
                                             <rect key="frame" x="22" y="109" width="87" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Hesitency" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="LHo-yg-Gqc" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                            <buttonCell key="cell" type="check" title="Hesitancy" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="LHo-yg-Gqc" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system" size="14"/>
                                             </buttonCell>
@@ -650,7 +579,7 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="PSYCH" translatesAutoresizingMaskIntoConstraints="NO" id="5gW-d9-j0L">
-                                <rect key="frame" x="245" y="224" width="159" height="297"/>
+                                <rect key="frame" x="154" y="200" width="159" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="tfv-wq-10A">
                                     <rect key="frame" x="3" y="3" width="153" height="276"/>
@@ -805,7 +734,7 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="GI" translatesAutoresizingMaskIntoConstraints="NO" id="urL-jv-WKs">
-                                <rect key="frame" x="406" y="365" width="159" height="331"/>
+                                <rect key="frame" x="315" y="341" width="159" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="Yo5-Cp-jBM">
                                     <rect key="frame" x="3" y="3" width="153" height="310"/>
@@ -1026,7 +955,7 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="ENT" translatesAutoresizingMaskIntoConstraints="NO" id="igr-DK-Uqb">
-                                <rect key="frame" x="567" y="363" width="140" height="332"/>
+                                <rect key="frame" x="476" y="340" width="140" height="332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="2WF-Mf-fhL">
                                     <rect key="frame" x="3" y="3" width="134" height="311"/>
@@ -1099,9 +1028,9 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="zgY-dy-O5x">
-                                            <rect key="frame" x="21" y="229" width="74" height="18"/>
+                                            <rect key="frame" x="21" y="229" width="103" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Tinnitus" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="qTJ-dH-vV8" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                            <buttonCell key="cell" type="check" title="Ringing Ears" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="qTJ-dH-vV8" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system" size="14"/>
                                             </buttonCell>
@@ -1229,10 +1158,10 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="EYE" translatesAutoresizingMaskIntoConstraints="NO" id="pWA-WF-rYI">
-                                <rect key="frame" x="406" y="235" width="147" height="126"/>
+                                <rect key="frame" x="315" y="210" width="159" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="Pa1-KQ-0dc">
-                                    <rect key="frame" x="3" y="3" width="141" height="105"/>
+                                    <rect key="frame" x="3" y="3" width="153" height="105"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Y0S-LW-12M">
@@ -1280,10 +1209,10 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="MSK" translatesAutoresizingMaskIntoConstraints="NO" id="mjT-Xd-mGp">
-                                <rect key="frame" x="567" y="188" width="138" height="171"/>
+                                <rect key="frame" x="476" y="165" width="140" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="pC2-yr-COd">
-                                    <rect key="frame" x="3" y="3" width="132" height="150"/>
+                                    <rect key="frame" x="3" y="3" width="134" height="150"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tzb-hD-5bh">
@@ -1369,10 +1298,10 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="HEMO" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-ke-iph">
-                                <rect key="frame" x="567" y="115" width="115" height="69"/>
+                                <rect key="frame" x="476" y="92" width="140" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="6B9-Fp-mYZ">
-                                    <rect key="frame" x="3" y="3" width="109" height="48"/>
+                                    <rect key="frame" x="3" y="3" width="134" height="48"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="hzb-kj-ct0">
@@ -1396,7 +1325,7 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="RESP" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-ya-jwt">
-                                <rect key="frame" x="709" y="446" width="152" height="250"/>
+                                <rect key="frame" x="618" y="422" width="152" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="8I6-J7-fA9">
                                     <rect key="frame" x="3" y="3" width="146" height="229"/>
@@ -1561,10 +1490,10 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="NEURO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-nz-A6p">
-                                <rect key="frame" x="709" y="131" width="142" height="311"/>
+                                <rect key="frame" x="618" y="107" width="152" height="311"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="ZxQ-uk-iBD">
-                                    <rect key="frame" x="3" y="3" width="136" height="290"/>
+                                    <rect key="frame" x="3" y="3" width="146" height="290"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="ePg-w3-YLs">
@@ -1651,8 +1580,8 @@ Gw
                                                 <font key="font" metaFont="system" size="14"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCf-7x-4PB">
-                                            <rect key="frame" x="21" y="168" width="56" height="18"/>
+                                        <button fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="uCf-7x-4PB">
+                                            <rect key="frame" x="21" y="168" width="57" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Jerks" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Cec-P4-wOV" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1768,10 +1697,10 @@ Gw
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="ENDO" translatesAutoresizingMaskIntoConstraints="NO" id="GIv-fc-Iz4">
-                                <rect key="frame" x="245" y="525" width="134" height="171"/>
+                                <rect key="frame" x="154" y="501" width="159" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="Khb-13-Nsa">
-                                    <rect key="frame" x="3" y="3" width="128" height="150"/>
+                                    <rect key="frame" x="3" y="3" width="153" height="150"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="BsB-SD-hmf">
@@ -1852,6 +1781,88 @@ Gw
                                 </view>
                                 <font key="titleFont" metaFont="systemBold"/>
                             </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kG-RG-Mor">
+                                <rect key="frame" x="20" y="22" width="74" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="roundRect" title="Flip States" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bsE-ED-wo9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="flipAllButtons:" target="oSV-Wn-0MK" id="aPR-Rv-Xmh"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D8i-Ki-zSD">
+                                <rect key="frame" x="538" y="16" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z6x-b4-Kmj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="oSV-Wn-0MK" id="PMR-NG-Mjq"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-KX-JFa">
+                                <rect key="frame" x="601" y="62" width="59" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title=" - Yes" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="I12-rj-YGC" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="14"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKw-gk-ZwZ">
+                                <rect key="frame" x="664" y="62" width="132" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title=" - Specifically No" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="CkP-cw-Tq2" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="14"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYU-jG-v35">
+                                <rect key="frame" x="542" y="62" width="55" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title=" - No" bezelStyle="regularSquare" imagePosition="left" enabled="NO" allowsMixedState="YES" inset="2" id="MgA-tg-6mM" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="14"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-6A-x2G">
+                                <rect key="frame" x="620" y="16" width="160" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Process &amp; Continue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jba-YA-AvT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="processROS:" target="oSV-Wn-0MK" id="gKs-1b-5Cl"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-2e-yAC">
+                                <rect key="frame" x="861" y="16" width="87" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Process" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cyx-7s-FFu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="processROS:" target="oSV-Wn-0MK" id="LjW-Ld-6yB"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEe-dt-i6L">
+                                <rect key="frame" x="785" y="16" width="73" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xTR-sh-yqY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clearROS:" target="oSV-Wn-0MK" id="RtU-Wk-ZYU"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -2008,7 +2019,7 @@ Gw
                 </viewController>
                 <customObject id="lEk-uc-nHn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1074.5" y="-266.5"/>
+            <point key="canvasLocation" x="-1165" y="-278"/>
         </scene>
     </scenes>
 </document>

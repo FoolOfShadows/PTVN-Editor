@@ -344,7 +344,7 @@ class PTVN {
         let assessment = "(?s)\(SectionDelimiters.assessmentStart.rawValue).*\(SectionDelimiters.assessmentEND.rawValue)"
         let objective = "(?s)\(SectionDelimiters.objectiveStart.rawValue).*\(SectionDelimiters.objectiveEnd.rawValue)"
         let problem = "(?s)\(SectionDelimiters.problemsStart.rawValue).*\(SectionDelimiters.problemsEnd.rawValue)"
-        let subjective = "(?s)\(SectionDelimiters.subjectiveStart.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
+        let subjective = "(?s)\(SectionDelimiters.problemsEnd.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
         let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
     }

@@ -33,19 +33,19 @@ class ROSViewController: NSViewController {
     var allROSControllers:[NSButton] { return  rosView.getListOfButtons()}
 
     
-    var genList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GEN", returnTitleAndStateFromView(rosView, withTag: 1))}
-    var giList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GI", returnTitleAndStateFromView(rosView, withTag: 2))}
-    var psychList:(sectionName: String, list: [(title:String, state:Int)]) {return ("PSYCH", returnTitleAndStateFromView(rosView, withTag: 3))}
-    var guList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GU", returnTitleAndStateFromView(rosView, withTag: 4))}
-    var endoList:(sectionName: String, list: [(title:String, state:Int)]) {return ("ENDO", returnTitleAndStateFromView(rosView, withTag: 5))}
-    var heentList:(sectionName: String, list: [(title:String, state:Int)]) {return ("ENT", returnTitleAndStateFromView(rosView, withTag: 6))}
-    var eyeList:(sectionName: String, list: [(title:String, state:Int)]) {return ("EYE", returnTitleAndStateFromView(rosView, withTag: 7))}
-    var mskList:(sectionName: String, list: [(title:String, state:Int)]) {return ("MSK", returnTitleAndStateFromView(rosView, withTag: 8))}
-    var hemoList:(sectionName: String, list: [(title:String, state:Int)]) {return ("HEMO", returnTitleAndStateFromView(rosView, withTag: 9))}
-    var respList:(sectionName: String, list: [(title:String, state:Int)]) {return ("RESP", returnTitleAndStateFromView(rosView, withTag: 10))}
-    var neuroList:(sectionName: String, list: [(title:String, state:Int)]) {return ("NEURO", returnTitleAndStateFromView(rosView, withTag: 11))}
-    var cardioList:(sectionName: String, list: [(title:String, state:Int)]) {return ("CARDIO", returnTitleAndStateFromView(rosView, withTag: 11))}
-    var dermList:(sectionName: String, list: [(title:String, state:Int)]) {return ("DERM", returnTitleAndStateFromView(rosView, withTag: 11))}
+//    var genList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GEN", returnTitleAndStateFromView(rosView, withTag: 1))}
+//    var giList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GI", returnTitleAndStateFromView(rosView, withTag: 2))}
+//    var psychList:(sectionName: String, list: [(title:String, state:Int)]) {return ("PSYCH", returnTitleAndStateFromView(rosView, withTag: 3))}
+//    var guList:(sectionName: String, list: [(title:String, state:Int)]) {return ("GU", returnTitleAndStateFromView(rosView, withTag: 4))}
+//    var endoList:(sectionName: String, list: [(title:String, state:Int)]) {return ("ENDO", returnTitleAndStateFromView(rosView, withTag: 5))}
+//    var heentList:(sectionName: String, list: [(title:String, state:Int)]) {return ("ENT", returnTitleAndStateFromView(rosView, withTag: 6))}
+//    var eyeList:(sectionName: String, list: [(title:String, state:Int)]) {return ("EYE", returnTitleAndStateFromView(rosView, withTag: 7))}
+//    var mskList:(sectionName: String, list: [(title:String, state:Int)]) {return ("MSK", returnTitleAndStateFromView(rosView, withTag: 8))}
+//    var hemoList:(sectionName: String, list: [(title:String, state:Int)]) {return ("HEMO", returnTitleAndStateFromView(rosView, withTag: 9))}
+//    var respList:(sectionName: String, list: [(title:String, state:Int)]) {return ("RESP", returnTitleAndStateFromView(rosView, withTag: 10))}
+//    var neuroList:(sectionName: String, list: [(title:String, state:Int)]) {return ("NEURO", returnTitleAndStateFromView(rosView, withTag: 11))}
+//    var cardioList:(sectionName: String, list: [(title:String, state:Int)]) {return ("CARDIO", returnTitleAndStateFromView(rosView, withTag: 11))}
+//    var dermList:(sectionName: String, list: [(title:String, state:Int)]) {return ("DERM", returnTitleAndStateFromView(rosView, withTag: 11))}
     
 
     let nc = NotificationCenter.default
@@ -150,6 +150,10 @@ class ROSViewController: NSViewController {
         return ""
     }
     
-
+    @IBAction func flipAllButtons(_ sender: NSButton) {
+        for button in allROSControllers {
+            button.setNextState()
+        }
+    }
     
 }

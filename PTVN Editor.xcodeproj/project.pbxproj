@@ -18,6 +18,7 @@
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
 		79349EA821765B420020F88B /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79349EA721765B420020F88B /* OrderedDictionary.swift */; };
 		79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79477C8B21779A9B00E9219D /* AssessmentModel.swift */; };
+		795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B7234219B47800010B07E /* TitlesAndOutput.swift */; };
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		798BBB4520939617002A28AA /* ESSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3D20939613002A28AA /* ESSController.swift */; };
 		798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3E20939613002A28AA /* IncontinenceController.swift */; };
@@ -102,6 +103,7 @@
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
 		79349EA721765B420020F88B /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		79477C8B21779A9B00E9219D /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
+		795B7234219B47800010B07E /* TitlesAndOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndOutput.swift; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
 		798BBB3E20939613002A28AA /* IncontinenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncontinenceController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				7906DEE7208E123900CD11A1 /* ROSViewController.swift */,
 				7906DEE6208E123900CD11A1 /* ROSModel.swift */,
+				795B7234219B47800010B07E /* TitlesAndOutput.swift */,
 			);
 			path = ROS;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				79CCA6A72090B73F00909285 /* ProcInjViewController.swift in Sources */,
 				79CCA6D22090D49F00909285 /* GI Model.swift in Sources */,
 				79CCA6E42090DA4200909285 /* GU Model.swift in Sources */,
+				795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */,
 				79CCA6EB2090DB7D00909285 /* Breast VC.swift in Sources */,
 				79AFDF5120C04B33007FAB5C /* LineContainingView.swift in Sources */,
 				79DDB9EE208786BE00E01853 /* Buttons.swift in Sources */,
