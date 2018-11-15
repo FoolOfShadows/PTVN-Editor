@@ -29,7 +29,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var synvPopup: NSPopUpButton!
     @IBOutlet weak var assessmentTableView: NSTableView!
     
-	@IBOutlet weak var visitLevelStack: NSStackView!
+	@IBOutlet weak var visitLevelView: NSView!
     
     var medicationView: NSTextView {
         get {
@@ -173,7 +173,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     
 	@IBAction func processAssessmentTable(_ sender: Any) {
 		
-		let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelStack.getListOfButtons().filter {$0.state == .on}.map {$0.title})
+		let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
 		
         theData.assessment.addToExistingText(results)
 	}
@@ -225,7 +225,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
 	
 	@IBAction func onlyOneCheckAtATime(_ sender:NSButton) {
-		let boxes = visitLevelStack.getListOfButtons()
+		let boxes = visitLevelView.getListOfButtons()
 		for box in boxes {
 			if box.title != sender.title {
 				box.state = .off

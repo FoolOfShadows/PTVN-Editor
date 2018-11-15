@@ -203,9 +203,10 @@ class PTVN {
             
         case .assessment:
             var results = assessment.cleanTheTextOf(prefixes)
-            results = results.replaceRegexPattern("(?s)Lvl \\d\\s*", with: "")
+            results = results.replaceRegexPattern("Lvl.*\\d\\s*", with: "")
             results = results.replaceRegexPattern("Lvl WE\\s*", with: "")
             results = results.replaceRegexPattern("Lvl NPW\\s*", with: "")
+            results = results.replaceRegexPattern("Lvl Y\\s*", with: "")
             return results.removeWhiteSpace() /*assessment.cleanTheTextOf(prefixes)*/
         case .plan:
             var results = plan
