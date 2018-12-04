@@ -118,9 +118,11 @@ class ESSController: NSViewController {
 		
 		if !stackResults.isEmpty {
 			results = "Epworth Sleepiness Scale result is \(scoreLabel.stringValue).\n\(stackResults)"
+            theData.objective.addToExistingText(results)
+            theData.assessment.addToExistingText("ESS questionnaire")
 		}
         
-        theData.objective.addToExistingText(results)
+        
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData

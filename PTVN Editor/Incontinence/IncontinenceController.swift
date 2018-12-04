@@ -80,6 +80,8 @@ class IncontinenceController: NSViewController {
 		if !resultsArray.isEmpty && resultsArray != ["","","",""] {
             //print(resultsArray)
             results = "Urinary incontinence screening.  Patient reports:\n" + resultsArray.filter {$0 != ""}.joined(separator: "\n")
+            theData.objective.addToExistingText(results)
+            theData.assessment.addToExistingText("Incontinence questionnaire")
 		}
 		
         theData.objective.addToExistingText(results)
