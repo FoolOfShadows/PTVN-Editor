@@ -57,6 +57,11 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         //let nc = NotificationCenter.default
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
         selectAllNormsInView()
+        
+        //Set up the font settings for the text views
+        let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
+        let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
+        mskResultsTextView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
     }
 	
 	@IBAction func clearTab(_ sender: Any) {

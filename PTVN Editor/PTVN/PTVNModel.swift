@@ -155,9 +155,9 @@ class PTVN {
                 probTemp = "PROBLEMS:\n\(problems)"
             }
             if !subjective.isEmpty && !probTemp.isEmpty {
-                subjectives.append("SUBJECTIVE:\n\(probTemp)\n\(subjective)")
+                subjectives.append("\(probTemp)\n\nSUBJECTIVE:\n\(subjective)")
             } else if !probTemp.isEmpty {
-                subjectives.append("SUBJECTIVE:\n\(probTemp)")
+                subjectives.append("\(probTemp)")
             } else if !subjective.isEmpty {
                 subjectives.append("SUBJECTIVE:\n\(subjective)")
             }
@@ -191,14 +191,12 @@ class PTVN {
             return subjectives.joined(separator: "\n\n")
         case .objective:
             var returnText = [String]()
-            var workingObjective = objective.replacingOccurrences(of: "\n\n\n", with: "\n\n")
-            if let cleanObjective = workingObjective.relaceOccurencesOfItems(objectiveBadBits, with: objectiveGoodBits) {
-                workingObjective = cleanObjective
-            }
+            
             //TODO:  Pull out Assessment sections, reorganize, compact, and return them.
-            let assessmentBits = PhysicalAssessment(objectiveText: workingObjective)
-            returnText.append(assessmentBits.cleanObjectiveOfAssessment(workingObjective).removeWhiteSpace())
+            let assessmentBits = PhysicalAssessment(objectiveText: objective)
+            
             returnText.append(assessmentBits.cleanAssessmentForXFR().cleanTheTextOf(prefixes))
+            
             return returnText.joined(separator: "\n")
             
         case .assessment:

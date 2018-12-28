@@ -47,6 +47,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var theData = PTVN(theText: "")
     var document = Document()
     
+    //Create a spellchecking instance
+    let spellChecker = OurSpellChecker()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -335,19 +338,20 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func copyObjective(_ sender: Any) {
-        theData.returnSOAPSection(.objective).copyToPasteboard()
+        spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.objective)).copyToPasteboard()
+        //theData.returnSOAPSection(.objective).copyToPasteboard()
     }
     
     @IBAction func copySubjective(_ sender: Any) {
-        theData.returnSOAPSection(.subjective).copyToPasteboard()
+        spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.subjective)).copyToPasteboard()
     }
     
     @IBAction func copyAssessment(_ sender: Any) {
-        theData.returnSOAPSection(.assessment).copyToPasteboard()
+        spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.assessment)).copyToPasteboard()
     }
     
     @IBAction func copyPlan(_ sender: Any) {
-        theData.returnSOAPSection(.plan).copyToPasteboard()
+        spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.plan)).copyToPasteboard()
     }
     
     @IBAction func getPMHUpdates(_ sender: Any) {

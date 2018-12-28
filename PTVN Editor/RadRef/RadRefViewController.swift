@@ -187,7 +187,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 		
 	}
 	
-    func clearAreaSideViews() {
+    private func clearAreaSideViews() {
         areaView.subviews.forEach({ $0.removeFromSuperview() })
         sideView.subviews.forEach({ $0.removeFromSuperview() })
         reasonView.stringValue = ""

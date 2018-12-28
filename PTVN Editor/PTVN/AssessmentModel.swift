@@ -49,8 +49,9 @@ struct PhysicalAssessment {
     var neuroSection:String { return getAssessmentSectionFor(SectionHeadings.NEURO.rawValue) }
     var mskSection:String { return getAssessmentSectionFor(SectionHeadings.MSK.rawValue) }
     var skinSection:String { return getAssessmentSectionFor(SectionHeadings.SKIN.rawValue) }
+    var nonPEObjective:String { return cleanObjectiveOfAssessment()}
     
-    var allPASections:[String] { return [genSection, psySection, headSection, eyeSection, entSection, noseSection, throatSection, neckSection, cvSection, chestSection, giSection, lymphSection, vibeSection, monoSection, extSection, neuroSection, mskSection, skinSection]}
+    var allPASections:[String] { return [mskSection, genSection, psySection, headSection, eyeSection, entSection, noseSection, throatSection, neckSection, cvSection, chestSection, giSection, lymphSection, extSection, neuroSection, skinSection]}
     
     func getAssessmentSectionFor(_ header:String) -> String {
         let bitsToClean:[String] = { SectionHeadings.allCases.map {$0.rawValue}.filter {$0 != header && $0 != SectionHeadings.VIBE.rawValue && $0 != SectionHeadings.MONO.rawValue}}()
@@ -81,19 +82,21 @@ struct PhysicalAssessment {
             finalExt.popLast()
         }
         
-        let orderedArray = [genSection, psySection, headSection, eyeSection, entSection, noseSection, throatSection, neckSection, cvSection, chestSection, giSection, lymphSection, finalExt, finalNeuro, mskSection, skinSection]
+        let orderedArray = [nonPEObjective, genSection, psySection, headSection, eyeSection, entSection, noseSection, throatSection, neckSection, cvSection, chestSection, giSection, lymphSection, finalExt, finalNeuro, mskSection, skinSection]
         
         let finalArray = orderedArray.filter { !$0.isEmpty }
-        
+        //print("Gen: \(genSection)\nExt: \(finalExt)\nNeuro: \(finalNeuro)")
         
         return finalArray.joined(separator: "\n")
     }
     
-    func cleanObjectiveOfAssessment(_ objectiveText:String) -> String {
-        var objective = objectiveText
+    //
+    func cleanObjectiveOfAssessment() -> String {
+        var localObjective = objectiveText
+        print("extSection: \(extSection)")
         for section in allPASections {
-            objective = objective.replacingOccurrences(of: section, with: "")
+            localObjective = localObjective.replacingOccurrences(of: section, with: "")
         }
-        return objective.replaceRegexPattern("\\n{2,}", with: "\n")
+        return localObjective.replaceRegexPattern("\\n{2,}", with: "\n")
     }
 }

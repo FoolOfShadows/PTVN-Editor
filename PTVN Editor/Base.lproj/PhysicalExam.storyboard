@@ -3849,12 +3849,67 @@ Gw
                                             </scroller>
                                         </scrollView>
                                         <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Issue" translatesAutoresizingMaskIntoConstraints="NO" id="M6L-ar-ZHH">
-                                            <rect key="frame" x="17" y="221" width="135" height="176"/>
+                                            <rect key="frame" x="17" y="201" width="135" height="196"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <view key="contentView" id="DIr-Iz-gC0">
-                                                <rect key="frame" x="3" y="3" width="129" height="158"/>
+                                                <rect key="frame" x="3" y="3" width="129" height="178"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNd-tg-anM">
+                                                        <rect key="frame" x="-2" y="102" width="112" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Hammer Toes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zql-nX-bih">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="4bS-yI-dgt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-0J-TGd">
+                                                        <rect key="frame" x="-2" y="82" width="77" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Calluses" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TfX-Uj-dlB">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="sra-Xf-HjK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="55" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-Cq-8eJ">
+                                                        <rect key="frame" x="-2" y="122" width="81" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Cyanosis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tGN-44-fCJ">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="1Lq-LL-pdA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="3Cm-Xv-JDe">
+                                                        <rect key="frame" x="-2" y="162" width="67" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Edema" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pVf-Wb-8I2">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="VD0-GT-qJx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7a-q9-rsv">
+                                                        <rect key="frame" x="-2" y="142" width="124" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Onychomycosis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="leY-X9-6cu">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system" size="14"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="BGU-2f-rSg"/>
+                                                        </connections>
+                                                    </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" tag="80" translatesAutoresizingMaskIntoConstraints="NO" id="iTG-rH-31y">
                                                         <rect key="frame" x="-2" y="62" width="124" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -3864,17 +3919,6 @@ Gw
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="4YI-EG-WDo"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNd-tg-anM">
-                                                        <rect key="frame" x="-2" y="82" width="112" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="check" title="Hammer Toes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zql-nX-bih">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system" size="14"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="4bS-yI-dgt"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPo-0U-meN">
@@ -3899,28 +3943,6 @@ Gw
                                                             <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="Yiq-WP-MVL"/>
                                                         </connections>
                                                     </button>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="55" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-Cq-8eJ">
-                                                        <rect key="frame" x="-2" y="102" width="81" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="check" title="Cyanosis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tGN-44-fCJ">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system" size="14"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="1Lq-LL-pdA"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="3Cm-Xv-JDe">
-                                                        <rect key="frame" x="-2" y="142" width="67" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="check" title="Edema" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pVf-Wb-8I2">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system" size="14"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="VD0-GT-qJx"/>
-                                                        </connections>
-                                                    </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" tag="81" translatesAutoresizingMaskIntoConstraints="NO" id="5US-g0-DB7">
                                                         <rect key="frame" x="-2" y="42" width="111" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -3932,19 +3954,10 @@ Gw
                                                             <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="19u-UP-eNz"/>
                                                         </connections>
                                                     </button>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7a-q9-rsv">
-                                                        <rect key="frame" x="-2" y="122" width="124" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="check" title="Onychomycosis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="leY-X9-6cu">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system" size="14"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="BGU-2f-rSg"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
+                                                <accessibility identifier="Issue"/>
                                             </view>
+                                            <accessibility identifier="Issue"/>
                                         </box>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-6h-uYG">
                                             <rect key="frame" x="749" y="83" width="26" height="19"/>

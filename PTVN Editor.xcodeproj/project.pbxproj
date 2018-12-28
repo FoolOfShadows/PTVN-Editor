@@ -17,6 +17,7 @@
 		791320622077C85200CB1537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791320612077C85200CB1537 /* Assets.xcassets */; };
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
 		79349EA821765B420020F88B /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79349EA721765B420020F88B /* OrderedDictionary.swift */; };
+		79400C1421D53458008B7CFE /* SpellChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79400C1321D53458008B7CFE /* SpellChecker.swift */; };
 		79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79477C8B21779A9B00E9219D /* AssessmentModel.swift */; };
 		795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B7234219B47800010B07E /* TitlesAndOutput.swift */; };
 		795C875321B71BD700E99E0C /* Doc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C875121B71BD700E99E0C /* Doc.storyboard */; };
@@ -103,6 +104,7 @@
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
 		79349EA721765B420020F88B /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		79400C1321D53458008B7CFE /* SpellChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellChecker.swift; sourceTree = "<group>"; };
 		79477C8B21779A9B00E9219D /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		795B7234219B47800010B07E /* TitlesAndOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndOutput.swift; sourceTree = "<group>"; };
 		795C875221B71BD700E99E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PTVN Editor/Base.lproj/Doc.storyboard"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				79AFE1D22188C646007F4A5E /* BlackLineClass.swift */,
 				79AFDF5220C04B8F007FAB5C /* CheckBoxContainingView.swift */,
 				79349EA721765B420020F88B /* OrderedDictionary.swift */,
+				79400C1321D53458008B7CFE /* SpellChecker.swift */,
 			);
 			path = "PTVN Editor";
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */,
 				79CCA6AB2090B73F00909285 /* WWEModel.swift in Sources */,
 				79CCA6F12090DC4E00909285 /* MSK Model.swift in Sources */,
+				79400C1421D53458008B7CFE /* SpellChecker.swift in Sources */,
 				799C221D20C6F89B00DC9993 /* PTVNTabView.swift in Sources */,
 				79CCA6E62090DA4200909285 /* SkinGynGUDRE VC.swift in Sources */,
 				79CCA6AD2090B73F00909285 /* LabsViewController.swift in Sources */,

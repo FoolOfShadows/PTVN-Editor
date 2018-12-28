@@ -10,13 +10,13 @@ import Foundation
 
 let vibrationSenseList = ["", "none", "normal", "decreased", "absent"]
 let yesNoList = ["", "yes", "no"]
-let complianceList = ["", "Compliant w/Meds & Diet", "Compliant w/Meds", "Compliant w/Diet", "Non-compliant w/Meds & Diet", "Non-compliant w/Meds", "Non-compliant w/Diet"]
+let complianceList = ["", "Compliant w/Medications & Diet", "Compliant w/Medications", "Compliant w/Diet", "Non-compliant w/Medications & Diet", "Non-compliant w/Medications", "Non-compliant w/Diet"]
 let checkingFBSList = ["", "1 time/day", "2 times/day", "3 times/day", "4 times/day", "5 times/day", "6 times/day", "2 times/day, 3days/week", "Every Other Day", "Every Week"]
 let retinopathyExamList = ["", "No", "Yes", "Unknown"]
 let glucometerIssuesList = ["", "Poor vision", "Blindness", "Dexterity"]
 let umalbList = ["", "Normal", "Abnormal"]
 let dmTypeList = ["", "I", "II", "II, Insulin requiring"]
-let dmModifierList = ["", "Controlled on diet", "Treated with meds", "Treated with insulin", "Uncontrolled"]
+let dmModifierList = ["", "Controlled on diet", "Treated with Medications", "Treated with insulin", "Uncontrolled"]
 let prognosisList = ["", "Stable", "Fair", "Poor", "Declining", "Improving"]
 let retinopathyHxList = ["", "Vision Loss", "Poor Vision", "Laser Treatment", "Injection Treatment"]
 

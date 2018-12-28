@@ -52,6 +52,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     var rightSenseStrengthBox = NSBox()
     var leftSenseAreaBox = NSBox()
     var rightSenseAreaBox = NSBox()
+    var leftCallusAreaBox = NSBox()
+    var rightCallusAreaBox = NSBox()
     
     var boxes = [NSBox]()
     
@@ -101,10 +103,16 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     
     
     private func clearAreaNonSiteViews() {
-        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox]
-        for box in boxes {
-            box.subviews.forEach({ $0.removeFromSuperview() } )
-        }
+//        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox, leftCallusAreaBox, rightCallusAreaBox]
+//        for box in boxes {
+//            box.subviews.forEach({ $0.removeFromSuperview() } )
+//        }
+        extSectionsView.subviews.forEach({ if let theSub = $0 as? NSBox {
+            if theSub.title != "Issue" {
+            $0.removeFromSuperview()
+            }
+            }
+        })
         sideBox = NSBox()
         edemaTypeBox = NSBox()
         edemaPittingBox = NSBox()
@@ -118,6 +126,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         leftSenseAreaBox = NSBox()
         rightSenseStrengthBox = NSBox()
         rightSenseAreaBox = NSBox()
+        leftCallusAreaBox = NSBox()
+        rightCallusAreaBox = NSBox()
     }
     
     @IBAction func setAreaSelections(_ sender:NSButton) {
@@ -136,6 +146,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             case "Onychomycosis", "Cyanosis", "Hammer Toes": setUpBoxesForOnchCyHam()
             case "Vibration Sense", "Monofilament": setUpBoxesForVibMono()
             case "Spider Veins", "Vericose Veins": setupBoxesForSpiderVericose()
+            case "Calluses": setupBoxesForCalluses()
             default: return
             }
         } else if sender.state == .off {
@@ -184,6 +195,13 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         rightSenseAreaBox.setUpSectionBoxUsingTitle(title: "Right", font: defaultFont, referenceView: leftSenseAreaBox, andButtonList: caseLists.senseAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
     }
     
+    private func setupBoxesForCalluses() {
+        leftCallusAreaBox.addButtonsToViewWithNames(caseLists.callusAreaCases, andSelector: nil)
+        leftCallusAreaBox.setUpSectionBoxUsingTitle(title: "Left", font: defaultFont, referenceView: issueBox, andButtonList: caseLists.callusAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        rightCallusAreaBox.addButtonsToViewWithNames(caseLists.callusAreaCases, andSelector: nil)
+        rightCallusAreaBox.setUpSectionBoxUsingTitle(title: "Right", font: defaultFont, referenceView: leftCallusAreaBox, andButtonList: caseLists.callusAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+    }
+    
     @objc func uniqueSelections(_ sender:NSButton) {
         if sender.state == .on {
             if let buttons = sender.superview?.subviews {
@@ -198,7 +216,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     
     @IBAction func addOrderToView(_ sender: Any) {
         var returnValues = [String]()
-        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox]
+        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox, leftCallusAreaBox, rightCallusAreaBox]
         for box in boxes {
             let selections = box.getActiveButtonsInView()
             if !selections.isEmpty {

@@ -251,6 +251,12 @@ struct extEnumLists {
         return tempCases
     }
     
+    var callusAreaCases:[String] {
+        var tempCases = [String]()
+        callusAreaSelections.allCases.forEach {tempCases.append($0.rawValue)}
+        return tempCases
+    }
+    
 }
 
 enum extTypes:String, CaseIterable {
@@ -258,6 +264,7 @@ enum extTypes:String, CaseIterable {
     case onychomycosis
     case cyanosis
     case hammerToes = "Hammer toes"
+    case calluses
     case vibrationSense = "vibration sense"
     case monofilament
     case spiderVeins = "spider veins"
@@ -336,6 +343,19 @@ enum senseAreaSelections:String, CaseIterable {
     case knee
     case thigh
     case abdomen
+}
+
+enum callusAreaSelections:String, CaseIterable {
+    case heel
+    case ball
+    case one = "1st toe"
+    case two = "2nd toe"
+    case three = "3rd toe"
+    case four = "4th toe"
+    case five = "5th toe"
+    case all = "all toes"
+    case medial
+    case lateral
 }
 
 

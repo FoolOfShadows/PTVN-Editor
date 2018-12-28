@@ -4156,9 +4156,9 @@ or bending</string>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="FIc-9K-wJb">
-                                            <rect key="frame" x="18" y="97" width="165" height="20"/>
+                                            <rect key="frame" x="18" y="97" width="96" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Weakness on Statin" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="NPH-6Q-lOm" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                            <buttonCell key="cell" type="check" title="Weakness" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="NPH-6Q-lOm" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
@@ -4182,9 +4182,9 @@ or bending</string>
                                             </textFieldCell>
                                         </textField>
                                         <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-ob-Wmb">
-                                            <rect key="frame" x="18" y="119" width="148" height="20"/>
+                                            <rect key="frame" x="18" y="119" width="79" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Cramps on Statin" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="an3-HQ-K5N" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                            <buttonCell key="cell" type="check" title="Cramps" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="an3-HQ-K5N" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
@@ -4198,9 +4198,9 @@ or bending</string>
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="ztN-Hc-m7v">
-                                            <rect key="frame" x="18" y="141" width="155" height="20"/>
+                                            <rect key="frame" x="18" y="141" width="86" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Myalgias on Statin" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="3Ej-if-oWt" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
+                                            <buttonCell key="cell" type="check" title="Myalgias" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="3Ej-if-oWt" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
@@ -6706,9 +6706,9 @@ Gw
                                                 <menu key="menu" id="7Vg-YZ-iQV">
                                                     <items>
                                                         <menuItem id="sdA-20-fPn"/>
-                                                        <menuItem title="Treated with meds" id="2Sx-mv-bLB"/>
+                                                        <menuItem title="Treated with medications" id="2Sx-mv-bLB"/>
                                                         <menuItem title="Treated with insulin" id="wGE-HU-Sfq"/>
-                                                        <menuItem title="Uncontrolled - not at target with meds" id="C5f-fp-Fza"/>
+                                                        <menuItem title="Uncontrolled - not at target with medications" id="C5f-fp-Fza"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
@@ -6785,9 +6785,9 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="OWq-WV-X1q">
-                                            <rect key="frame" x="18" y="185" width="194" height="18"/>
+                                            <rect key="frame" x="18" y="185" width="233" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Taking meds w/out difficulty" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fr4-lQ-vo4">
+                                            <buttonCell key="cell" type="check" title="Taking medications w/out difficulty" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fr4-lQ-vo4">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
