@@ -36,6 +36,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var assessmentView: NSTextView!
     @IBOutlet var planView: NSTextView!
     @IBOutlet weak var pharmacyView: NSTextField!
+    @IBOutlet weak var subjectiveActivateSafari: NSButton!
+    @IBOutlet weak var objectiveActivateSafari: NSButton!
+    @IBOutlet weak var assessmentActivateSafari: NSButton!
+    @IBOutlet weak var planActivateSafari: NSButton!
     
     var ccView: NSTextView {
         get {
@@ -340,18 +344,30 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBAction func copyObjective(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.objective)).copyToPasteboard()
         //theData.returnSOAPSection(.objective).copyToPasteboard()
+        if objectiveActivateSafari.state == NSControl.StateValue.on {
+            activateSafari()
+        }
     }
     
     @IBAction func copySubjective(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.subjective)).copyToPasteboard()
+        if subjectiveActivateSafari.state == NSControl.StateValue.on {
+            activateSafari()
+        }
     }
     
     @IBAction func copyAssessment(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.assessment)).copyToPasteboard()
+        if assessmentActivateSafari.state == NSControl.StateValue.on {
+            activateSafari()
+        }
     }
     
     @IBAction func copyPlan(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.plan)).copyToPasteboard()
+        if planActivateSafari.state == NSControl.StateValue.on {
+            activateSafari()
+        }
     }
     
     @IBAction func getPMHUpdates(_ sender: Any) {
@@ -421,6 +437,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             updateView()
             document.updateChangeCount(.changeDone)
         }
+    }
+    
+    func activateSafari() {
+        NSWorkspace.shared.openFile("/Applications/Safari.app")
     }
     
     
