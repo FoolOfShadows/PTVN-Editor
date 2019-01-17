@@ -13,7 +13,7 @@ protocol ptvnDelegate: class {
     func returnPTVNValues(sender: NSViewController)
 }
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, ptvnDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate {
 
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
@@ -34,6 +34,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet var objectiveView: NSTextView!
     @IBOutlet var pshView: NSTextView!
     @IBOutlet var assessmentView: NSTextView!
+    @IBOutlet weak var assessmentTableView: NSTableView!
+    @IBOutlet weak var visitLevelView: NSView!
     @IBOutlet var planView: NSTextView!
     @IBOutlet weak var pharmacyView: NSTextField!
     @IBOutlet weak var subjectiveActivateSafari: NSButton!
@@ -46,6 +48,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             return ccScroll.contentView.documentView as! NSTextView
         }
     }
+    
+    var assessmentString = String()
+    var assessmentList = [String]()
+    var chosenAssessmentList = [String]()
     
     //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
@@ -65,6 +71,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         }
+        
+        //Set up the table of previous assessments on the Assessment & Plan tab
+        self.assessmentTableView.delegate = self
+        self.assessmentTableView.dataSource = self
+        
         
         //Set up delegation for the text views and fields to be able to respond to typing
         ccView.delegate = self
@@ -112,6 +123,14 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Needs to be here rather than viewDidLoad
         document = self.view.window?.windowController?.document as! Document
         theData = document.theData
+        
+        //Populate assessmentTableView with Problems subsection of the Subjective section
+        let problems = theData.problems
+        print(problems)
+        assessmentList = problems.convertListToArray()
+        print(assessmentList)
+        self.assessmentTableView.reloadData()
+        chosenAssessmentList = assessmentList
         updateView()
         
     }
@@ -292,6 +311,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         assessmentView.string = theData.assessment
         planView.string = theData.plan
         pharmacyView.stringValue = theData.pharmacy
+        //self.assessmentTableView.reloadData()
         //document.updateChangeCount(.changeDone)
     }
     
@@ -441,6 +461,64 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     func activateSafari() {
         NSWorkspace.shared.openFile("/Applications/Safari.app")
+    }
+    
+    //MARK: Table Handling Functions
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        print("Table row count = \(assessmentList.count)")
+        return assessmentList.count
+    }
+    
+    //Set up the tableview with the data from the assessmentList array
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        var result:NSTableCellView
+        result = tableView.makeView(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
+        result.textField?.stringValue = assessmentList[row]
+        
+        return result
+    }
+    
+    @IBAction func processAssessmentTable(_ sender: Any) {
+        
+        let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
+        print(results)
+        theData.assessment.addToExistingText(results)
+        updateView()
+    }
+    
+    @IBAction func getDataFromSelectedRow(_ sender:Any) {
+        let currentRow = assessmentTableView.row(for: sender as! NSView)
+        if (sender as! NSButton).state == .on {
+            chosenAssessmentList.append(assessmentList[currentRow])
+        } else if (sender as! NSButton).state == .off {
+            chosenAssessmentList = chosenAssessmentList.filter { $0 != assessmentList[currentRow] }
+        }
+    }
+    
+    //Attached to the table's Table Cell View prototype via the classes First Responder
+    //updates the data source array with any changes made to the table items.
+    @IBAction func updateArrayWithEdit(_ sender:Any) {
+        let currentRow = assessmentTableView.row(for: sender as! NSView)
+        //print(currentRow)
+        
+        if let textField = sender as? NSTextField {
+            let textValue = textField.stringValue
+            assessmentList.remove(at: currentRow)
+            assessmentList.insert(textValue, at: currentRow)
+        }
+        
+        
+    }
+    
+    //Removes the selected row from the table and the corresponding
+    //item from the data source array
+    @IBAction func removeRowFromTable(_ sender: NSButton) {
+        let row = assessmentTableView.selectedRow
+        if row != -1 {
+            assessmentList.remove(at: row)
+            let indexSet = IndexSet(integer:row)
+            assessmentTableView.removeRows(at:indexSet, withAnimation:NSTableView.AnimationOptions.effectFade)
+        }
     }
     
     
