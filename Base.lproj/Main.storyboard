@@ -781,7 +781,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Subjective" identifier="" id="B5W-I8-wch">
-                                        <view key="view" id="2hT-7x-9Hg">
+                                        <view key="view" ambiguous="YES" id="2hT-7x-9Hg">
                                             <rect key="frame" x="32" y="7" width="1113" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -961,7 +961,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Q7u-g0-0ps">
                                                         <rect key="frame" x="1" y="1" width="255" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="8JL-k1-BAS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="255" height="569"/>
@@ -988,7 +988,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="uXv-s6-0Bj">
                                                         <rect key="frame" x="1" y="1" width="231" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="nTW-NE-gtd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="231" height="569"/>
@@ -1033,7 +1033,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="aVC-7s-OHb">
                                                         <rect key="frame" x="1" y="1" width="257" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="YHr-O0-8pL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="257" height="569"/>
@@ -1069,7 +1069,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="pnt-mM-8YW">
                                                         <rect key="frame" x="1" y="1" width="223" height="113"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="TtB-0u-9aE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="113"/>
@@ -1096,7 +1096,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="vbI-R0-86e">
                                                         <rect key="frame" x="1" y="1" width="223" height="163"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ap2-Mi-pnS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="163"/>
@@ -1141,7 +1141,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="3hU-pW-XTi">
                                                         <rect key="frame" x="1" y="1" width="223" height="149"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="1A5-Y6-x72">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="149"/>
@@ -1207,7 +1207,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="yUs-6m-qou">
                                                         <rect key="frame" x="1" y="1" width="1062" height="538"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="w8l-bE-lDr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1062" height="538"/>
@@ -1261,7 +1261,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Assessment &amp; Plan" identifier="" id="8FD-VC-MOy">
-                                        <view key="view" ambiguous="YES" id="yv2-gU-qId">
+                                        <view key="view" id="yv2-gU-qId">
                                             <rect key="frame" x="32" y="7" width="1113" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1270,7 +1270,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="9sE-BL-XR6">
                                                         <rect key="frame" x="1" y="1" width="450" height="554"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="55Z-3a-wRD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="554"/>
@@ -1297,7 +1297,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="HP4-nl-CLf">
                                                         <rect key="frame" x="1" y="1" width="551" height="524"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ubd-KL-0zL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="551" height="524"/>
