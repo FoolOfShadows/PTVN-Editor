@@ -37,6 +37,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var assessmentTableView: NSTableView!
     @IBOutlet weak var visitLevelView: NSView!
     @IBOutlet var planView: NSTextView!
+    @IBOutlet weak var commonMedsPopup: NSPopUpButton!
     @IBOutlet weak var pharmacyView: NSTextField!
     @IBOutlet weak var subjectiveActivateSafari: NSButton!
     @IBOutlet weak var objectiveActivateSafari: NSButton!
@@ -132,6 +133,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         self.assessmentTableView.reloadData()
         chosenAssessmentList = assessmentList
         updateView()
+        commonMedsPopup.clearPopUpButton(menuItems: commonMedsList)
         
     }
 
@@ -518,6 +520,20 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             assessmentList.remove(at: row)
             let indexSet = IndexSet(integer:row)
             assessmentTableView.removeRows(at:indexSet, withAnimation:NSTableView.AnimationOptions.effectFade)
+        }
+    }
+    
+    @IBAction func addMed(_ sender: Any) {
+        if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
+            let newMed = "~~" + commonMedsPopup.titleOfSelectedItem!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            if planView.string.contains("Prescribed this visit:") {
+                planView.string = planView.string.replacingOccurrences(of: "Prescribed this visit:", with: "Prescribed this visit:\n\(newMed)")
+            } else {
+                planView.addToViewsExistingText("Prescribed this visit:\n\(newMed)")
+            }
+            updateVarForView(planView)
+            //            let currentMeds = medicationView.string
+            //            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
         }
     }
     
