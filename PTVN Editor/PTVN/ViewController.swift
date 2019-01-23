@@ -456,7 +456,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         objectiveActivateSafari.title = "And Activate \(browser)"
         assessmentActivateSafari.title = "And Activate \(browser)"
         planActivateSafari.title = "And Activate \(browser)"
-        print("Delegate notification received, browser set to \(browser), and title set to \(subjectiveActivateSafari.title)")
+        //print("Delegate notification received, browser set to \(browser), and title set to \(subjectiveActivateSafari.title)")
     }
     
     @IBAction func clearMeds(_ sender: Any) {
