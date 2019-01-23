@@ -23,7 +23,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="ndJ-Dh-Vue" kind="show" id="3IQ-G5-0cN"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -941,7 +945,7 @@
                                                     </scroller>
                                                 </scrollView>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ru-eI-fG8">
-                                                    <rect key="frame" x="136" y="15" width="138" height="18"/>
+                                                    <rect key="frame" x="136" y="18" width="247" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="And Activate Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IFM-RV-ENW">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1250,7 +1254,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cyc-Ex-Krq">
-                                                    <rect key="frame" x="144" y="15" width="138" height="18"/>
+                                                    <rect key="frame" x="144" y="18" width="288" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="And Activate Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="GXr-je-FUZ">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1411,7 +1415,7 @@
                                                     </connections>
                                                 </button>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xkU-vL-SQ1">
-                                                    <rect key="frame" x="160" y="15" width="138" height="18"/>
+                                                    <rect key="frame" x="160" y="18" width="238" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="And Activate Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0pp-8t-vW0">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1419,7 +1423,7 @@
                                                     </buttonCell>
                                                 </button>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TG-da-MEL">
-                                                    <rect key="frame" x="623" y="15" width="138" height="18"/>
+                                                    <rect key="frame" x="623" y="18" width="228" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="And Activate Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="I9T-YQ-IOl">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -16072,6 +16076,51 @@ Gw
                 <customObject id="ZDe-ap-X6A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1074.5" y="-266.5"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="ZwZ-Zd-N0o">
+            <objects>
+                <viewController title="Preferences" id="ndJ-Dh-Vue" customClass="PreferencesViewController" customModule="PTVN_Editor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Etj-3T-sBo">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-fN-Pq1">
+                                <rect key="frame" x="18" y="263" width="101" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Default Browser" id="zXW-7z-qED">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-Lc-GLS">
+                                <rect key="frame" x="123" y="258" width="310" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ku9-RO-bSC" id="Y22-AQ-dqN">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="aP9-BI-dAa">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="Ku9-RO-bSC"/>
+                                            <menuItem title="Item 2" id="MZS-nL-wE2"/>
+                                            <menuItem title="Item 3" id="xtQ-x0-A70"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="setBrowser:" target="ndJ-Dh-Vue" id="T6k-cy-bYs"/>
+                                </connections>
+                            </popUpButton>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="browserList" destination="UE6-Lc-GLS" id="erY-je-hwe"/>
+                    </connections>
+                </viewController>
+                <customObject id="Fyt-KS-5c7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1457" y="116"/>
         </scene>
         <!--GenView-->
         <scene sceneID="5c2-Gy-11c">

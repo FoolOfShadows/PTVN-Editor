@@ -22,6 +22,8 @@
 		795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B7234219B47800010B07E /* TitlesAndOutput.swift */; };
 		795C875321B71BD700E99E0C /* Doc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C875121B71BD700E99E0C /* Doc.storyboard */; };
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
+		7967689821F7745F000A836F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689621F7745F000A836F /* PreferencesViewController.swift */; };
+		7967689A21F7750D000A836F /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689921F7750D000A836F /* PreferencesModel.swift */; };
 		798BBB4520939617002A28AA /* ESSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3D20939613002A28AA /* ESSController.swift */; };
 		798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3E20939613002A28AA /* IncontinenceController.swift */; };
 		798BBB4720939617002A28AA /* PHQ9Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3F20939614002A28AA /* PHQ9Controller.swift */; };
@@ -109,6 +111,8 @@
 		795B7234219B47800010B07E /* TitlesAndOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndOutput.swift; sourceTree = "<group>"; };
 		795C875221B71BD700E99E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PTVN Editor/Base.lproj/Doc.storyboard"; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		7967689621F7745F000A836F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		7967689921F7750D000A836F /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
 		798BBB3E20939613002A28AA /* IncontinenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncontinenceController.swift; sourceTree = "<group>"; };
 		798BBB3F20939614002A28AA /* PHQ9Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHQ9Controller.swift; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 				7913205F2077C85100CB1537 /* Document.swift */,
 				79DDB9E8208786A500E01853 /* PTVNModel.swift */,
 				79477C8B21779A9B00E9219D /* AssessmentModel.swift */,
+				7967689621F7745F000A836F /* PreferencesViewController.swift */,
+				7967689921F7750D000A836F /* PreferencesModel.swift */,
 			);
 			path = PTVN;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				79CCA6C32090D16500909285 /* ENT Model.swift in Sources */,
 				79CCA6F32090DC4E00909285 /* NeuroMSK VC.swift in Sources */,
 				798BD5A220D15FA500FD089B /* CheckOutVC.swift in Sources */,
+				7967689A21F7750D000A836F /* PreferencesModel.swift in Sources */,
 				79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */,
 				79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */,
 				79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */,
@@ -619,6 +626,7 @@
 				79CCA6CF2090D49F00909285 /* CV Model.swift in Sources */,
 				79CCA6A82090B73F00909285 /* DMViewController.swift in Sources */,
 				7906DEE8208E123900CD11A1 /* ROSModel.swift in Sources */,
+				7967689821F7745F000A836F /* PreferencesViewController.swift in Sources */,
 				79CCA6AA2090B73F00909285 /* ProcInjModel.swift in Sources */,
 				79CCA6D32090D49F00909285 /* Lymph Model.swift in Sources */,
 				79CCA6AC2090B73F00909285 /* RadRefModel.swift in Sources */,

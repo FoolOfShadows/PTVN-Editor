@@ -12,8 +12,11 @@ import Quartz
 protocol ptvnDelegate: class {
     func returnPTVNValues(sender: NSViewController)
 }
+protocol browerChoiceDelegate: class {
+    func changeBrowserLabel()
+}
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate, browerChoiceDelegate {
 
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
@@ -116,6 +119,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up notification center for switching forms
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(switchForm), name: Notification.Name("SwitchForm"), object: nil)
+        //Set up notification center for changing browser label
+        nc.addObserver(self, selector: #selector(changeBrowserLabel), name: Notification.Name("SetBrowser"), object: nil)
     }
     
     
@@ -135,6 +140,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         updateView()
         commonMedsPopup.clearPopUpButton(menuItems: commonMedsList)
         
+        changeBrowserLabel()
     }
 
     //Update the PTVN instance variables as the user is typing into the associated fields
@@ -282,12 +288,14 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     //When one of the form views exits after updating the instance of the PTVN
     //update the document's main view
     func returnPTVNValues(sender: NSViewController) {
+        //print("Returning PTVN Values from \(sender.title)")
         //Because the document's not catching changes returned from the forms
         //it's change count has to be manually updated here to trigger
         //save on closing notice
         updateView()
         document.updateChangeCount(.changeDone)
     }
+
     
     //Update the main view of the document with data from the PTVN instance
     func updateView() {
@@ -365,30 +373,29 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     @IBAction func copyObjective(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.objective)).copyToPasteboard()
-        //theData.returnSOAPSection(.objective).copyToPasteboard()
         if objectiveActivateSafari.state == NSControl.StateValue.on {
-            activateSafari()
+            activateBrowser()
         }
     }
     
     @IBAction func copySubjective(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.subjective)).copyToPasteboard()
         if subjectiveActivateSafari.state == NSControl.StateValue.on {
-            activateSafari()
+            activateBrowser()
         }
     }
     
     @IBAction func copyAssessment(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.assessment)).copyToPasteboard()
         if assessmentActivateSafari.state == NSControl.StateValue.on {
-            activateSafari()
+            activateBrowser()
         }
     }
     
     @IBAction func copyPlan(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.plan)).copyToPasteboard()
         if planActivateSafari.state == NSControl.StateValue.on {
-            activateSafari()
+            activateBrowser()
         }
     }
     
@@ -432,16 +439,24 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         document.updateChangeCount(.changeDone)
     }
     
+    //Lets MA jump directly to the next eval form
     @objc func switchForm() {
         //print("Notification received")
         let buttons = self.view.getListOfButtons()
         let button = buttons.filter { $0.title == FormButtons.formName }[0]
         button.performClick(self)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
-//            button.performClick(self)
-//            print("button pressed?")
-//        }
+    }
+    
+    //Changes the label of the "And open [browser]" button to match the user's chosen browser
+    @objc func changeBrowserLabel() {
+        let defaults = UserDefaults.standard
+        let browser = defaults.string(forKey: UserDefaultKeyTitles.browser.rawValue) ?? "Safari"
         
+        subjectiveActivateSafari.title = "And Activate \(browser)"
+        objectiveActivateSafari.title = "And Activate \(browser)"
+        assessmentActivateSafari.title = "And Activate \(browser)"
+        planActivateSafari.title = "And Activate \(browser)"
+        print("Delegate notification received, browser set to \(browser), and title set to \(subjectiveActivateSafari.title)")
     }
     
     @IBAction func clearMeds(_ sender: Any) {
@@ -461,8 +476,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
     
-    func activateSafari() {
-        NSWorkspace.shared.openFile("/Applications/Safari.app")
+    func activateBrowser() {
+        let defaults = UserDefaults.standard
+        let browser = defaults.string(forKey: "browser") ?? "Safari"
+        NSWorkspace.shared.openFile("/Applications/\(browser).app")
     }
     
     //MARK: Table Handling Functions

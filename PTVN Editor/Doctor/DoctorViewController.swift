@@ -122,7 +122,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let preOpResults = PreOp().processSectionData(getDataFromView(preOpView))
         
         
-        var resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
+        let resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
         
 //        if !medicationView.string.isEmpty {
 //            let medArray = medicationView.string.convertListToArray()

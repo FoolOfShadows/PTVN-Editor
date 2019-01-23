@@ -57,7 +57,7 @@ struct Neuro:PopulateComboBoxProtocol {
 			resultArray.append("Gait: \(gaitArray.joined(separator: ", "))")
 		}
 		if !postureArray.isEmpty {
-			resultArray.append("Gait: \(postureArray.joined(separator: ", "))")
+			resultArray.append("Posture: \(postureArray.joined(separator: ", "))")
 		}
 		
 		if !resultArray.isEmpty {
