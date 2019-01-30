@@ -141,7 +141,7 @@ class PTVN {
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
     }
     
-    //FIXME: Fix this to format the output correctly for adding to PF
+    
     func returnSOAPSection(_ section: SOAPSections) -> String {
         switch section {
         case .subjective:
@@ -192,8 +192,8 @@ class PTVN {
         case .objective:
             var returnText = [String]()
             
-            //TODO:  Pull out Assessment sections, reorganize, compact, and return them.
             let assessmentBits = PhysicalAssessment(objectiveText: objective)
+            
             
             returnText.append(assessmentBits.cleanAssessmentForXFR().cleanTheTextOf(prefixes))
             

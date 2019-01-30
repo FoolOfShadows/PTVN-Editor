@@ -214,10 +214,12 @@ extension NSView {
         //            print(label.frame)
         //            return label.frame
         //        }
-        
+        //print("Received names: \(names)")
         var buttonY: Int = Int(self.frame.size.height - 20)
         //print(buttonY)
+        //print(names)
         for name in names {
+            //print(name)
             //let newButton = NSButton(frame: labelSize(for: name, fontSize: 16, maxWidth: 500, startingY: CGFloat(buttonY)))
             var nameSize: Int {
                 if name.count > 5 {
@@ -226,7 +228,7 @@ extension NSView {
                     return name.count * 100
                 }
             }
-            //printView(nameSize)
+            //print(nameSize)
             let newButton = NSButton(frame: CGRect(x: 0, y: buttonY, width: nameSize, height: 16))
             //let newButton = NSButton(checkboxWithTitle: name, target: self, action: nil)
             newButton.setButtonType(.switch)
@@ -238,7 +240,7 @@ extension NSView {
             if let theSelector = theSelector {
                 newButton.action = theSelector
             }
-            
+        
             self.addSubview(newButton)
             buttonY = buttonY - 20
         }

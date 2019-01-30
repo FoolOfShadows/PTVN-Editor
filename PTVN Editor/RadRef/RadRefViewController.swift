@@ -10,9 +10,7 @@ import Cocoa
 
 class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
 	@IBOutlet var radiologyView: NSView!
-    @IBOutlet weak var typeView: NSView!
-    @IBOutlet weak var areaView: NSView!
-    @IBOutlet weak var sideView: NSView!
+    @IBOutlet weak var typeView: NSBox!
 	@IBOutlet weak var reasonView: NSTextField!
 	@IBOutlet weak var radScroll: NSScrollView!
     
@@ -30,6 +28,8 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
+    
+    let defaultFont:NSFont = .systemFont(ofSize: 13)
 	
 	let nc = NotificationCenter.default
 	
@@ -63,24 +63,27 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
                     }
                 }
             }
+            var buttonList = [String]()
             switch sender.title {
-            case "XRAY": areaView.addButtonsToViewWithNames(caseLists.xrayCases, andSelector: #selector(setSideSelections))
-            case "MRI": areaView.addButtonsToViewWithNames(caseLists.mriCases, andSelector: #selector(setSideSelections))
-            case "MAM": areaView.addButtonsToViewWithNames(caseLists.mamCases, andSelector: #selector(setSideSelections))
-            case "BMD": areaView.addButtonsToViewWithNames(caseLists.bmdCases, andSelector: #selector(setSideSelections))
-            case "USND": areaView.addButtonsToViewWithNames(caseLists.usndCases, andSelector: #selector(setSideSelections))
-            case "CT": areaView.addButtonsToViewWithNames(caseLists.ctCases, andSelector: #selector(setSideSelections))
-            case "MRA": areaView.addButtonsToViewWithNames(caseLists.mraCases, andSelector: #selector(setSideSelections))
-            case "Cardio": areaView.addButtonsToViewWithNames(caseLists.cardioCases, andSelector: #selector(setSideSelections))
-            case "GI": areaView.addButtonsToViewWithNames(caseLists.giCases, andSelector: #selector(setSideSelections))
-            case "Resp": areaView.addButtonsToViewWithNames(caseLists.respCases, andSelector: #selector(setSideSelections))
-            case "Neuro": areaView.addButtonsToViewWithNames(caseLists.neuroCases, andSelector: #selector(setSideSelections))
-            case "NUC": areaView.addButtonsToViewWithNames(caseLists.nucCases, andSelector: #selector(setSideSelections))
-            case "Med": areaView.addButtonsToViewWithNames(caseLists.refMedSide, andSelector: #selector(setSideSelections))
-            case "Surg": areaView.addButtonsToViewWithNames(caseLists.refSurgSide, andSelector: #selector(setSideSelections))
-            case "Ther": areaView.addButtonsToViewWithNames(caseLists.refTherSide, andSelector: #selector(setSideSelections))
+            case "XRAY": buttonList = caseLists.xrayCases
+            case "MRI": buttonList = caseLists.mriCases
+            case "MAM": buttonList = caseLists.mamCases
+            case "BMD": buttonList = caseLists.bmdCases
+            case "USND": buttonList = caseLists.usndCases
+            case "CT": buttonList = caseLists.ctCases
+            case "MRA": buttonList = caseLists.mraCases
+            case "Cardio": buttonList = caseLists.cardioCases
+            case "GI": buttonList = caseLists.giCases
+            case "Resp": buttonList = caseLists.respCases
+            case "Neuro": buttonList = caseLists.neuroCases
+            case "NUC": buttonList = caseLists.nucCases
+            case "Med": buttonList = caseLists.refMedSide
+            case "Surg": buttonList = caseLists.refSurgSide
+            case "Ther": buttonList = caseLists.refTherSide
             default: return
             }
+            areaBox.addButtonsToViewWithNames(buttonList, andSelector: #selector(setSideSelections))
+            areaBox.setUpSectionBoxUsingTitle(title: "Area", font: defaultFont, referenceView: typeView, andButtonList: buttonList, inView: self.radiologyView, withHeightAdjustment: 17)
         } else if sender.state == .off {
             clearAreaSideViews()
         }
@@ -90,7 +93,8 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
     
     @objc func setSideSelections(_ sender:NSButton) {
         if sender.state == .on {
-            sideView.subviews.forEach({ $0.removeFromSuperview() })
+            detailsBox.subviews.forEach({ $0.removeFromSuperview() })
+            detailsBox = NSBox()
             if let buttons = sender.superview?.subviews {
                 for button in buttons {
                     if (button as! NSButton).title != sender.title {
@@ -98,49 +102,52 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
                     }
                 }
             }
+            var buttonList = [String]()
             switch sender.title {
             //Basic sides
             case radXRAYAreas.ribs.rawValue, radXRAYAreas.kneeStanding.rawValue, radXRAYAreas.hip.rawValue, radXRAYAreas.femur.rawValue, radXRAYAreas.tibFib.rawValue, radXRAYAreas.ankle.rawValue, radXRAYAreas.foot.rawValue, radXRAYAreas.shoulder.rawValue, radXRAYAreas.elbow.rawValue, radXRAYAreas.wrist.rawValue, radXRAYAreas.hand.rawValue, radMAMAreas.diagnostic.rawValue, radUSNDAreas.breast.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radRLBSide, andSelector: nil)
+                buttonList = caseLists.radRLBSide
             case radXRAYAreas.spine.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.spineSide + caseLists.xraySpineSide, andSelector: nil)
+                buttonList = caseLists.spineSide + caseLists.xraySpineSide
             case radUSNDAreas.vDoppler.rawValue, radUSNDAreas.aDoppler.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radUSNDDopplerSide, andSelector: nil)
+                buttonList = caseLists.radUSNDDopplerSide
             //Contrast
             case radCTAreas.head.rawValue, radCTAreas.chest.rawValue, radCTAreas.orbits.rawValue, radMRIAreas.brain.rawValue, radMRIAreas.pelvis.rawValue, radMRIAreas.chest.rawValue, radMRIAreas.orbits.rawValue, radMRAAreas.brain.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.contrast, andSelector: nil)
+                buttonList = caseLists.contrast
             case radCTAreas.abdomen.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radCTAbSide, andSelector: nil)
+                buttonList = caseLists.radCTAbSide
             case radCTAreas.extremity.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radExtremitySide, andSelector: nil)
+                buttonList = caseLists.radExtremitySide
             case radCTAreas.myelogram.rawValue, radMRIAreas.spine.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.spineSide, andSelector: nil)
+                buttonList = caseLists.spineSide
             case radMRIAreas.extremity.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radExtremityContrastSide, andSelector: nil)
+                buttonList = caseLists.radExtremityContrastSide
             case radMRIAreas.abdomen.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radMRIAbSide, andSelector: nil)
+                buttonList = caseLists.radMRIAbSide
             case radMRAAreas.extremities.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radMRAExtremitySide, andSelector: nil)
+                buttonList = caseLists.radMRAExtremitySide
             case radCardioAreas.ECHO.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radECHOSide, andSelector: nil)
+                buttonList = caseLists.radECHOSide
             case radCardioAreas.stressTest.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radSTSTSide, andSelector: nil)
+                buttonList = caseLists.radSTSTSide
             case radCardioAreas.holter.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radHLTRSide, andSelector: nil)
+                buttonList = caseLists.radHLTRSide
             case radRespAreas.sleep.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radSleepSide, andSelector: nil)
+                buttonList = caseLists.radSleepSide
             case radRespAreas.PFT.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radPFTSide, andSelector: nil)
+                buttonList = caseLists.radPFTSide
             case radRespAreas.spirometry.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radSpiroSide, andSelector: nil)
+                buttonList = caseLists.radSpiroSide
             case radRespAreas.ABG.rawValue:
-                sideView.addButtonsToViewWithNames(caseLists.radABGside, andSelector: nil)
-                
+                buttonList = caseLists.radABGside
+
             default:
                 return
             }
+            detailsBox.addButtonsToViewWithNames(buttonList, andSelector: nil)
+            detailsBox.setUpSectionBoxUsingTitle(title: "Details", font: defaultFont, referenceView: areaBox, andButtonList: buttonList, inView: self.radiologyView, withHeightAdjustment: 17)
         } else if sender.state == .off {
-            sideView.subviews.forEach({ $0.removeFromSuperview() })
+            detailsBox.subviews.forEach({ $0.removeFromSuperview() })
         }
     }
 	
@@ -148,8 +155,8 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	@IBAction func addOrderToView(_ sender: Any) {
         var returnValues = [String]()
         returnValues.append(typeView.getActiveButtonInView())
-        returnValues.append(areaView.getActiveButtonInView())
-        returnValues.append(sideView.getActiveButtonInView())
+        returnValues.append(areaBox.getActiveButtonInView())
+        returnValues.append(detailsBox.getActiveButtonInView())
         if !reasonView.stringValue.isEmpty {
             returnValues.append(reasonView.stringValue)
         }
@@ -188,9 +195,12 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	}
 	
     private func clearAreaSideViews() {
-        areaView.subviews.forEach({ $0.removeFromSuperview() })
-        sideView.subviews.forEach({ $0.removeFromSuperview() })
+        areaBox.subviews.forEach({ $0.removeFromSuperview() })
+        detailsBox.subviews.forEach({ $0.removeFromSuperview() })
         reasonView.stringValue = ""
+        
+        areaBox = NSBox()
+        detailsBox = NSBox()
     }
     
 	@IBAction func clearRadRef(_ sender: Any) {

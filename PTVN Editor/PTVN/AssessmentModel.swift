@@ -86,14 +86,14 @@ struct PhysicalAssessment {
         
         let finalArray = orderedArray.filter { !$0.isEmpty }
         //print("Gen: \(genSection)\nExt: \(finalExt)\nNeuro: \(finalNeuro)")
-        
+        print(finalArray.joined(separator: "\n"))
         return finalArray.joined(separator: "\n")
     }
     
     //
     func cleanObjectiveOfAssessment() -> String {
         var localObjective = objectiveText
-        print("extSection: \(extSection)")
+        //print("extSection: \(extSection)")
         for section in allPASections {
             localObjective = localObjective.replacingOccurrences(of: section, with: "")
         }
