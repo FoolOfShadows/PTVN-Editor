@@ -14,14 +14,14 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	@IBOutlet weak var reasonView: NSTextField!
 	@IBOutlet weak var radScroll: NSScrollView!
     
-    var areaBox = NSBox()
-    var detailsBox = NSBox()
-    
     var radOrders: NSTextView {
         get {
             return radScroll.contentView.documentView as! NSTextView
         }
     }
+    
+    var areaBox = NSBox()
+    var detailsBox = NSBox()
     
     let caseLists = enumLists()
 
@@ -46,6 +46,8 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
     }
 	
     /*override*/ func controlTextDidEndEditing(_ obj: Notification) {
+        //Capture the tapped key, see if it's the Return key
+        //and if it is, process all the data into the results field
         if let sendingKey = obj.userInfo?["NSTextMovement"] as? Int {
             if sendingKey == NSReturnTextMovement {
                 addOrderToView(self)
@@ -171,10 +173,10 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	@IBAction func processRadRef(_ sender: Any) {
 		var finalResults = [String]()
         let resultsArray = radOrders.string.components(separatedBy: "\n")
-        print(resultsArray)
+        //print(resultsArray)
         let radResults = resultsArray.filter { !$0.contains("Med") && !$0.contains("Surg") && !$0.contains("Ther") }
         let refResults = resultsArray.filter { $0.contains("Med") || $0.contains("Surg") || $0.contains("Ther") }
-        print(refResults)
+        //print(refResults)
 		if !radResults.isEmpty {
 			finalResults.append("Tests ordered:\n\(radResults.joined(separator: "\n").addCharacterToBeginningOfEachLine("••"))")
 		}

@@ -86,14 +86,16 @@ class HPIViewController: NSViewController {
 		if getTextFieldsFrom(view)[0].stringValue != "" {
 			title = getTextFieldsFrom(view)[0].stringValue
 		}
-		let activeButtons = getListOfButtons(view).filter {$0.state != .off}
-		for button in activeButtons {
-			if button.state == .mixed {
-				positiveResults.append(button.title.lowercased().replacingOccurrences(of: "\n", with: ""))
-			} else if button.state == .on {
-				negativeResults.append(button.title.lowercased().replacingOccurrences(of: "\n", with: ""))
-			}
-		}
+		//let activeButtons = getListOfButtons(view).filter {$0.state != .off}
+        positiveResults += getListOfButtons(view).filter { $0.state == .mixed }.map { $0.title.lowercased().replacingOccurrences(of: "\n", with: "")}
+        negativeResults += getListOfButtons(view).filter { $0.state == .on }.map { $0.title.lowercased().replacingOccurrences(of: "\n", with: "")}
+//        for button in activeButtons {
+//            if button.state == .mixed {
+//                positiveResults.append(button.title.lowercased().replacingOccurrences(of: "\n", with: ""))
+//            } else if button.state == .on {
+//                negativeResults.append(button.title.lowercased().replacingOccurrences(of: "\n", with: ""))
+//            }
+//        }
 		
 		if !phlegmColorCombo.stringValue.isEmpty {
 			func addendColorToPhlegmIn(_ result:inout [String]) {
@@ -112,6 +114,7 @@ class HPIViewController: NSViewController {
 		
 		return (title:title, positives:positiveResults, negatives:negativeResults)
 	}
+    
 	
 	@IBAction func clearHPI(_ sender: Any) {
 		hpiView.clearControllers()
@@ -123,6 +126,7 @@ class HPIViewController: NSViewController {
         //incase of a crash, but it doesn't seem to do what I need
         NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
         
+        let htnData = HPIHTNData(htnButtons: getListOfButtons(htnBox))
         
 		var resultsArray = [String]()
 		var results = String()
@@ -131,7 +135,7 @@ class HPIViewController: NSViewController {
 		resultsArray.append(processHPISection(.uti, usingData: getTitlesOfActiveButtonsFrom(utiBox)))
 		resultsArray.append(processHPISection(.uri, usingData: getTitlesOfActiveButtonsFrom(uriBox)))
 		resultsArray.append(processHPISection(.chestpain, usingData: getTitlesOfActiveButtonsFrom(chestPainBox)))
-		resultsArray.append(processHPISection(.htn, usingData: getTitlesOfActiveButtonsFrom(htnBox)))
+        resultsArray.append(htnData.getHPIHTNData())
 		resultsArray.append(processHPISection(.hichol, usingData: getTitlesOfActiveButtonsFrom(cholesterolBox)))
 //		if noProblemsCheckbox.state == .on {
 //			resultsArray.append("Patient reports no new problems or concerns today.")

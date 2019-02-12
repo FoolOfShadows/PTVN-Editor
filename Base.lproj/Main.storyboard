@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.59"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -625,7 +625,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -4257,7 +4257,7 @@ Gw
                                     <rect key="frame" x="3" y="3" width="256" height="451"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="s09-gN-5su">
+                                        <button fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="s09-gN-5su">
                                             <rect key="frame" x="18" y="318" width="197" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="xlS-2s-Q1e" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4267,7 +4267,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-ie-mqU">
+                                        <button fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-ie-mqU">
                                             <rect key="frame" x="18" y="360" width="112" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Blurry vision" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="uCc-PM-UXc" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4284,7 +4284,7 @@ or bending</string>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="BAI-oz-GXK">
+                                        <button fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="BAI-oz-GXK">
                                             <rect key="frame" x="18" y="383" width="96" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Headache" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Fcx-Nk-ZlI" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4301,7 +4301,7 @@ or bending</string>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="LHt-rl-hTv">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="LHt-rl-hTv">
                                             <rect key="frame" x="18" y="269" width="132" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Slurred speech" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="I30-vc-xWH" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4309,7 +4309,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="g9g-6G-LpO">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="g9g-6G-LpO">
                                             <rect key="frame" x="18" y="246" width="137" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Garbled speech" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="kRg-cn-Z1f" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4317,7 +4317,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="397-N6-YDD">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="397-N6-YDD">
                                             <rect key="frame" x="18" y="223" width="184" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Weakness on one side" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="JxJ-hg-rko" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4325,7 +4325,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="UFJ-Sj-mxM">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="UFJ-Sj-mxM">
                                             <rect key="frame" x="18" y="200" width="111" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Facial droop" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="rnC-iw-tlr" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4333,7 +4333,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="JyZ-yO-Rod">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="JyZ-yO-Rod">
                                             <rect key="frame" x="18" y="177" width="154" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Numbness of face" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="BGb-s7-Zed" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4341,7 +4341,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-vz-A7z">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-vz-A7z">
                                             <rect key="frame" x="18" y="154" width="151" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Numbness of arm" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="2vD-3A-5DM" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4349,7 +4349,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-Gk-mne">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-Gk-mne">
                                             <rect key="frame" x="18" y="131" width="145" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Numbness of leg" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Ftn-0r-Jjj" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4357,7 +4357,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-UW-w92">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-UW-w92">
                                             <rect key="frame" x="18" y="108" width="96" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Confusion" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="bop-3E-aDg" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4365,7 +4365,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="mGm-e9-HnT">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="mGm-e9-HnT">
                                             <rect key="frame" x="18" y="85" width="120" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Double vision" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="DOi-WK-ZUu" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4376,7 +4376,7 @@ or bending</string>
                                                 <action selector="deselectNoProblems:" target="Kqh-qg-MLm" id="pA2-4R-8Lw"/>
                                             </connections>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="LBW-mG-UU3">
+                                        <button fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="LBW-mG-UU3">
                                             <rect key="frame" x="18" y="62" width="190" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Medication compliance" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="iyh-tQ-VHF" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4384,7 +4384,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="DoB-Ae-M8T">
+                                        <button fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="DoB-Ae-M8T">
                                             <rect key="frame" x="18" y="39" width="113" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Low salt diet" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="5rA-mf-Cd1" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
@@ -4392,7 +4392,7 @@ or bending</string>
                                                 <font key="font" metaFont="system" size="16"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="doO-8s-SMY">
+                                        <button fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="doO-8s-SMY">
                                             <rect key="frame" x="18" y="16" width="83" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Exercise" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="xEE-aJ-yf2" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
