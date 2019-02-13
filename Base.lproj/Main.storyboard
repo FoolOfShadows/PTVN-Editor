@@ -5356,6 +5356,7 @@ Gw
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="HTNHPIOnsetView" destination="A3l-jg-ou1" id="MKX-zO-9lq"/>
                         <outlet property="bpAreaBox" destination="V2S-dp-FDA" id="fO1-Wb-n4G"/>
                         <outlet property="bpDiaView" destination="rvd-5v-BBG" id="DvH-W7-G1y"/>
                         <outlet property="bpSysView" destination="Cw2-zw-hVh" id="jNG-xZ-jGY"/>

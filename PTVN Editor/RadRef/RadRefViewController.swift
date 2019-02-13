@@ -96,6 +96,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
     @objc func setSideSelections(_ sender:NSButton) {
         if sender.state == .on {
             detailsBox.subviews.forEach({ $0.removeFromSuperview() })
+            detailsBox.removeFromSuperview()
             detailsBox = NSBox()
             if let buttons = sender.superview?.subviews {
                 for button in buttons {
@@ -197,8 +198,15 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	}
 	
     private func clearAreaSideViews() {
-        areaBox.subviews.forEach({ $0.removeFromSuperview() })
-        detailsBox.subviews.forEach({ $0.removeFromSuperview() })
+        radiologyView.subviews.forEach({ if let theSub = $0 as? NSBox {
+            if theSub.title != "Test/Ref" {
+                $0.removeFromSuperview()
+            }
+            }
+            
+        })
+//        areaBox.subviews.forEach({ $0.removeFromSuperview() })
+//        detailsBox.subviews.forEach({ $0.removeFromSuperview() })
         reasonView.stringValue = ""
         
         areaBox = NSBox()

@@ -129,6 +129,8 @@ struct HPIHTNData {
     var tia:[NSButton] {return htnButtons.filter { $0.state != .off && $0.tag == 7 }}
     var lifestyle:[NSButton] {return htnButtons.filter { $0.state != .off && $0.tag == 8 }}
     
+    var onset = String()
+    
     var positiveGen:[String] {return general.filter { $0.state == .mixed }.map { $0.title.lowercased().replacingOccurrences(of: "\n", with: "")}}
     var negativeGen:[String] {return general.filter { $0.state == .on }.map { $0.title.lowercased().replacingOccurrences(of: "\n", with: "")}}
     var positiveTIA:[String] {return tia.filter { $0.state == .mixed }.map { $0.title.lowercased().replacingOccurrences(of: "\n", with: "")}}
@@ -141,34 +143,39 @@ struct HPIHTNData {
         var positiveResults = [String]()
         var finalResults = [String]()
         
+        if !onset.isEmpty {
+            positiveResults.append("Onset \(onset).")
+        }
+        
         if !negativeGen.isEmpty {
-            negativeResults.append(negativeGen.joined(separator: ", "))
+            negativeResults.append("Patient denies \(negativeGen.joined(separator: ", ")).")
         }
         if !negativeTIA.isEmpty {
-            negativeResults.append("TIA symptoms including: \(negativeTIA.joined(separator: ", "))")
+            negativeResults.append("Patient denies TIA symptoms including: \(negativeTIA.joined(separator: ", ")).")
         }
         if !negativeLS.isEmpty {
-            negativeResults.append("is not compliant with the following lifestyle modifications: \(negativeLS.joined(separator: ", "))")
+            negativeResults.append("Patient reports compliance with the following lifestyle modifications: \(negativeLS.joined(separator: ", ")).")
         }
         if !positiveGen.isEmpty {
-            positiveResults.append(positiveGen.joined(separator: ", "))
+            positiveResults.append("Patient reports \(positiveGen.joined(separator: ", ")).")
         }
-        if !negativeTIA.isEmpty {
-            positiveResults.append("possible TIA symptoms including: \(positiveTIA.joined(separator: ", "))")
+        if !positiveTIA.isEmpty {
+            positiveResults.append("Patient reports possible TIA symptoms including: \(positiveTIA.joined(separator: ", ")).")
         }
-        if !negativeLS.isEmpty {
-            positiveResults.append("compliance with the following lifestyle modifications: \(positiveLS.joined(separator: ", "))")
+        if !positiveLS.isEmpty {
+            positiveResults.append("Patient reports noncompliance with the following lifestyle modifications: \(positiveLS.joined(separator: ", ")).")
         }
         
-        if !negativeResults.isEmpty {
-            finalResults.append("Patient denies \(negativeResults.joined(separator: "; ")).")
-        }
         if !positiveResults.isEmpty {
-            finalResults.append("Patient reports \(positiveResults.joined(separator: "; "))")
+            finalResults.append("\(positiveResults.joined(separator: " "))")
         }
+        if !negativeResults.isEmpty {
+            finalResults.append("\(negativeResults.joined(separator: " "))")
+        }
+        
         
         if !finalResults.isEmpty {
-            return "Patient returns for evaluation of hypertension. \(finalResults.joined(separator: "\n"))."
+            return "Patient returns for evaluation of hypertension. \(finalResults.joined(separator: "\n"))"
         } else {
             return ""
         }

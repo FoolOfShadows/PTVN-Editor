@@ -18,6 +18,7 @@ class HPIViewController: NSViewController {
 	@IBOutlet weak var htnBox: NSBox!
 	@IBOutlet weak var cholesterolBox: NSBox!
 	@IBOutlet weak var noProblemsCheckbox: NSButton!
+    @IBOutlet weak var HTNHPIOnsetView: NSTextField!
     
     @IBOutlet weak var weightView: NSTextField!
     @IBOutlet weak var heightView: NSTextField!
@@ -126,7 +127,7 @@ class HPIViewController: NSViewController {
         //incase of a crash, but it doesn't seem to do what I need
         NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: self)
         
-        let htnData = HPIHTNData(htnButtons: getListOfButtons(htnBox))
+        let htnData = HPIHTNData(htnButtons: getListOfButtons(htnBox), onset: HTNHPIOnsetView.stringValue)
         
 		var resultsArray = [String]()
 		var results = String()
