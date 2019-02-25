@@ -136,7 +136,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         assessmentList = problems.convertListToArray()
         print(assessmentList)
         self.assessmentTableView.reloadData()
-        chosenAssessmentList = assessmentList
+        //chosenAssessmentList = assessmentList
         updateView()
         commonMedsPopup.clearPopUpButton(menuItems: commonMedsList)
         

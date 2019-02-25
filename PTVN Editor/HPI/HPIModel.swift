@@ -154,7 +154,7 @@ struct HPIHTNData {
             negativeResults.append("Patient denies TIA symptoms including: \(negativeTIA.joined(separator: ", ")).")
         }
         if !negativeLS.isEmpty {
-            negativeResults.append("Patient reports compliance with the following lifestyle modifications: \(negativeLS.joined(separator: ", ")).")
+            negativeResults.append("Patient reports noncompliance with the following lifestyle modifications: \(negativeLS.joined(separator: ", ")).")
         }
         if !positiveGen.isEmpty {
             positiveResults.append("Patient reports \(positiveGen.joined(separator: ", ")).")
@@ -163,7 +163,7 @@ struct HPIHTNData {
             positiveResults.append("Patient reports possible TIA symptoms including: \(positiveTIA.joined(separator: ", ")).")
         }
         if !positiveLS.isEmpty {
-            positiveResults.append("Patient reports noncompliance with the following lifestyle modifications: \(positiveLS.joined(separator: ", ")).")
+            positiveResults.append("Patient reports compliance with the following lifestyle modifications: \(positiveLS.joined(separator: ", ")).")
         }
         
         if !positiveResults.isEmpty {
