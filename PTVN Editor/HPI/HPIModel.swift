@@ -12,8 +12,8 @@ enum HPITypes:String {
 	case symptoms = "presents with symptoms including"
 	case uti = "presents with symptoms of urinary tract infection including"
 	case uri = "presents with symptoms of upper respiratory infection including"
-	case htn = "returns for followup of hypertension and reports"
-	case hichol = "returns for followup of high cholesterol and reports"
+	case htn = "presents for evaluation of hypertension and reports"
+	case hichol = "presents for evaluation of high cholesterol and reports"
 	case chestpain = "presents with symptoms of chest pain including"
     case posGen
     case negGen
@@ -175,7 +175,7 @@ struct HPIHTNData {
         
         
         if !finalResults.isEmpty {
-            return "Patient returns for evaluation of hypertension. \(finalResults.joined(separator: "\n"))"
+            return "Patient presents for evaluation of hypertension. \(finalResults.joined(separator: "\n"))"
         } else {
             return ""
         }
