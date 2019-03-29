@@ -14,6 +14,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 
 	@IBOutlet weak var neuroBox: NSBox!
 	@IBOutlet weak var mskBox: NSBox!
+    @IBOutlet weak var generalStrengthBox: NSBox!
 	
 	@IBOutlet weak var rSLRCombo: NSComboBox!
 	@IBOutlet weak var lSLRCombo: NSComboBox!
@@ -93,13 +94,14 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 		self.view.clearControllers()
 
 		neuroBox.populateSelectionsInViewUsing(Neuro())
+        generalStrengthBox.populateSelectionsInViewUsing(MSK())
 	}
 	
 	@IBAction func selectNorms(_ sender: NSButton) {
 		func normalButtonRangesForSection(_ section:String) -> [Int] {
 			switch section {
 			case "neuro":
-				return [Int](1...6)
+				return [Int](3...6)
 			case "msk":
 				return [Int](1...4)
 			default:
@@ -348,10 +350,13 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         directionBox = NSBox()
         degreeBox = NSBox()
         toneBox = NSBox()
+        generalStrengthBox.populateSelectionsInViewUsing(MSK())
     }
     
     @IBAction func addOrderToView(_ sender: Any) {
         var returnValues = [String]()
+        var generalValues = [String]()
+        
         boxes = [sideBox, swellingBox, strengthBox, directionBox, degreeBox, toneBox]
         for box in boxes {
             let selections = box.getActiveButtonsInView()
@@ -367,7 +372,25 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
             returnValues.insert("tender to palpation", at: 0)
             //returnValues.append("tender to palpatation")
         }
-        mskResultsTextView.addToViewsExistingText("\(siteBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
+        if !returnValues.isEmpty { mskResultsTextView.addToViewsExistingText("\(siteBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
+        }
+        
+        let gsSelections = generalStrengthBox.getButtonsInView()
+        if !gsSelections.isEmpty {
+            for selection in gsSelections where !selection.title.isEmpty {
+                switch selection.tag {
+                case 50: generalValues.append("BLE: \(selection.title)/5")
+                case 51: generalValues.append("LLE: \(selection.title)/5")
+                case 52: generalValues.append("RLE: \(selection.title)/5")
+                case 55: generalValues.append("BUE: \(selection.title)/5")
+                case 56: generalValues.append("LUE: \(selection.title)/5")
+                case 57: generalValues.append("RUE: \(selection.title)/5")
+                default: return
+                }
+            }
+            mskResultsTextView.addToViewsExistingText("General strength: \(generalValues.joined(separator: ", "))")
+            
+        }
     }
     
     func switchNorms(_ sender:NSButton) {

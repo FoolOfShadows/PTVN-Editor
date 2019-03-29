@@ -312,12 +312,15 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     @IBAction func selectNorms(_ sender: NSButton) {
 		func normalButtonRangesForSection(_ section:String) -> [Int] {
 			switch section {
+            //If there were "l:" or "r:" buttons at some point
+            //I got rid of them at some point
 			case "n:":
-				return [Int](1...7)
-			case "l:":
+                //Don't select the Vibe or Monofil normal checkboxes
 				return [Int](1...5)
-			case "r:":
-				return [Int](1...5)
+//            case "l:":
+//                return [Int](1...5)
+//            case "r:":
+//                return [Int](1...5)
 			default:
 				return [Int]()
 			}

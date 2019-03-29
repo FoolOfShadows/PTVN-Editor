@@ -8,8 +8,11 @@
 
 import Foundation
 
-class MSK {
-	
+class MSK:PopulateComboBoxProtocol {
+    
+    func matchValuesFrom(_ id: Int) -> [String]? {
+        return ["", "0", "1", "2", "3", "4", "5"]
+    }
 	var mskAbnormalResults = String()
 	
 	func processSectionFrom(_ data: [(Int, String?)]) -> String {
