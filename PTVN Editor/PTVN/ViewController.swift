@@ -502,6 +502,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
         print(results)
         theData.assessment.addToExistingText(results)
+        //Clear table
+        visitLevelView.clearControllers()
+        assessmentTableView.clearControllers()
+        chosenAssessmentList = [String]()
         updateView()
     }
     
