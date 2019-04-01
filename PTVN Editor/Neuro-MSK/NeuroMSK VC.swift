@@ -388,7 +388,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
                 default: return
                 }
             }
-            mskResultsTextView.addToViewsExistingText("General strength: \(generalValues.joined(separator: ", "))")
+            mskResultsTextView.addToViewsExistingText("Extremity strength: \(generalValues.joined(separator: ", "))")
             
         }
     }
