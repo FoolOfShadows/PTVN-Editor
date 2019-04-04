@@ -9,9 +9,15 @@
 import Cocoa
 
 extension String {
-    mutating func addToExistingText(_ text:String) {
+    mutating func addToExistingText(_ text:String, withSpace:Bool = true) {
+        var space = "\n"
+        
+        if withSpace == true {
+            space = "\n\n"
+        }
+        
         if !self.isEmpty {
-            self += "\n\n\(text)"
+            self += "\(space)\(text)"
         } else {
             self = text
         }

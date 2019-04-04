@@ -500,8 +500,18 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBAction func processAssessmentTable(_ sender: Any) {
         
         let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
-        print(results)
-        theData.assessment.addToExistingText(results)
+        //print(results)
+        theData.assessment.addToExistingText(results, withSpace: false)
+        
+        //Reorganize the assessment so the Visit Level is at the bottom of the dx list
+        let assessList = theData.assessment.components(separatedBy: "\n")
+        let visitLevel = assessList.filter {$0.hasPrefix("Lvl")}
+        let visitDx = assessList.filter {$0.hasPrefix("-")}
+        let restOfList = assessList.filter {!(visitLevel + visitDx).contains($0)}
+        //print("\(visitLevel)\n\(visitDx)\n\(restOfList)")
+        let reorganizedList = restOfList + visitDx + visitLevel
+        theData.assessment = reorganizedList.filter {!$0.isEmpty}.joined(separator: "\n")
+        
         //Clear table
         visitLevelView.clearControllers()
         assessmentTableView.clearControllers()
