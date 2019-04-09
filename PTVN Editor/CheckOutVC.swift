@@ -26,7 +26,7 @@ class CheckOutVC: NSViewController {
         super.viewDidLoad()
         
         demoView.stringValue = """
-        \(theData.ptName) (\(theData.ptDOB))
+        \(theData.ptName)
         Visit date: \(theData.visitDate)
 """
 notesView.string = prepDataForView()
@@ -34,8 +34,7 @@ notesView.string = prepDataForView()
     
     @IBAction func printCheckOutReport(_ sender: Any) {
         let results = """
-Whelchel Primary Care Medicine
-Patient Visit Summary
+Whelchel Primary Care Medicine Patient Visit Summary
 
 \(demoView.stringValue)
         
@@ -72,7 +71,7 @@ Patient Visit Summary
         }
         let refills = theData.plan.getLinesStartingWith("~~").joined(separator: "\n").cleanTheTextOf(["~~"])
         if !refills.isEmpty {
-            refillValues = "Refills requested:\n\(refills)"
+            refillValues = "Medications being prescribed:\n\(refills)"
         }
         let refrad = theData.plan.getLinesStartingWith("••").joined(separator: "\n").cleanTheTextOf(["••"])
         if !refrad.isEmpty {
@@ -80,7 +79,7 @@ Patient Visit Summary
         }
         let assessment = theData.assessment.removeWhiteSpace()
         if !assessment.isEmpty {
-            assessmentValues = "Diagnoses this visit:\n\(assessment)"
+            assessmentValues = "Diagnoses this visit:\n\(assessment.replacingOccurrences(of: "Lvl", with: "Visit level"))"
         }
         let objective = theData.objective
         //if !objective.isEmpty {
@@ -100,7 +99,7 @@ Patient Visit Summary
             planValues = cleanPlan
         }
         
-        let values = [radValues, refillValues, planValues, vitalsValues, assessmentValues, medValues]
+        let values = [vitalsValues, refillValues, radValues, /*planValues,*/ assessmentValues, medValues]
         let usedValues = values.filter { !$0.isEmpty }
         return usedValues.joined(separator: "\n\n")
     }
