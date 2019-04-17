@@ -11,6 +11,8 @@
 		7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE7208E123900CD11A1 /* ROSViewController.swift */; };
 		7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */; };
 		7906DEED208E16A800CD11A1 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEEB208E16A700CD11A1 /* DoctorModel.swift */; };
+		79071F45225E483C0092E8F3 /* ADHDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79071F44225E483C0092E8F3 /* ADHDVC.swift */; };
+		79071F47225E493E0092E8F3 /* ADHDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79071F46225E493E0092E8F3 /* ADHDModel.swift */; };
 		7913205C2077C85100CB1537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205B2077C85100CB1537 /* AppDelegate.swift */; };
 		7913205E2077C85100CB1537 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205D2077C85100CB1537 /* ViewController.swift */; };
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
@@ -97,6 +99,8 @@
 		7906DEE7208E123900CD11A1 /* ROSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSViewController.swift; sourceTree = "<group>"; };
 		7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		7906DEEB208E16A700CD11A1 /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
+		79071F44225E483C0092E8F3 /* ADHDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADHDVC.swift; sourceTree = "<group>"; };
+		79071F46225E493E0092E8F3 /* ADHDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADHDModel.swift; sourceTree = "<group>"; };
 		791320582077C85100CB1537 /* PTVN Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PTVN Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7913205B2077C85100CB1537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7913205D2077C85100CB1537 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79071F48225E494C0092E8F3 /* ADHD */ = {
+			isa = PBXGroup;
+			children = (
+				79071F44225E483C0092E8F3 /* ADHDVC.swift */,
+				79071F46225E493E0092E8F3 /* ADHDModel.swift */,
+			);
+			path = ADHD;
+			sourceTree = "<group>";
+		};
 		7913204F2077C85100CB1537 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +254,7 @@
 				798BBB502093965F002A28AA /* PHQ9 */,
 				798BBB5A2093A005002A28AA /* Preventive */,
 				798A8F7D20E3F4F60036A74C /* Mood */,
+				79071F48225E494C0092E8F3 /* ADHD */,
 				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
 				798BD5A120D15FA500FD089B /* CheckOutVC.swift */,
 				791320612077C85200CB1537 /* Assets.xcassets */,
@@ -606,6 +620,7 @@
 				799C221D20C6F89B00DC9993 /* PTVNTabView.swift in Sources */,
 				79CCA6E62090DA4200909285 /* SkinGynGUDRE VC.swift in Sources */,
 				79CCA6AD2090B73F00909285 /* LabsViewController.swift in Sources */,
+				79071F45225E483C0092E8F3 /* ADHDVC.swift in Sources */,
 				798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */,
 				79CCA6A62090B73F00909285 /* HPIModel.swift in Sources */,
 				798BBB4B20939617002A28AA /* MemoryModel.swift in Sources */,
@@ -646,6 +661,7 @@
 				79AFE1D32188C646007F4A5E /* BlackLineClass.swift in Sources */,
 				79E60BD920DBF56700BC775B /* MoodVC.swift in Sources */,
 				798BBB4720939617002A28AA /* PHQ9Controller.swift in Sources */,
+				79071F47225E493E0092E8F3 /* ADHDModel.swift in Sources */,
 				798BBB592093A000002A28AA /* PreventiveController.swift in Sources */,
 				79CCA6E32090DA4200909285 /* Gyn Model.swift in Sources */,
 				79CCA6EC2090DB7D00909285 /* Breast Model.swift in Sources */,
