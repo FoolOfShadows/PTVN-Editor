@@ -100,7 +100,7 @@ class ADHDVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         print("Result: \(result)")
         //Add the information to the existing subjective data
         if !result.isEmpty {
-            theData.subjective.addToExistingText("\(result)")
+            theData.objective.addToExistingText("\(result)")
         }
         
         //print(theData.subjective)
