@@ -2096,27 +2096,9 @@
                                 <rect key="frame" x="642" y="647" width="480" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XgP-JA-zJ3" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YC0-er-jVg" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
-                                        <buttonCell key="cell" type="square" title="Prev" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c3f-Ju-1M0">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                <color key="value" red="0.5328899131" green="1" blue="0.95890977659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="5cM-Yg-bff" kind="sheet" identifier="showPreventive" id="10D-vi-Z5n"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-52-6G5" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="0.0" width="60" height="25"/>
-                                        <buttonCell key="cell" type="square" title="MWE" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tVs-C3-iB7">
+                                        <buttonCell key="cell" type="square" title="ADHD" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QwF-Xo-Xkm">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -2129,11 +2111,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="krU-r2-0XC" kind="sheet" identifier="showMWE" id="lz0-Gr-tOW"/>
+                                            <segue destination="9as-Jw-jaj" kind="sheet" identifier="showADHD" id="bp9-U9-sKs"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-wD-RYg" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="120" y="0.0" width="60" height="25"/>
+                                        <rect key="frame" x="60" y="0.0" width="60" height="25"/>
                                         <buttonCell key="cell" type="square" title="PHQ9" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aoR-Ad-o6S">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -2151,7 +2133,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zp7-x3-RE8" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="0.0" width="60" height="25"/>
+                                        <rect key="frame" x="120" y="0.0" width="60" height="25"/>
                                         <buttonCell key="cell" type="square" title="Mood" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WzD-sO-qWT">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -2168,26 +2150,8 @@
                                             <segue destination="epQ-Hh-IVb" kind="sheet" identifier="showMood" id="cm5-13-Fby"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YC0-er-jVg" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="0.0" width="60" height="25"/>
-                                        <buttonCell key="cell" type="square" title="ADHD" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QwF-Xo-Xkm">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                <color key="value" red="0.5328899131" green="1" blue="0.95890977659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="9as-Jw-jaj" kind="sheet" identifier="showADHD" id="bp9-U9-sKs"/>
-                                        </connections>
-                                    </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PHW-lG-1ll" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="0.0" width="60" height="25"/>
+                                        <rect key="frame" x="180" y="0.0" width="60" height="25"/>
                                         <buttonCell key="cell" type="square" title="Memory" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LWt-4R-2gc">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -2205,7 +2169,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S89-20-jbl" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="360" y="0.0" width="60" height="25"/>
+                                        <rect key="frame" x="240" y="0.0" width="60" height="25"/>
                                         <buttonCell key="cell" type="square" title="ESS" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NHA-IS-ZHP">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -2223,7 +2187,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EQI-z2-yAf" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                        <rect key="frame" x="420" y="0.0" width="60" height="25"/>
+                                        <rect key="frame" x="300" y="0.0" width="60" height="25"/>
                                         <buttonCell key="cell" type="square" title="Incont" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dbz-x1-LL3">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -2238,6 +2202,42 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="H76-JO-4Qx" kind="sheet" identifier="showIncont" id="nO3-PY-oqx"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-52-6G5" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
+                                        <rect key="frame" x="360" y="0.0" width="60" height="25"/>
+                                        <buttonCell key="cell" type="square" title="MWE" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tVs-C3-iB7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.5328899131" green="1" blue="0.95890977659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="krU-r2-0XC" kind="sheet" identifier="showMWE" id="lz0-Gr-tOW"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XgP-JA-zJ3" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
+                                        <rect key="frame" x="420" y="0.0" width="60" height="25"/>
+                                        <buttonCell key="cell" type="square" title="Prev" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c3f-Ju-1M0">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.5328899131" green="1" blue="0.95890977659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="5cM-Yg-bff" kind="sheet" identifier="showPreventive" id="10D-vi-Z5n"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -12656,9 +12656,9 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yn-NJ-X6F">
-                                            <rect key="frame" x="18" y="622" width="566" height="17"/>
+                                            <rect key="frame" x="18" y="622" width="559" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Over the last 2 weeks, how often have you been boethered by any of the following problems?" id="X4d-hG-BkY">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Over the last 2 weeks, how often have you been bothered by any of the following problems?" id="X4d-hG-BkY">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -16206,7 +16206,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haX-7M-Ne3">
-                                                                    <rect key="frame" x="0.0" y="3" width="504" height="44"/>
+                                                                    <rect key="frame" x="0.0" y="3" width="519" height="44"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="0Ec-z7-cx8">
                                                                         <font key="font" metaFont="system" size="16"/>
@@ -16239,7 +16239,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKT-2P-cQb">
-                                                                    <rect key="frame" x="1" y="25" width="22" height="18"/>
+                                                                    <rect key="frame" x="1" y="13" width="22" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1hb-Pi-fzD">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -16271,7 +16271,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FXG-gx-iNd">
-                                                                    <rect key="frame" x="1" y="25" width="22" height="18"/>
+                                                                    <rect key="frame" x="1" y="13" width="22" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Q1F-jB-VX0">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -16303,7 +16303,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="Z5h-Z9-P29">
-                                                                    <rect key="frame" x="1" y="25" width="22" height="18"/>
+                                                                    <rect key="frame" x="1" y="13" width="22" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="WEy-gg-OiZ">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -16335,7 +16335,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="z60-xL-Wqr">
-                                                                    <rect key="frame" x="1" y="25" width="22" height="18"/>
+                                                                    <rect key="frame" x="1" y="13" width="22" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="caa-7X-vpU">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -16367,7 +16367,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="bw1-SJ-GGx">
-                                                                    <rect key="frame" x="1" y="25" width="22" height="18"/>
+                                                                    <rect key="frame" x="1" y="13" width="22" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Ee-pV-AVf">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

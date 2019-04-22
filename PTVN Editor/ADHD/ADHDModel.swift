@@ -22,9 +22,9 @@ struct ADHDData {
         case distracted = "11. How often are you distracted by activity or noise around you?"
         case leave = "12. How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
         case restless = "13. How often do you feel restless or fidgety?"
-        case unwinding = "14. How often do you have difficulty unwinding and relaxing when you ahve time to yourself?"
+        case unwinding = "14. How often do you have difficulty unwinding and relaxing when you have time to yourself?"
         case talking = "15. How often do you find yourself talking too much when you are in social situations?"
-        case conversation = "16. When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?"
+        case conversation = "16. When you're in a conversation, how often do you finish the sentences of people you're talking to before they finish themselves?"
         case waiting = "17. How often do you have difficulty waiting your turn in situations when turn taking is required?"
         case interrupt = "18. How often do you interrupt others when they are busy?"
     }
