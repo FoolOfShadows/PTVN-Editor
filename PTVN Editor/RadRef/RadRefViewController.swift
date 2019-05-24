@@ -164,6 +164,8 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
             returnValues.append(reasonView.stringValue)
         }
         radOrders.addToViewsExistingText(returnValues.filter {$0 != "" }.joined(separator: " - "))
+        clearAreaSideViews()
+        typeView.turnButtonsInViewOff()
 	}
 	
 
@@ -173,12 +175,19 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
 	
 	@IBAction func processRadRef(_ sender: Any) {
 		var finalResults = [String]()
+        
+        //Check to see if there are uncommitted selections, and add them to the radOrders field
+        if !areaBox.getActiveButtonInView().isEmpty {
+            addOrderToView(self)
+        }
+        
         let resultsArray = radOrders.string.components(separatedBy: "\n")
         //print(resultsArray)
         let radResults = resultsArray.filter { !$0.contains("Med") && !$0.contains("Surg") && !$0.contains("Ther") }
         let refResults = resultsArray.filter { $0.contains("Med") || $0.contains("Surg") || $0.contains("Ther") }
         //print(refResults)
-		if !radResults.isEmpty {
+        print("Rad results contains:\n\(radResults)")
+		if !radResults.isEmpty && radResults != [""] {
 			finalResults.append("Tests ordered:\n\(radResults.joined(separator: "\n").addCharacterToBeginningOfEachLine("••"))")
 		}
         if !refResults.isEmpty {

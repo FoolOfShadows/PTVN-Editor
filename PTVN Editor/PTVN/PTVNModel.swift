@@ -237,6 +237,8 @@ class PTVN {
         return actualChanges.joined(separator: "\n")
     }
     
+    //If the MA has copied meds data from Practice Fusion to paste
+    //into the med section, it will need to be cleaned up.
     var saveValue:String {return """
         #PTVNFILE#
         \(SectionDelimiters.planStart.rawValue)
@@ -271,8 +273,6 @@ class PTVN {
         \(SectionDelimiters.rosEnd.rawValue)
         
         \(SectionDelimiters.medStart.rawValue)
-        //If the MA has copied meds data from Practice Fusion to paste
-        //into the med section, it will need to be cleaned up.
         \(medicines.replaceRegexPattern("-\\s*•\\s*", with: "- "))
         \(SectionDelimiters.medEnd.rawValue)
         
