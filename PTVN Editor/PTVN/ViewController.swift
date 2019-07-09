@@ -573,6 +573,23 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
     
+    @IBAction func createMessage(_ sender: Any) {
+      
+        let ptName = ptNameView.stringValue
+        let thePasteBoard = NSPasteboard.general
+        if var contents = thePasteBoard.pasteboardItems?.first?.string(forType: .string) {
+            "\(ptName) - \(contents)".copyToPasteboard()
+        }
+        NSWorkspace.shared.openFile("/Applications/DocsInk.app")
+//        var theValues = [String]()
+//        let theLines = problemView.string.components(separatedBy: "/n")
+//        for line in theLines {
+//            if line.contains("••") || line.contains("~~") {
+//                theValues.append(line)
+//            }
+//        }
+        
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
