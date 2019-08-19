@@ -142,7 +142,10 @@ class HPIViewController: NSViewController {
 //			resultsArray.append("Patient reports no new problems or concerns today.")
 //		}
         
-        let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
+        if !bpSysView.stringValue.isEmpty {
+            let currentVitals = Vitals(weight: weightView.stringValue, height: heightView.stringValue, temp: tempView.stringValue, bpSite: returnActiveButtonTitleFromView(bpAreaBox), systolic: bpSysView.stringValue, diastolic: bpDiaView.stringValue, pulse: pulseView.stringValue, resp: respView.stringValue, pulseOx: pulseOxView.stringValue, poType: returnActiveButtonTitleFromView(pulseOxBox))
+            theData.objective.addToExistingText(currentVitals.getVitalsOutput())
+        }
 		
 		let hpiResults = resultsArray.filter {$0 != ""}
 		if !hpiResults.isEmpty {
@@ -152,7 +155,7 @@ class HPIViewController: NSViewController {
 		}
         
         theData.subjective.addToExistingText(results)
-        theData.objective.addToExistingText(currentVitals.getVitalsOutput())
+        
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
