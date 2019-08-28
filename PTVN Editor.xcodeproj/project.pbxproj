@@ -20,6 +20,8 @@
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
 		79349EA821765B420020F88B /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79349EA721765B420020F88B /* OrderedDictionary.swift */; };
 		79400C1421D53458008B7CFE /* SpellChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79400C1321D53458008B7CFE /* SpellChecker.swift */; };
+		79412AD92310318C00216702 /* Pain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79412AD72310318C00216702 /* Pain.storyboard */; };
+		79412ADB2310322C00216702 /* PillCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79412ADA2310322C00216702 /* PillCountVC.swift */; };
 		79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79477C8B21779A9B00E9219D /* AssessmentModel.swift */; };
 		795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B7234219B47800010B07E /* TitlesAndOutput.swift */; };
 		795C875321B71BD700E99E0C /* Doc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C875121B71BD700E99E0C /* Doc.storyboard */; };
@@ -111,6 +113,8 @@
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
 		79349EA721765B420020F88B /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		79400C1321D53458008B7CFE /* SpellChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellChecker.swift; sourceTree = "<group>"; };
+		79412AD82310318C00216702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pain.storyboard; sourceTree = "<group>"; };
+		79412ADA2310322C00216702 /* PillCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountVC.swift; sourceTree = "<group>"; };
 		79477C8B21779A9B00E9219D /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		795B7234219B47800010B07E /* TitlesAndOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndOutput.swift; sourceTree = "<group>"; };
 		795C875221B71BD700E99E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PTVN Editor/Base.lproj/Doc.storyboard"; sourceTree = "<group>"; };
@@ -383,8 +387,10 @@
 		79CCA6B52090BC2900909285 /* Pain */ = {
 			isa = PBXGroup;
 			children = (
+				79412AD72310318C00216702 /* Pain.storyboard */,
 				79CCA6972090B73D00909285 /* PainViewController.swift */,
 				79CCA6942090B73D00909285 /* PainModel.swift */,
+				79412ADA2310322C00216702 /* PillCountVC.swift */,
 			);
 			path = Pain;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79412AD92310318C00216702 /* Pain.storyboard in Resources */,
 				791320622077C85200CB1537 /* Assets.xcassets in Resources */,
 				79AFE1CE2188A124007F4A5E /* ROS.storyboard in Resources */,
 				79AFE1D12188A223007F4A5E /* PhysicalExam.storyboard in Resources */,
@@ -593,6 +600,7 @@
 				79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */,
 				79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */,
 				79DDB9ED208786BE00E01853 /* GeneralExtensions.swift in Sources */,
+				79412ADB2310322C00216702 /* PillCountVC.swift in Sources */,
 				7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */,
 				79DDB9E9208786A500E01853 /* PTVNModel.swift in Sources */,
 				79CCA6A72090B73F00909285 /* ProcInjViewController.swift in Sources */,
@@ -677,6 +685,14 @@
 				791320642077C85200CB1537 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		79412AD72310318C00216702 /* Pain.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79412AD82310318C00216702 /* Base */,
+			);
+			name = Pain.storyboard;
 			sourceTree = "<group>";
 		};
 		795C875121B71BD700E99E0C /* Doc.storyboard */ = {
@@ -817,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = b1;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -825,7 +841,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.77;
+				MARKETING_VERSION = 1.78;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -838,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = b1;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -846,7 +862,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.77;
+				MARKETING_VERSION = 1.78;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

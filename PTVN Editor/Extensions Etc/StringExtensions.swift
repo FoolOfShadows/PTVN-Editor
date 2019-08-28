@@ -211,6 +211,12 @@ extension String {
 //        }
         return newArray
     }
+    
+    func convertStringToStandardDate() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M/d/yy"
+        return formatter.date(from: self)
+    }
 }
 
 
