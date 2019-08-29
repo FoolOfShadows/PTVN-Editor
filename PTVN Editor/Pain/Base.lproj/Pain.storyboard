@@ -958,7 +958,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="10" doubleValue="4" tickMarkPosition="below" numberOfTickMarks="21" allowsTickMarkValuesOnly="YES" sliderType="linear" id="yGc-xe-j0L"/>
                                             <connections>
-                                                <action selector="takeAverageWeeklySlider:" target="rI2-yo-U0R" id="NUs-2W-beV"/>
+                                                <action selector="takeAverageWeeklySlider:" target="rI2-yo-U0R" id="qN7-tP-Y3f"/>
                                             </connections>
                                         </slider>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uu0-h4-erP">
@@ -1006,7 +1006,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <action selector="takeDoubleValueFrom:" target="zyf-Z5-hPe" id="7Oc-jg-Utp"/>
+                                                <action selector="takeDoubleValueFrom:" target="zyf-Z5-hPe" id="EVd-5i-8Na"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxP-jh-O6C">
@@ -1077,7 +1077,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="10" doubleValue="4" tickMarkPosition="below" numberOfTickMarks="21" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Qla-Hp-OYi"/>
                                             <connections>
-                                                <action selector="takeEnjoymentSlider:" target="rI2-yo-U0R" id="oKh-XK-lKH"/>
+                                                <action selector="takeEnjoymentSlider:" target="rI2-yo-U0R" id="RdN-QK-HCd"/>
                                             </connections>
                                         </slider>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbT-Hx-tXX">
@@ -1125,7 +1125,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <action selector="takeDoubleValueFrom:" target="kTv-sx-nDN" id="jSD-gN-77u"/>
+                                                <action selector="takeDoubleValueFrom:" target="kTv-sx-nDN" id="VvA-bF-Hul"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyh-8Q-dVY">
@@ -1196,7 +1196,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="10" doubleValue="4" tickMarkPosition="below" numberOfTickMarks="21" allowsTickMarkValuesOnly="YES" sliderType="linear" id="0xC-qt-TDK"/>
                                             <connections>
-                                                <action selector="takeActivitySlider:" target="rI2-yo-U0R" id="XNG-eK-aHy"/>
+                                                <action selector="takeActivitySlider:" target="rI2-yo-U0R" id="ZJu-ct-rIL"/>
                                             </connections>
                                         </slider>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nh3-Qc-9sL">
@@ -1244,7 +1244,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <action selector="takeDoubleValueFrom:" target="03C-9J-0me" id="aJv-Af-vaC"/>
+                                                <action selector="takeDoubleValueFrom:" target="03C-9J-0me" id="6Y1-bM-B4r"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8x-K4-RRF">

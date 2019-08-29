@@ -8,7 +8,11 @@
 
 import Cocoa
 
-class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate {
+protocol PillCountDelegate: class {
+    var pillCountData:String { get set }
+}
+
+class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate, NSControlTextEditingDelegate, PillCountDelegate {
 
 	@IBOutlet var painTabView: NSView!
 	@IBOutlet weak var locationBox: NSBox!
@@ -39,6 +43,8 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
 	@IBOutlet weak var qolMeasurePopup: NSPopUpButton!
 	@IBOutlet weak var qolCommentsView: NSTextField!
     
+    var pillCountData = String()
+    
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
 	
@@ -63,9 +69,6 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
         clearPain(self)
     }
 	
-//    override func controlTextDidChange(_ obj: Notification) {
-//        //calculatePEGScore()
-//    }
 	
     func calculatePEGScore() -> String {
         var painResults = [String]()
@@ -81,25 +84,34 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
         
         if let weeklyValue = Double(painSeverityAmountView.stringValue), let enjoymentValue = Double(painJoyAmountView.stringValue), let activityValue = Double(painActivityAmountView.stringValue) {
             let totalSum = weeklyValue + enjoymentValue + activityValue
+            pegScoreView.stringValue = "\(String(format: "%.1f", totalSum/3))/10"
             painResults.append("PEG PAIN SCORE = \(String(format: "%.1f", totalSum/3))/10")
         }
         
         return painResults.joined(separator: "\n")
     }
     
+    func updatePEGView() {
+        if let weeklyValue = Double(painSeverityAmountView.stringValue), let enjoymentValue = Double(painJoyAmountView.stringValue), let activityValue = Double(painActivityAmountView.stringValue) {
+            let totalSum = weeklyValue + enjoymentValue + activityValue
+            print("PEG Score: \(totalSum)")
+            pegScoreView.stringValue = "\(String(format: "%.1f", totalSum/3))/10"
+        }
+    }
+    
     @IBAction func takeAverageWeeklySlider(_ sender: NSSlider) {
         painSeverityAmountView.doubleValue = sender.doubleValue
-        //calculatePEGScore()
+        updatePEGView()
     }
     
     @IBAction func takeEnjoymentSlider(_ sender: NSSlider) {
         painJoyAmountView.doubleValue = sender.doubleValue
-        //calculatePEGScore()
+        updatePEGView()
     }
     
     @IBAction func takeActivitySlider(_ sender: NSSlider) {
         painActivityAmountView.doubleValue = sender.doubleValue
-        //calculatePEGScore()
+        updatePEGView()
     }
 	
 	
@@ -124,7 +136,10 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
 		let functionResults = Function().processSectionData(getButtonsIn(view: functionBox))
 		let qolResults = getQOLInfo()
 		let fullResults = [locationResults, durationResults, severityResults, qualityResults, timingResults, contextResults, modifyingFactorResults, associatedSymptoms, functionResults, qolResults]
-		let filteredResults = fullResults.filter {!$0.isEmpty}
+		var filteredResults = fullResults.filter {!$0.isEmpty}
+        if !pillCountData.isEmpty {
+            filteredResults.append(pillCountData)
+        }
 		
         theData.subjective.addToExistingText(filteredResults.joined(separator: "\n"))
         
@@ -198,4 +213,18 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate 
 		
 		return result
 	}
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if let theSegue = segue.identifier {
+            switch theSegue {
+            case "showPillCount":
+                if let toViewController = segue.destinationController as? PillCountVC {
+                    //For the delegate to work, it needs to be assigned here
+                    //rather than in view did load.  Because it's a modal window?
+                    toViewController.pillCountDelegate = self
+                }
+            default: return
+            }
+        }
+    }
 }

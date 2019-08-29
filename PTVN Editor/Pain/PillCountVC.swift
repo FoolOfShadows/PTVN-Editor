@@ -20,6 +20,8 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
     @IBOutlet weak var expectedCountText: NSTextField!
     @IBOutlet weak var discrepancyText: NSTextField!
     
+    weak var pillCountDelegate: PillCountDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lastFillText.delegate = self
@@ -40,12 +42,13 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
     }
     
     func controlTextDidEndEditing(_ obj: Notification) {
+        var totalPillsPerDay = Int()
         if let onePill = Double(wt1PillText.stringValue), let totalWeight = Double(totalPillWtText.stringValue) {
             currentCountText.stringValue = String(totalWeight/onePill)
         }
         
         if let lastFill = lastFillText.stringValue.convertStringToStandardDate(), let currentDate = currentDateText.stringValue.convertStringToStandardDate(), let fillQty = Int(lastFillQtyText.stringValue), let pillDose = Int(pillsPerDoseText.stringValue), let dayDose = Int(dosesPerDayText.stringValue) {
-            let totalPillsPerDay = pillDose * dayDose
+            totalPillsPerDay = pillDose * dayDose
             print("Pills/Day: \(totalPillsPerDay)")
             let userCalendar = Calendar.current
 
@@ -58,12 +61,26 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
             expectedCountText.stringValue = String(fillQty - pillsUsed)
         }
         
-        if let currentCount = Int(currentCountText.stringValue), let expectedCount = Int(expectedCountText.stringValue) {
-            discrepancyText.stringValue = String(expectedCount - currentCount)
+        if let currentCount = Int(currentCountText.stringValue), let expectedCount = Int(expectedCountText.stringValue), let onePill = Double(wt1PillText.stringValue), let totalWeight = Double(totalPillWtText.stringValue) {
+            let discrepancyValue = expectedCount - currentCount
+            let varianceCount = (1.5 * Double(totalPillsPerDay)) + ((0.02 * totalWeight)/onePill)
+            print("Total allowed variance: \(varianceCount)")
+            discrepancyText.stringValue = String(discrepancyValue)
+            if (Double(expectedCount)-varianceCount)...(Double(expectedCount)+varianceCount) ~= Double(currentCount) {
+                discrepancyText.textColor = NSColor.green
+            } else {
+                discrepancyText.textColor = NSColor.red
+            }
         }
     }
     
     
     @IBAction func processPillCount(_ sender: NSButton) {
+        if discrepancyText.textColor == NSColor.green {
+            pillCountDelegate?.pillCountData = "Pill count done.  Results satisfactory."
+        } else if discrepancyText.textColor == NSColor.red {
+            pillCountDelegate?.pillCountData = "Pill count done.  Results unsatisfactory."
+        }
+        self.dismiss(self)
     }
 }
