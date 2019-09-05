@@ -77,10 +77,16 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
     
     @IBAction func processPillCount(_ sender: NSButton) {
         if discrepancyText.textColor == NSColor.green {
-            pillCountDelegate?.pillCountData = "Pill count done.  Results satisfactory."
+            pillCountDelegate?.pillCountData = "Pill count done. Results satisfactory."
         } else if discrepancyText.textColor == NSColor.red {
-            pillCountDelegate?.pillCountData = "Pill count done.  Results unsatisfactory."
+            if let current = Int(currentCountText.stringValue), let expected = Int(expectedCountText.stringValue) {
+                if current > expected {
+                    pillCountDelegate?.pillCountData = "Pill count done. More pills than expected."
+                } else if current < expected {
+                    pillCountDelegate?.pillCountData = "Pill count done. Fewer pills than expected."
+                }
+            }
+            self.dismiss(self)
         }
-        self.dismiss(self)
     }
 }

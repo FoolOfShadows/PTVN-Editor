@@ -18,6 +18,7 @@
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
 		791320622077C85200CB1537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791320612077C85200CB1537 /* Assets.xcassets */; };
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
+		793133B8231849B000B3649A /* OpioidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793133B7231849B000B3649A /* OpioidVC.swift */; };
 		79349EA821765B420020F88B /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79349EA721765B420020F88B /* OrderedDictionary.swift */; };
 		79400C1421D53458008B7CFE /* SpellChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79400C1321D53458008B7CFE /* SpellChecker.swift */; };
 		79412AD92310318C00216702 /* Pain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79412AD72310318C00216702 /* Pain.storyboard */; };
@@ -111,6 +112,7 @@
 		791320642077C85200CB1537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
+		793133B7231849B000B3649A /* OpioidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpioidVC.swift; sourceTree = "<group>"; };
 		79349EA721765B420020F88B /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		79400C1321D53458008B7CFE /* SpellChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellChecker.swift; sourceTree = "<group>"; };
 		79412AD82310318C00216702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pain.storyboard; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				79CCA6F42090DC5700909285 /* Neuro-MSK */,
 				798BBB5520939C26002A28AA /* MWE */,
 				798BBB4D2093963E002A28AA /* ESS */,
+				793133B9231849D500B3649A /* Opioid Risk Tool */,
 				798BBB4E20939646002A28AA /* Incontinence */,
 				798BBB4F20939656002A28AA /* Memory */,
 				798BBB502093965F002A28AA /* PHQ9 */,
@@ -270,6 +273,14 @@
 				79400C1321D53458008B7CFE /* SpellChecker.swift */,
 			);
 			path = "PTVN Editor";
+			sourceTree = "<group>";
+		};
+		793133B9231849D500B3649A /* Opioid Risk Tool */ = {
+			isa = PBXGroup;
+			children = (
+				793133B7231849B000B3649A /* OpioidVC.swift */,
+			);
+			path = "Opioid Risk Tool";
 			sourceTree = "<group>";
 		};
 		798A8F7D20E3F4F60036A74C /* Mood */ = {
@@ -664,6 +675,7 @@
 				799C11BD20ADD2A000FBCC13 /* LabSetUpPrintViewController.swift in Sources */,
 				79CCA6D92090D5F600909285 /* DigitAssessment.swift in Sources */,
 				799C221B20C6D57900DC9993 /* PTVNWindowController.swift in Sources */,
+				793133B8231849B000B3649A /* OpioidVC.swift in Sources */,
 				79CCA6E72090DA4200909285 /* DRE Model.swift in Sources */,
 				798BBB4C20939617002A28AA /* IncontinenceModel.swift in Sources */,
 				79AFE1D32188C646007F4A5E /* BlackLineClass.swift in Sources */,
@@ -833,7 +845,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b2;
+				CURRENT_PROJECT_VERSION = b3;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -854,7 +866,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b2;
+				CURRENT_PROJECT_VERSION = b3;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
