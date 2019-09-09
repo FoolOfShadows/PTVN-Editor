@@ -285,6 +285,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
                 }
+            case "showORTView":
+                if let toViewController = segue.destinationController as? OpioidVC {
+                    toViewController.currentPTVNDelegate = self
+                    toViewController.theData = theData
+                }
             default: return
             }
         }
