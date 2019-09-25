@@ -454,6 +454,12 @@ extension Date {
         let newDate = Calendar.current.date(byAdding: components, to: self)
         return newDate
     }
+    
+    func shortDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.short
+        return formatter.string(from: self)
+    }
 }
 
 func getDateFromString(_ date: [String]) -> [Date]? {
@@ -541,4 +547,91 @@ extension NSAttributedString {
         
         return ceil(boundingBox.width)
     }
+}
+
+//Using the name line from the PTVN, break it into it's components
+//then return it in the format requested per the FileLabelType enum
+func getFileLabellingNameFrom(_ name: String) -> String {
+    var fileLabellingName = String()
+    var ptFirstName = ""
+    var ptLastName = ""
+    var ptMiddleName = ""
+    var ptExtraName = ""
+    let extraNameBits = ["Sr", "Jr", "II", "III", "IV", "MD"]
+    
+    func checkForMatchInSets(_ arrayToCheckIn: [String], arrayToCheckFor: [String]) -> Bool {
+        var result = false
+        for item in arrayToCheckIn {
+            if arrayToCheckFor.contains(item) {
+                result = true
+                break
+            }
+        }
+        return result
+    }
+    
+    let nameComponents = name.components(separatedBy: " ").filter {!$0.contains("(")}
+    
+    let extraBitsCheck = checkForMatchInSets(nameComponents, arrayToCheckFor: extraNameBits)
+    
+    if extraBitsCheck == true {
+        ptLastName = nameComponents[nameComponents.count-2]
+        ptExtraName = nameComponents[nameComponents.count-1]
+    } else {
+        ptLastName = nameComponents[nameComponents.count-1]
+        ptExtraName = ""
+    }
+    
+    if nameComponents.count > 2 {
+        if nameComponents[nameComponents.count - 2] == "Van" {
+            ptLastName = "Van " + ptLastName
+        }
+    }
+    
+    //Get first name
+    ptFirstName = nameComponents[0]
+    
+    //Get middle name
+    if (nameComponents.count == 3 && extraBitsCheck == true) || nameComponents.count < 3 {
+        ptMiddleName = ""
+    } else {
+        ptMiddleName = nameComponents[1]
+    }
+
+    fileLabellingName = "\(ptLastName)\(ptFirstName)\(ptMiddleName)\(ptExtraName)"
+   
+    let badNameBits = [" ", "-", "'", "(", ")", "\""]
+    for bit in badNameBits {
+        fileLabellingName = fileLabellingName.replacingOccurrences(of: bit, with: "")
+    }
+    
+    return fileLabellingName
+}
+
+func createFileLabelFrom(PatientName name:String, FileType type:String, date:String) -> String {
+    //Format Date
+    var dateComponents = date.split(separator: "/")//extractedLabData.labDateString?.split(separator: "/") ?? [""]
+    if dateComponents.count == 3 {
+        dateComponents = [dateComponents[2], dateComponents[0], dateComponents[1]]
+    }
+    var paddedComponents = [String]()
+    for item in dateComponents {
+        if item.count < 2 {
+            paddedComponents.append("0\(item)")
+        } else {
+            paddedComponents.append(String(item))
+        }
+    }
+    var finalComponents = [String]()
+    for item in paddedComponents {
+        if item.count == 4 {
+            finalComponents.append(String(item.suffix(2)))
+        } else {
+            finalComponents.append(item)
+        }
+    }
+    
+    let results = [name, type, finalComponents.joined(separator: "")]
+    
+    return results.joined(separator: " ")
 }

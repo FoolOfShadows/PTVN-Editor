@@ -10,6 +10,7 @@ import Cocoa
 
 protocol PillCountDelegate: class {
     var pillCountData:String { get set }
+    var ptName:String { get set }
 }
 
 class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate, NSControlTextEditingDelegate, PillCountDelegate {
@@ -44,6 +45,7 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate,
 	@IBOutlet weak var qolCommentsView: NSTextField!
     
     var pillCountData = String()
+    var ptName:String = ""
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
@@ -219,6 +221,7 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate,
             switch theSegue {
             case "showPillCount":
                 if let toViewController = segue.destinationController as? PillCountVC {
+                    ptName = theData.ptName
                     //For the delegate to work, it needs to be assigned here
                     //rather than in view did load.  Because it's a modal window?
                     toViewController.pillCountDelegate = self

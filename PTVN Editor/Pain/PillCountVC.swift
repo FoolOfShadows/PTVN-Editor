@@ -19,6 +19,9 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
     @IBOutlet weak var currentDateText: NSTextField!
     @IBOutlet weak var expectedCountText: NSTextField!
     @IBOutlet weak var discrepancyText: NSTextField!
+    @IBOutlet weak var handCountText: NSTextField!
+    
+    var handCountDiscrepency = ""
     
     weak var pillCountDelegate: PillCountDelegate?
     
@@ -88,5 +91,34 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
             }
             self.dismiss(self)
         }
+    }
+    
+    @IBAction func printPillCount(_ sender: NSButton) {
+        guard let name = pillCountDelegate?.ptName else { return }
+        if let theHandCount = Int(handCountText.stringValue), let expectedCount = Int(expectedCountText.stringValue) {
+            handCountDiscrepency = String(theHandCount - expectedCount)
+        }
+        print(name)
+        let theText = """
+        \(name)     \(currentDateText.stringValue)
+        Last Filled: \(lastFillText.stringValue)     Fill Qty: \(lastFillQtyText.stringValue)
+        Pills/Dose: \(pillsPerDoseText.stringValue)     Doses/Day: \(dosesPerDayText.stringValue)
+        Wt 1 Pill: \(wt1PillText.stringValue)     Total Wt: \(totalPillWtText.stringValue)     Count by weight: \(currentCountText.stringValue)
+        Expected Count: \(expectedCountText.stringValue)     Discrepency by weight: \(discrepancyText.stringValue)
+        Hand Count: \(handCountText.stringValue)     Discrepency by hand: \(handCountDiscrepency)
+"""
+        print(theText)
+        var fileName = createFileLabelFrom(PatientName: getFileLabellingNameFrom(name), FileType: "PILLCOUNT", date: String(Date().shortDate()))
+        fileName = "\(fileName).txt"
+        print(fileName)
+        let pillCountFile = theText.data(using: String.Encoding.utf8)
+        if (pillCountFile != nil) {
+            print("There's a file")
+        } else {
+            print("There doesn't seem to be a file")
+        }
+        let newFileManager = FileManager.default
+        let savePath = NSHomeDirectory()
+        newFileManager.createFile(atPath: "\(savePath)/WPCMSharedFiles/zruss Review/11 Pill Count Data/\(fileName)", contents: pillCountFile, attributes: nil)
     }
 }
