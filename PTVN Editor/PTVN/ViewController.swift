@@ -517,9 +517,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         let assessList = theData.assessment.components(separatedBy: "\n")
         let visitLevel = assessList.filter {$0.hasPrefix("Lvl")}
         let visitDx = assessList.filter {$0.hasPrefix("-")}
-        let restOfList = assessList.filter {!(visitLevel + visitDx).contains($0)}
+        let phq9 = assessList.filter { $0.contains("PHQ-9")}
+        let restOfList = assessList.filter {!(visitLevel + visitDx + phq9).contains($0)}
         //print("\(visitLevel)\n\(visitDx)\n\(restOfList)")
-        let reorganizedList = restOfList + visitDx + visitLevel
+        let reorganizedList = restOfList + visitDx + visitLevel + phq9
         theData.assessment = reorganizedList.filter {!$0.isEmpty}.joined(separator: "\n")
         
         //Clear table

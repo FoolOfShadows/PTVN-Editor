@@ -246,6 +246,17 @@ extension NSView {
         }
     }
     
+    func activateButtonsWithNames(_ names: [String]) {
+        let buttons = self.getButtonsInView()
+        for name in names {
+            for button in buttons {
+                if button.title == name {
+                    button.state = .on
+                }
+            }
+        }
+    }
+    
 }
 
 extension NSBox {

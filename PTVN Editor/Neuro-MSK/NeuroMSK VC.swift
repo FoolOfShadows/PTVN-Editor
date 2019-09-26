@@ -64,6 +64,13 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
         mskResultsTextView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
     }
+    
+    override func viewWillAppear() {
+//        let gsSelections = generalStrengthBox.getButtonsInView().filter { (50...60).contains($0.tag)}
+//        for selection in gsSelections {
+//            selection.action = #selector(self.uniqueSelections(_:))
+//        }
+    }
 	
 	@IBAction func clearTab(_ sender: Any) {
 		clearMSKTab()
@@ -302,7 +309,7 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
             if let boxTitle = sender.superview?.superview as? NSBox {
                 print(boxTitle.title)
                 switch boxTitle.title {
-                case "Strength":
+                case "Strength", "General Strength":
                     normalButtons.filter { $0.title == "STR" }[0].state = .off
                 case "ROM Direction":
                     normalButtons.filter { $0.title == "ROM" }[0].state = .off
@@ -353,6 +360,24 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         generalStrengthBox.populateSelectionsInViewUsing(MSK())
     }
     
+    @IBAction func uniqueGSModifier(_ sender: NSButton) {
+        if sender.state == .on {
+            let gsSelections = generalStrengthBox.getButtonsInView()
+            switch sender.tag {
+            case 80:
+                gsSelections.filter {$0.tag == 81}[0].state = .off
+            case 81:
+                gsSelections.filter {$0.tag == 80}[0].state = .off
+            case 85:
+                gsSelections.filter {$0.tag == 86}[0].state = .off
+            case 86:
+                gsSelections.filter {$0.tag == 85}[0].state = .off
+            default:
+                return
+            }
+        }
+    }
+    
     @IBAction func addOrderToView(_ sender: Any) {
         var returnValues = [String]()
         var generalValues = [String]()
@@ -376,16 +401,34 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         }
         
         let gsSelections = generalStrengthBox.getButtonsInView()
-        if !gsSelections.isEmpty {
-            for selection in gsSelections where !selection.title.isEmpty {
+        let actualSelections = gsSelections.filter { (50...60).contains($0.tag) && !$0.title.isEmpty}
+        let titleList = actualSelections.map {$0.title}
+        print(titleList)
+        if !actualSelections.isEmpty {
+            var uModifier = ""
+            var lModifier = ""
+            for selection in gsSelections where selection.state == .on {
                 switch selection.tag {
-                case 50: generalValues.append("BLE: \(selection.title)/5")
-                case 51: generalValues.append("LLE: \(selection.title)/5")
-                case 52: generalValues.append("RLE: \(selection.title)/5")
-                case 55: generalValues.append("BUE: \(selection.title)/5")
-                case 56: generalValues.append("LUE: \(selection.title)/5")
-                case 57: generalValues.append("RUE: \(selection.title)/5")
-                default: return
+                case 80, 81:
+                    lModifier = selection.title
+                case 85, 86:
+                    uModifier = selection.title
+                default:
+                    uModifier = ""
+                    lModifier = ""
+                }
+            }
+            print("uMod = \(uModifier)\nlMod = \(lModifier)")
+            for selection in actualSelections where !selection.title.isEmpty {
+                print(selection.tag)
+                switch selection.tag {
+                case 50: generalValues.append("BLE: \(selection.title)\(lModifier)/5")
+                case 51: generalValues.append("LLE: \(selection.title)\(lModifier)/5")
+                case 52: generalValues.append("RLE: \(selection.title)\(lModifier)/5")
+                case 55: generalValues.append("BUE: \(selection.title)\(uModifier)/5")
+                case 56: generalValues.append("LUE: \(selection.title)\(uModifier)/5")
+                case 57: generalValues.append("RUE: \(selection.title)\(uModifier)/5")
+                default: continue
                 }
             }
             mskResultsTextView.addToViewsExistingText("Extremity strength: \(generalValues.joined(separator: ", "))")

@@ -143,10 +143,41 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             switchNormOff(sender)
             switch sender.title {
             case "Edema": setUpBoxesForEdema()
-            case "Onychomycosis", "Cyanosis", "Hammer Toes": setUpBoxesForOnchCyHam()
-            case "Vibration Sense", "Monofilament": setUpBoxesForVibMono()
-            case "Spider Veins", "Vericose Veins": setupBoxesForSpiderVericose()
-            case "Calluses": setupBoxesForCalluses()
+            case "Cyanosis":
+                setUpBoxesForOnchCyHam()
+                extremitiesBox.activateButtonsWithNames(["toes"])
+                leftDigitsBox.activateButtonsWithNames(["all"])
+                rightDigitsBox.activateButtonsWithNames(["all"])
+            case "Onychomycosis":
+                setUpBoxesForOnchCyHam()
+                extremitiesBox.activateButtonsWithNames(["toes"])
+                leftDigitsBox.activateButtonsWithNames(["1"])
+                rightDigitsBox.activateButtonsWithNames(["1"])
+            case "Hammer Toes": setUpBoxesForOnchCyHam()
+            case "Vibration Sense":
+                setUpBoxesForVibMono()
+                leftSenseAreaBox.activateButtonsWithNames(["foot"])
+                leftSenseStrengthBox.activateButtonsWithNames(["decreased"])
+                rightSenseAreaBox.activateButtonsWithNames(["foot"])
+                rightSenseStrengthBox.activateButtonsWithNames(["decreased"])
+            case "Monofilament":
+                setUpBoxesForVibMono()
+                leftSenseAreaBox.activateButtonsWithNames(["toes"])
+                leftSenseStrengthBox.activateButtonsWithNames(["absent"])
+                rightSenseAreaBox.activateButtonsWithNames(["toes"])
+                rightSenseStrengthBox.activateButtonsWithNames(["absent"])
+            case "Spider Veins":
+                setupBoxesForSpiderVericose()
+                leftSenseAreaBox.activateButtonsWithNames(["ankle"])
+                rightSenseAreaBox.activateButtonsWithNames(["ankle"])
+            case "Vericose Veins":
+                setupBoxesForSpiderVericose()
+                leftSenseAreaBox.activateButtonsWithNames(["calf"])
+                rightSenseAreaBox.activateButtonsWithNames(["calf"])
+            case "Calluses":
+                setupBoxesForCalluses()
+                leftCallusAreaBox.activateButtonsWithNames(["1st toe", "medial"])
+                rightCallusAreaBox.activateButtonsWithNames(["1st toe", "medial"])
             default: return
             }
         } else if sender.state == .off {
