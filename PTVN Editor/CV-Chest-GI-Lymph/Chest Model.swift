@@ -32,6 +32,7 @@ struct Chest/*:PopulateComboBoxProtocol*/ {
             case 6: resultArray.append("normal fremitus")
             case 7: resultArray.append("no egophony")
             case 8: resultArray.append("breathing non labored")
+            case 9: resultArray.append("no bruits")
             case 10: resultArray.append("wheezes RUL")
             case 11: resultArray.append("wheezes LUL")
             case 12: resultArray.append("wheezes BUL")
@@ -60,7 +61,9 @@ struct Chest/*:PopulateComboBoxProtocol*/ {
             case 44: resultArray.append("egophony RLL")
             case 45: resultArray.append("egophony LLL")
             case 46: resultArray.append("egophony BLL")
-            case 50: resultArray.append(item.1!)
+            case 50: resultArray.append("right carotid bruit")
+            case 51: resultArray.append("left carotid bruit")
+            case 60: resultArray.append(item.1!)
             default: continue
 			}
 		}

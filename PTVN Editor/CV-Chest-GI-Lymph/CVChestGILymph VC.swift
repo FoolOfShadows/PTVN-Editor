@@ -21,31 +21,21 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
 	@IBOutlet var giTTPView: NSTextField!
 	@IBOutlet weak var giMassCombo: NSComboBox!
 	@IBOutlet var giMassView: NSTextField!
-    @IBOutlet weak var cracklesCombo: NSComboBox!
-    
-    @IBOutlet weak var wheezingCombo: NSComboBox!
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
     
-    
-    //let commands = ["wheezing rule", "wheezing lull", "wheezing bull", "wheezing armel", "wheezing ell"]
+
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		//loadedViewControllers.append(self)
 		selfView = self.view
         
         giTTPView.delegate = self
         giMassView.delegate = self
         
         clearCV()
-        //let nc = NotificationCenter.default
-        //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
         selectAllNormsInView()
-        
-//        GlobalControlls_VC.recognizer.delegate = self
-//        GlobalControlls_VC.recognizer.commands = commands
     }
 	
 	
@@ -78,7 +68,6 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
 	func clearCV() {
 		self.view.clearControllers()
 		cvBox.populateSelectionsInViewUsing(Cardiovascular())
-		//chestBox.populateSelectionsInViewUsing(Chest())
 		giBox.populateSelectionsInViewUsing(GI())
 	}
 	
@@ -88,7 +77,7 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
             case "lymph":
                 return [Int](1...4)
 			case "chest":
-				return [Int](1...8)
+				return [Int](1...9)
 			case "cv", "gi":
 				return [Int](1...7)
 			default:
@@ -153,13 +142,14 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
                 switch sender.tag {
                 case 10...16:
                     theButtons.filter({$0.tag == 3})[0].state = .off
-                    //clear.state = .off
                 case 20...26:
                     theButtons.filter({$0.tag == 5})[0].state = .off
                 case 30...36:
                     theButtons.filter({$0.tag == 4})[0].state = .off
                 case 40...46:
                     theButtons.filter({$0.tag == 7})[0].state = .off
+                case 50...51:
+                    theButtons.filter({$0.tag == 9})[0].state = .off
                 default: return
                 }
             case "GI":
@@ -259,16 +249,4 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
             selectNorms(button)
         }
     }
-    
-//    func speechRecognizer(_ sender: NSSpeechRecognizer, didRecognizeCommand command: String) {
-//        switch command {
-//        case "wheezing rule": wheezingCombo.stringValue = "RUL"
-//        case  "wheezing lull": wheezingCombo.stringValue = "LUL"
-//        case "wheezing bull": wheezingCombo.stringValue = "BUL"
-//        case "wheezing armel": wheezingCombo.stringValue = "RML"
-//        case "wheezing ell": wheezingCombo.stringValue = "LLL"
-//        //case "callus right": wheezingCombo.stringValue = "Callus Right"
-//        default: return
-//        }
-//    }
 }

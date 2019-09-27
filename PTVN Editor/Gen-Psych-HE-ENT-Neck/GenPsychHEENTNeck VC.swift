@@ -160,8 +160,7 @@ class GenPsychHEENTNeck_VC: NSViewController, ProcessTabProtocol {
                     theButtons.filter({$0.tag == 4})[0].state = .off
                 case 12:
                     theButtons.filter({$0.tag == 6})[0].state = .off
-                case 13, 14:
-                    theButtons.filter({$0.tag == 3})[0].state = .off
+
                 default: return
                 }
             default: return
