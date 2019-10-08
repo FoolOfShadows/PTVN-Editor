@@ -96,6 +96,15 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
+    
 //    @IBAction func addMed(_ sender: Any) {
 //        if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
 //            medicationView.addToViewsExistingText(commonMedsPopup.titleOfSelectedItem!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))

@@ -36,6 +36,12 @@ class OpioidVC: NSViewController {
                    }
                }
         scoreLabel.stringValue = String(score)
+    
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
     }
     
     @IBAction func getGender(_ sender: NSButton) {

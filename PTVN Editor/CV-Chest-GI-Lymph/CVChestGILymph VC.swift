@@ -37,6 +37,15 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
         clearCV()
         selectAllNormsInView()
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 	
 	
 	@IBAction func processCVTab(_ sender: Any) {

@@ -4182,7 +4182,7 @@ Gw
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-Nv-do7">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-Nv-do7">
                                 <rect key="frame" x="465" y="587" width="32" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="CQF-ek-X2I"/>
@@ -4401,7 +4401,7 @@ Gw
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Ou-Ywe">
+                            <stackView hidden="YES" distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Ou-Ywe">
                                 <rect key="frame" x="569" y="569" width="189" height="34"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IT2-mS-GKZ">
@@ -4504,7 +4504,7 @@ Gw
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <stackView distribution="fill" orientation="vertical" alignment="trailing" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybP-Qb-KpC">
+                            <stackView hidden="YES" distribution="fill" orientation="vertical" alignment="trailing" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybP-Qb-KpC">
                                 <rect key="frame" x="515" y="568" width="46" height="35"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xu8-jb-Hao">
@@ -4568,13 +4568,13 @@ Gw
                                             </scroller>
                                         </scrollView>
                                         <box autoresizesSubviews="NO" misplaced="YES" borderType="line" title="Issue" translatesAutoresizingMaskIntoConstraints="NO" id="M6L-ar-ZHH">
-                                            <rect key="frame" x="17" y="201" width="135" height="196"/>
+                                            <rect key="frame" x="17" y="182" width="135" height="215"/>
                                             <view key="contentView" id="DIr-Iz-gC0">
-                                                <rect key="frame" x="3" y="3" width="129" height="178"/>
+                                                <rect key="frame" x="3" y="3" width="129" height="197"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNd-tg-anM">
-                                                        <rect key="frame" x="-2" y="102" width="112" height="18"/>
+                                                        <rect key="frame" x="-2" y="121" width="112" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Hammer Toes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zql-nX-bih">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4584,7 +4584,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-0J-TGd">
-                                                        <rect key="frame" x="-2" y="82" width="77" height="18"/>
+                                                        <rect key="frame" x="-2" y="101" width="77" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Calluses" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TfX-Uj-dlB">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4594,7 +4594,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" tag="55" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-Cq-8eJ">
-                                                        <rect key="frame" x="-2" y="122" width="81" height="18"/>
+                                                        <rect key="frame" x="-2" y="141" width="81" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Cyanosis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tGN-44-fCJ">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4604,7 +4604,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="3Cm-Xv-JDe">
-                                                        <rect key="frame" x="-2" y="162" width="67" height="18"/>
+                                                        <rect key="frame" x="-2" y="181" width="67" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Edema" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pVf-Wb-8I2">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4614,7 +4614,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7a-q9-rsv">
-                                                        <rect key="frame" x="-2" y="142" width="124" height="18"/>
+                                                        <rect key="frame" x="-2" y="161" width="124" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Onychomycosis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="leY-X9-6cu">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4623,8 +4623,18 @@ Gw
                                                             <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="BGU-2f-rSg"/>
                                                         </connections>
                                                     </button>
+                                                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w57-zC-0vp">
+                                                        <rect key="frame" x="-2" y="81" width="71" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="Bunions" bezelStyle="regularSquare" imagePosition="left" inset="2" id="IzW-mn-tgw">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="setAreaSelections:" target="Cm0-Yy-7Gs" id="DNA-0l-A6M"/>
+                                                        </connections>
+                                                    </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" tag="80" translatesAutoresizingMaskIntoConstraints="NO" id="iTG-rH-31y">
-                                                        <rect key="frame" x="-2" y="62" width="124" height="18"/>
+                                                        <rect key="frame" x="-2" y="61" width="124" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Vibration Sense" bezelStyle="regularSquare" imagePosition="left" inset="2" id="u1l-hs-td9">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4634,7 +4644,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPo-0U-meN">
-                                                        <rect key="frame" x="-2" y="22" width="103" height="18"/>
+                                                        <rect key="frame" x="-2" y="21" width="103" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Spider Veins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ch0-Qv-6ee">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4644,7 +4654,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-1J-PJ9">
-                                                        <rect key="frame" x="-2" y="2" width="117" height="18"/>
+                                                        <rect key="frame" x="-2" y="1" width="117" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Vericose Veins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="t3r-Zi-a5Q">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4654,7 +4664,7 @@ Gw
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" misplaced="YES" tag="81" translatesAutoresizingMaskIntoConstraints="NO" id="5US-g0-DB7">
-                                                        <rect key="frame" x="-2" y="42" width="111" height="18"/>
+                                                        <rect key="frame" x="-2" y="41" width="111" height="18"/>
                                                         <buttonCell key="cell" type="check" title="Monofilament" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kab-Zw-eLp">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system" size="14"/>
@@ -4665,25 +4675,27 @@ Gw
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Efs-0J-TGd" firstAttribute="leading" secondItem="iTG-rH-31y" secondAttribute="leading" id="5do-sN-Ize"/>
-                                                    <constraint firstItem="w7a-q9-rsv" firstAttribute="top" secondItem="DIr-Iz-gC0" secondAttribute="top" constant="20" symbolic="YES" id="89v-RJ-MoT"/>
-                                                    <constraint firstItem="xPo-0U-meN" firstAttribute="top" secondItem="5US-g0-DB7" secondAttribute="bottom" constant="6" symbolic="YES" id="GEq-sJ-pM7"/>
-                                                    <constraint firstItem="5US-g0-DB7" firstAttribute="top" secondItem="iTG-rH-31y" secondAttribute="bottom" constant="6" symbolic="YES" id="J6i-1H-ZXS"/>
-                                                    <constraint firstItem="sNd-tg-anM" firstAttribute="leading" secondItem="Efs-0J-TGd" secondAttribute="leading" id="KH2-Fg-eQ5"/>
-                                                    <constraint firstItem="3Cm-Xv-JDe" firstAttribute="leading" secondItem="DIr-Iz-gC0" secondAttribute="leading" id="Nuf-fC-PIM"/>
-                                                    <constraint firstItem="3Cm-Xv-JDe" firstAttribute="leading" secondItem="w7a-q9-rsv" secondAttribute="leading" id="OzT-WZ-Iv6"/>
-                                                    <constraint firstItem="2aK-Cq-8eJ" firstAttribute="top" secondItem="w7a-q9-rsv" secondAttribute="bottom" constant="6" symbolic="YES" id="RsW-Bn-0Up"/>
-                                                    <constraint firstItem="w7a-q9-rsv" firstAttribute="top" secondItem="3Cm-Xv-JDe" secondAttribute="bottom" constant="6" symbolic="YES" id="Y9r-5s-46i"/>
-                                                    <constraint firstItem="5US-g0-DB7" firstAttribute="leading" secondItem="xPo-0U-meN" secondAttribute="leading" id="bXJ-qv-qQY"/>
-                                                    <constraint firstItem="sNd-tg-anM" firstAttribute="centerX" secondItem="5US-g0-DB7" secondAttribute="centerX" id="cMW-EJ-EQl"/>
-                                                    <constraint firstItem="iTG-rH-31y" firstAttribute="leading" secondItem="5US-g0-DB7" secondAttribute="leading" id="e3I-Vf-tFh"/>
-                                                    <constraint firstItem="xPo-0U-meN" firstAttribute="leading" secondItem="wYp-1J-PJ9" secondAttribute="leading" id="elS-tO-Jax"/>
-                                                    <constraint firstItem="w7a-q9-rsv" firstAttribute="leading" secondItem="2aK-Cq-8eJ" secondAttribute="leading" id="hpn-83-cqL"/>
-                                                    <constraint firstItem="sNd-tg-anM" firstAttribute="top" secondItem="2aK-Cq-8eJ" secondAttribute="bottom" constant="6" symbolic="YES" id="kUI-WN-wDY"/>
-                                                    <constraint firstItem="wYp-1J-PJ9" firstAttribute="top" secondItem="xPo-0U-meN" secondAttribute="bottom" constant="6" symbolic="YES" id="kaW-c8-SY6"/>
-                                                    <constraint firstItem="iTG-rH-31y" firstAttribute="top" secondItem="Efs-0J-TGd" secondAttribute="bottom" constant="6" symbolic="YES" id="kbb-8s-kHr"/>
-                                                    <constraint firstItem="Efs-0J-TGd" firstAttribute="top" secondItem="sNd-tg-anM" secondAttribute="bottom" constant="6" symbolic="YES" id="mOx-DF-gmY"/>
-                                                    <constraint firstItem="2aK-Cq-8eJ" firstAttribute="leading" secondItem="sNd-tg-anM" secondAttribute="leading" id="ttv-Bs-0s9"/>
+                                                    <constraint firstItem="w7a-q9-rsv" firstAttribute="top" secondItem="DIr-Iz-gC0" secondAttribute="top" constant="20" symbolic="YES" id="159-xL-F17"/>
+                                                    <constraint firstItem="2aK-Cq-8eJ" firstAttribute="top" secondItem="w7a-q9-rsv" secondAttribute="bottom" constant="6" symbolic="YES" id="2Qs-SS-sez"/>
+                                                    <constraint firstItem="sNd-tg-anM" firstAttribute="leading" secondItem="Efs-0J-TGd" secondAttribute="leading" id="6Vb-xc-o7R"/>
+                                                    <constraint firstItem="3Cm-Xv-JDe" firstAttribute="leading" secondItem="DIr-Iz-gC0" secondAttribute="leading" id="6Vs-ce-bDQ"/>
+                                                    <constraint firstItem="5US-g0-DB7" firstAttribute="leading" secondItem="xPo-0U-meN" secondAttribute="leading" id="9Ll-HD-bDy"/>
+                                                    <constraint firstItem="w7a-q9-rsv" firstAttribute="top" secondItem="3Cm-Xv-JDe" secondAttribute="bottom" constant="6" symbolic="YES" id="Eyh-ri-FsH"/>
+                                                    <constraint firstItem="iTG-rH-31y" firstAttribute="leading" secondItem="5US-g0-DB7" secondAttribute="leading" id="Jqp-41-dd5"/>
+                                                    <constraint firstItem="5US-g0-DB7" firstAttribute="top" secondItem="iTG-rH-31y" secondAttribute="bottom" constant="6" symbolic="YES" id="Klo-JV-ePd"/>
+                                                    <constraint firstItem="3Cm-Xv-JDe" firstAttribute="leading" secondItem="w7a-q9-rsv" secondAttribute="leading" id="Qcm-wb-NIy"/>
+                                                    <constraint firstItem="Efs-0J-TGd" firstAttribute="top" secondItem="sNd-tg-anM" secondAttribute="bottom" constant="6" symbolic="YES" id="RCb-H8-8RE"/>
+                                                    <constraint firstItem="w57-zC-0vp" firstAttribute="leading" secondItem="iTG-rH-31y" secondAttribute="leading" id="TKT-IL-MZP"/>
+                                                    <constraint firstItem="Efs-0J-TGd" firstAttribute="leading" secondItem="w57-zC-0vp" secondAttribute="leading" id="V8c-6o-un5"/>
+                                                    <constraint firstItem="2aK-Cq-8eJ" firstAttribute="leading" secondItem="sNd-tg-anM" secondAttribute="leading" id="ZIx-zz-ino"/>
+                                                    <constraint firstItem="w57-zC-0vp" firstAttribute="top" secondItem="Efs-0J-TGd" secondAttribute="bottom" constant="6" symbolic="YES" id="a9R-4h-XGl"/>
+                                                    <constraint firstItem="w7a-q9-rsv" firstAttribute="leading" secondItem="2aK-Cq-8eJ" secondAttribute="leading" id="exX-rH-vNF"/>
+                                                    <constraint firstItem="sNd-tg-anM" firstAttribute="centerX" secondItem="5US-g0-DB7" secondAttribute="centerX" id="fc5-e2-OKT"/>
+                                                    <constraint firstItem="xPo-0U-meN" firstAttribute="top" secondItem="5US-g0-DB7" secondAttribute="bottom" constant="6" symbolic="YES" id="hCQ-3b-29F"/>
+                                                    <constraint firstItem="sNd-tg-anM" firstAttribute="top" secondItem="2aK-Cq-8eJ" secondAttribute="bottom" constant="6" symbolic="YES" id="jTa-kf-UsU"/>
+                                                    <constraint firstItem="wYp-1J-PJ9" firstAttribute="top" secondItem="xPo-0U-meN" secondAttribute="bottom" constant="6" symbolic="YES" id="m9O-tb-jT5"/>
+                                                    <constraint firstItem="iTG-rH-31y" firstAttribute="top" secondItem="w57-zC-0vp" secondAttribute="bottom" constant="6" symbolic="YES" id="qmX-Hp-PTQ"/>
+                                                    <constraint firstItem="xPo-0U-meN" firstAttribute="leading" secondItem="wYp-1J-PJ9" secondAttribute="leading" id="syJ-16-XHV"/>
                                                 </constraints>
                                                 <accessibility identifier="Issue"/>
                                             </view>
@@ -4707,15 +4719,15 @@ Gw
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="M6L-ar-ZHH" secondAttribute="trailing" constant="646" id="EeV-Is-Mw3"/>
-                                        <constraint firstItem="M6L-ar-ZHH" firstAttribute="leading" secondItem="NvR-nW-QAt" secondAttribute="leading" id="JCY-Y1-cno"/>
+                                        <constraint firstItem="NvR-nW-QAt" firstAttribute="leading" secondItem="uwX-T0-zd8" secondAttribute="leading" constant="20" id="AXv-sY-WVC"/>
+                                        <constraint firstAttribute="trailing" secondItem="M6L-ar-ZHH" secondAttribute="trailing" constant="646" id="Ma6-aN-URb"/>
                                         <constraint firstItem="NvR-nW-QAt" firstAttribute="top" secondItem="uwX-T0-zd8" secondAttribute="top" constant="342" id="RBZ-Om-QZt"/>
-                                        <constraint firstItem="M6L-ar-ZHH" firstAttribute="leading" secondItem="uwX-T0-zd8" secondAttribute="leading" constant="20" symbolic="YES" id="YZc-IY-lo2"/>
                                         <constraint firstItem="NvR-nW-QAt" firstAttribute="top" secondItem="cl3-6h-uYG" secondAttribute="bottom" constant="9" id="aHY-na-90B"/>
+                                        <constraint firstItem="M6L-ar-ZHH" firstAttribute="leading" secondItem="uwX-T0-zd8" secondAttribute="leading" constant="20" id="c6E-A8-gbc"/>
+                                        <constraint firstItem="M6L-ar-ZHH" firstAttribute="top" secondItem="uwX-T0-zd8" secondAttribute="top" constant="20" id="fsY-rC-9FW"/>
                                         <constraint firstAttribute="trailing" secondItem="cl3-6h-uYG" secondAttribute="trailing" constant="20" symbolic="YES" id="ij5-Mb-IcS"/>
                                         <constraint firstAttribute="bottom" secondItem="NvR-nW-QAt" secondAttribute="bottom" constant="20" symbolic="YES" id="jyN-Ul-19N"/>
-                                        <constraint firstItem="M6L-ar-ZHH" firstAttribute="top" secondItem="uwX-T0-zd8" secondAttribute="top" constant="20" symbolic="YES" id="uT3-tc-xRs"/>
-                                        <constraint firstAttribute="bottom" secondItem="M6L-ar-ZHH" secondAttribute="bottom" constant="205" id="wMQ-Tk-KX7"/>
+                                        <constraint firstAttribute="bottom" secondItem="M6L-ar-ZHH" secondAttribute="bottom" constant="186" id="qH4-Ia-kgm"/>
                                         <constraint firstItem="cl3-6h-uYG" firstAttribute="trailing" secondItem="NvR-nW-QAt" secondAttribute="trailing" id="wkv-dd-kPp"/>
                                     </constraints>
                                 </view>

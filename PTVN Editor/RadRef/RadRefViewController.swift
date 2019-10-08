@@ -42,6 +42,12 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
         radOrders.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
+
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
 		
     }
 	

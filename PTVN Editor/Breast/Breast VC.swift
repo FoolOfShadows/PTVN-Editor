@@ -21,6 +21,15 @@ class Breast_VC: NSViewController, ProcessTabProtocol {
         selectAllNormsInView()
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
+    
     @IBAction func processBreastTab(_ sender: Any) {
         let results = processTab()
         theData.objective.addToExistingText(results)

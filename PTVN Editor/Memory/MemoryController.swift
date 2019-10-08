@@ -66,6 +66,15 @@ class MemoryController: NSViewController {
         super.viewDidLoad()
         
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 	
 	@IBAction func takeProcessMemory(_ sender: NSButton) {
 		var finalResultsArray = [String]()

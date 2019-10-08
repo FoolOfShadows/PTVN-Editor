@@ -142,6 +142,15 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
         changeBrowserLabel()
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 
     //Update the PTVN instance variables as the user is typing into the associated fields
     func textDidChange(_ notification: Notification) {
@@ -515,12 +524,13 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
         //Reorganize the assessment so the Visit Level is at the bottom of the dx list
         let assessList = theData.assessment.components(separatedBy: "\n")
+        var qResults = [String]()
         let visitLevel = assessList.filter {$0.hasPrefix("Lvl")}
         let visitDx = assessList.filter {$0.hasPrefix("-")}
-        let phq9 = assessList.filter { $0.contains("PHQ-9")}
-        let restOfList = assessList.filter {!(visitLevel + visitDx + phq9).contains($0)}
+        qResults += assessList.filter { $0.contains("PHQ-9") || $0.contains("ESS questionnaire") || $0.contains("Incontinence questionnaire") || $0.contains("Memory test") || $0.contains("Mood test")}
+        let restOfList = assessList.filter {!(visitLevel + visitDx + qResults).contains($0)}
         //print("\(visitLevel)\n\(visitDx)\n\(restOfList)")
-        let reorganizedList = restOfList + visitDx + visitLevel + phq9
+        let reorganizedList = restOfList + visitDx + visitLevel + qResults
         theData.assessment = reorganizedList.filter {!$0.isEmpty}.joined(separator: "\n")
         
         //Clear table

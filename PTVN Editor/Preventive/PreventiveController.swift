@@ -102,6 +102,15 @@ class PreventiveController: NSViewController {
         //previousPrevView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
         previousPrevView.string = getPrevDataFrom(theData.preventive)
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 	
 	func prepareMeasures() -> String {
 		var results = processMeasures(measures: measures)

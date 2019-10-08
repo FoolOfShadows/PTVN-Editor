@@ -31,6 +31,15 @@ class GenPsychHEENTNeck_VC: NSViewController, ProcessTabProtocol {
         //nc.addObserver(self, selector: #selector(selectAllNormsInView), name: NSNotification.Name(rawValue: "SetAllToNorm"), object: nil)
         selectAllNormsInView()
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 	
 	@IBAction func processGenTab(_ sender: Any) {
 		let results = processTab()

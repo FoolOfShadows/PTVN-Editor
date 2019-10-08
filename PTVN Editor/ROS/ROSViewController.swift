@@ -70,6 +70,15 @@ class ROSViewController: NSViewController {
         
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
+    
     @IBAction func processROS(_ sender: NSButton) {
         //This code is supposed to save the document, I was trying to use it as a backup
         //incase of a crash, but it doesn't seem to do what I need

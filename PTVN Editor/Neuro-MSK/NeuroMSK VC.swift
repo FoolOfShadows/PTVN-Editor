@@ -71,6 +71,15 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
 //            selection.action = #selector(self.uniqueSelections(_:))
 //        }
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 	
 	@IBAction func clearTab(_ sender: Any) {
 		clearMSKTab()

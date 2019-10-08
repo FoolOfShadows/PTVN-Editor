@@ -53,6 +53,12 @@ class HPIViewController: NSViewController {
 		addSelectorToButtonsInView(chestPainBox)
 		addSelectorToButtonsInView(htnBox)
 		addSelectorToButtonsInView(cholesterolBox)
+        
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
 	}
 	
 	func getTextFieldsFrom(_ view:NSView) -> [NSTextField] {

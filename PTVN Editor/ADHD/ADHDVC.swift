@@ -29,6 +29,15 @@ class ADHDVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         self.adhdQuestionTableView.reloadData()
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
         return adhdData.adhdQuestions.count
     }

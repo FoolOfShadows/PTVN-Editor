@@ -52,6 +52,15 @@ class ProcInjViewController: NSViewController, NSTextFieldDelegate, NSControlTex
 		rSysAnkleView.delegate = self
 		rSysBrachView.delegate = self
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
 	
 	/*override*/ func controlTextDidChange(_ obj: Notification) {
 		if let lAnkle = Double(lSysAnkleView.stringValue), let lBrach = Double(lSysBrachView.stringValue) {

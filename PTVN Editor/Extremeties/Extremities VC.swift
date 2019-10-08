@@ -54,6 +54,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     var rightSenseAreaBox = NSBox()
     var leftCallusAreaBox = NSBox()
     var rightCallusAreaBox = NSBox()
+    var medialBunionBox = NSBox()
+    var lateralBunionBox = NSBox()
     
     var boxes = [NSBox]()
     
@@ -80,6 +82,15 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
         pulsesTextView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         extTextView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
     }
     
 //    override func viewDidAppear() {
@@ -128,6 +139,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         rightSenseAreaBox = NSBox()
         leftCallusAreaBox = NSBox()
         rightCallusAreaBox = NSBox()
+        medialBunionBox = NSBox()
+        lateralBunionBox = NSBox()
     }
     
     @IBAction func setAreaSelections(_ sender:NSButton) {
@@ -178,6 +191,10 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
                 setupBoxesForCalluses()
                 leftCallusAreaBox.activateButtonsWithNames(["1st toe", "medial"])
                 rightCallusAreaBox.activateButtonsWithNames(["1st toe", "medial"])
+            case "Bunions":
+                setupBoxesForBunions()
+                medialBunionBox.activateButtonsWithNames(["bilateral"])
+                
             default: return
             }
         } else if sender.state == .off {
@@ -233,6 +250,13 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         rightCallusAreaBox.setUpSectionBoxUsingTitle(title: "Right", font: defaultFont, referenceView: leftCallusAreaBox, andButtonList: caseLists.callusAreaCases, inView: self.extSectionsView, withHeightAdjustment: 18)
     }
     
+    private func setupBoxesForBunions() {
+        medialBunionBox.addButtonsToViewWithNames(caseLists.sideCases, andSelector: nil)
+        medialBunionBox.setUpSectionBoxUsingTitle(title: "Medial", font: defaultFont, referenceView: issueBox, andButtonList: caseLists.sideCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+        lateralBunionBox.addButtonsToViewWithNames(caseLists.sideCases, andSelector: nil)
+        lateralBunionBox.setUpSectionBoxUsingTitle(title: "Lateral", font: defaultFont, referenceView: medialBunionBox, andButtonList: caseLists.sideCases, inView: self.extSectionsView, withHeightAdjustment: 18)
+    }
+    
     @objc func uniqueSelections(_ sender:NSButton) {
         if sender.state == .on {
             if let buttons = sender.superview?.subviews {
@@ -247,7 +271,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     
     @IBAction func addOrderToView(_ sender: Any) {
         var returnValues = [String]()
-        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox, leftCallusAreaBox, rightCallusAreaBox]
+        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox, leftCallusAreaBox, rightCallusAreaBox, medialBunionBox, lateralBunionBox]
         for box in boxes {
             let selections = box.getActiveButtonsInView()
             if !selections.isEmpty {

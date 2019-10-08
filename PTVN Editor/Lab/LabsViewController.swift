@@ -37,6 +37,15 @@ class LabsViewController: NSViewController {
         clearLabs(self)
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if let theWindow = self.view.window {
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+        }
+    }
+    
     //Scrapes a view for all the textfields in a view
     //and returns an array of tuples containing the fields tag
     //and string value
