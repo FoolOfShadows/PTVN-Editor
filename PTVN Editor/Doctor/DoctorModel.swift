@@ -13,6 +13,7 @@ let kneeList = ["", "Right Knee", "Left Knee", "Both Knees"]
 
 struct DataReview {
 	func processSectionData(_ data:[(Int, String?)]) -> String {
+        print("processing: \(data)")
 		var results = String()
 		var resultArray = [String]()
 		var letterType = "(to be determined)"
@@ -44,6 +45,7 @@ struct DataReview {
 			case 17: resultArray.append( "Patient declines diabetic eye exam")
 			case 18: resultArray.append( "Patient declines mammogram")
 			case 25: resultArray.append("Patient has requested early refills on pain medications.  Patient admonished regarding health risks and consequences of overtaking pain medications and strongly admonished to take the medication as prescribed and referred to the pain treatment agreement.")
+            case 50: resultArray.append("The patient would benefit from a back brace to support weak spinal muscles and reduce pain by restricting trunk mobility.")
 			default: continue
 			}
 		}

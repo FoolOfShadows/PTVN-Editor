@@ -129,7 +129,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
             case "Skin":
                 switch sender.tag {
                 case 6:
-                    let dtrs = theButtons.filter({$0.tag == 5})[0]
+                    let dtrs = theButtons.filter({$0.tag == 3})[0]
                     dtrs.state = .off
                 default: return
                 }
@@ -181,7 +181,7 @@ class SkinGynGUDRE_VC: NSViewController, NSTextFieldDelegate, ProcessTabProtocol
             case "Skin":
                 switch sender.tag {
                 case 11:
-                    let dtrs = theButtons.filter({$0.tag == 3})[0]
+                    let dtrs = theButtons.filter({$0.tag == 5})[0]
                     dtrs.state = .off
                 case 12, 13, 16:
                     let dtrs = theButtons.filter({$0.tag == 4})[0]

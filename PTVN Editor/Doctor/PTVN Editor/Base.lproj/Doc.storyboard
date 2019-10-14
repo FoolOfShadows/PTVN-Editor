@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="59E-Nj-AZ9">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="59E-Nj-AZ9">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -835,6 +835,24 @@ Gw
                                     </subviews>
                                 </view>
                             </box>
+                            <box fixedFrame="YES" borderType="line" title="Snippets" translatesAutoresizingMaskIntoConstraints="NO" id="w98-PG-tar">
+                                <rect key="frame" x="275" y="237" width="132" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="zAT-er-hWd">
+                                    <rect key="frame" x="3" y="3" width="126" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="50" translatesAutoresizingMaskIntoConstraints="NO" id="idS-Ws-Zfk">
+                                            <rect key="frame" x="18" y="18" width="90" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Back brace" bezelStyle="regularSquare" imagePosition="left" inset="2" id="m4z-RJ-qO1">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
@@ -846,6 +864,7 @@ Gw
                         <outlet property="labView" destination="tBT-i2-zN5" id="Fpm-0S-sfp"/>
                         <outlet property="preOpView" destination="eQ0-Ii-pST" id="r1Z-FJ-zvm"/>
                         <outlet property="proceduresView" destination="vL3-6A-jNr" id="z0D-ry-Bt3"/>
+                        <outlet property="snippetReviewView" destination="w98-PG-tar" id="C12-5P-5uj"/>
                         <outlet property="synvPopup" destination="Js6-Ql-OwV" id="r55-nm-TAm"/>
                     </connections>
                 </viewController>

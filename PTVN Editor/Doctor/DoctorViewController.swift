@@ -17,6 +17,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
 
     @IBOutlet var doctorTabView: NSView!
     @IBOutlet weak var dataReviewView: NSBox!
+    @IBOutlet weak var snippetReviewView: NSBox!
     @IBOutlet weak var labView: NSBox!
     @IBOutlet weak var proceduresView: NSBox!
     @IBOutlet weak var educationView: NSBox!
@@ -124,6 +125,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     @IBAction func returnResults(_ sender:Any) {
         let dataReviewResults = DataReview().processSectionData(getDataFromView(dataReviewView))
+        let snippetResults = DataReview().processSectionData(getDataFromView(snippetReviewView))
         let labViewResults = Lab().processSectionData(getDataFromView(labView))
         let proceduresResults = Procedures().processProceduresUsing(getDataFromView(proceduresView))
         let educationResults = Education().processSectionData(getDataFromView(educationView))
@@ -131,7 +133,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let preOpResults = PreOp().processSectionData(getDataFromView(preOpView))
         
         
-        let resultsArray = [dataReviewResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
+        let resultsArray = [dataReviewResults, snippetResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
         
 //        if !medicationView.string.isEmpty {
 //            let medArray = medicationView.string.convertListToArray()
@@ -143,6 +145,9 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let results = filteredResultsArray.joined(separator: "\n")
         
         theData.plan.addToExistingText(results)
+        if results.contains("1111F") {
+            theData.assessment.addToExistingText("1111F")
+        }
 //        processAssessmentTable(self)
         
         let firstVC = presentingViewController as! ViewController

@@ -18,9 +18,9 @@ struct Skin {
 			switch item.0 {
 			case 1: resultArray.append("warm")
 			case 2: resultArray.append("dry")
-			case 3: resultArray.append("no rash")
+			case 5: resultArray.append("no rash")
 			case 4: resultArray.append("no lesions")
-			case 5: resultArray.append("normal turgor")
+			case 3: resultArray.append("normal turgor")
 			case 6: resultArray.append("decreased skin turgor")
             case 7: resultArray.append("rosacea with rhynophyma")
 			case 10: resultArray.append("Acne: \(item.1!)")

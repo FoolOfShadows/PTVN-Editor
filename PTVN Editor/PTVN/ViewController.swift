@@ -527,7 +527,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         var qResults = [String]()
         let visitLevel = assessList.filter {$0.hasPrefix("Lvl")}
         let visitDx = assessList.filter {$0.hasPrefix("-")}
-        qResults += assessList.filter { $0.contains("PHQ-9") || $0.contains("ESS questionnaire") || $0.contains("Incontinence questionnaire") || $0.contains("Memory test") || $0.contains("Mood test")}
+        qResults += assessList.filter { $0.contains("PHQ-9") || $0.contains("ESS questionnaire") || $0.contains("Incontinence questionnaire") || $0.contains("Memory test") || $0.contains("Mood test") || $0.contains("1111F")}
         let restOfList = assessList.filter {!(visitLevel + visitDx + qResults).contains($0)}
         //print("\(visitLevel)\n\(visitDx)\n\(restOfList)")
         let reorganizedList = restOfList + visitDx + visitLevel + qResults

@@ -85,9 +85,9 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
 			switch section {
             case "lymph":
                 return [Int](1...4)
-			case "chest":
-				return [Int](1...9)
-			case "cv", "gi":
+			case "cv", "chest":
+				return [Int](1...8)
+            case "gi":
 				return [Int](1...7)
 			default:
 				return [Int]()
@@ -138,10 +138,12 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
             switch sendingBoxTitle {
             case "CV":
                 switch sender.tag {
-                case 9...12:
+                case 11...14:
                     theButtons.filter({$0.tag == 1})[0].state = .off
-                case 13, 14:
+                case 17, 18:
                     theButtons.filter({$0.tag == 3})[0].state = .off
+                case 15, 16:
+                    theButtons.filter({$0.tag == 8})[0].state = .off
                 case 21:
                     theButtons.filter({$0.tag == 2})[0].state = .off
                 default: return
@@ -157,8 +159,6 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
                     theButtons.filter({$0.tag == 4})[0].state = .off
                 case 40...46:
                     theButtons.filter({$0.tag == 7})[0].state = .off
-                case 50...51:
-                    theButtons.filter({$0.tag == 9})[0].state = .off
                 default: return
                 }
             case "GI":
