@@ -93,7 +93,7 @@ class IncontinenceController: NSViewController {
             theData.assessment.addToExistingText("Incontinence questionnaire")
 		}
 		
-        theData.objective.addToExistingText(results)
+        //theData.objective.addToExistingText(results)
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
