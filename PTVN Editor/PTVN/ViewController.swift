@@ -40,6 +40,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var assessmentTableView: NSTableView!
     @IBOutlet weak var visitLevelView: NSView!
     @IBOutlet var planView: NSTextView!
+    @IBOutlet weak var dxView: NSTextView!
     @IBOutlet weak var commonMedsPopup: NSPopUpButton!
     @IBOutlet weak var pharmacyView: NSTextField!
     @IBOutlet weak var subjectiveActivateSafari: NSButton!
@@ -71,7 +72,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
-        let theTextViews = [ccView, medsView, rosView, problemView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView]
+        let theTextViews = [ccView, medsView, rosView, problemView, subjectiveView, preventiveView, pmhView, nutritionView, socialView, familyView, allergyView, medsView, objectiveView, pshView, assessmentView, planView, dxView]
         theTextViews.forEach { view in
             view!.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         }
@@ -100,6 +101,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         assessmentView.delegate = self
         planView.delegate = self
         pharmacyView.delegate = self
+        dxView.delegate = self
         
         //Set up selections in lists with data from text file
         if let fluList = getSectionDataStartingFrom("START FLU", andEndingWith: "END FLU") {
@@ -132,9 +134,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
         //Populate assessmentTableView with Problems subsection of the Subjective section
         let problems = theData.problems
-        print(problems)
+        //print(problems)
         assessmentList = problems.convertListToArray()
-        print(assessmentList)
+        //print(assessmentList)
         self.assessmentTableView.reloadData()
         //chosenAssessmentList = assessmentList
         updateView()
@@ -345,6 +347,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         assessmentView.string = theData.assessment
         planView.string = theData.plan
         pharmacyView.stringValue = theData.pharmacy
+        dxView.string = theData.diagnoses
         //self.assessmentTableView.reloadData()
         //document.updateChangeCount(.changeDone)
     }

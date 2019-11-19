@@ -836,14 +836,14 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Snippets" translatesAutoresizingMaskIntoConstraints="NO" id="w98-PG-tar">
-                                <rect key="frame" x="275" y="237" width="132" height="72"/>
+                                <rect key="frame" x="275" y="183" width="132" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="zAT-er-hWd">
-                                    <rect key="frame" x="3" y="3" width="126" height="54"/>
+                                    <rect key="frame" x="3" y="3" width="126" height="108"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" tag="50" translatesAutoresizingMaskIntoConstraints="NO" id="idS-Ws-Zfk">
-                                            <rect key="frame" x="18" y="18" width="90" height="18"/>
+                                            <rect key="frame" x="18" y="72" width="90" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Back brace" bezelStyle="regularSquare" imagePosition="left" inset="2" id="m4z-RJ-qO1">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

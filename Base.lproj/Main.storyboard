@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -996,7 +996,7 @@
                                                     <rect key="frame" x="17" y="27" width="272" height="571"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="Q7u-g0-0ps">
                                                         <rect key="frame" x="1" y="1" width="255" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="8JL-k1-BAS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="255" height="569"/>
@@ -1022,7 +1022,7 @@
                                                     <rect key="frame" x="579" y="27" width="248" height="571"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="uXv-s6-0Bj">
                                                         <rect key="frame" x="1" y="1" width="231" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="nTW-NE-gtd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="231" height="569"/>
@@ -1067,7 +1067,7 @@
                                                     <rect key="frame" x="297" y="27" width="274" height="571"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="aVC-7s-OHb">
                                                         <rect key="frame" x="1" y="1" width="257" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="YHr-O0-8pL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="257" height="569"/>
@@ -1101,7 +1101,7 @@
                                                     <rect key="frame" x="841" y="483" width="240" height="115"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="pnt-mM-8YW">
                                                         <rect key="frame" x="1" y="1" width="223" height="113"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="TtB-0u-9aE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="113"/>
@@ -1127,7 +1127,7 @@
                                                     <rect key="frame" x="841" y="285" width="240" height="165"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="vbI-R0-86e">
                                                         <rect key="frame" x="1" y="1" width="223" height="163"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ap2-Mi-pnS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="163"/>
@@ -1172,7 +1172,7 @@
                                                     <rect key="frame" x="841" y="101" width="240" height="151"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="3hU-pW-XTi">
                                                         <rect key="frame" x="1" y="1" width="223" height="149"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="1A5-Y6-x72">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="149"/>
@@ -1282,7 +1282,7 @@
                                                     <rect key="frame" x="17" y="59" width="1079" height="539"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="yUs-6m-qou">
                                                         <rect key="frame" x="1" y="1" width="1062" height="537"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="w8l-bE-lDr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1062" height="537"/>
@@ -1361,7 +1361,7 @@
                                                     <rect key="frame" x="17" y="276" width="467" height="338"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="9sE-BL-XR6">
                                                         <rect key="frame" x="1" y="1" width="450" height="336"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="55Z-3a-wRD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="336"/>
@@ -1391,7 +1391,7 @@
                                                     <rect key="frame" x="528" y="123" width="568" height="491"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="HP4-nl-CLf">
                                                         <rect key="frame" x="1" y="1" width="551" height="489"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ubd-KL-0zL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="551" height="489"/>
@@ -1519,18 +1519,18 @@
                                                     <rect key="frame" x="118" y="58" width="366" height="210"/>
                                                     <clipView key="contentView" id="MLM-dU-hKz">
                                                         <rect key="frame" x="1" y="0.0" width="364" height="209"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="jmx-Nv-8Jp" viewBased="YES" id="LAh-rS-x3B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="184"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                 <tableColumns>
                                                                     <tableColumn width="40" minWidth="40" maxWidth="1000" id="dJ4-Fk-kTW">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="message" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1566,7 +1566,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn width="318" minWidth="40" maxWidth="1000" id="gWI-X2-aRy">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Assessment">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="message" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1787,7 +1787,7 @@
                                                     </constraints>
                                                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="LSM-5o-4LK" id="lyh-XK-pw6">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="menu"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="51Z-0k-f3q">
                                                             <items>
                                                                 <menuItem state="on" id="LSM-5o-4LK"/>
@@ -1807,7 +1807,7 @@
                                                     </constraints>
                                                     <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zud-Yg-Lg3">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="cellTitle"/>
+                                                        <font key="font" metaFont="menu" size="12"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="addMed:" target="5gI-5U-AMq" id="ZOw-TK-JHm"/>
@@ -1888,7 +1888,7 @@
                                                     <rect key="frame" x="17" y="17" width="610" height="598"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="aRX-OO-FBg">
                                                         <rect key="frame" x="1" y="1" width="593" height="596"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ugn-VY-b3t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="593" height="596"/>
@@ -1926,7 +1926,7 @@
                                                     <rect key="frame" x="635" y="17" width="461" height="598"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="ZMG-ir-MT8">
                                                         <rect key="frame" x="1" y="1" width="444" height="596"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Kmn-zf-umM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="444" height="596"/>
@@ -1972,6 +1972,57 @@
                                                 <constraint firstAttribute="trailing" secondItem="hS8-gp-oFz" secondAttribute="trailing" constant="17" id="vvX-vP-sKC"/>
                                                 <constraint firstAttribute="bottom" secondItem="hS8-gp-oFz" secondAttribute="bottom" constant="17" id="w40-qk-Ygr"/>
                                                 <constraint firstAttribute="bottom" secondItem="dO4-Ti-al3" secondAttribute="bottom" constant="17" id="xdh-ZJ-SoC"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Dx" identifier="" id="klB-87-sSg">
+                                        <view key="view" id="sNR-h3-lkm">
+                                            <rect key="frame" x="32" y="7" width="1113" height="640"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wr8-d7-dgP">
+                                                    <rect key="frame" x="3" y="17" width="557" height="582"/>
+                                                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="lXw-21-QPx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="542" height="582"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="tdf-lZ-Bik">
+                                                                <rect key="frame" x="0.0" y="0.0" width="542" height="582"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="minSize" width="542" height="582"/>
+                                                                <size key="maxSize" width="542" height="10000000"/>
+                                                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            </textView>
+                                                        </subviews>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="AJf-BP-DSV">
+                                                        <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="4om-sN-AxY">
+                                                        <rect key="frame" x="542" y="0.0" width="15" height="582"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2XO-z0-cbS">
+                                                    <rect key="frame" x="1" y="607" width="68" height="16"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Diagnoses" id="bhj-gz-k8c">
+                                                        <font key="font" usesAppearanceFont="YES"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2XO-z0-cbS" firstAttribute="top" secondItem="sNR-h3-lkm" secondAttribute="top" constant="17" id="8Jd-JV-PqM"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wr8-d7-dgP" secondAttribute="bottom" constant="17" id="JW0-Bd-94h"/>
+                                                <constraint firstItem="Wr8-d7-dgP" firstAttribute="leading" secondItem="sNR-h3-lkm" secondAttribute="leading" constant="3" id="Upu-tJ-qtg"/>
+                                                <constraint firstItem="2XO-z0-cbS" firstAttribute="leading" secondItem="sNR-h3-lkm" secondAttribute="leading" constant="3" id="Zda-R9-oYS"/>
+                                                <constraint firstItem="tdf-lZ-Bik" firstAttribute="top" secondItem="2XO-z0-cbS" secondAttribute="bottom" constant="8" id="bYf-fl-DpN"/>
+                                                <constraint firstItem="Wr8-d7-dgP" firstAttribute="top" secondItem="sNR-h3-lkm" secondAttribute="top" constant="41" id="j2X-fB-zOR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wr8-d7-dgP" secondAttribute="trailing" constant="553" id="rYm-2N-ev1"/>
                                             </constraints>
                                         </view>
                                     </tabViewItem>
@@ -2580,6 +2631,7 @@
                         <outlet property="assessmentView" destination="55Z-3a-wRD" id="9cF-3R-Ict"/>
                         <outlet property="ccScroll" destination="lGv-y9-PUA" id="Qdc-oh-yQx"/>
                         <outlet property="commonMedsPopup" destination="bJA-m0-W4P" id="pM7-Ez-4vG"/>
+                        <outlet property="dxView" destination="tdf-lZ-Bik" id="1pY-Q9-58y"/>
                         <outlet property="familyView" destination="1A5-Y6-x72" id="zg9-pS-Ypd"/>
                         <outlet property="medsView" destination="ugn-VY-b3t" id="Mmx-4c-zXZ"/>
                         <outlet property="nutritionView" destination="TtB-0u-9aE" id="8eB-32-RYP"/>
@@ -2621,16 +2673,16 @@
                                     <rect key="frame" x="1" y="1" width="747" height="394"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="44" rowSizeStyle="automatic" viewBased="YES" id="fvX-3S-QhB">
+                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="44" rowSizeStyle="automatic" viewBased="YES" id="fvX-3S-QhB">
                                             <rect key="frame" x="0.0" y="0.0" width="747" height="394"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="628" minWidth="40" maxWidth="1000" id="ret-HX-GCF">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -2663,7 +2715,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="53" minWidth="40" maxWidth="1000" id="nUh-yo-sHK">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -2695,7 +2747,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="57" minWidth="10" maxWidth="3.4028234663852886e+38" id="brX-RK-Gn1">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -2781,7 +2833,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TKf-35-Z65">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="mRE-0R-5yG"/>
@@ -2792,7 +2844,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ink-Yv-QlM">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="OxR-Mf-cQU"/>
@@ -2891,7 +2943,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="P92-rq-wXx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
@@ -2902,7 +2954,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Su-rw-6aG">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
@@ -2928,7 +2980,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N8W-CG-84k">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="FKH-Bu-Hx5"/>
@@ -2939,7 +2991,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
@@ -3137,7 +3189,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0cR-Ik-Bgr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
+                                    <font key="font" metaFont="menu" size="12"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="addOrderToView:" target="rHR-5q-exD" id="h7g-ta-BcM"/>
@@ -4358,7 +4410,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="90 Day Lab" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uvN-Ux-Gwh">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
+                                                <font key="font" metaFont="menu" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="select90DayLabs:" target="t3o-OQ-uPC" id="ahy-mS-qDl"/>
@@ -4369,7 +4421,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="Rheum Lab" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="brc-0f-288">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
+                                                <font key="font" metaFont="menu" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="selectRheumLabs:" target="t3o-OQ-uPC" id="rxp-hX-Mrf"/>
@@ -4380,7 +4432,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="DM Lab" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="txM-PL-nvo">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
+                                                <font key="font" metaFont="menu" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="selectDMLabs:" target="t3o-OQ-uPC" id="XDZ-Om-vzG"/>
@@ -4391,7 +4443,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="Thy Lab" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JoQ-lE-3cT">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
+                                                <font key="font" metaFont="menu" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="selectThyLabs:" target="t3o-OQ-uPC" id="One-S5-So1"/>
@@ -4402,7 +4454,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="Yrly Phys" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6fJ-Ts-23C">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
+                                                <font key="font" metaFont="menu" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="selectYearlyLabs:" target="t3o-OQ-uPC" id="UzQ-ZF-0c5"/>
@@ -4413,7 +4465,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="STD Panel" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SDM-ib-DMo">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
+                                                <font key="font" metaFont="menu" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="selectSTDLabs:" target="t3o-OQ-uPC" id="YdF-mt-BfY"/>
@@ -5670,7 +5722,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient complains of (TRUE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="pSt-sL-BH7" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="14"/>
+                                    <font key="font" metaFont="menu" size="14"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-1z-EUB">
@@ -5678,7 +5730,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient denies (FALSE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="zo1-TP-KHw" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="14"/>
+                                    <font key="font" metaFont="menu" size="14"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -5763,7 +5815,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Dfg-eq-rvC" id="meM-jU-I7b">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="oCl-M8-Va0">
                                                     <items>
                                                         <menuItem state="on" id="Dfg-eq-rvC"/>
@@ -5778,7 +5830,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="3Fd-cr-H38">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="7Vg-YZ-iQV">
                                                     <items>
                                                         <menuItem id="sdA-20-fPn"/>
@@ -5881,7 +5933,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ddM-KP-NOP" id="Esx-gM-7jO">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="TqS-UP-azk">
                                                     <items>
                                                         <menuItem state="on" id="ddM-KP-NOP"/>
@@ -6019,7 +6071,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="h6B-mp-pPz">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="bn3-zf-bCn">
                                                     <items>
                                                         <menuItem id="Agr-W3-FAz"/>
@@ -6151,7 +6203,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Amo-CN-Q9v" id="3nR-Rc-hrz">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="8Lc-Qj-hKQ">
                                                     <items>
                                                         <menuItem state="on" id="Amo-CN-Q9v"/>
@@ -6219,7 +6271,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="5Jj-iO-eCh" id="4dC-l9-otR">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="b4I-To-TDb">
                                                     <items>
                                                         <menuItem title="Item 1" state="on" id="5Jj-iO-eCh"/>
@@ -6285,7 +6337,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JD5-G4-1jx" id="uKu-G7-P4O">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="5d6-BA-a18">
                                                     <items>
                                                         <menuItem state="on" id="JD5-G4-1jx">
@@ -6329,7 +6381,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="N7Z-Gk-OKG">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="TnK-js-E4X">
                                                     <items>
                                                         <menuItem id="QKg-y2-noB"/>
@@ -6682,7 +6734,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="bdm-Vp-xAK" id="Oej-AV-3gI">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="AM3-sp-M5Z">
                                                     <items>
                                                         <menuItem state="on" id="bdm-Vp-xAK"/>
@@ -6878,7 +6930,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3KV-BL-QrZ" id="Xtt-AB-c5b">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="exG-yh-xwJ">
                                                     <items>
                                                         <menuItem state="on" id="3KV-BL-QrZ">
@@ -6893,7 +6945,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qfG-OV-xZD" id="QPI-ZQ-Svc">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="V8x-tz-OKs">
                                                     <items>
                                                         <menuItem state="on" id="qfG-OV-xZD">
@@ -7023,7 +7075,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="SO0-0P-sTo" id="0eQ-f9-A3X">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="HCe-95-Ot2">
                                                     <items>
                                                         <menuItem state="on" id="SO0-0P-sTo"/>
@@ -7036,7 +7088,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="LL5-vW-xr6" id="aA3-QP-6gC">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="NKu-rn-fR0">
                                                     <items>
                                                         <menuItem state="on" id="LL5-vW-xr6"/>
@@ -7049,7 +7101,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="BeU-n1-c11" id="D1q-g7-vDd">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="1de-LO-RAt">
                                                     <items>
                                                         <menuItem state="on" id="BeU-n1-c11">
@@ -7082,7 +7134,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="6TD-Ow-Fur" id="GIM-oQ-Ja6">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="gdq-HR-DZj">
                                                     <items>
                                                         <menuItem state="on" id="6TD-Ow-Fur">
@@ -7106,7 +7158,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="OAa-zF-O3E" id="4yx-AP-pVu">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="73u-hP-bv0">
                                                     <items>
                                                         <menuItem state="on" id="OAa-zF-O3E"/>
@@ -7119,7 +7171,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="l4q-em-i1W" id="sWZ-il-qCY">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="oru-tQ-Ls9">
                                                     <items>
                                                         <menuItem state="on" id="l4q-em-i1W"/>
@@ -7141,7 +7193,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kHJ-ri-T5q" id="2YH-UP-WBS">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="csY-pF-u2P">
                                                     <items>
                                                         <menuItem state="on" id="kHJ-ri-T5q"/>
@@ -7154,7 +7206,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UdX-Sf-CGA" id="D3x-7e-Rem">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="Izw-qo-ZPj">
                                                     <items>
                                                         <menuItem state="on" id="UdX-Sf-CGA">
@@ -7178,7 +7230,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="IfQ-yE-Xl2" id="s6a-5S-eNF">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="c9f-34-3tk">
                                                     <items>
                                                         <menuItem state="on" id="IfQ-yE-Xl2"/>
@@ -7209,7 +7261,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="A6C-P0-diV" id="gzn-yo-Or5">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="bbJ-mX-ICv">
                                                     <items>
                                                         <menuItem state="on" id="A6C-P0-diV"/>
@@ -7222,7 +7274,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ceu-LR-BM9" id="Lny-J7-H7p">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="npK-rn-jjY">
                                                     <items>
                                                         <menuItem state="on" id="Ceu-LR-BM9"/>
@@ -7235,7 +7287,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JTw-ah-bMR" id="6eh-8b-oPv">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="naF-cS-ddM">
                                                     <items>
                                                         <menuItem state="on" id="JTw-ah-bMR"/>
@@ -7248,7 +7300,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="e4Y-Qr-FgU" id="njc-4x-wZR">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="pjt-dF-Atb">
                                                     <items>
                                                         <menuItem state="on" id="e4Y-Qr-FgU"/>
@@ -7279,7 +7331,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="jpc-ba-cAG" id="1de-fW-spX">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="fwf-HY-TB1">
                                                     <items>
                                                         <menuItem state="on" id="jpc-ba-cAG">
@@ -7312,7 +7364,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gmg-PV-rbM" id="LPQ-j6-Ngz">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="tlz-ex-GoN">
                                                     <items>
                                                         <menuItem state="on" id="gmg-PV-rbM"/>
@@ -7325,7 +7377,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="YBA-aq-etp" id="fNh-dg-BpU">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="z5w-zD-oST">
                                                     <items>
                                                         <menuItem state="on" id="YBA-aq-etp"/>
@@ -7365,7 +7417,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qt7-FX-1ka" id="gDE-gW-ryK">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="cLH-MS-VYn">
                                                     <items>
                                                         <menuItem state="on" id="qt7-FX-1ka"/>
@@ -7387,7 +7439,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="xpf-Yg-gfj">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="W79-PU-vyn">
                                                     <items>
                                                         <menuItem id="Mf2-AS-gJh"/>
@@ -7421,7 +7473,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ysb-N2-bG2" id="lpa-I6-NWS">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="8me-cy-iZH">
                                                     <items>
                                                         <menuItem state="on" id="Ysb-N2-bG2"/>
@@ -7434,7 +7486,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aQ-0R-VZT" id="CKa-vp-7c7">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="wnS-RX-G1Y">
                                                     <items>
                                                         <menuItem state="on" id="4aQ-0R-VZT"/>
@@ -7465,7 +7517,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="XwG-In-WnC" id="sLE-mt-yyp">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="ljW-ds-jJr">
                                                     <items>
                                                         <menuItem state="on" id="XwG-In-WnC"/>
@@ -7487,7 +7539,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="PXi-ii-nn9" id="gY8-BI-AHr">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="51s-BZ-dRH">
                                                     <items>
                                                         <menuItem state="on" id="PXi-ii-nn9"/>
@@ -7518,7 +7570,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="b8M-wM-kZs" id="8go-x2-giK">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="tRN-XT-SXV">
                                                     <items>
                                                         <menuItem state="on" id="b8M-wM-kZs"/>
@@ -9161,7 +9213,7 @@ Gw
                                                 <action selector="ifYesThenNoBoxOff:" target="BMA-ka-kqm" id="UOo-UM-b0c"/>
                                             </connections>
                                         </button>
-                                        <button misplaced="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-Rr-uhZ">
+                                        <button tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-Rr-uhZ">
                                             <rect key="frame" x="165" y="393" width="44" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="AEI-zd-OgM"/>
@@ -9210,7 +9262,7 @@ Gw
                                             <rect key="frame" x="99" y="290" width="106" height="26"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="R0W-Z1-sDS">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="Pkq-Ch-sOe">
                                                     <items>
                                                         <menuItem title="OCP" id="WhA-h1-FPx"/>
@@ -9398,7 +9450,7 @@ Gw
                                             </connections>
                                         </button>
                                         <button tag="19" translatesAutoresizingMaskIntoConstraints="NO" id="tkN-Dr-aer">
-                                            <rect key="frame" x="177" y="344" width="44" height="18"/>
+                                            <rect key="frame" x="177" y="346" width="44" height="18"/>
                                             <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VrZ-Ai-cI5">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -9530,7 +9582,7 @@ Gw
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button misplaced="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="lym-lK-qgT">
+                                        <button tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="lym-lK-qgT">
                                             <rect key="frame" x="219" y="393" width="44" height="18"/>
                                             <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="QTX-CA-b5S">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -9604,7 +9656,7 @@ Gw
                                             <rect key="frame" x="181" y="86" width="106" height="26"/>
                                             <popUpButtonCell key="cell" type="push" title="monthly" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="M9I-uy-cMI" id="g8J-hu-QDC">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="Fun-q6-INJ">
                                                     <items>
                                                         <menuItem title="less often than monthly" id="LB3-E1-tjk"/>
@@ -9620,7 +9672,7 @@ Gw
                                             </constraints>
                                             <popUpButtonCell key="cell" type="push" title="heavy" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="lwL-dT-ccq" id="nK2-Tj-Yon">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="2Fv-fr-CAB">
                                                     <items>
                                                         <menuItem title="light" id="iIA-ba-vVZ"/>
@@ -9732,7 +9784,7 @@ Gw
                                             </connections>
                                         </button>
                                         <button tag="18" translatesAutoresizingMaskIntoConstraints="NO" id="26n-op-H4o">
-                                            <rect key="frame" x="123" y="344" width="44" height="18"/>
+                                            <rect key="frame" x="123" y="346" width="44" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="eMZ-uU-lea"/>
                                             </constraints>
@@ -10031,7 +10083,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-0S-Sce">
                                                                     <rect key="frame" x="-2" y="0.0" width="11" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="Gfz-Pp-Wnk">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10039,7 +10091,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lbc-Sn-IME">
                                                                     <rect key="frame" x="144" y="0.0" width="11" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="5" id="zOr-fc-dUP">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10047,7 +10099,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sc-gJ-H2r">
                                                                     <rect key="frame" x="290" y="0.0" width="17" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10" id="GOe-uG-8VR">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10129,7 +10181,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8LY-AS-72H">
                                                                     <rect key="frame" x="-2" y="0.0" width="11" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="mgU-Fw-wuA">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10137,7 +10189,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffi-lt-xrM">
                                                                     <rect key="frame" x="144" y="0.0" width="11" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="5" id="wYH-WF-wZ6">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10145,7 +10197,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBU-di-vuX">
                                                                     <rect key="frame" x="290" y="0.0" width="17" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10" id="qQs-Kh-0kP">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10231,7 +10283,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dt-aQ-7tM">
                                                                     <rect key="frame" x="-2" y="0.0" width="11" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="iQQ-VU-COp">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10239,7 +10291,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTY-on-X24">
                                                                     <rect key="frame" x="144" y="0.0" width="11" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="5" id="duF-Qj-aua">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -10247,7 +10299,7 @@ Gw
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hjb-nW-qIP">
                                                                     <rect key="frame" x="290" y="0.0" width="17" height="14"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10" id="TlH-ud-jV3">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -11944,16 +11996,16 @@ Gw
                                     <rect key="frame" x="1" y="0.0" width="1058" height="418"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="6IX-RO-g4W" viewBased="YES" id="guZ-eB-TLv">
+                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="6IX-RO-g4W" viewBased="YES" id="guZ-eB-TLv">
                                             <rect key="frame" x="0.0" y="0.0" width="1058" height="395"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="44.5" minWidth="40" maxWidth="1000" id="UXW-mD-JPN">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -11988,7 +12040,7 @@ Gw
                                                 </tableColumn>
                                                 <tableColumn width="646.5" minWidth="40" maxWidth="1000" id="LRG-pZ-QLQ">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -12143,7 +12195,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ku9-RO-bSC" id="Y22-AQ-dqN">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="system"/>
                                     <menu key="menu" id="aP9-BI-dAa">
                                         <items>
                                             <menuItem title="Item 1" state="on" id="Ku9-RO-bSC"/>
@@ -12658,16 +12710,16 @@ Gw
                                     <rect key="frame" x="1" y="1" width="747" height="567"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="44" rowSizeStyle="automatic" viewBased="YES" id="2QS-rx-ddq">
+                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="44" rowSizeStyle="automatic" viewBased="YES" id="2QS-rx-ddq">
                                             <rect key="frame" x="0.0" y="0.0" width="747" height="567"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="525" minWidth="40" maxWidth="1000" id="viA-iT-03T">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -12700,7 +12752,7 @@ Gw
                                                 </tableColumn>
                                                 <tableColumn width="40" minWidth="40" maxWidth="1000" id="3fl-U2-vkw">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -12732,7 +12784,7 @@ Gw
                                                 </tableColumn>
                                                 <tableColumn width="40" minWidth="40" maxWidth="1000" id="wCH-zW-hZg">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -12764,7 +12816,7 @@ Gw
                                                 </tableColumn>
                                                 <tableColumn width="40" minWidth="10" maxWidth="3.4028234663852886e+38" id="C8K-QY-jx5">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -12796,7 +12848,7 @@ Gw
                                                 </tableColumn>
                                                 <tableColumn width="40" minWidth="10" maxWidth="3.4028234663852886e+38" id="MD5-vM-PiH">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -12828,7 +12880,7 @@ Gw
                                                 </tableColumn>
                                                 <tableColumn width="44" minWidth="10" maxWidth="3.4028234663852886e+38" id="mem-7V-Fqv">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>

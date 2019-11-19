@@ -74,6 +74,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
             var buttonList = [String]()
             switch sender.title {
             case "XRAY": buttonList = caseLists.xrayCases
+                //print(buttonList)
             case "MRI": buttonList = caseLists.mriCases
             case "MAM": buttonList = caseLists.mamCases
             case "BMD": buttonList = caseLists.bmdCases
@@ -104,7 +105,7 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
             detailsBox.subviews.forEach({ $0.removeFromSuperview() })
             detailsBox.removeFromSuperview()
             detailsBox = NSBox()
-            if let buttons = sender.superview?.subviews {
+            if let buttons = sender.superview?.subviews.filter({ (type(of: $0) == NSButton.self ) }) {
                 for button in buttons {
                     if (button as! NSButton).title != sender.title {
                         (button as! NSButton).state = .off
@@ -169,6 +170,14 @@ class RadRefViewController: NSViewController, NSTextFieldDelegate, NSControlText
         if !reasonView.stringValue.isEmpty {
             returnValues.append(reasonView.stringValue)
         }
+        //Fix XRAY's selected via GI here
+        if returnValues.contains("GI") {
+            print(returnValues)
+            if !returnValues.contains("EGD") && !returnValues.contains("colonoscopy") {
+                returnValues[0] = "XRAY"
+            }
+        }
+        
         radOrders.addToViewsExistingText(returnValues.filter {$0 != "" }.joined(separator: " - "))
         clearAreaSideViews()
         typeView.turnButtonsInViewOff()

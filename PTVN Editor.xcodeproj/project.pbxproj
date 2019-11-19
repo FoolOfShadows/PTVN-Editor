@@ -864,7 +864,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.82;
+				MARKETING_VERSION = 1.83;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -886,7 +886,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.82;
+				MARKETING_VERSION = 1.83;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

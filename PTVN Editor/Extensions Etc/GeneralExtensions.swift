@@ -229,6 +229,24 @@ extension NSView {
                 }
             }
             //print(nameSize)
+            
+            //Trying to figure out adding dividing lines
+            if name.contains("---") {
+                let textField = NSTextField(frame: CGRect(x: 0, y: buttonY, width: 150, height: 16))
+                let theUserFont:NSFont = NSFont.systemFont(ofSize: 16)
+                let fontAttributes = NSDictionary(object: theUserFont, forKey: NSAttributedString.Key.font as NSCopying)
+                let myAttributedTitle = NSAttributedString(string: "----------", attributes: fontAttributes as? [NSAttributedString.Key : Any])
+                textField.attributedStringValue = myAttributedTitle
+                //These bits need to be set to turn it from an editable text field to a label which blends in with the interface better
+                textField.isEditable = false
+                textField.drawsBackground = false
+                textField.isBezeled = false
+                //textField.frame.size = textField.fittingSize
+                self.addSubview(textField)
+                buttonY = buttonY - 20
+                
+            } else {
+            
             let newButton = NSButton(frame: CGRect(x: 0, y: buttonY, width: nameSize, height: 16))
             //let newButton = NSButton(checkboxWithTitle: name, target: self, action: nil)
             newButton.setButtonType(.switch)
@@ -243,6 +261,7 @@ extension NSView {
         
             self.addSubview(newButton)
             buttonY = buttonY - 20
+            }
         }
     }
     

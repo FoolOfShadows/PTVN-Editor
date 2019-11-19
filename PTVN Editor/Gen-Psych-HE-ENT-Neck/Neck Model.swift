@@ -24,7 +24,7 @@ struct Neck {
 			case 9: resultArray.append("anterior cervical lymphadenopathy")
 			case 10: resultArray.append("posterior cervical lymphadenopathy")
 			case 11: resultArray.append("jugular venous distention")
-			case 12: resultArray.append("goiter")
+			case 12: resultArray.append("thyromegaly")
 			case 20: resultArray.append(item.1!)
 			default: continue
 			}

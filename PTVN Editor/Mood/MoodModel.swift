@@ -10,7 +10,7 @@ import Foundation
 
 struct MoodData {
     enum sectionOneQuestionsEnum:String {
-        case hyper = "... you felt so good or so hyper that other people though you were not your normal self, or you were so hyper that you got into trouble?"
+        case hyper = "... you felt so good or so hyper that other people thought you were not your normal self, or you were so hyper that you got into trouble?"
         case irritable = "... you were so irritable that you shouted at people or started fights or arguments?"
         case confident = "... you felt much more self-confident than usual?"
         case sleep = "... you got much less sleep than usual and found you didn't really miss it?"

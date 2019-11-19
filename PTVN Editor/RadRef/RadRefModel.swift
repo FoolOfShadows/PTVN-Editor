@@ -241,6 +241,7 @@ enum radXRAYAreas:String, CaseIterable {
     case chestPALAT = "chest PA and Lateral"
     case ribs = "rib series"
     case abdomenFlat = "abdomen flat and upright"
+    case firstBreak = "----------"
     case spine
     case kneeStanding = "knee series with standing film"
     case hip
@@ -249,15 +250,17 @@ enum radXRAYAreas:String, CaseIterable {
     case tibFib = "tib fib"
     case ankle
     case foot
+    case secondBreak = "---------"
     case shoulder = "shoulder series"
     case elbow
     case wrist
     case hand
+    case thirdBreak = "--------"
     case myelogram = "plain myelogram"
-    case upperGI = "upper GI"
-    case barium = "barium swallow"
-    case swallow = "swallow function study"
-    case enema = "gastrograffin enema"
+//    case upperGI = "upper GI"
+//    case barium = "barium swallow"
+//    case swallow = "swallow function study"
+//    case enema = "gastrograffin enema"
 }
 
 enum radMRAAreas:String, CaseIterable {
@@ -318,6 +321,10 @@ enum radRespAreas:String, CaseIterable {
 enum radGIAreas:String, CaseIterable {
     case colonoscopy
     case EGD
+    case upperGI = "upper GI"
+    case barium = "barium swallow"
+    case swallow = "swallow function study"
+    case enema = "gastrograffin enema"
 }
 
 enum radCardioAreas:String, CaseIterable {
