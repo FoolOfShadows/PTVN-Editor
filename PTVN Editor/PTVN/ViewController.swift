@@ -40,7 +40,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var assessmentTableView: NSTableView!
     @IBOutlet weak var visitLevelView: NSView!
     @IBOutlet var planView: NSTextView!
-    @IBOutlet weak var dxView: NSTextView!
+    @IBOutlet var dxView: NSTextView!
     @IBOutlet weak var commonMedsPopup: NSPopUpButton!
     @IBOutlet weak var pharmacyView: NSTextField!
     @IBOutlet weak var subjectiveActivateSafari: NSButton!
@@ -387,6 +387,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.assessment = assessmentView.string
         case planView:
             theData.plan = planView.string
+        case dxView:
+            theData.diagnoses = dxView.string
 //        case pharmacyView:
 //            theData.pharmacy = pharmacyView.stringValue
         default: return
