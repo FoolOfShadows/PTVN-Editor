@@ -26,6 +26,7 @@
 		79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79477C8B21779A9B00E9219D /* AssessmentModel.swift */; };
 		795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B7234219B47800010B07E /* TitlesAndOutput.swift */; };
 		795C875321B71BD700E99E0C /* Doc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C875121B71BD700E99E0C /* Doc.storyboard */; };
+		79624E0C239AA60000E57372 /* NoteWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79624E0B239AA60000E57372 /* NoteWindowVC.swift */; };
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		7967689821F7745F000A836F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689621F7745F000A836F /* PreferencesViewController.swift */; };
 		7967689A21F7750D000A836F /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689921F7750D000A836F /* PreferencesModel.swift */; };
@@ -122,6 +123,7 @@
 		79477C8B21779A9B00E9219D /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		795B7234219B47800010B07E /* TitlesAndOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndOutput.swift; sourceTree = "<group>"; };
 		795C875221B71BD700E99E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PTVN Editor/Base.lproj/Doc.storyboard"; sourceTree = "<group>"; };
+		79624E0B239AA60000E57372 /* NoteWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWindowVC.swift; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		7967689621F7745F000A836F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7967689921F7750D000A836F /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				79477C8B21779A9B00E9219D /* AssessmentModel.swift */,
 				7967689621F7745F000A836F /* PreferencesViewController.swift */,
 				7967689921F7750D000A836F /* PreferencesModel.swift */,
+				79624E0B239AA60000E57372 /* NoteWindowVC.swift */,
 			);
 			path = PTVN;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79624E0C239AA60000E57372 /* NoteWindowVC.swift in Sources */,
 				7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */,
 				79CCA6C32090D16500909285 /* ENT Model.swift in Sources */,
 				79CCA6F32090DC4E00909285 /* NeuroMSK VC.swift in Sources */,
@@ -856,7 +860,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PTVN Editor/PTVN Editor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b2;
+				CURRENT_PROJECT_VERSION = b1;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -864,7 +868,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.83;
+				MARKETING_VERSION = 1.84;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -878,7 +882,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PTVN Editor/PTVN Editor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b2;
+				CURRENT_PROJECT_VERSION = b1;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -886,7 +890,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.83;
+				MARKETING_VERSION = 1.84;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

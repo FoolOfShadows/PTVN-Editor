@@ -15,8 +15,11 @@ protocol ptvnDelegate: class {
 protocol browerChoiceDelegate: class {
     func changeBrowserLabel()
 }
+protocol notesDelegate: class {
+    func updateSubjectiveWithNotes(_ notes: String)
+}
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate, browerChoiceDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate, browerChoiceDelegate, notesDelegate {
 
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
@@ -61,6 +64,26 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
     var document = Document()
+    
+    var noteText:String {
+        get {
+            return "This should be nothing"
+        }
+        set {
+            print("Updating view with \(newValue)")
+            objectiveView.string.addToExistingText(newValue)
+            updateVarForView(objectiveView)
+        }
+    }
+    func updateSubjectiveWithNotes(_ notes: String) {
+        print("updating the view with \(notes)")
+        subjectiveView.string.addToExistingText(notes)
+        updateVarForView(subjectiveView)
+    }
+    
+    @IBAction func openNotesView(_ sender: Any) {
+        performSegue(withIdentifier: "showNoteWindow", sender: self)
+    }
     
     //Create a spellchecking instance
     let spellChecker = OurSpellChecker()
@@ -305,6 +328,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                 if let toViewController = segue.destinationController as? ADAMVC {
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
+                }
+            case "showNoteWindow":
+                print("segueing from main VC")
+                if let toViewController = segue.destinationController as? NoteWindowVC {
+                    toViewController.currentNoteDelegate = self
                 }
             default: return
             }

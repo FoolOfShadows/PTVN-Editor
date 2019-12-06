@@ -667,6 +667,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
                                     <items>
+                                        <menuItem title="Open Note Window" keyEquivalent="n" id="wPZ-cu-ocF">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="openNotesView:" target="Ady-hI-5gd" id="il6-qg-hML"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
                                             <connections>
                                                 <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
@@ -710,7 +716,63 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="261"/>
+            <point key="canvasLocation" x="-826" y="-23"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="7ev-Bn-V56">
+            <objects>
+                <viewController title="Notes" id="wo2-Ie-Dfm" customClass="NoteWindowVC" customModule="PTVN_Editor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Sny-5l-laF">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU7-jb-xOa">
+                                <rect key="frame" x="20" y="61" width="410" height="219"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="OM0-OI-SM9">
+                                    <rect key="frame" x="0.0" y="0.0" width="395" height="219"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="Pig-l7-Fnz">
+                                            <rect key="frame" x="0.0" y="0.0" width="395" height="219"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="395" height="219"/>
+                                            <size key="maxSize" width="395" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="rS5-I0-QOj">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="4mm-qZ-JLk">
+                                    <rect key="frame" x="395" y="0.0" width="15" height="219"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-W8-sPh">
+                                <rect key="frame" x="284" y="13" width="147" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Add to Subjective" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xLF-KL-Qdd">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addToAssessment:" target="wo2-Ie-Dfm" id="Dtb-Zb-jgY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="noteScrollView" destination="QU7-jb-xOa" id="Gup-Vc-geQ"/>
+                    </connections>
+                </viewController>
+                <customObject id="YSG-3I-gfq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-883" y="240"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -996,7 +1058,7 @@
                                                     <rect key="frame" x="17" y="27" width="272" height="571"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="Q7u-g0-0ps">
                                                         <rect key="frame" x="1" y="1" width="255" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="8JL-k1-BAS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="255" height="569"/>
@@ -1022,7 +1084,7 @@
                                                     <rect key="frame" x="579" y="27" width="248" height="571"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="uXv-s6-0Bj">
                                                         <rect key="frame" x="1" y="1" width="231" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="nTW-NE-gtd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="231" height="569"/>
@@ -1067,7 +1129,7 @@
                                                     <rect key="frame" x="297" y="27" width="274" height="571"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="aVC-7s-OHb">
                                                         <rect key="frame" x="1" y="1" width="257" height="569"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="YHr-O0-8pL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="257" height="569"/>
@@ -1101,7 +1163,7 @@
                                                     <rect key="frame" x="841" y="483" width="240" height="115"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="pnt-mM-8YW">
                                                         <rect key="frame" x="1" y="1" width="223" height="113"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="TtB-0u-9aE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="113"/>
@@ -1127,7 +1189,7 @@
                                                     <rect key="frame" x="841" y="285" width="240" height="165"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="vbI-R0-86e">
                                                         <rect key="frame" x="1" y="1" width="223" height="163"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ap2-Mi-pnS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="163"/>
@@ -1172,7 +1234,7 @@
                                                     <rect key="frame" x="841" y="101" width="240" height="151"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="3hU-pW-XTi">
                                                         <rect key="frame" x="1" y="1" width="223" height="149"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="1A5-Y6-x72">
                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="149"/>
@@ -1282,7 +1344,7 @@
                                                     <rect key="frame" x="17" y="59" width="1079" height="539"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="yUs-6m-qou">
                                                         <rect key="frame" x="1" y="1" width="1062" height="537"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="w8l-bE-lDr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1062" height="537"/>
@@ -1361,7 +1423,7 @@
                                                     <rect key="frame" x="17" y="276" width="467" height="338"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="9sE-BL-XR6">
                                                         <rect key="frame" x="1" y="1" width="450" height="336"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="55Z-3a-wRD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="336"/>
@@ -1391,7 +1453,7 @@
                                                     <rect key="frame" x="528" y="123" width="568" height="491"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="HP4-nl-CLf">
                                                         <rect key="frame" x="1" y="1" width="551" height="489"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ubd-KL-0zL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="551" height="489"/>
@@ -1519,7 +1581,7 @@
                                                     <rect key="frame" x="118" y="58" width="366" height="210"/>
                                                     <clipView key="contentView" id="MLM-dU-hKz">
                                                         <rect key="frame" x="1" y="0.0" width="364" height="209"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="jmx-Nv-8Jp" viewBased="YES" id="LAh-rS-x3B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="184"/>
@@ -1888,7 +1950,7 @@
                                                     <rect key="frame" x="17" y="17" width="610" height="598"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="aRX-OO-FBg">
                                                         <rect key="frame" x="1" y="1" width="593" height="596"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ugn-VY-b3t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="593" height="596"/>
@@ -1926,7 +1988,7 @@
                                                     <rect key="frame" x="635" y="17" width="461" height="598"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="ZMG-ir-MT8">
                                                         <rect key="frame" x="1" y="1" width="444" height="596"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Kmn-zf-umM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="444" height="596"/>
@@ -1992,7 +2054,7 @@
                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <size key="minSize" width="542" height="582"/>
-                                                                <size key="maxSize" width="542" height="10000000"/>
+                                                                <size key="maxSize" width="557" height="10000000"/>
                                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             </textView>
                                                         </subviews>
@@ -2652,11 +2714,12 @@
                         <outlet property="subjectiveActivateSafari" destination="9Ru-eI-fG8" id="u2N-u2-S4U"/>
                         <outlet property="subjectiveView" destination="edD-ok-KbA" id="iOg-WU-fJ7"/>
                         <outlet property="visitLevelView" destination="jDt-dZ-J2r" id="v53-HK-zpr"/>
+                        <segue destination="wo2-Ie-Dfm" kind="show" identifier="showNoteWindow" id="dIB-eO-aD0"/>
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="535.5"/>
+            <point key="canvasLocation" x="-58" y="541"/>
         </scene>
         <!--MoodVC-->
         <scene sceneID="SUq-zg-tG4">
