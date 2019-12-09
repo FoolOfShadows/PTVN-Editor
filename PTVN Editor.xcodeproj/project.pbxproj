@@ -30,6 +30,7 @@
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		7967689821F7745F000A836F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689621F7745F000A836F /* PreferencesViewController.swift */; };
 		7967689A21F7750D000A836F /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689921F7750D000A836F /* PreferencesModel.swift */; };
+		79802486239EC3D0005DBBA2 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79802485239EC3D0005DBBA2 /* NoteView.swift */; };
 		798BBB4520939617002A28AA /* ESSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3D20939613002A28AA /* ESSController.swift */; };
 		798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3E20939613002A28AA /* IncontinenceController.swift */; };
 		798BBB4720939617002A28AA /* PHQ9Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3F20939614002A28AA /* PHQ9Controller.swift */; };
@@ -128,6 +129,7 @@
 		7967689621F7745F000A836F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7967689921F7750D000A836F /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
 		7973C3072339380300FF9812 /* PTVN Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PTVN Editor.entitlements"; sourceTree = "<group>"; };
+		79802485239EC3D0005DBBA2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
 		798BBB3E20939613002A28AA /* IncontinenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncontinenceController.swift; sourceTree = "<group>"; };
 		798BBB3F20939614002A28AA /* PHQ9Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHQ9Controller.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				7967689621F7745F000A836F /* PreferencesViewController.swift */,
 				7967689921F7750D000A836F /* PreferencesModel.swift */,
 				79624E0B239AA60000E57372 /* NoteWindowVC.swift */,
+				79802485239EC3D0005DBBA2 /* NoteView.swift */,
 			);
 			path = PTVN;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				79CCA6C62090D16500909285 /* GenPsychHEENTNeck VC.swift in Sources */,
 				798BBB4520939617002A28AA /* ESSController.swift in Sources */,
 				79CCA6D02090D49F00909285 /* Chest Model.swift in Sources */,
+				79802486239EC3D0005DBBA2 /* NoteView.swift in Sources */,
 				79CCA6E52090DA4200909285 /* Skin Model.swift in Sources */,
 				798BBB582093A000002A28AA /* PreventiveModel.swift in Sources */,
 				798BBB5320939C20002A28AA /* MWEController.swift in Sources */,
@@ -860,7 +864,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PTVN Editor/PTVN Editor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b1;
+				CURRENT_PROJECT_VERSION = b2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -882,7 +886,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PTVN Editor/PTVN Editor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b1;
+				CURRENT_PROJECT_VERSION = b2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

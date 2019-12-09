@@ -26,6 +26,12 @@ class NoteWindowVC: NSViewController {
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
         let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
         notes.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
+        currentNoteDelegate?.noteWindowOpen = true
+        
+    }
+    
+    override func viewDidAppear() {
+        currentNoteDelegate?.noteWindow = self.view.window
     }
     
     @IBAction func addToAssessment(_ sender: Any) {
@@ -37,6 +43,10 @@ class NoteWindowVC: NSViewController {
             //currentNoteDelegate?.noteText = notes.string
         }
         self.view.window?.close()
+    }
+    
+    override func viewWillDisappear() {
+        currentNoteDelegate?.noteWindowOpen = false
     }
     
 }
