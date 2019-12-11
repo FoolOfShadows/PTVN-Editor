@@ -21,7 +21,7 @@ protocol notesDelegate: class {
     var noteWindow:NSWindow? { get set }
 }
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate, ptvnDelegate, browerChoiceDelegate, notesDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate, browerChoiceDelegate, notesDelegate {
 
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
@@ -88,6 +88,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         performSegue(withIdentifier: "showNoteWindow", sender: self)
         windowCloseDelegate?.setWindowCloseValue(noteWindowOpen)
         } else {
+            //Get the currently existing window passed from the delegate and bring it forward
             if let notesWindow = noteWindow, notesWindow.title == "Notes" {
                 notesWindow.makeKeyAndOrderFront(self)
             }
@@ -510,6 +511,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //print("Notification received")
         let buttons = self.view.getListOfButtons()
         let button = buttons.filter { $0.title == FormButtons.formName }[0]
+        print(button.title)
         button.performClick(self)
     }
     

@@ -31,6 +31,7 @@ class NoteWindowVC: NSViewController {
     }
     
     override func viewDidAppear() {
+        //Have to wait for the view to appear to be able to pass the window back to the delegate
         currentNoteDelegate?.noteWindow = self.view.window
     }
     
