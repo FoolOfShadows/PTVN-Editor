@@ -353,6 +353,12 @@ class PTVN {
     
 }
 
+enum FormButton:String {
+    case ros = "ROS"
+    case pain = "Pain"
+    case diabetes = "Diabetes"
+}
+
 struct FormButtons {
     static var formName = String()
 }

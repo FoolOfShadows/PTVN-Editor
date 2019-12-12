@@ -11,6 +11,7 @@ import Quartz
 
 protocol ptvnDelegate: class {
     func returnPTVNValues(sender: NSViewController)
+    func switchToModule(module: FormButton)
 }
 protocol browerChoiceDelegate: class {
     func changeBrowserLabel()
@@ -153,7 +154,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
         //Set up notification center for switching forms
         let nc = NotificationCenter.default
-        nc.addObserver(self, selector: #selector(switchForm), name: Notification.Name("SwitchForm"), object: nil)
+//        nc.addObserver(self, selector: #selector(switchForm), name: Notification.Name("SwitchForm"), object: nil)
         //Set up notification center for changing browser label
         nc.addObserver(self, selector: #selector(changeBrowserLabel), name: Notification.Name("SetBrowser"), object: nil)
     }
@@ -507,10 +508,17 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     //Lets MA jump directly to the next eval form
-    @objc func switchForm() {
-        //print("Notification received")
+//    @objc func switchForm() {
+//        //print("Notification received")
+//        let buttons = self.view.getListOfButtons()
+//        let button = buttons.filter { $0.title == FormButtons.formName }[0]
+//        print(button.title)
+//        button.performClick(self)
+//    }
+    
+    func switchToModule(module: FormButton) {
         let buttons = self.view.getListOfButtons()
-        let button = buttons.filter { $0.title == FormButtons.formName }[0]
+        let button = buttons.filter { $0.title == module.rawValue }[0]
         print(button.title)
         button.performClick(self)
     }

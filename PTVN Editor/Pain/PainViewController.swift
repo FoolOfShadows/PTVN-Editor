@@ -50,7 +50,6 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate,
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
 	
-	let nc = NotificationCenter.default
     
 //    private var displayedTotal:Double {
 //        get {
@@ -158,21 +157,14 @@ class PainViewController: NSViewController, NSTextFieldDelegate, NSTextDelegate,
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         
         if sender.title == "Process & Continue" {
-            FormButtons.formName = "Diabetes"
             self.dismiss(self)
-            nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
+            currentPTVNDelegate?.switchToModule(module: FormButton.diabetes)
         } else {
             self.dismiss(self)
         }
 
 	}
 	
-//    @IBAction func processPainAndContinue(_ sender: Any) {
-//        processPain(self)
-//        TrackingTabs.newTab = 4
-//        nc.post(name: NSNotification.Name("SwitchTabs"), object: nil)
-//        processAndContinue()
-//    }
 	
 	func getDurationInfo() -> String {
 		var results = String()

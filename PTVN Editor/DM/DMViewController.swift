@@ -34,7 +34,6 @@ class DMViewController: NSViewController {
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
 	
-	let nc = NotificationCenter.default
 	
 	override func viewDidLoad() {
         super.viewDidLoad()

@@ -37,8 +37,6 @@ class HPIViewController: NSViewController {
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
 	
-	let nc = NotificationCenter.default
-	
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -168,9 +166,8 @@ class HPIViewController: NSViewController {
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         
         if sender.title == "Process & Continue" {
-            FormButtons.formName = "ROS"
             self.dismiss(self)
-            nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
+            currentPTVNDelegate?.switchToModule(module: FormButton.ros)
         } else {
             self.dismiss(self)
         }

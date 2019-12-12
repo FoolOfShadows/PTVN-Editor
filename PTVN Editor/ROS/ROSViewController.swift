@@ -47,8 +47,6 @@ class ROSViewController: NSViewController {
 //    var cardioList:(sectionName: String, list: [(title:String, state:Int)]) {return ("CARDIO", returnTitleAndStateFromView(rosView, withTag: 11))}
 //    var dermList:(sectionName: String, list: [(title:String, state:Int)]) {return ("DERM", returnTitleAndStateFromView(rosView, withTag: 11))}
     
-
-    let nc = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,9 +109,8 @@ class ROSViewController: NSViewController {
         
         
         if sender.title == "Process & Continue" {
-        FormButtons.formName = "Pain"
         self.dismiss(self)
-        nc.post(name: NSNotification.Name("SwitchForm"), object: nil)
+            currentPTVNDelegate?.switchToModule(module: FormButton.pain)
         } else {
             self.dismiss(self)
         }
