@@ -28,6 +28,13 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
 //    @IBOutlet weak var medicationScroll: NSScrollView!
     @IBOutlet weak var arthPopup: NSPopUpButton!
     @IBOutlet weak var synvPopup: NSPopUpButton!
+    
+    @IBOutlet weak var previousPrevScroll: NSScrollView!
+    var previousPrevView: NSTextView {
+        get {
+            return previousPrevScroll.contentView.documentView as! NSTextView
+        }
+    }
 //    @IBOutlet weak var assessmentTableView: NSTableView!
 //
 //    @IBOutlet weak var visitLevelView: NSView!
@@ -83,18 +90,9 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.assessmentTableView.delegate = self
-//        self.assessmentTableView.dataSource = self
         clearDrTab(self)
-        
-        //Populate assessmentTableView with Problems subsection of the Subjective section
-//        let problems = theData.problems/*theData.subjective.simpleRegExMatch("(?s)(Problems\\*\\*).*(\\*problems\\*)").cleanTheTextOf(problemBadBits)*/
-//        assessmentList = problems.convertListToArray()
-//        self.assessmentTableView.reloadData()
-//        chosenAssessmentList = assessmentList
-        
-        
-        
+        setFontSizeOf(16, forFields: [previousPrevView])
+        previousPrevView.string = getPrevDataFrom(theData.preventive)
     }
     
     override func viewDidAppear() {
@@ -185,67 +183,42 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
     
     
-//    @IBAction func processAssessmentTable(_ sender: Any) {
-//
-//        let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
-//
-//        theData.assessment.addToExistingText(results)
-//    }
+private func getPrevDataFrom(_ source:String) -> String {
+    var preventiveResultsArray = [String]()
+    let preventiveArray = source.components(separatedBy: "\n")
+    for measure in preventiveArray {
+        let dates = measure.allRegexMatchesFor("(\\d*/\\d*/\\d*|\\d+/\\d+)")
+        let heading = measure.simpleRegExMatch("^\\w* -|^\\w*-|^\\w* \\w* -|^\\w* \\w*-")
+        
+        //print(heading)
+        //print(dates)
+        
+        if let sortedDates = getDateFromString(dates)?.sorted() {
+            if let last = sortedDates.last {
+                //format the date
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy"
+                preventiveResultsArray.append("\(heading) \(dateFormatter.string(from: last))")
+                //print("\(heading) \(dateFormatter.string(from: last))")
+            } else {
+                preventiveResultsArray.append("\(heading) no last date found")
+                //print("\(heading) no last date found")
+            }
+            
+        }
+    }
+    return preventiveResultsArray.joined(separator: "\n")
     
-//    @IBAction func getDataFromSelectedRow(_ sender:Any) {
-//        let currentRow = assessmentTableView.row(for: sender as! NSView)
-//        if (sender as! NSButton).state == .on {
-//            chosenAssessmentList.append(assessmentList[currentRow])
-//        } else if (sender as! NSButton).state == .off {
-//            chosenAssessmentList = chosenAssessmentList.filter { $0 != assessmentList[currentRow] }
-//        }
-//    }
+}
     
-    //Adds a blank line to the table and selects it, also adding a corresponding
-    //empty string item to the data source array
-//    @IBAction func addMedToTable(_ sender: NSButton) {
-//        //Add the info from the textfield to the medList array
-//        assessmentList.insert("", at: 0)
-//        //Add the new info into the tableView (not sure exactly how this works)
-//        assessmentTableView.insertRows(at: IndexSet(integer: 0), withAnimation: NSTableView.AnimationOptions.slideDown)
-//        assessmentTableView.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
-//
-//    }
-    
-    //Attached to the table's Table Cell View prototype via the classes First Responder
-    //updates the data source array with any changes made to the table items.
-//    @IBAction func updateArrayWithEdit(_ sender:Any) {
-//        let currentRow = assessmentTableView.row(for: sender as! NSView)
-//        //print(currentRow)
-//
-//        if let textField = sender as? NSTextField {
-//            let textValue = textField.stringValue
-//            assessmentList.remove(at: currentRow)
-//            assessmentList.insert(textValue, at: currentRow)
-//        }
-//
-//
-//    }
-    
-    //Removes the selected row from the table and the corresponding
-    //item from the data source array
-//    @IBAction func removeRowFromTable(_ sender: NSButton) {
-//        let row = assessmentTableView.selectedRow
-//        if row != -1 {
-//            assessmentList.remove(at: row)
-//            let indexSet = IndexSet(integer:row)
-//            assessmentTableView.removeRows(at:indexSet, withAnimation:NSTableView.AnimationOptions.effectFade)
-//        }
-//    }
-	
-//    @IBAction func onlyOneCheckAtATime(_ sender:NSButton) {
-//        let boxes = visitLevelView.getListOfButtons()
-//        for box in boxes {
-//            if box.title != sender.title {
-//                box.state = .off
-//            }
-//        }
-//    }
+    func setFontSizeOf(_ size: CGFloat, forFields textFields: [NSTextView]) {
+        let theUserFont:NSFont = NSFont.systemFont(ofSize: size)
+        let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
+        //let fontAttributes = NSDictionary(object: theUserFont, forKey: NSFontAttributeName as NSCopying)
+        for field in textFields {
+            field.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
+        }
+    }
     
     @IBAction func thinnerOrNot(_ sender:NSButton) {
         let boxes = preOpView.getListOfButtons()

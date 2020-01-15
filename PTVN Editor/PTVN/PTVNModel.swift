@@ -341,6 +341,7 @@ class PTVN {
         let pmh = "(?s)\(SectionDelimiters.pmhStart.rawValue).*\(SectionDelimiters.pmhEnd.rawValue)"
         let psh = "(?s)\(SectionDelimiters.pshStart.rawValue).*\(SectionDelimiters.pshEnd.rawValue)"
         let preventive = "(?s)\(SectionDelimiters.preventiveStart.rawValue).*\(SectionDelimiters.preventiveEnd.rawValue)"
+        let preventive2 = "(?s)"
         let ros = "(?s)\(SectionDelimiters.rosStart.rawValue).*\(SectionDelimiters.rosEnd.rawValue)"
         let assessment = "(?s)\(SectionDelimiters.assessmentStart.rawValue).*\(SectionDelimiters.assessmentEND.rawValue)"
         let objective = "(?s)\(SectionDelimiters.objectiveStart.rawValue).*\(SectionDelimiters.objectiveEnd.rawValue)"

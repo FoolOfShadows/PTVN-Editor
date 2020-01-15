@@ -89,12 +89,17 @@ class ProcInjViewController: NSViewController, NSTextFieldDelegate, NSControlTex
 		nebulizerPopup.clearPopUpButton(menuItems: ProcInjModel().nebulizerList)
 		setUpMenuItemsForButtonsIn(injectionsBox)
 	}
-	
+
     @IBAction func processProcInjTab(_ sender: Any) {
         var finalResults = [String]()
-        finalResults.append(ProcInjModel().processOfficeProceduresUsing(getButtonsIn(view: proceduresBox)))
+        var chargeResults = [String]()
+        let procedureResults = ProcInjModel().processOfficeProceduresUsing(getButtonsIn(view: proceduresBox))
+        finalResults.append(procedureResults.procedures)
+        chargeResults += procedureResults.charges
         finalResults.append(ProcInjModel().processInjectionsUsing(getButtonsIn(view: injectionsBox)))
-        finalResults.append(ProcInjModel().processLabsOrderedUsing(getButtonsIn(view: labBox)))
+        let labResults = ProcInjModel().processLabsOrderedUsing(getButtonsIn(view: labBox))
+        finalResults.append(labResults.labOrders)
+        chargeResults += labResults.charges
         //finalResults.append(ProcInjModel().processABIResults(left: lABIIndexView.stringValue, right: rABIIndexView.stringValue))
         if !samplesView.string.isEmpty {
             finalResults.append("Samples given:\n\(samplesView.string)")
@@ -104,11 +109,14 @@ class ProcInjViewController: NSViewController, NSTextFieldDelegate, NSControlTex
 		
 		
 		let filteredResults = finalResults.filter {!$0.isEmpty}
+        let filteredCharges = chargeResults.filter {!$0.isEmpty}
 		
         theData.plan.addToExistingText(filteredResults.joined(separator: "\n"))
         if !processABI().isEmpty {
             theData.objective.addToExistingText(processABI())
         }
+        
+        theData.assessment.addToExistingText(filteredCharges.joined(separator: "\n"))
         
         
         let firstVC = presentingViewController as! ViewController

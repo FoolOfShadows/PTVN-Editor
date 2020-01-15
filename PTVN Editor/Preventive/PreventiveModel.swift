@@ -8,36 +8,6 @@
 
 import Cocoa
 
-class PreventiveMeasure {
-	var measure: String
-	var suggestedDate: NSTextField
-	var notDue: NSButton
-	
-	init(measure: String, date:NSTextField, notDue:NSButton) {
-		self.measure = measure
-		self.suggestedDate = date
-		self.notDue = notDue
-	}
-	
-	func processMeasure() -> String {
-		var result = String()
-		
-		if self.suggestedDate.stringValue != "" {
-			result = "\(self.measure): \(self.suggestedDate.stringValue)."
-		} else if self.notDue.state == .on {
-			result = "\(self.measure): not due."
-		}
-		
-		return result
-	}
-	
-	func clearMeasure() {
-		suggestedDate.stringValue = String()
-		notDue.state = .off
-	}
-	
-}
-
 func processMeasures(measures:[PreventiveMeasure]) -> String {
 	var resultString = String()
 	var resultArray = [String]()
@@ -57,9 +27,9 @@ func processMeasures(measures:[PreventiveMeasure]) -> String {
 }
 
 func processClearMeasures(measures:[PreventiveMeasure]) {
-	for measure in measures {
-		measure.clearMeasure()
-	}
+//	for measure in measures {
+//		measure.clearMeasure()
+//	}
 }
 
 func getPrevDataFrom(_ source:String) -> String {

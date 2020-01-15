@@ -113,9 +113,10 @@ struct ProcInjModel {
     }
     
 
-    func processOfficeProceduresUsing(_ data:[(Int, String?)]) -> String {
+    func processOfficeProceduresUsing(_ data:[(Int, String?)]) -> (procedures: String, charges: [String]) {
         var resultArray = [String]()
-        var results = String()
+        var procedures = String()
+        var charges = [String]()
         
         func determineNebTreatmentFrom(_ type:String) -> String {
             switch type {
@@ -132,7 +133,9 @@ struct ProcInjModel {
             case 2: resultArray.append("Digital rectal exam")
             case 3: resultArray.append("Hemoccult Stool cards x 3 given for colon cancer screening.")
             case 4: resultArray.append("Incision and drainage of abscess, consent signe.d")
-            case 5: resultArray.append("EKG, consent signed.")
+            case 5:
+                resultArray.append("EKG, consent signed.")
+                charges.append("EKG")
             case 6: resultArray.append("Ear lavage of \(item.1!), consent signed.")
             case 7: resultArray.append("Nebulizer treatment using \(determineNebTreatmentFrom(item.1!)) solution.")
             case 8: resultArray.append("Cryo treatment x \(item.1!), consent signed.")
@@ -143,23 +146,32 @@ struct ProcInjModel {
         }
             
             if !resultArray.isEmpty {
-                results = "Office procedure(s) performed:\n\(resultArray.joined(separator: "\n"))"
+                procedures = "Office procedure(s) performed:\n\(resultArray.joined(separator: "\n"))"
             }
-            return results
+            return (procedures, charges)
         }
     
     
-    func processLabsOrderedUsing(_ data:[(Int, String?)]) -> String {
+    func processLabsOrderedUsing(_ data:[(Int, String?)]) -> (labOrders:String, charges:[String]) {
         var resultArray = [String]()
-        var results = String()
+        var labOrders = String()
+        var charges = [String]()
         
         for item in data {
             switch item.0 {
-            case 1: resultArray.append("Urine dip, consent signed.")
-            case 2: resultArray.append("UCG, consent signed.")
-            case 3: resultArray.append("UDS, consent signed.")
+            case 1:
+                resultArray.append("Urine dip, consent signed.")
+                charges.append("UDIP")
+            case 2:
+                resultArray.append("UCG, consent signed.")
+                charges.append("UCG")
+            case 3:
+                resultArray.append("UDS, consent signed.")
+                charges.append("UDS")
             case 4: resultArray.append("m UDS, consent signed.")
-            case 5: resultArray.append("Rapid Flu A&B swab, consent signed.")
+            case 5:
+                resultArray.append("Rapid Flu A&B swab, consent signed.")
+                charges.append("FLU")
 			case 26: resultArray.append("Flu swab tests positive for Influenza A")
 			case 27: resultArray.append("Flu swab tests positive for Influenza B")
 			case 6: resultArray.append("Flu swab tests negative for Influenza A")
@@ -170,10 +182,10 @@ struct ProcInjModel {
         }
         
         if !resultArray.isEmpty {
-            results = "Lab(s) ordered:\n\(resultArray.joined(separator: "\n"))"
+            labOrders = "Lab(s) ordered:\n\(resultArray.joined(separator: "\n"))"
         }
         
-        return results
+        return (labOrders, charges)
     }
     
     func processABIResults(left:String, right:String) -> String {

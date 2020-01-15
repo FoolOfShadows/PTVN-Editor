@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="59E-Nj-AZ9">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="59E-Nj-AZ9">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -325,7 +325,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wA6-nL-jkL" id="VmJ-p4-e47">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="sQB-rE-fVk">
                                                     <items>
                                                         <menuItem state="on" id="wA6-nL-jkL">
@@ -373,7 +373,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="S8e-yC-g0S" id="p2U-fq-Azs">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="CpK-nO-9Av">
                                                     <items>
                                                         <menuItem state="on" id="S8e-yC-g0S">
@@ -836,14 +836,14 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Snippets" translatesAutoresizingMaskIntoConstraints="NO" id="w98-PG-tar">
-                                <rect key="frame" x="275" y="183" width="132" height="126"/>
+                                <rect key="frame" x="275" y="57" width="363" height="252"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="zAT-er-hWd">
-                                    <rect key="frame" x="3" y="3" width="126" height="108"/>
+                                    <rect key="frame" x="3" y="3" width="357" height="234"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" tag="50" translatesAutoresizingMaskIntoConstraints="NO" id="idS-Ws-Zfk">
-                                            <rect key="frame" x="18" y="72" width="90" height="18"/>
+                                            <rect key="frame" x="18" y="198" width="90" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Back brace" bezelStyle="regularSquare" imagePosition="left" inset="2" id="m4z-RJ-qO1">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -853,6 +853,33 @@ Gw
                                     </subviews>
                                 </view>
                             </box>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-eC-Bph">
+                                <rect key="frame" x="663" y="61" width="311" height="248"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="gYd-va-gYP">
+                                    <rect key="frame" x="1" y="1" width="294" height="246"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="GXD-GS-l4l">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="246"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="294" height="246"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="cNI-N3-QpU">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="5Kh-aE-IBi">
+                                    <rect key="frame" x="295" y="1" width="15" height="246"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                     </view>
                     <connections>
@@ -863,6 +890,7 @@ Gw
                         <outlet property="injectionsView" destination="5eF-Dw-XnO" id="6yf-Th-Vpp"/>
                         <outlet property="labView" destination="tBT-i2-zN5" id="Fpm-0S-sfp"/>
                         <outlet property="preOpView" destination="eQ0-Ii-pST" id="r1Z-FJ-zvm"/>
+                        <outlet property="previousPrevScroll" destination="TQe-eC-Bph" id="bHF-3d-VnY"/>
                         <outlet property="proceduresView" destination="vL3-6A-jNr" id="z0D-ry-Bt3"/>
                         <outlet property="snippetReviewView" destination="w98-PG-tar" id="C12-5P-5uj"/>
                         <outlet property="synvPopup" destination="Js6-Ql-OwV" id="r55-nm-TAm"/>
