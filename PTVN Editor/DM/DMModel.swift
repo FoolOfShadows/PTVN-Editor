@@ -100,7 +100,7 @@ func processLabsUsing(_ data:[(Int, String?)]) -> String {
 		case 3: results.append("HgbA1C: \(item.1!)")
 		case 4:
 			if results.contains(where: {$0.hasPrefix("HgbA1C:")}) {
-				if let i = results.index(where: {$0.hasPrefix("HgbA1C:")}) {
+				if let i = results.firstIndex(where: {$0.hasPrefix("HgbA1C:")}) {
 					results[i] = "\(results[i]); 3 month glucose average: \(item.1!)"
 				}
 			}
@@ -111,7 +111,7 @@ func processLabsUsing(_ data:[(Int, String?)]) -> String {
 		case 8: subResults.append("U Malb: \(item.1!)")
 		case 10:
 			if subResults.contains(where: {$0.hasPrefix("U Malb:")}) {
-				if let i = subResults.index(where: {$0.hasPrefix("U Malb:")}) {
+				if let i = subResults.firstIndex(where: {$0.hasPrefix("U Malb:")}) {
 					subResults[i] = "\(subResults[i]) - \(item.1!)"
 				}
 			}

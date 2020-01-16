@@ -96,7 +96,9 @@ class ProcInjViewController: NSViewController, NSTextFieldDelegate, NSControlTex
         let procedureResults = ProcInjModel().processOfficeProceduresUsing(getButtonsIn(view: proceduresBox))
         finalResults.append(procedureResults.procedures)
         chargeResults += procedureResults.charges
-        finalResults.append(ProcInjModel().processInjectionsUsing(getButtonsIn(view: injectionsBox)))
+        let injectionResults = ProcInjModel().processInjectionsUsing(getButtonsIn(view: injectionsBox))
+        finalResults.append(injectionResults.injections)
+        chargeResults += injectionResults.charges
         let labResults = ProcInjModel().processLabsOrderedUsing(getButtonsIn(view: labBox))
         finalResults.append(labResults.labOrders)
         chargeResults += labResults.charges
