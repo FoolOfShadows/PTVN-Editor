@@ -26,6 +26,8 @@
 		79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79477C8B21779A9B00E9219D /* AssessmentModel.swift */; };
 		795B7235219B47800010B07E /* TitlesAndOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B7234219B47800010B07E /* TitlesAndOutput.swift */; };
 		795C875321B71BD700E99E0C /* Doc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C875121B71BD700E99E0C /* Doc.storyboard */; };
+		7960579623E4827800E7C540 /* LetterheadPrinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960579423E4827800E7C540 /* LetterheadPrinting.swift */; };
+		7960579723E4827800E7C540 /* WPCM Letterhead Blank Cropped.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7960579523E4827800E7C540 /* WPCM Letterhead Blank Cropped.pdf */; };
 		79624E0C239AA60000E57372 /* NoteWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79624E0B239AA60000E57372 /* NoteWindowVC.swift */; };
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		7967689821F7745F000A836F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689621F7745F000A836F /* PreferencesViewController.swift */; };
@@ -125,6 +127,8 @@
 		79477C8B21779A9B00E9219D /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		795B7234219B47800010B07E /* TitlesAndOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndOutput.swift; sourceTree = "<group>"; };
 		795C875221B71BD700E99E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PTVN Editor/Base.lproj/Doc.storyboard"; sourceTree = "<group>"; };
+		7960579423E4827800E7C540 /* LetterheadPrinting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterheadPrinting.swift; sourceTree = "<group>"; };
+		7960579523E4827800E7C540 /* WPCM Letterhead Blank Cropped.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "WPCM Letterhead Blank Cropped.pdf"; sourceTree = "<group>"; };
 		79624E0B239AA60000E57372 /* NoteWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWindowVC.swift; sourceTree = "<group>"; };
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		7967689621F7745F000A836F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				791320612077C85200CB1537 /* Assets.xcassets */,
 				791320662077C85200CB1537 /* Info.plist */,
 				791320672077C85200CB1537 /* PTVN_Editor.entitlements */,
+				7960579323E4827800E7C540 /* Printing To Letterhead */,
 				79CCA6BA2090BCFC00909285 /* Extensions Etc */,
 				79AFDF5020C04B33007FAB5C /* LineContainingView.swift */,
 				79AFE1D22188C646007F4A5E /* BlackLineClass.swift */,
@@ -295,6 +300,15 @@
 				793133B7231849B000B3649A /* OpioidVC.swift */,
 			);
 			path = "Opioid Risk Tool";
+			sourceTree = "<group>";
+		};
+		7960579323E4827800E7C540 /* Printing To Letterhead */ = {
+			isa = PBXGroup;
+			children = (
+				7960579423E4827800E7C540 /* LetterheadPrinting.swift */,
+				7960579523E4827800E7C540 /* WPCM Letterhead Blank Cropped.pdf */,
+			);
+			path = "Printing To Letterhead";
 			sourceTree = "<group>";
 		};
 		798A8F7D20E3F4F60036A74C /* Mood */ = {
@@ -609,6 +623,7 @@
 				79AFE1CE2188A124007F4A5E /* ROS.storyboard in Resources */,
 				79B860352358BCB3009CF5CD /* Questionnaires.storyboard in Resources */,
 				79AFE1D12188A223007F4A5E /* PhysicalExam.storyboard in Resources */,
+				7960579723E4827800E7C540 /* WPCM Letterhead Blank Cropped.pdf in Resources */,
 				795C875321B71BD700E99E0C /* Doc.storyboard in Resources */,
 				791320652077C85200CB1537 /* Main.storyboard in Resources */,
 			);
@@ -686,6 +701,7 @@
 				79CCA6D32090D49F00909285 /* Lymph Model.swift in Sources */,
 				79CCA6AC2090B73F00909285 /* RadRefModel.swift in Sources */,
 				791320602077C85100CB1537 /* Document.swift in Sources */,
+				7960579623E4827800E7C540 /* LetterheadPrinting.swift in Sources */,
 				798BBB4920939617002A28AA /* PHQ9Model.swift in Sources */,
 				79CCA6D12090D49F00909285 /* CVChestGILymph VC.swift in Sources */,
 				79CCA6C82090D16500909285 /* Neck Model.swift in Sources */,
@@ -869,7 +885,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b5;
+				CURRENT_PROJECT_VERSION = b6;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -892,7 +908,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b5;
+				CURRENT_PROJECT_VERSION = b6;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

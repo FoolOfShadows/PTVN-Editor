@@ -24,38 +24,41 @@ class CheckOutVC: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let theUserFont:NSFont = NSFont.systemFont(ofSize: 16)
+        let fontAttributes = NSDictionary(object: theUserFont, forKey: kCTFontAttributeName as! NSCopying)
+        notesView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         
         demoView.stringValue = """
-        \(theData.ptName)
-        Visit date: \(theData.visitDate)
+\(theData.ptName)       Visit date: \(theData.visitDate)
 """
 notesView.string = prepDataForView()
     }
     
     @IBAction func printCheckOutReport(_ sender: Any) {
         let results = """
-Whelchel Primary Care Medicine Patient Visit Summary
 
 \(demoView.stringValue)
         
 \(notesView.string)
 """
-        
+        //FIXME: Need to print this to letterhead
+        //FIXME: Will need to calculate the font size like in the LabLetter module
         let printTextView = NSTextView()
         printTextView.setFrameSize(NSSize(width: 680, height: 0))
+        printTextView.textStorage?.font = NSFont(name: "Times New Roman", size: 14)
         printTextView.string = results
-        printTextView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
         
         
-        let myPrintInfo = NSPrintInfo.shared
+//        let myPrintInfo = NSPrintInfo.shared
+//
+//        myPrintInfo.leftMargin = 40
+//        myPrintInfo.bottomMargin = 40
+//        myPrintInfo.isVerticallyCentered = false
+//
+//        let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
+//        myPrintOperation.run()
         
-        myPrintInfo.leftMargin = 40
-        myPrintInfo.bottomMargin = 40
-        myPrintInfo.isVerticallyCentered = false
-        
-        let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
-        myPrintOperation.run()
-        self.dismiss(self)
+        printLetterheadWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: true, defaultCopies: 1)
     }
     
     private func prepDataForView() -> String {
@@ -67,19 +70,19 @@ Whelchel Primary Care Medicine Patient Visit Summary
         var planValues = String()
         
         if !theData.medicines.isEmpty {
-            medValues = "Medications for this visit:\n\(theData.medicines)"
+            medValues = "Medications active for this visit:\n\(theData.medicines)"
         }
         let refills = theData.plan.getLinesStartingWith("~~").joined(separator: "\n").cleanTheTextOf(["~~"])
         if !refills.isEmpty {
-            refillValues = "Medications being prescribed:\n\(refills)"
+            refillValues = "Medications being prescribed/refilled this visit:\n(New medications will be called in within 4 hours of your visit, refills by the end of the day)\n\(refills)"
         }
         let refrad = theData.plan.getLinesStartingWith("••").joined(separator: "\n").cleanTheTextOf(["••"])
         if !refrad.isEmpty {
-            radValues = "Referrals/Radiology being ordered:\n\(refrad)"
+            radValues = "Referrals/Radiology being ordered:\n(We will call you when the test or referral has been scheduled)\n\(refrad)"
         }
         let assessment = theData.assessment.removeWhiteSpace()
         if !assessment.isEmpty {
-            assessmentValues = "Diagnoses this visit:\n\(assessment.replacingOccurrences(of: "Lvl", with: "Visit level"))"
+            assessmentValues = "Active diagnoses this visit:\n\(assessment.replacingOccurrences(of: "Lvl", with: "Visit level"))"
         }
         let objective = theData.objective
         //if !objective.isEmpty {

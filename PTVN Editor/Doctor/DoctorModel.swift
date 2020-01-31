@@ -46,6 +46,10 @@ struct DataReview {
 			case 18: resultArray.append( "Patient declines mammogram")
 			case 25: resultArray.append("Patient has requested early refills on pain medications.  Patient admonished regarding health risks and consequences of overtaking pain medications and strongly admonished to take the medication as prescribed and referred to the pain treatment agreement.")
             case 50: resultArray.append("The patient would benefit from a back brace to support weak spinal muscles and reduce pain by restricting trunk mobility.")
+            case 51: resultArray.append("Patient qualifies for CPAP with a respiratory disturbance index equal to or greater than 15, or between 5 and 14 with comorbidities.")
+            case 52: resultArray.append("Patient qualifies for oxygen with a pulse ox less than or qual to 89% for five minutes or more.")
+            case 53: resultArray.append("Patient qualifies for oxygen with lowest oxygen desaturation = 80% on room air and oxygen saturation less than or equal to 89? for 48 min.")
+            case 54: resultArray.append("Bedside commode")
 			default: continue
 			}
 		}
