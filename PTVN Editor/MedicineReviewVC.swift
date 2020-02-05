@@ -117,6 +117,11 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         self.dismiss(self)
     }
     
+    @IBAction func changeMeds(_ sender: Any?) {
+        //Take selected med and present a form to adjust their sig or change to a different medication
+        //Keep the current sig/med and match it to the changed sig/med
+    }
+    
     let pharmacies = ["", "Krogers", "Matthewsons", "Walgreens", "Super1", "Walmart", "CVS", "Killions", "Humana", "Express Scripts", "Optum Rx", "Walmart (Carthage)", "Super1 (Tyler)", "Krogers (Longview)", "City Drug", "Well Dynamix", "Davita Rx", "Walmart (4th St.)", "Written script"]
     
 }

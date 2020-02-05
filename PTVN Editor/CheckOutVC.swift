@@ -29,7 +29,9 @@ class CheckOutVC: NSViewController {
         notesView.typingAttributes = fontAttributes as! [NSAttributedString.Key : Any]
         
         demoView.stringValue = """
-\(theData.ptName)       Visit date: \(theData.visitDate)
+\(theData.ptName)
+        
+Summary of your visit with Dr. Dawn Whelchel on \(theData.visitDate).
 """
 notesView.string = prepDataForView()
     }
@@ -57,8 +59,8 @@ notesView.string = prepDataForView()
 //
 //        let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
 //        myPrintOperation.run()
-        
-        printLetterheadWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: true, defaultCopies: 1)
+        printBlankPageWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: true)
+        //printLetterheadWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: true, defaultCopies: 1)
     }
     
     private func prepDataForView() -> String {

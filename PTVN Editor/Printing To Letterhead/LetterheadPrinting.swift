@@ -29,6 +29,11 @@ func printLetterheadWithText(_ text:String, fontName:String = "Times New Roman",
     let printOpts: [NSPrintInfo.AttributeKey: Any] = [NSPrintInfo.AttributeKey.copies: copies]
     let printInfo = NSPrintInfo(dictionary: printOpts)
     //This gets really close to fitting
+    printInfo.horizontalPagination = .automatic
+    printInfo.verticalPagination = .automatic
+    printInfo.isVerticallyCentered = false
+    
+    
     printInfo.leftMargin = 0
     printInfo.rightMargin = 0
     printInfo.isHorizontallyCentered = false
@@ -50,7 +55,7 @@ func printLetterheadWithText(_ text:String, fontName:String = "Times New Roman",
     
 }
 
-func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", fontSize: CGFloat = 12.0, window: NSWindow) {
+func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", fontSize: CGFloat = 12.0, window: NSWindow, andCloseWindow close: Bool = false, defaultCopies copies:Int = 1) {
     let textView = NSTextView(frame: NSRect(origin: .zero, size: CGSize(width: 612, height: 734)))
     
     
@@ -62,14 +67,25 @@ func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", 
     
     let printInfo = NSPrintInfo.shared
     //This gets really close to fitting
-    printInfo.leftMargin = 0
-    printInfo.rightMargin = 0
+    printInfo.horizontalPagination = .fit
+    printInfo.verticalPagination = .automatic
+    printInfo.isVerticallyCentered = false
+    
+    printInfo.leftMargin = 70
+    printInfo.rightMargin = 70
     printInfo.isHorizontallyCentered = false
     printInfo.topMargin = -600
     printInfo.bottomMargin = -100
     
     let operation:NSPrintOperation = NSPrintOperation(view: textView, printInfo: printInfo)
-    operation.runModal(for: window, delegate: nil, didRun: nil, contextInfo: nil)
+    
+    var theSelector:Selector? = nil
+    if close == true {
+        theSelector = #selector(window.close)
+
+    }
+    
+    operation.runModal(for: window, delegate: window, didRun: theSelector, contextInfo: nil)
     //operation.run()
     
 }
