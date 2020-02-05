@@ -64,6 +64,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var assessmentList = [String]()
     var chosenAssessmentList = [String]()
     
+    var followupInfo = (first:String(), second:String(), third:String())
+    
     //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
     var document = Document()
@@ -318,6 +320,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             case "showCheckOut":
                 if let toViewController = segue.destinationController as? CheckOutVC {
                     toViewController.currentPTVNDelegate = self
+                    theData.createFollowup(firstBit: followupInfo.first, secondBit: followupInfo.second.lowercased(), thirdBit: followupInfo.third)
+                    //print(theData.plan)
                     toViewController.theData = theData
                 }
             case "showMood":
@@ -662,6 +666,16 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
 //            }
 //        }
         
+    }
+    
+    @IBAction func getFirstFUPart(_ sender: NSButton) {
+        followupInfo.first = sender.title
+    }
+    @IBAction func getSecondFUPart(_ sender: NSButton) {
+        followupInfo.second = sender.title
+    }
+    @IBAction func getThirdFUPart(_ sender: NSButton) {
+        followupInfo.third = sender.title
     }
 
     

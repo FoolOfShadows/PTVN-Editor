@@ -1424,7 +1424,7 @@
                                                     <rect key="frame" x="17" y="276" width="467" height="338"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="9sE-BL-XR6">
                                                         <rect key="frame" x="1" y="1" width="450" height="336"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="55Z-3a-wRD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="336"/>
@@ -1451,24 +1451,24 @@
                                                     </scroller>
                                                 </scrollView>
                                                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-H4-zXi">
-                                                    <rect key="frame" x="528" y="123" width="568" height="491"/>
+                                                    <rect key="frame" x="528" y="198" width="568" height="416"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="HP4-nl-CLf">
-                                                        <rect key="frame" x="1" y="1" width="551" height="489"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <rect key="frame" x="1" y="1" width="551" height="414"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ubd-KL-0zL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="551" height="489"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="551" height="414"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="551" height="489"/>
+                                                                <size key="minSize" width="551" height="414"/>
                                                                 <size key="maxSize" width="581" height="10000000"/>
                                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             </textView>
                                                         </subviews>
                                                     </clipView>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="491" id="bwd-td-FMd"/>
+                                                        <constraint firstAttribute="height" constant="416" id="bwd-td-FMd"/>
                                                         <constraint firstAttribute="width" constant="568" id="lcc-Em-Mp9"/>
                                                     </constraints>
                                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="wkX-VZ-7T3">
@@ -1476,7 +1476,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Z1v-GH-YeO">
-                                                        <rect key="frame" x="552" y="1" width="15" height="489"/>
+                                                        <rect key="frame" x="552" y="1" width="15" height="414"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -1582,7 +1582,7 @@
                                                     <rect key="frame" x="118" y="58" width="366" height="210"/>
                                                     <clipView key="contentView" id="MLM-dU-hKz">
                                                         <rect key="frame" x="1" y="0.0" width="364" height="209"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="jmx-Nv-8Jp" viewBased="YES" id="LAh-rS-x3B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="184"/>
@@ -1593,7 +1593,7 @@
                                                                 <tableColumns>
                                                                     <tableColumn width="40" minWidth="40" maxWidth="1000" id="dJ4-Fk-kTW">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                            <font key="font" metaFont="message" size="11"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1629,7 +1629,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn width="318" minWidth="40" maxWidth="1000" id="gWI-X2-aRy">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Assessment">
-                                                                            <font key="font" metaFont="message" size="11"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1900,15 +1900,297 @@
                                                         <action selector="markAsCharged:" target="5gI-5U-AMq" id="dce-nR-mgB"/>
                                                     </connections>
                                                 </button>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-FC-3di">
+                                                    <rect key="frame" x="528" y="128" width="422" height="62"/>
+                                                    <subviews>
+                                                        <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ov-4Y-6Mr">
+                                                            <rect key="frame" x="0.0" y="46" width="422" height="16"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="stT-pe-Hpd">
+                                                                    <rect key="frame" x="-1" y="-1" width="28" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="1" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="4IK-1F-6zV">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="Ipj-gK-eFf"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uwb-1i-vk7">
+                                                                    <rect key="frame" x="46" y="-1" width="30" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="2" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="myd-Iv-sNS">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="jGd-J7-zQ3"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p7E-lF-stB">
+                                                                    <rect key="frame" x="95" y="-1" width="31" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="3" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="dZZ-zA-6ew">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="qbg-J0-whi"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pjq-0C-0Sk">
+                                                                    <rect key="frame" x="145" y="-1" width="31" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="4" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="626-C9-7uO">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="qy2-Xx-stS"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KDH-KK-hJH">
+                                                                    <rect key="frame" x="195" y="-1" width="30" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="5" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="TH4-EY-Vrq">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="6nX-3c-r7n"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-bb-Hi6">
+                                                                    <rect key="frame" x="244" y="-1" width="31" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="6" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="CIM-vO-HDD">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="Fsh-31-YIE"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WWp-ca-v7H">
+                                                                    <rect key="frame" x="294" y="-1" width="30" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="7" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="yWv-Ag-HXd">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="Gkc-GX-icF"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TC5-aW-NLU">
+                                                                    <rect key="frame" x="343" y="-1" width="31" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="8" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="azU-Ow-Rmh">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="3xB-Ob-saW"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRm-eh-dYv">
+                                                                    <rect key="frame" x="393" y="-1" width="31" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="9" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="XJ3-Rz-2p4">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getFirstFUPart:" target="5gI-5U-AMq" id="YLY-XU-bIz"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                        <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="28" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANz-qr-5Of">
+                                                            <rect key="frame" x="0.0" y="23" width="362" height="16"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hRu-AV-zgl">
+                                                                    <rect key="frame" x="-1" y="-1" width="46" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="Day" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="WPf-Em-vnd">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getSecondFUPart:" target="5gI-5U-AMq" id="QZt-MN-ikB"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pR4-WT-987">
+                                                                    <rect key="frame" x="70" y="-1" width="56" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="Week" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="v5L-Dh-aPS">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getSecondFUPart:" target="5gI-5U-AMq" id="T6y-rP-Ywv"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="upj-lO-waf">
+                                                                    <rect key="frame" x="151" y="-1" width="61" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="Month" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="6Rn-iD-X96">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getSecondFUPart:" target="5gI-5U-AMq" id="lai-KW-Cjf"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yjj-1W-Xix">
+                                                                    <rect key="frame" x="237" y="-1" width="49" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="Year" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="hA2-FH-1ls">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getSecondFUPart:" target="5gI-5U-AMq" id="a9X-uA-Wfd"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="clX-82-CJs">
+                                                                    <rect key="frame" x="311" y="-1" width="53" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="Keep" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ahv-R4-VSW">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getSecondFUPart:" target="5gI-5U-AMq" id="UuO-vx-bEp"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                        <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnQ-J6-q6c">
+                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="16"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zex-Rb-BEJ">
+                                                                    <rect key="frame" x="-1" y="-1" width="36" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="15" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Wpg-o0-ttn">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getThirdFUPart:" target="5gI-5U-AMq" id="wgg-kj-DkX"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-Ah-76J">
+                                                                    <rect key="frame" x="52" y="-1" width="38" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="20" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lju-eW-9ZG">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getThirdFUPart:" target="5gI-5U-AMq" id="wRC-eE-90f"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GRW-yE-YSI">
+                                                                    <rect key="frame" x="107" y="-1" width="38" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="25" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="wcT-Lb-OFd">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getThirdFUPart:" target="5gI-5U-AMq" id="l8m-y0-0jJ"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iZ7-Ph-a8B">
+                                                                    <rect key="frame" x="162" y="-1" width="39" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="30" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="nS2-yL-0l6">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getThirdFUPart:" target="5gI-5U-AMq" id="VBJ-nE-WrC"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ahQ-bQ-LYo">
+                                                                    <rect key="frame" x="218" y="-1" width="39" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="35" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="MTs-0V-1Ot">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getThirdFUPart:" target="5gI-5U-AMq" id="cr9-a5-iq2"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-5H-el6">
+                                                                    <rect key="frame" x="274" y="-1" width="39" height="18"/>
+                                                                    <buttonCell key="cell" type="radio" title="40" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="c7c-2O-HFA">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="getThirdFUPart:" target="5gI-5U-AMq" id="KD4-kg-AfP"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xkU-vL-SQ1" firstAttribute="leading" secondItem="V5b-yB-t9s" secondAttribute="trailing" constant="8" id="1JI-9f-IWz"/>
                                                 <constraint firstItem="Lao-2K-ey8" firstAttribute="top" secondItem="yv2-gU-qId" secondAttribute="top" constant="26" id="2V2-1y-7RB"/>
                                                 <constraint firstItem="LBn-RF-HBw" firstAttribute="leading" secondItem="s5U-fs-ko5" secondAttribute="leading" id="4VH-k5-4NJ"/>
-                                                <constraint firstItem="s5U-fs-ko5" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="13" id="6ZN-zY-qAr"/>
+                                                <constraint firstItem="s5U-fs-ko5" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="88" id="6ZN-zY-qAr"/>
                                                 <constraint firstAttribute="trailing" secondItem="uW7-H4-zXi" secondAttribute="trailing" constant="17" id="6gO-2Y-P2e"/>
                                                 <constraint firstItem="jDt-dZ-J2r" firstAttribute="top" secondItem="Lao-2K-ey8" secondAttribute="bottom" constant="39" id="80K-lB-xcP"/>
-                                                <constraint firstItem="bJA-m0-W4P" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="12" id="Ae2-Tc-hhJ"/>
+                                                <constraint firstItem="bJA-m0-W4P" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="87" id="Ae2-Tc-hhJ"/>
                                                 <constraint firstItem="Lao-2K-ey8" firstAttribute="leading" secondItem="yv2-gU-qId" secondAttribute="leading" constant="17" id="BFX-vg-sXT"/>
                                                 <constraint firstItem="k9m-Nq-iJZ" firstAttribute="leading" secondItem="hPB-at-XUv" secondAttribute="trailing" constant="12" id="CgQ-nx-8hx"/>
                                                 <constraint firstItem="LBn-RF-HBw" firstAttribute="top" secondItem="s5U-fs-ko5" secondAttribute="bottom" constant="19" id="D7X-d6-Gtm"/>
@@ -1930,7 +2212,7 @@
                                                 <constraint firstItem="hPB-at-XUv" firstAttribute="top" secondItem="8gB-SE-469" secondAttribute="bottom" constant="18" id="fT2-dc-teH"/>
                                                 <constraint firstItem="fw6-Dn-maC" firstAttribute="leading" secondItem="ubd-KL-0zL" secondAttribute="leading" id="inH-yc-1kT"/>
                                                 <constraint firstItem="s5U-fs-ko5" firstAttribute="leading" secondItem="uW7-H4-zXi" secondAttribute="leading" id="kYJ-XA-iq4"/>
-                                                <constraint firstItem="e7V-f0-M3S" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="14" id="omp-7b-7qx"/>
+                                                <constraint firstItem="e7V-f0-M3S" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="89" id="omp-7b-7qx"/>
                                                 <constraint firstItem="V5b-yB-t9s" firstAttribute="leading" secondItem="yv2-gU-qId" secondAttribute="leading" constant="17" id="pJC-Qh-kiX"/>
                                                 <constraint firstItem="Db4-9h-eNJ" firstAttribute="leading" secondItem="ubd-KL-0zL" secondAttribute="leading" id="qTx-pW-AoS"/>
                                                 <constraint firstItem="8gB-SE-469" firstAttribute="leading" secondItem="LBn-RF-HBw" secondAttribute="trailing" constant="8" id="uMH-YH-9Ot"/>
@@ -2720,7 +3002,7 @@
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="541"/>
+            <point key="canvasLocation" x="-58" y="540.5"/>
         </scene>
         <!--MoodVC-->
         <scene sceneID="SUq-zg-tG4">
@@ -2746,7 +3028,7 @@
                                             <tableColumns>
                                                 <tableColumn width="628" minWidth="40" maxWidth="1000" id="ret-HX-GCF">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -2779,7 +3061,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="53" minWidth="40" maxWidth="1000" id="nUh-yo-sHK">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -2811,7 +3093,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="57" minWidth="10" maxWidth="3.4028234663852886e+38" id="brX-RK-Gn1">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -2897,7 +3179,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TKf-35-Z65">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="mRE-0R-5yG"/>
@@ -2908,7 +3190,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ink-Yv-QlM">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="OxR-Mf-cQU"/>
@@ -3007,7 +3289,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="P92-rq-wXx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
@@ -3018,7 +3300,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Su-rw-6aG">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
@@ -3044,7 +3326,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N8W-CG-84k">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="FKH-Bu-Hx5"/>
@@ -3055,7 +3337,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
@@ -5786,7 +6068,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient complains of (TRUE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="pSt-sL-BH7" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="menu" size="14"/>
+                                    <font key="font" metaFont="label" size="14"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-1z-EUB">
@@ -5794,7 +6076,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient denies (FALSE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="zo1-TP-KHw" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="menu" size="14"/>
+                                    <font key="font" metaFont="label" size="14"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -12116,7 +12398,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="49" y="1" width="646" height="20"/>
+                                                            <rect key="frame" x="48.5" y="1" width="646" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">

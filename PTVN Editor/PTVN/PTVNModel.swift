@@ -106,6 +106,7 @@ class PTVN {
     var subjective = String()
     var plan = String()
     var pharmacy = String()
+    var followupInfo = String()
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
@@ -139,6 +140,27 @@ class PTVN {
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue, self.problems, SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
+    }
+    
+    func createFollowup(firstBit:String, secondBit:String, thirdBit:String) {
+        var results = String()
+        var plural = String()
+        if let isNumber = Int(firstBit) {
+            if isNumber != 1 {
+                plural = "s"
+            }
+        }
+        if !firstBit.isEmpty && !secondBit.isEmpty {
+            results = "Schedule follow up appointment in \(firstBit) \(secondBit)\(plural)"
+        }
+        if !thirdBit.isEmpty {
+            results += " for \(thirdBit) minutes."
+        }
+        
+        if secondBit == "keep" {
+            results = "Keep previously scheduled appointment."
+        }
+        followupInfo = results
     }
     
     
