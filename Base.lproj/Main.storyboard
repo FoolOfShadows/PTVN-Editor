@@ -1593,7 +1593,7 @@
                                                                 <tableColumns>
                                                                     <tableColumn width="40" minWidth="40" maxWidth="1000" id="dJ4-Fk-kTW">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                            <font key="font" metaFont="label" size="11"/>
+                                                                            <font key="font" metaFont="message" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1629,7 +1629,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn width="318" minWidth="40" maxWidth="1000" id="gWI-X2-aRy">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Assessment">
-                                                                            <font key="font" metaFont="label" size="11"/>
+                                                                            <font key="font" metaFont="message" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1900,7 +1900,7 @@
                                                         <action selector="markAsCharged:" target="5gI-5U-AMq" id="dce-nR-mgB"/>
                                                     </connections>
                                                 </button>
-                                                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-FC-3di">
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-FC-3di">
                                                     <rect key="frame" x="528" y="128" width="422" height="62"/>
                                                     <subviews>
                                                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ov-4Y-6Mr">
@@ -2201,9 +2201,11 @@
                                                 <constraint firstItem="r21-cP-M52" firstAttribute="leading" secondItem="yv2-gU-qId" secondAttribute="leading" constant="118" id="LAW-SH-bRz"/>
                                                 <constraint firstItem="VnC-md-D4D" firstAttribute="trailing" secondItem="LAh-rS-x3B" secondAttribute="trailing" id="LQS-5z-WHn"/>
                                                 <constraint firstItem="xkU-vL-SQ1" firstAttribute="top" secondItem="r21-cP-M52" secondAttribute="bottom" constant="23" id="LUd-Ij-LGy"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZuK-FC-3di" secondAttribute="trailing" constant="163" id="LnS-Y0-guL"/>
                                                 <constraint firstItem="VnC-md-D4D" firstAttribute="top" secondItem="r21-cP-M52" secondAttribute="bottom" constant="20" id="QFQ-gA-DzK"/>
                                                 <constraint firstItem="55Z-3a-wRD" firstAttribute="top" secondItem="hSB-sO-u2r" secondAttribute="bottom" constant="9" id="QNC-Tm-BtB"/>
                                                 <constraint firstItem="uW7-H4-zXi" firstAttribute="leading" secondItem="Lao-2K-ey8" secondAttribute="trailing" constant="44" id="Qrb-ge-gqU"/>
+                                                <constraint firstItem="bJA-m0-W4P" firstAttribute="top" secondItem="ZuK-FC-3di" secondAttribute="bottom" constant="17" id="ROk-WD-NOL"/>
                                                 <constraint firstItem="8gB-SE-469" firstAttribute="top" secondItem="bJA-m0-W4P" secondAttribute="bottom" constant="9" id="TBS-Q1-AW9"/>
                                                 <constraint firstItem="2TG-da-MEL" firstAttribute="top" secondItem="8gB-SE-469" secondAttribute="bottom" constant="21" id="U2k-s3-TzM"/>
                                                 <constraint firstItem="r21-cP-M52" firstAttribute="top" secondItem="Lao-2K-ey8" secondAttribute="bottom" constant="8" id="Yce-z3-fGb"/>
@@ -2215,11 +2217,13 @@
                                                 <constraint firstItem="e7V-f0-M3S" firstAttribute="top" secondItem="uW7-H4-zXi" secondAttribute="bottom" constant="89" id="omp-7b-7qx"/>
                                                 <constraint firstItem="V5b-yB-t9s" firstAttribute="leading" secondItem="yv2-gU-qId" secondAttribute="leading" constant="17" id="pJC-Qh-kiX"/>
                                                 <constraint firstItem="Db4-9h-eNJ" firstAttribute="leading" secondItem="ubd-KL-0zL" secondAttribute="leading" id="qTx-pW-AoS"/>
+                                                <constraint firstItem="ZuK-FC-3di" firstAttribute="top" secondItem="ubd-KL-0zL" secondAttribute="bottom" constant="9" id="rR4-FF-zGf"/>
                                                 <constraint firstItem="8gB-SE-469" firstAttribute="leading" secondItem="LBn-RF-HBw" secondAttribute="trailing" constant="8" id="uMH-YH-9Ot"/>
                                                 <constraint firstItem="e7V-f0-M3S" firstAttribute="leading" secondItem="bJA-m0-W4P" secondAttribute="trailing" constant="8" id="vAe-7F-n7e"/>
                                                 <constraint firstItem="fw6-Dn-maC" firstAttribute="top" secondItem="8gB-SE-469" secondAttribute="bottom" constant="18" id="wa0-Pc-6b4"/>
                                                 <constraint firstItem="2TG-da-MEL" firstAttribute="leading" secondItem="fw6-Dn-maC" secondAttribute="trailing" constant="10" id="yil-R7-sPu"/>
                                                 <constraint firstItem="hSB-sO-u2r" firstAttribute="leading" secondItem="55Z-3a-wRD" secondAttribute="leading" id="yv4-Hd-NoC"/>
+                                                <constraint firstItem="ZuK-FC-3di" firstAttribute="leading" secondItem="LAh-rS-x3B" secondAttribute="trailing" constant="45" id="zdK-Zw-jel"/>
                                                 <constraint firstItem="ubd-KL-0zL" firstAttribute="top" secondItem="Db4-9h-eNJ" secondAttribute="bottom" constant="9" id="zfj-N4-x8b"/>
                                             </constraints>
                                         </view>
@@ -3028,7 +3032,7 @@
                                             <tableColumns>
                                                 <tableColumn width="628" minWidth="40" maxWidth="1000" id="ret-HX-GCF">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -3061,7 +3065,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="53" minWidth="40" maxWidth="1000" id="nUh-yo-sHK">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -3093,7 +3097,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="57" minWidth="10" maxWidth="3.4028234663852886e+38" id="brX-RK-Gn1">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -3179,7 +3183,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TKf-35-Z65">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="mRE-0R-5yG"/>
@@ -3190,7 +3194,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ink-Yv-QlM">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="OxR-Mf-cQU"/>
@@ -3289,7 +3293,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="P92-rq-wXx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
@@ -3300,7 +3304,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Su-rw-6aG">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
@@ -3326,7 +3330,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N8W-CG-84k">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="FKH-Bu-Hx5"/>
@@ -3337,7 +3341,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
@@ -6068,7 +6072,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient complains of (TRUE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="pSt-sL-BH7" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="label" size="14"/>
+                                    <font key="font" metaFont="menu" size="14"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-1z-EUB">
@@ -6076,7 +6080,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient denies (FALSE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="zo1-TP-KHw" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="label" size="14"/>
+                                    <font key="font" metaFont="menu" size="14"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -12398,7 +12402,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="48.5" y="1" width="646" height="20"/>
+                                                            <rect key="frame" x="49" y="1" width="646" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
