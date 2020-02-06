@@ -8,13 +8,24 @@
 
 import Cocoa
 
-class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+protocol ChangeMedDelegate: class {
+    var currentMed:String { get set }
+    var changedMeds:[String] { get set }
+    var theData:PTVN { get set }
+}
+
+class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource, ChangeMedDelegate {
+    
+    
 
     @IBOutlet weak var currentMedsTableView: NSTableView!
     @IBOutlet weak var pharmacyCombo: NSComboBox!
     
     var medListArray = [String]()
     var chosenMeds = [String]()
+    
+    var currentMed = String()
+    var changedMeds = [String]()
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
@@ -84,6 +95,7 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     @IBAction func returnResults(_ sender:Any) {
+        print("Changed Meds: \(changedMeds.joined(separator: "/n"))")
         let firstVC = presentingViewController as! ViewController
         var results = medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n")
         if !results.isEmpty {
@@ -96,6 +108,7 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         if !pharmacyCombo.stringValue.isEmpty && pharmacyCombo.stringValue != theData.pharmacy {
             theData.pharmacy = pharmacyCombo.stringValue
         }
+        
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
         self.dismiss(self)
@@ -118,10 +131,24 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     @IBAction func changeMeds(_ sender: Any?) {
+        let currentRow = currentMedsTableView.row(for: sender as! NSView)
+        let currentCellView = currentMedsTableView.rowView(atRow: currentRow, makeIfNecessary: false)?.view(atColumn: 1) as! NSTableCellView
+        guard let currentText = currentCellView.textField?.stringValue else { return }
+        currentMed = currentText
+        performSegue(withIdentifier: "showChangeMed", sender: self)
         //Take selected med and present a form to adjust their sig or change to a different medication
         //Keep the current sig/med and match it to the changed sig/med
     }
     
     let pharmacies = ["", "Krogers", "Matthewsons", "Walgreens", "Super1", "Walmart", "CVS", "Killions", "Humana", "Express Scripts", "Optum Rx", "Walmart (Carthage)", "Super1 (Tyler)", "Krogers (Longview)", "City Drug", "Well Dynamix", "Davita Rx", "Walmart (4th St.)", "Written script"]
     
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChangeMed" {
+            if let toViewController = segue.destinationController as? ChangeMedsVC {
+                toViewController.currentChangeMedDelegate = self
+                toViewController.currentMed = self.currentMed
+                toViewController.theData = self.theData
+            }
+        }
+    }
 }

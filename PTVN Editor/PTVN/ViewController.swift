@@ -321,7 +321,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                 if let toViewController = segue.destinationController as? CheckOutVC {
                     toViewController.currentPTVNDelegate = self
                     theData.createFollowup(firstBit: followupInfo.first, secondBit: followupInfo.second.lowercased(), thirdBit: followupInfo.third)
-                    //print(theData.plan)
+                    theData.plan.addToExistingText(theData.followupInfo)
+                    returnPTVNValues(sender: self)
                     toViewController.theData = theData
                 }
             case "showMood":

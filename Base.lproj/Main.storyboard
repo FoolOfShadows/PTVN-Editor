@@ -3182,7 +3182,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TKf-35-Z65">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="mRE-0R-5yG"/>
@@ -3193,7 +3193,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ink-Yv-QlM">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="OxR-Mf-cQU"/>
@@ -3292,7 +3292,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="P92-rq-wXx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
@@ -3303,7 +3303,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Su-rw-6aG">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
@@ -3329,7 +3329,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N8W-CG-84k">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="FKH-Bu-Hx5"/>
@@ -3340,7 +3340,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
@@ -6071,7 +6071,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient complains of (TRUE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="pSt-sL-BH7" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="menu" size="14"/>
+                                    <font key="font" metaFont="label" size="14"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-1z-EUB">
@@ -6079,7 +6079,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient denies (FALSE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="zo1-TP-KHw" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="menu" size="14"/>
+                                    <font key="font" metaFont="label" size="14"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -12387,7 +12387,7 @@ Gw
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="646.5" minWidth="40" maxWidth="1000" id="LRG-pZ-QLQ">
+                                                <tableColumn width="935" minWidth="40" maxWidth="1000" id="LRG-pZ-QLQ">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -12401,11 +12401,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="49" y="1" width="646" height="20"/>
+                                                            <rect key="frame" x="49" y="1" width="935" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
-                                                                    <rect key="frame" x="0.0" y="3" width="646" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="3" width="935" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="Bib-06-o4w">
                                                                         <font key="font" metaFont="system" size="16"/>
@@ -12423,6 +12423,38 @@ Gw
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
+                                                <tableColumn width="69.5" minWidth="10" maxWidth="3.4028234663852886e+38" id="mEX-hm-oQJ">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="kAw-26-M3f">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="0xf-SJ-a06">
+                                                            <rect key="frame" x="987" y="1" width="69" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <button identifier="changeButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-NF-Ct9">
+                                                                    <rect key="frame" x="3" y="-3" width="55" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="inline" title="Change" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Nyt-ER-jdx">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="smallSystemBold"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="changeMeds:" target="sDR-c2-ARI" id="Ve8-sD-tSl"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
                                             </tableColumns>
                                             <connections>
                                                 <outlet property="dataSource" destination="Zlg-Kc-hTP" id="mQO-AI-98P"/>
@@ -12431,8 +12463,8 @@ Gw
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="WzS-kR-Uf4">
-                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="WzS-kR-Uf4">
+                                    <rect key="frame" x="1" y="403" width="1340" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="2ni-Uj-CDJ">
@@ -12519,6 +12551,7 @@ Gw
                     <connections>
                         <outlet property="currentMedsTableView" destination="guZ-eB-TLv" id="grU-Xl-idF"/>
                         <outlet property="pharmacyCombo" destination="OCB-iI-cdg" id="jlv-Jl-Nfz"/>
+                        <segue destination="THV-IC-Sfz" kind="modal" identifier="showChangeMed" id="6HJ-p8-W5K"/>
                     </connections>
                 </viewController>
                 <customObject id="sDR-c2-ARI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -13395,6 +13428,90 @@ Gw
                 <customObject id="ZWl-tc-SmG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1638" y="4246"/>
+        </scene>
+        <!--Change MedsVC-->
+        <scene sceneID="agI-HR-mYQ">
+            <objects>
+                <viewController id="THV-IC-Sfz" customClass="ChangeMedsVC" customModule="PTVN_Editor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="rMV-lU-cLf">
+                        <rect key="frame" x="0.0" y="0.0" width="668" height="181"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGr-GE-u96">
+                                <rect key="frame" x="19" y="145" width="631" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Current Med" id="6y2-TD-3ER">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9pI-rM-YH6">
+                                <rect key="frame" x="20" y="62" width="628" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Changed Med" drawsBackground="YES" id="X23-jM-IGb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nDt-fE-tlE">
+                                <rect key="frame" x="298" y="94" width="72" height="32"/>
+                                <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M3Q-6s-xBZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="copyCurrentToChanged:" target="THV-IC-Sfz" id="OSh-sP-S7i"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZT3-oc-aBw">
+                                <rect key="frame" x="565" y="13" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Process" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qez-tC-zj5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="processChange:" target="THV-IC-Sfz" id="8YR-zL-T4B"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="78h-Gw-UUL">
+                                <rect key="frame" x="455" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="knC-8o-d0e">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="THV-IC-Sfz" id="mlJ-3V-8Y2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9pI-rM-YH6" firstAttribute="top" secondItem="nDt-fE-tlE" secondAttribute="bottom" constant="18" id="7Dq-lo-MaV"/>
+                            <constraint firstItem="ZT3-oc-aBw" firstAttribute="leading" secondItem="78h-Gw-UUL" secondAttribute="trailing" constant="40" id="DFx-by-x1g"/>
+                            <constraint firstItem="78h-Gw-UUL" firstAttribute="leading" secondItem="rMV-lU-cLf" secondAttribute="leading" constant="461" id="Fxx-2F-POl"/>
+                            <constraint firstItem="TGr-GE-u96" firstAttribute="leading" secondItem="rMV-lU-cLf" secondAttribute="leading" constant="21" id="JKh-Tw-lmk"/>
+                            <constraint firstItem="nDt-fE-tlE" firstAttribute="top" secondItem="TGr-GE-u96" secondAttribute="bottom" constant="23" id="OEq-7g-gQ3"/>
+                            <constraint firstItem="9pI-rM-YH6" firstAttribute="leading" secondItem="rMV-lU-cLf" secondAttribute="leading" constant="20" id="PJP-Tg-aol"/>
+                            <constraint firstAttribute="trailing" secondItem="nDt-fE-tlE" secondAttribute="trailing" constant="304" id="Rfb-1x-PXc"/>
+                            <constraint firstItem="TGr-GE-u96" firstAttribute="top" secondItem="rMV-lU-cLf" secondAttribute="top" constant="20" id="ZO3-4M-BkM"/>
+                            <constraint firstItem="ZT3-oc-aBw" firstAttribute="top" secondItem="9pI-rM-YH6" secondAttribute="bottom" constant="21" id="cvF-DS-TET"/>
+                            <constraint firstAttribute="trailing" secondItem="ZT3-oc-aBw" secondAttribute="trailing" constant="20" id="j9V-4f-1ew"/>
+                            <constraint firstItem="78h-Gw-UUL" firstAttribute="top" secondItem="9pI-rM-YH6" secondAttribute="bottom" constant="21" id="rni-Hj-kQ9"/>
+                            <constraint firstItem="nDt-fE-tlE" firstAttribute="leading" secondItem="rMV-lU-cLf" secondAttribute="leading" constant="304" id="t14-w4-RTL"/>
+                            <constraint firstAttribute="trailing" secondItem="TGr-GE-u96" secondAttribute="trailing" constant="20" id="xjZ-2p-F7t"/>
+                            <constraint firstAttribute="trailing" secondItem="9pI-rM-YH6" secondAttribute="trailing" constant="20" id="ycZ-H6-lPw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changedMedView" destination="9pI-rM-YH6" id="Nif-gx-3rT"/>
+                        <outlet property="currentMedView" destination="TGr-GE-u96" id="e4e-Kd-eSL"/>
+                    </connections>
+                </viewController>
+                <customObject id="bLr-31-Csk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="4662.5"/>
         </scene>
         <!--ORT-->
         <scene sceneID="g0f-tu-aIy">

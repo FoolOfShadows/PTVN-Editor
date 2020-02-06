@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7901799A23EC8F1A006E8312 /* ChangeMedsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */; };
 		7906DEE8208E123900CD11A1 /* ROSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE6208E123900CD11A1 /* ROSModel.swift */; };
 		7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE7208E123900CD11A1 /* ROSViewController.swift */; };
 		7906DEEC208E16A800CD11A1 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */; };
@@ -105,6 +106,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMedsVC.swift; sourceTree = "<group>"; };
 		7906DEE6208E123900CD11A1 /* ROSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSModel.swift; sourceTree = "<group>"; };
 		7906DEE7208E123900CD11A1 /* ROSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSViewController.swift; sourceTree = "<group>"; };
 		7906DEEA208E16A700CD11A1 /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				79071F48225E494C0092E8F3 /* ADHD */,
 				79B860362358BE0E009CF5CD /* ADAMVC.swift */,
 				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
+				7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */,
 				798BD5A120D15FA500FD089B /* CheckOutVC.swift */,
 				791320612077C85200CB1537 /* Assets.xcassets */,
 				791320662077C85200CB1537 /* Info.plist */,
@@ -641,6 +644,7 @@
 				79CCA6C32090D16500909285 /* ENT Model.swift in Sources */,
 				79CCA6F32090DC4E00909285 /* NeuroMSK VC.swift in Sources */,
 				798BD5A220D15FA500FD089B /* CheckOutVC.swift in Sources */,
+				7901799A23EC8F1A006E8312 /* ChangeMedsVC.swift in Sources */,
 				7967689A21F7750D000A836F /* PreferencesModel.swift in Sources */,
 				79AFDF5320C04B8F007FAB5C /* CheckBoxContainingView.swift in Sources */,
 				79477C8C21779A9B00E9219D /* AssessmentModel.swift in Sources */,
@@ -885,7 +889,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b9;
+				CURRENT_PROJECT_VERSION = b10;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -908,7 +912,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b9;
+				CURRENT_PROJECT_VERSION = b10;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
