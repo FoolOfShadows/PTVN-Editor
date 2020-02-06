@@ -56,7 +56,7 @@ func printLetterheadWithText(_ text:String, fontName:String = "Times New Roman",
 }
 
 func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", fontSize: CGFloat = 12.0, window: NSWindow, andCloseWindow close: Bool = false, defaultCopies copies:Int = 1) {
-    let textView = NSTextView(frame: NSRect(origin: .zero, size: CGSize(width: 612, height: 734)))
+    let textView = NSTextView(frame: NSRect(origin: .zero, size: CGSize(width: 470, height: 734)))
     
     
     let theUserFont = NSFont(name: fontName, size: fontSize)
@@ -67,7 +67,7 @@ func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", 
     
     let printInfo = NSPrintInfo.shared
     //This gets really close to fitting
-    printInfo.horizontalPagination = .fit
+    printInfo.horizontalPagination = .automatic
     printInfo.verticalPagination = .automatic
     printInfo.isVerticallyCentered = false
     
