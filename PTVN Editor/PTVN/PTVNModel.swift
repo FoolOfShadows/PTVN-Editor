@@ -58,6 +58,8 @@ enum SectionDelimiters:String {
     case pharmacyEnd = "PHARMACY#"
     case otherStart = "#OTHER"
     case otherEnd = "OTHER#"
+    case followupStart = "#FOLLOWUP"
+    case followupEnd = "FOLLOWUP#"
 }
 
 enum SOAPSections {
@@ -107,6 +109,9 @@ class PTVN {
     var plan = String()
     var pharmacy = String()
     var followupInfo = String()
+    var followupPt1 = String()
+    var followupPt2 = String()
+    var followupPt3 = String()
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
@@ -140,27 +145,35 @@ class PTVN {
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue, self.problems, SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
+        self.followupInfo = theText.simpleRegExMatch(Regexes().followup).cleanTheTextOf([SectionDelimiters.followupStart.rawValue, SectionDelimiters.followupEnd.rawValue])
     }
     
-    func createFollowup(firstBit:String, secondBit:String, thirdBit:String) {
+    func createFollowup() {
         var results = String()
         var plural = String()
-        if let isNumber = Int(firstBit) {
+        if let isNumber = Int(followupPt1) {
             if isNumber != 1 {
                 plural = "s"
             }
         }
-        if !firstBit.isEmpty && !secondBit.isEmpty {
-            results = "Schedule follow up appointment in \(firstBit) \(secondBit)\(plural)"
+        if !followupPt1.isEmpty && !followupPt2.isEmpty && !followupPt3.isEmpty {
+            results = "`•Schedule follow up appointment in \(followupPt1) \(followupPt2)\(plural) for \(followupPt3) minutes."
         }
-        if !thirdBit.isEmpty {
-            results += " for \(thirdBit) minutes."
-        }
+//        if !followupPt3.isEmpty {
+//            results += " for \(followupPt3) minutes."
+//        }
         
-        if secondBit == "keep" {
-            results = "Keep previously scheduled appointment."
+        if followupPt2 == "keep" {
+            results = "`•Keep previously scheduled appointment."
         }
         followupInfo = results
+    }
+    
+    func visitLongDate() -> String {
+        guard let theVisitDate = getDateFromString([visitDate])?[0] else { return visitDate }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM dd, yyyy"
+        return formatter.string(from: theVisitDate)
     }
     
     
@@ -371,6 +384,7 @@ class PTVN {
         let subjective = "(?s)\(SectionDelimiters.problemsEnd.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
         let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
+        let followup = "(?s)\(SectionDelimiters.followupStart.rawValue).*\(SectionDelimiters.followupEnd.rawValue)"
     }
 
     

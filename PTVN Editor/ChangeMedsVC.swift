@@ -32,7 +32,7 @@ class ChangeMedsVC: NSViewController {
     
     @IBAction func processChange(_ sender: Any) {
         if !changedMedView.stringValue.isEmpty {
-            theData.plan.addToExistingText("``\(currentMed) changed to \(changedMedView.stringValue)")
+            theData.plan.addToExistingText("``\(changedMedView.stringValue) (changed from \(currentMed))")
             let firstVC = presentingViewController as! MedicineReviewVC
             firstVC.returnResults(self)
             self.dismiss(self)

@@ -111,7 +111,9 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
+        if sender is MedicineReviewVC {
         self.dismiss(self)
+        }
     }
     
     @IBAction func getRefills(_ sender: Any?) {

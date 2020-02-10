@@ -665,3 +665,4 @@ func createFileLabelFrom(PatientName name:String, FileType type:String, date:Str
     
     return results.joined(separator: " ")
 }
+

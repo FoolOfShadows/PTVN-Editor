@@ -320,9 +320,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             case "showCheckOut":
                 if let toViewController = segue.destinationController as? CheckOutVC {
                     toViewController.currentPTVNDelegate = self
-                    theData.createFollowup(firstBit: followupInfo.first, secondBit: followupInfo.second.lowercased(), thirdBit: followupInfo.third)
-                    theData.plan.addToExistingText(theData.followupInfo)
-                    returnPTVNValues(sender: self)
+                    //theData.plan.addToExistingText(theData.followupInfo)
+                    //returnPTVNValues(sender: self)
                     toViewController.theData = theData
                 }
             case "showMood":
@@ -670,15 +669,29 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func getFirstFUPart(_ sender: NSButton) {
-        followupInfo.first = sender.title
+        theData.followupPt1 = sender.title.lowercased()
+        theData.createFollowup()
+        if !theData.followupInfo.isEmpty {
+            theData.plan.addToExistingText(theData.followupInfo)
+            document.updateChangeCount(.changeDone)
+        }
     }
     @IBAction func getSecondFUPart(_ sender: NSButton) {
-        followupInfo.second = sender.title
+        theData.followupPt2 = sender.title.lowercased()
+        theData.createFollowup()
+        if !theData.followupInfo.isEmpty {
+            theData.plan.addToExistingText(theData.followupInfo)
+            document.updateChangeCount(.changeDone)
+        }
     }
     @IBAction func getThirdFUPart(_ sender: NSButton) {
-        followupInfo.third = sender.title
+        theData.followupPt3 = sender.title.lowercased()
+        theData.createFollowup()
+        if !theData.followupInfo.isEmpty {
+            theData.plan.addToExistingText(theData.followupInfo)
+            document.updateChangeCount(.changeDone)
+        }
     }
-
     
     deinit {
         NotificationCenter.default.removeObserver(self)

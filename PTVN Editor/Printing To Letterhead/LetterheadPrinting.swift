@@ -56,7 +56,7 @@ func printLetterheadWithText(_ text:String, fontName:String = "Times New Roman",
 }
 
 func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", fontSize: CGFloat = 12.0, window: NSWindow, andCloseWindow close: Bool = false, defaultCopies copies:Int = 1) {
-    let textView = NSTextView(frame: NSRect(origin: .zero, size: CGSize(width: 470, height: 734)))
+    let textView = NSTextView(frame: NSRect(origin: .zero, size: CGSize(width: 470, height: 688/*734*/)))
     
     
     let theUserFont = NSFont(name: fontName, size: fontSize)
@@ -74,8 +74,11 @@ func printBlankPageWithText(_ text:String, fontName:String = "Times New Roman", 
     printInfo.leftMargin = 70
     printInfo.rightMargin = 70
     printInfo.isHorizontallyCentered = false
-    printInfo.topMargin = -600
-    printInfo.bottomMargin = -100
+    printInfo.topMargin = 40
+    //printInfo.topMargin = -600
+    printInfo.bottomMargin = 40
+    //printInfo.bottomMargin = -100
+    //printInfo.paperSize = CGSize(width: 612.0, height: 792.0 )
     
     let operation:NSPrintOperation = NSPrintOperation(view: textView, printInfo: printInfo)
     

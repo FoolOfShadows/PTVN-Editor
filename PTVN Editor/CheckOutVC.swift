@@ -31,7 +31,7 @@ class CheckOutVC: NSViewController {
         demoView.stringValue = """
 \(theData.ptName)
         
-Summary of your visit with Dr. Dawn Whelchel on \(theData.visitDate).
+Summary of your visit with Dr. Dawn Whelchel on \(theData.visitLongDate()).
 """
 notesView.string = prepDataForView()
     }
@@ -59,7 +59,7 @@ notesView.string = prepDataForView()
 //
 //        let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
 //        myPrintOperation.run()
-        printBlankPageWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: true)
+        printBlankPageWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: false)
         //printLetterheadWithText(printTextView.string, fontSize: 14, window: self.view.window!, andCloseWindow: true, defaultCopies: 1)
     }
     
@@ -69,10 +69,13 @@ notesView.string = prepDataForView()
         var radValues = String()
         var assessmentValues = String()
         var vitalsValues = String()
-        var planValues = String()
+        //var planValues = String()
+        var changedMedValues = String()
+        var followupValues = String()
         
         if !theData.medicines.isEmpty {
-            medValues = "Medications active for this visit:\n\(theData.medicines)"
+            medValues = theData.medicines.replacingOccurrences(of: "DISCONTINUED THIS VIST:", with: "Medications being discontinued at this visit:")
+            medValues = "Medications active for this visit:\n\(medValues)"
         }
         let refills = theData.plan.getLinesStartingWith("~~").joined(separator: "\n").cleanTheTextOf(["~~"])
         if !refills.isEmpty {
@@ -82,9 +85,17 @@ notesView.string = prepDataForView()
         if !refrad.isEmpty {
             radValues = "Referrals/Radiology being ordered:\n(We will call you when the test or referral has been scheduled)\n\(refrad)"
         }
+        let changedMeds = theData.plan.getLinesStartingWith("``").joined(separator: "\n").cleanTheTextOf(["``"])
+        if !changedMeds.isEmpty {
+            changedMedValues = "Medications changed this visit:\n\(changedMeds)"
+        }
         let assessment = theData.assessment.removeWhiteSpace()
         if !assessment.isEmpty {
             assessmentValues = "Active diagnoses this visit:\n\(assessment.replacingOccurrences(of: "Lvl", with: "Visit level"))"
+        }
+        let followup = theData.plan.getLinesStartingWith("`•")
+        if !followup.isEmpty {
+            followupValues = followup[0].cleanTheTextOf(["`•"])
         }
         let objective = theData.objective
         //if !objective.isEmpty {
@@ -97,14 +108,14 @@ notesView.string = prepDataForView()
             //}
         }
         
-        let plan = theData.plan.removeWhiteSpace()
-        if !plan.isEmpty {
-            let badBits = ["Tests ordered:", "Referrals made to:", "••.*", "~~.*", "REFILLS REQUESTED:"]
-            let cleanPlan = plan.cleanTheTextOf(badBits)
-            planValues = cleanPlan
-        }
+//        let plan = theData.plan.removeWhiteSpace()
+//        if !plan.isEmpty {
+//            let badBits = ["Tests ordered:", "Referrals made to:", "••.*", "~~.*", "REFILLS REQUESTED:", "``", ]
+//            let cleanPlan = plan.cleanTheTextOf(badBits)
+//            planValues = cleanPlan
+//        }
         
-        let values = [vitalsValues, refillValues, radValues, /*planValues,*/ assessmentValues, medValues, theData.followupInfo]
+        let values = [vitalsValues, refillValues, radValues, changedMedValues, /*planValues,*/ assessmentValues, medValues, followupValues]
         let usedValues = values.filter { !$0.isEmpty }
         return usedValues.joined(separator: "\n\n")
     }
