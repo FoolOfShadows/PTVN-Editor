@@ -30,9 +30,16 @@ class ChangeMedsVC: NSViewController {
         changedMedView.stringValue = currentMedView.stringValue
     }
     
-    @IBAction func processChange(_ sender: Any) {
+    @IBAction func addToMedList(_ sender: NSButton) {
         if !changedMedView.stringValue.isEmpty {
-            theData.plan.addToExistingText("``\(changedMedView.stringValue) (changed from \(currentMed))")
+            switch sender.title {
+            case "Add To ML":
+                theData.plan.addToExistingText("``\(changedMedView.stringValue) (changed from \(currentMed))")
+            case "Rx & Add":
+                theData.plan.addToExistingText("`~\(changedMedView.stringValue) (changed from \(currentMed))")
+            default:
+                return
+            }
             let firstVC = presentingViewController as! MedicineReviewVC
             firstVC.returnResults(self)
             self.dismiss(self)

@@ -85,9 +85,10 @@ notesView.string = prepDataForView()
         if !refrad.isEmpty {
             radValues = "Referrals/Radiology being ordered:\n(We will call you when the test or referral has been scheduled)\n\(refrad)"
         }
-        let changedMeds = theData.plan.getLinesStartingWith("``").joined(separator: "\n").cleanTheTextOf(["``"])
+        var changedMeds = theData.plan.getLinesStartingWith("``")
+        changedMeds += theData.plan.getLinesStartingWith("`~")
         if !changedMeds.isEmpty {
-            changedMedValues = "Medications changed this visit:\n\(changedMeds)"
+            changedMedValues = "Medications changed this visit:\n\(changedMeds.joined(separator: "\n").cleanTheTextOf(["``", "`~"]))"
         }
         let assessment = theData.assessment.removeWhiteSpace()
         if !assessment.isEmpty {
