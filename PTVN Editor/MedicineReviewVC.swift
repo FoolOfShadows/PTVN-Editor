@@ -111,8 +111,11 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        if sender is MedicineReviewVC {
+        print(sender)
+        if let theSender = sender as? NSButton {
+            if theSender.title == "Med Check" {
         self.dismiss(self)
+            }
         }
     }
     
