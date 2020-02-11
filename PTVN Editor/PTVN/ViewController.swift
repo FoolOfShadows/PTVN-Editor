@@ -543,6 +543,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         if theData.plan.contains("~~"){
             //theData.plan = theData.plan.cleanTheTextOf(["~~"])
             theData.plan = theData.plan.replacingOccurrences(of: "~~", with: "DONE - ")
+            theData.plan = theData.plan.replacingOccurrences(of: "`~", with: "DONE - ")
+            theData.plan = theData.plan.replacingOccurrences(of: "``", with: "UPDATED - ")
             updateView()
             document.updateChangeCount(.changeDone)
         }

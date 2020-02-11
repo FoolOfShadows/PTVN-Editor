@@ -164,7 +164,10 @@ class PTVN {
 //        }
         
         if followupPt2 == "keep" {
-            results = "`•Keep previously scheduled appointment."
+            let nextApt = self.plan.getLinesStartingWith("Next apt: ")[0].replacingOccurrences(of: "Next apt: ", with: "")
+            results = "`•Keep previously scheduled appointment (\(nextApt))."
+        } else if followupPt2 == "prn" {
+            results = "`•Patient will schedule appointment as needed."
         }
         followupInfo = results
     }
