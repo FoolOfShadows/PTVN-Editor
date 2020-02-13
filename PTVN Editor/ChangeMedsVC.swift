@@ -19,7 +19,16 @@ class ChangeMedsVC: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        if let theWindow = self.view.window {
+            theWindow.title = "Medicine Changes"
+            //This removes the ability to resize the window of a view
+            //opened by a segue
+            theWindow.styleMask.remove(.resizable)
+            //This makes the window float at the front of the other windows
+//            theWindow.level = .floating
+//            theWindow.setFrameUsingName("builderWindow")
+//            theWindow.windowController!.windowFrameAutosaveName = "builderWindow"
+        }
     }
     
     override func viewDidAppear() {

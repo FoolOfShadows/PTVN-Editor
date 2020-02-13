@@ -19,6 +19,7 @@
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
 		791320622077C85200CB1537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791320612077C85200CB1537 /* Assets.xcassets */; };
 		791320652077C85200CB1537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791320632077C85200CB1537 /* Main.storyboard */; };
+		791DA9E923F5987400E39C6E /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791DA9E823F5987400E39C6E /* FollowUpVC.swift */; };
 		793133B8231849B000B3649A /* OpioidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793133B7231849B000B3649A /* OpioidVC.swift */; };
 		79349EA821765B420020F88B /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79349EA721765B420020F88B /* OrderedDictionary.swift */; };
 		79400C1421D53458008B7CFE /* SpellChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79400C1321D53458008B7CFE /* SpellChecker.swift */; };
@@ -121,6 +122,7 @@
 		791320642077C85200CB1537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		791320662077C85200CB1537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791320672077C85200CB1537 /* PTVN_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PTVN_Editor.entitlements; sourceTree = "<group>"; };
+		791DA9E823F5987400E39C6E /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
 		793133B7231849B000B3649A /* OpioidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpioidVC.swift; sourceTree = "<group>"; };
 		79349EA721765B420020F88B /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		79400C1321D53458008B7CFE /* SpellChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellChecker.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				798A8F7D20E3F4F60036A74C /* Mood */,
 				79071F48225E494C0092E8F3 /* ADHD */,
 				79B860362358BE0E009CF5CD /* ADAMVC.swift */,
+				791DA9E823F5987400E39C6E /* FollowUpVC.swift */,
 				798CA1C420BEEB5700FA3D22 /* MedicineReviewVC.swift */,
 				7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */,
 				798BD5A120D15FA500FD089B /* CheckOutVC.swift */,
@@ -725,6 +728,7 @@
 				798BBB4720939617002A28AA /* PHQ9Controller.swift in Sources */,
 				79071F47225E493E0092E8F3 /* ADHDModel.swift in Sources */,
 				798BBB592093A000002A28AA /* PreventiveController.swift in Sources */,
+				791DA9E923F5987400E39C6E /* FollowUpVC.swift in Sources */,
 				79CCA6E32090DA4200909285 /* Gyn Model.swift in Sources */,
 				79CCA6EC2090DB7D00909285 /* Breast Model.swift in Sources */,
 			);
@@ -889,7 +893,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b14;
+				CURRENT_PROJECT_VERSION = b15;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -912,7 +916,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = b14;
+				CURRENT_PROJECT_VERSION = b15;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

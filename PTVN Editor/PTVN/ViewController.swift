@@ -64,7 +64,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var assessmentList = [String]()
     var chosenAssessmentList = [String]()
     
-    var followupInfo = (first:String(), second:String(), third:String())
+//    var followupInfo = (first:String(), second:String(), third:String())
     
     //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
@@ -349,6 +349,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                 if let toViewController = segue.destinationController as? NoteWindowVC {
                     toViewController.currentNoteDelegate = self
                 }
+            case "showFollowup":
+                if let toViewController = segue.destinationController as? FollowUpVC {
+                toViewController.currentPTVNDelegate = self
+                toViewController.theData = theData
+                }
             default: return
             }
         }
@@ -540,14 +545,14 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func clearMeds(_ sender: Any) {
-        if theData.plan.contains("~~"){
+        //if theData.plan.contains("~~"){
             //theData.plan = theData.plan.cleanTheTextOf(["~~"])
             theData.plan = theData.plan.replacingOccurrences(of: "~~", with: "DONE - ")
             theData.plan = theData.plan.replacingOccurrences(of: "`~", with: "DONE - ")
             theData.plan = theData.plan.replacingOccurrences(of: "``", with: "UPDATED - ")
             updateView()
             document.updateChangeCount(.changeDone)
-        }
+        //}
     }
     
     @IBAction func clearRads(_ sender: Any) {

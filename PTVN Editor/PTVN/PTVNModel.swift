@@ -58,8 +58,8 @@ enum SectionDelimiters:String {
     case pharmacyEnd = "PHARMACY#"
     case otherStart = "#OTHER"
     case otherEnd = "OTHER#"
-    case followupStart = "#FOLLOWUP"
-    case followupEnd = "FOLLOWUP#"
+//    case followupStart = "#FOLLOWUP"
+//    case followupEnd = "FOLLOWUP#"
 }
 
 enum SOAPSections {
@@ -145,7 +145,7 @@ class PTVN {
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue, self.problems, SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
-        self.followupInfo = theText.simpleRegExMatch(Regexes().followup).cleanTheTextOf([SectionDelimiters.followupStart.rawValue, SectionDelimiters.followupEnd.rawValue])
+//        self.followupInfo = theText.simpleRegExMatch(Regexes().followup).cleanTheTextOf([SectionDelimiters.followupStart.rawValue, SectionDelimiters.followupEnd.rawValue])
     }
     
     func createFollowup() {
@@ -387,7 +387,7 @@ class PTVN {
         let subjective = "(?s)\(SectionDelimiters.problemsEnd.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
         let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
-        let followup = "(?s)\(SectionDelimiters.followupStart.rawValue).*\(SectionDelimiters.followupEnd.rawValue)"
+//        let followup = "(?s)\(SectionDelimiters.followupStart.rawValue).*\(SectionDelimiters.followupEnd.rawValue)"
     }
 
     
