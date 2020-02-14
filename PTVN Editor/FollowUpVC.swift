@@ -52,6 +52,8 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         if tableColumn?.identifier.rawValue == "clmAssessment" {
             vw.textField?.stringValue = assessmentList[row].0
         } else if tableColumn?.identifier.rawValue == "clmCheckbox" {
+//            let buttonvw = vw.objectValue as? NSButton
+//            buttonvw?.state = assessmentList[row].1
             vw.getButtonsInView()[0].state = assessmentList[row].1
         }
 //        guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
@@ -81,6 +83,14 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         } else if (sender as! NSButton).state == .off {
             chosenAssessmentList = chosenAssessmentList.filter { $0 != currentText}
             assessmentList[currentRow].1 = .off
+        }
+    }
+    
+    @IBAction func getDataFromSelectedCheckboxes(_ sender: NSButton) {
+        if sender.state == .on {
+            chosenAssessmentList.append(sender.title)
+        } else if sender.state == .off {
+            chosenAssessmentList = chosenAssessmentList.filter { $0 != sender.title}
         }
     }
     

@@ -10,6 +10,6 @@ import Foundation
 
 enum BrowserList: String, CaseIterable {
     case Safari
-    case Chrome
+    case Chrome = "Google Chrome"
     case Firefox
 }

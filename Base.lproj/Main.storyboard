@@ -2908,7 +2908,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TKf-35-Z65">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="mRE-0R-5yG"/>
@@ -2919,7 +2919,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ink-Yv-QlM">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="OxR-Mf-cQU"/>
@@ -3018,7 +3018,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="P92-rq-wXx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
@@ -3029,7 +3029,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Su-rw-6aG">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
@@ -3055,7 +3055,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N8W-CG-84k">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="FKH-Bu-Hx5"/>
@@ -3066,7 +3066,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="label" size="14"/>
+                                            <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
@@ -5797,7 +5797,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient complains of (TRUE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="pSt-sL-BH7" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="label" size="14"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-1z-EUB">
@@ -5805,7 +5805,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient denies (FALSE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="zo1-TP-KHw" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="label" size="14"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -12127,7 +12127,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="49" y="1" width="935" height="20"/>
+                                                            <rect key="frame" x="48.5" y="1" width="935" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
@@ -12163,7 +12163,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="0xf-SJ-a06">
-                                                            <rect key="frame" x="987" y="1" width="69" height="17"/>
+                                                            <rect key="frame" x="986.5" y="1" width="69" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button identifier="changeButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-NF-Ct9">
@@ -12784,6 +12784,109 @@ Gw
                                     <action selector="addReasonToTable:" target="K36-Ku-Fbx" id="x1d-4b-ix8"/>
                                 </connections>
                             </button>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-r4-DQu">
+                                <rect key="frame" x="20" y="58" width="363" height="34"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cze-lO-HCw">
+                                        <rect key="frame" x="0.0" y="20" width="363" height="14"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5db-Vk-ccB">
+                                                <rect key="frame" x="-2" y="-2" width="65" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Lab FU" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wSb-On-eZS">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="getDataFromSelectedCheckboxes:" target="K36-Ku-Fbx" id="jWo-gV-AoK"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R52-kQ-CSZ">
+                                                <rect key="frame" x="67" y="-2" width="131" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Well woman exam" bezelStyle="regularSquare" imagePosition="left" inset="2" id="a2S-9S-y4T">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="getDataFromSelectedCheckboxes:" target="K36-Ku-Fbx" id="mhx-mv-Nyj"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="38w-Kh-e1D">
+                                                <rect key="frame" x="202" y="-2" width="47" height="18"/>
+                                                <buttonCell key="cell" type="check" title="PAP" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ZJR-tF-5bn">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="getDataFromSelectedCheckboxes:" target="K36-Ku-Fbx" id="m2h-00-DKF"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cqp-Dp-g7t">
+                                                <rect key="frame" x="253" y="-2" width="112" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Yearly physical" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hGh-Ce-3ml">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="getDataFromSelectedCheckboxes:" target="K36-Ku-Fbx" id="23I-fn-cWR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="13" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-Ik-kLN">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="14"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tEq-70-Mvd">
+                                                <rect key="frame" x="-2" y="-2" width="60" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Forms" bezelStyle="regularSquare" imagePosition="left" inset="2" id="6EN-ML-8KP">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="getDataFromSelectedCheckboxes:" target="K36-Ku-Fbx" id="WUF-74-Wjg"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TJw-h8-pJW">
+                                                <rect key="frame" x="67" y="-2" width="114" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Preventive visit" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tlf-Af-esv">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="getDataFromSelectedCheckboxes:" target="K36-Ku-Fbx" id="hif-ij-HHL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ZuK-FC-3di" firstAttribute="leading" secondItem="WcI-IN-v31" secondAttribute="leading" constant="20" id="MNC-gR-RNa"/>

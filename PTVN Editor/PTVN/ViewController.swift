@@ -565,7 +565,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     func activateBrowser() {
         let defaults = UserDefaults.standard
-        let browser = defaults.string(forKey: "browser") ?? "Safari"
+        var browser = defaults.string(forKey: "browser") ?? "Safari"
+        if browser == "Chrome" {
+            browser = "Google Chrome"
+        }
         NSWorkspace.shared.openFile("/Applications/\(browser).app")
     }
     
