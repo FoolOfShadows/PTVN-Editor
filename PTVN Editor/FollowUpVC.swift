@@ -16,8 +16,13 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
 
     var assessmentString = String()
-    var assessmentList = [String]()
+    var assessmentList = [(String, NSControl.StateValue)]()
     var chosenAssessmentList = [String]()
+    
+    var followupPt1 = String()
+    var followupPt2 = String()
+    var followupPt3 = String()
+    var followupInfo = String()
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
@@ -29,9 +34,7 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         self.assessmentTableView.delegate = self
         self.assessmentTableView.dataSource = self
         
-        assessmentList = theData.assessment.convertListToArray()
-        print("Assessment Text: \(theData.assessment)")
-        print("Assessment List: \(assessmentList)")
+        assessmentList = theData.assessment.convertListToArray().map { ($0, .off)}
         self.assessmentTableView.reloadData()
     }
     
@@ -44,25 +47,104 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     //Set up the tableview with the data from the assessmentList array
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var result:NSTableCellView
-        result = tableView.makeView(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
-        result.textField?.stringValue = assessmentList[row]
-        
-        return result
+        guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else {
+            return nil }
+        if tableColumn?.identifier.rawValue == "clmAssessment" {
+            vw.textField?.stringValue = assessmentList[row].0
+        } else if tableColumn?.identifier.rawValue == "clmCheckbox" {
+            vw.getButtonsInView()[0].state = assessmentList[row].1
+        }
+//        guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
+//        vw.textField?.stringValue = assessmentList[row].0
+        return vw
     }
+    
     
     @IBAction func addReasonToTable(_ sender: Any) {
         if !addReasonView.stringValue.isEmpty {
-            assessmentList.append(addReasonView.stringValue)
+            assessmentList.append((addReasonView.stringValue, .on))
+            chosenAssessmentList.append(addReasonView.stringValue)
             self.assessmentTableView.reloadData()
-            let newView = self.assessmentTableView
+            addReasonView.stringValue = ""
+            //FIXME: Newly added rows should be checked by default
+        }
+    }
+    @IBAction func getDataFromSelectedRowsText(_ sender:Any) {
+        let currentRow = assessmentTableView.row(for: sender as! NSView)
+        let currentCellView = assessmentTableView.rowView(atRow: currentRow, makeIfNecessary: false)?.view(atColumn: 1) as! NSTableCellView
+        guard let currentText = currentCellView.textField?.stringValue else { return }
+
+
+        if (sender as! NSButton).state == .on {
+            chosenAssessmentList.append(currentText)
+            assessmentList[currentRow].1 = .on
+        } else if (sender as! NSButton).state == .off {
+            chosenAssessmentList = chosenAssessmentList.filter { $0 != currentText}
+            assessmentList[currentRow].1 = .off
         }
     }
     
     @IBAction func processAssessmentTable(_ sender: Any) {
+        var followupData = String()
+        if !followupInfo.isEmpty {
+            followupData = followupInfo
+        }
+        if !chosenAssessmentList.isEmpty {
+            followupData += " Followup will be for: \(chosenAssessmentList.joined(separator: ", "))"
+        }
+        if !followupData.isEmpty {
+            let firstVC = presentingViewController as! ViewController
+            theData.plan.addToExistingText(followupData)
+            firstVC.theData = theData
+            currentPTVNDelegate?.returnPTVNValues(sender: self)
+        }
+        self.dismiss(self)
+    }
     
-//    let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
-        
-//        theData.plan.addToExistingText(results, withSpace: false)
+        func createFollowup() {
+            var results = String()
+            var plural = String()
+            if let isNumber = Int(followupPt1) {
+                if isNumber != 1 {
+                    plural = "s"
+                }
+            }
+            if !followupPt1.isEmpty && !followupPt2.isEmpty && !followupPt3.isEmpty {
+                results = "`•Schedule follow up appointment in \(followupPt1) \(followupPt2)\(plural) for \(followupPt3) minutes."
+            }
+    //        if !followupPt3.isEmpty {
+    //            results += " for \(followupPt3) minutes."
+    //        }
+            
+            if followupPt2 == "keep" {
+                let nextApt = theData.plan.getLinesStartingWith("Next apt: ")[0].replacingOccurrences(of: "Next apt: ", with: "")
+                results = "`•Keep previously scheduled appointment (\(nextApt))."
+            } else if followupPt2 == "prn" {
+                results = "`•Patient will schedule appointment as needed."
+            }
+            followupInfo = results
+        }
+    
+    
+    @IBAction func getFirstFUPart(_ sender: NSButton) {
+        followupPt1 = sender.title.lowercased()
+        createFollowup()
+//        if !followupInfo.isEmpty {
+//            theData.plan.addToExistingText(followupInfo)
+//        }
+    }
+    @IBAction func getSecondFUPart(_ sender: NSButton) {
+        followupPt2 = sender.title.lowercased()
+        createFollowup()
+//        if !followupInfo.isEmpty {
+//            theData.plan.addToExistingText(followupInfo)
+//        }
+    }
+    @IBAction func getThirdFUPart(_ sender: NSButton) {
+        followupPt3 = sender.title.lowercased()
+        createFollowup()
+//        if !followupInfo.isEmpty {
+//            theData.plan.addToExistingText(followupInfo)
+//        }
     }
 }

@@ -675,31 +675,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
     }
     
-    @IBAction func getFirstFUPart(_ sender: NSButton) {
-        theData.followupPt1 = sender.title.lowercased()
-        theData.createFollowup()
-        if !theData.followupInfo.isEmpty {
-            theData.plan.addToExistingText(theData.followupInfo)
-            document.updateChangeCount(.changeDone)
-        }
-    }
-    @IBAction func getSecondFUPart(_ sender: NSButton) {
-        theData.followupPt2 = sender.title.lowercased()
-        theData.createFollowup()
-        if !theData.followupInfo.isEmpty {
-            theData.plan.addToExistingText(theData.followupInfo)
-            document.updateChangeCount(.changeDone)
-        }
-    }
-    @IBAction func getThirdFUPart(_ sender: NSButton) {
-        theData.followupPt3 = sender.title.lowercased()
-        theData.createFollowup()
-        if !theData.followupInfo.isEmpty {
-            theData.plan.addToExistingText(theData.followupInfo)
-            document.updateChangeCount(.changeDone)
-        }
-    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

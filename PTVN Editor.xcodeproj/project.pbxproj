@@ -14,6 +14,7 @@
 		7906DEED208E16A800CD11A1 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEEB208E16A700CD11A1 /* DoctorModel.swift */; };
 		79071F45225E483C0092E8F3 /* ADHDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79071F44225E483C0092E8F3 /* ADHDVC.swift */; };
 		79071F47225E493E0092E8F3 /* ADHDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79071F46225E493E0092E8F3 /* ADHDModel.swift */; };
+		7911290523F5D3F700D8B486 /* CheckBoxCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911290423F5D3F700D8B486 /* CheckBoxCellView.swift */; };
 		7913205C2077C85100CB1537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205B2077C85100CB1537 /* AppDelegate.swift */; };
 		7913205E2077C85100CB1537 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205D2077C85100CB1537 /* ViewController.swift */; };
 		791320602077C85100CB1537 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913205F2077C85100CB1537 /* Document.swift */; };
@@ -114,6 +115,7 @@
 		7906DEEB208E16A700CD11A1 /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		79071F44225E483C0092E8F3 /* ADHDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADHDVC.swift; sourceTree = "<group>"; };
 		79071F46225E493E0092E8F3 /* ADHDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADHDModel.swift; sourceTree = "<group>"; };
+		7911290423F5D3F700D8B486 /* CheckBoxCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCellView.swift; sourceTree = "<group>"; };
 		791320582077C85100CB1537 /* PTVN Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PTVN Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7913205B2077C85100CB1537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7913205D2077C85100CB1537 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		7913204F2077C85100CB1537 = {
 			isa = PBXGroup;
 			children = (
+				7911290423F5D3F700D8B486 /* CheckBoxCellView.swift */,
 				791320632077C85200CB1537 /* Main.storyboard */,
 				79AFE1CF2188A223007F4A5E /* PhysicalExam.storyboard */,
 				79B860342358BCB3009CF5CD /* Questionnaires.storyboard */,
@@ -711,6 +714,7 @@
 				7960579623E4827800E7C540 /* LetterheadPrinting.swift in Sources */,
 				798BBB4920939617002A28AA /* PHQ9Model.swift in Sources */,
 				79CCA6D12090D49F00909285 /* CVChestGILymph VC.swift in Sources */,
+				7911290523F5D3F700D8B486 /* CheckBoxCellView.swift in Sources */,
 				79CCA6C82090D16500909285 /* Neck Model.swift in Sources */,
 				798BBB5420939C20002A28AA /* MWEModel.swift in Sources */,
 				7906DEED208E16A800CD11A1 /* DoctorModel.swift in Sources */,

@@ -108,10 +108,6 @@ class PTVN {
     var subjective = String()
     var plan = String()
     var pharmacy = String()
-    var followupInfo = String()
-    var followupPt1 = String()
-    var followupPt2 = String()
-    var followupPt3 = String()
 //    var lastAppointment:String {return getLastAptInfoFrom(theText)}
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
@@ -145,31 +141,6 @@ class PTVN {
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue, self.problems, SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
-//        self.followupInfo = theText.simpleRegExMatch(Regexes().followup).cleanTheTextOf([SectionDelimiters.followupStart.rawValue, SectionDelimiters.followupEnd.rawValue])
-    }
-    
-    func createFollowup() {
-        var results = String()
-        var plural = String()
-        if let isNumber = Int(followupPt1) {
-            if isNumber != 1 {
-                plural = "s"
-            }
-        }
-        if !followupPt1.isEmpty && !followupPt2.isEmpty && !followupPt3.isEmpty {
-            results = "`•Schedule follow up appointment in \(followupPt1) \(followupPt2)\(plural) for \(followupPt3) minutes."
-        }
-//        if !followupPt3.isEmpty {
-//            results += " for \(followupPt3) minutes."
-//        }
-        
-        if followupPt2 == "keep" {
-            let nextApt = self.plan.getLinesStartingWith("Next apt: ")[0].replacingOccurrences(of: "Next apt: ", with: "")
-            results = "`•Keep previously scheduled appointment (\(nextApt))."
-        } else if followupPt2 == "prn" {
-            results = "`•Patient will schedule appointment as needed."
-        }
-        followupInfo = results
     }
     
     func visitLongDate() -> String {
@@ -387,7 +358,6 @@ class PTVN {
         let subjective = "(?s)\(SectionDelimiters.problemsEnd.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
         let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
-//        let followup = "(?s)\(SectionDelimiters.followupStart.rawValue).*\(SectionDelimiters.followupEnd.rawValue)"
     }
 
     
