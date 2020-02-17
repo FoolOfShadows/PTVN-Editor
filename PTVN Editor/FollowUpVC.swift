@@ -44,19 +44,20 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource, 
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        
-        let firstBit = fu1Stack.getButtonsInView().filter {$0.title == "3"}[0]
-        if firstBit.isSelectable {
+        //These connections need to be weak or they will create a retention cycle and the presenting view won't close
+        //FIXME: Probably a better way to structure this
+        weak var firstFUBit = fu1Stack.getButtonsInView().filter {$0.title == "3"}[0]
+        if let firstBit = firstFUBit {
             firstBit.state = .on
             getFirstFUPart(firstBit)
         }
-        let secondBit = fu2Stack.getButtonsInView().filter {$0.title == "Month"}[0]
-        if secondBit.isSelectable {
+        weak var secondFUBit = fu2Stack.getButtonsInView().filter {$0.title == "Month"}[0]
+        if let secondBit = secondFUBit {
             secondBit.state = .on
             getSecondFUPart(secondBit)
         }
-        let thirdBit = fu3Stack.getButtonsInView().filter {$0.title == "25"}[0]
-        if thirdBit.isSelectable {
+        weak var thirdFUBit = fu3Stack.getButtonsInView().filter {$0.title == "25"}[0]
+        if let thirdBit = thirdFUBit {
             thirdBit.state = .on
             getThirdFUPart(thirdBit)
         }
