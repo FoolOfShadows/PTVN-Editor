@@ -8,11 +8,14 @@
 
 import Cocoa
 
-class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate, NSControlTextEditingDelegate {
 
 
     @IBOutlet weak var assessmentTableView: NSTableView!
     @IBOutlet weak var addReasonView: NSTextField!
+    @IBOutlet weak var fu1Stack: NSStackView!
+    @IBOutlet weak var fu2Stack: NSStackView!
+    @IBOutlet weak var fu3Stack: NSStackView!
     
 
     var assessmentString = String()
@@ -33,11 +36,41 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
         //Set up the table of previous assessments on the Assessment & Plan tab
         self.assessmentTableView.delegate = self
         self.assessmentTableView.dataSource = self
+        self.addReasonView.delegate = self
         
         assessmentList = theData.assessment.convertListToArray().map { ($0, .off)}
         self.assessmentTableView.reloadData()
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        let firstBit = fu1Stack.getButtonsInView().filter {$0.title == "3"}[0]
+        if firstBit.isSelectable {
+            firstBit.state = .on
+            getFirstFUPart(firstBit)
+        }
+        let secondBit = fu2Stack.getButtonsInView().filter {$0.title == "Month"}[0]
+        if secondBit.isSelectable {
+            secondBit.state = .on
+            getSecondFUPart(secondBit)
+        }
+        let thirdBit = fu3Stack.getButtonsInView().filter {$0.title == "25"}[0]
+        if thirdBit.isSelectable {
+            thirdBit.state = .on
+            getThirdFUPart(thirdBit)
+        }
+    }
+    
+    func controlTextDidEndEditing(_ obj: Notification) {
+        //Capture the tapped key, see if it's the Return key
+        //and if it is, process all the data into the results field
+        if let sendingKey = obj.userInfo?["NSTextMovement"] as? Int {
+            if sendingKey == NSReturnTextMovement {
+                addReasonToTable(self)
+            }
+        }
+    }
     
     //MARK: Table Handling Functions
     func numberOfRows(in tableView: NSTableView) -> Int {

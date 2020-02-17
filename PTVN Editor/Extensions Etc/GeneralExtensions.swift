@@ -125,6 +125,14 @@ extension NSView {
             }
         }
     }
+    
+    func turnOnButtonInViewWithTitle(_ title:String) {
+        for button in self.getButtonsInView() {
+            if button.title == title {
+                button.state = .on
+            }
+        }
+    }
 	
 	func getButtonsInView() -> [NSButton] {
 		var results = [NSButton]()

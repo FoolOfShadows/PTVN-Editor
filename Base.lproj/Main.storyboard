@@ -1593,7 +1593,7 @@
                                                                 <tableColumns>
                                                                     <tableColumn width="40" minWidth="40" maxWidth="1000" id="dJ4-Fk-kTW">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                            <font key="font" metaFont="message" size="11"/>
+                                                                            <font key="font" metaFont="controlContent" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -1629,7 +1629,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn width="318" minWidth="40" maxWidth="1000" id="gWI-X2-aRy">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Previous Assessment">
-                                                                            <font key="font" metaFont="message" size="11"/>
+                                                                            <font key="font" metaFont="controlContent" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -2757,7 +2757,7 @@
                                             <tableColumns>
                                                 <tableColumn width="628" minWidth="40" maxWidth="1000" id="ret-HX-GCF">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="controlContent" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -2790,7 +2790,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="53" minWidth="40" maxWidth="1000" id="nUh-yo-sHK">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="controlContent" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -2822,7 +2822,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="57" minWidth="10" maxWidth="3.4028234663852886e+38" id="brX-RK-Gn1">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="controlContent" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -12127,7 +12127,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="48.5" y="1" width="935" height="20"/>
+                                                            <rect key="frame" x="49" y="1" width="935" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
@@ -12163,7 +12163,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="0xf-SJ-a06">
-                                                            <rect key="frame" x="986.5" y="1" width="69" height="17"/>
+                                                            <rect key="frame" x="987" y="1" width="69" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button identifier="changeButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-NF-Ct9">
@@ -12897,6 +12897,9 @@ Gw
                     <connections>
                         <outlet property="addReasonView" destination="cSZ-Zz-QgB" id="Q4a-QU-YXC"/>
                         <outlet property="assessmentTableView" destination="eEr-hb-gXd" id="wAY-Ec-X1T"/>
+                        <outlet property="fu1Stack" destination="5Ov-4Y-6Mr" id="hAf-hi-ZF7"/>
+                        <outlet property="fu2Stack" destination="ANz-qr-5Of" id="OuN-fY-f2C"/>
+                        <outlet property="fu3Stack" destination="fnQ-J6-q6c" id="JWq-Aj-Dqn"/>
                     </connections>
                 </viewController>
                 <customObject id="ReM-aY-O84" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
