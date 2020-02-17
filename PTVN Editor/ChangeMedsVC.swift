@@ -50,7 +50,7 @@ class ChangeMedsVC: NSViewController {
                 return
             }
             let firstVC = presentingViewController as! MedicineReviewVC
-            firstVC.returnResults(self)
+            firstVC.returnChangedMeds()
             self.dismiss(self)
         }
     }

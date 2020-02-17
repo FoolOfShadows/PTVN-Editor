@@ -12,6 +12,7 @@ protocol ChangeMedDelegate: class {
     var currentMed:String { get set }
     var changedMeds:[String] { get set }
     var theData:PTVN { get set }
+    func returnChangedMeds()
 }
 
 class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource, ChangeMedDelegate {
@@ -95,9 +96,10 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     @IBAction func returnResults(_ sender:Any) {
-        print("Changed Meds: \(changedMeds.joined(separator: "/n"))")
+        
         let firstVC = presentingViewController as! ViewController
         var results = medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n")
+        print("Med List Array Results: \(results)")
         if !results.isEmpty {
             results = "\n\n DISCONTINUED THIS VIST:\n\(results.addCharacterToBeginningOfEachLine("- "))"
         }
@@ -117,6 +119,12 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         self.dismiss(self)
             }
         }
+    }
+    
+    func returnChangedMeds() {
+        let firstVC = presentingViewController as! ViewController
+        firstVC.theData = theData
+        currentPTVNDelegate?.returnPTVNValues(sender: self)
     }
     
     @IBAction func getRefills(_ sender: Any?) {
