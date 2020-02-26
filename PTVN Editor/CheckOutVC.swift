@@ -116,7 +116,7 @@ notesView.string = prepDataForView()
 //            planValues = cleanPlan
 //        }
         
-        let values = [vitalsValues, refillValues, radValues, changedMedValues, /*planValues,*/ assessmentValues, medValues, followupValues]
+        let values = [refillValues, changedMedValues, radValues, vitalsValues, /*planValues,*/ assessmentValues, medValues, followupValues]
         let usedValues = values.filter { !$0.isEmpty }
         return usedValues.joined(separator: "\n\n")
     }

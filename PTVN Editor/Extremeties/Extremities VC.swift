@@ -155,7 +155,12 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             }
             switchNormOff(sender)
             switch sender.title {
-            case "Edema": setUpBoxesForEdema()
+            case "Edema":
+                setUpBoxesForEdema()
+                edemaTypeBox.activateButtonsWithNames(["+1"])
+                edemaPittingBox.activateButtonsWithNames(["pitting"])
+                sideBox.activateButtonsWithNames(["bilateral"])
+                edemaAreaBox.activateButtonsWithNames(["ankle"])
             case "Cyanosis":
                 setUpBoxesForOnchCyHam()
                 extremitiesBox.activateButtonsWithNames(["toes"])
