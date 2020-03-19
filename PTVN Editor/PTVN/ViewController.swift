@@ -53,6 +53,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var objectiveActivateSafari: NSButton!
     @IBOutlet weak var assessmentActivateSafari: NSButton!
     @IBOutlet weak var planActivateSafari: NSButton!
+    @IBOutlet weak var phoneMin: NSTextField!
     
     var ccView: NSTextView {
         get {
@@ -563,6 +564,16 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
     
+    @IBAction func selectOnlyOne(_ sender: NSButton) {
+        if let buttons = sender.superview?.subviews as? [NSButton] {
+            for button in buttons {
+                if button.title != sender.title {
+                    button.state = .off
+                }
+            }
+        }
+    }
+    
     func activateBrowser() {
         let defaults = UserDefaults.standard
         var browser = defaults.string(forKey: "browser") ?? "Safari"
@@ -589,7 +600,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     @IBAction func processAssessmentTable(_ sender: Any) {
         
-        let results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
+        var results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
+        if !phoneMin.stringValue.isEmpty {
+            results = results.replacingOccurrences(of: "Lvl Phn", with: "Lvl Phn (\(phoneMin.stringValue))")
+            results = results.replacingOccurrences(of: "Lvl TM", with: "Lvl TM (\(phoneMin.stringValue))")
+        }
         //print(results)
         theData.assessment.addToExistingText(results, withSpace: false)
         
@@ -608,6 +623,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         visitLevelView.clearControllers()
         assessmentTableView.clearControllers()
         chosenAssessmentList = [String]()
+        phoneMin.stringValue = String()
         updateView()
     }
     
@@ -631,8 +647,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             assessmentList.remove(at: currentRow)
             assessmentList.insert(textValue, at: currentRow)
         }
-        
-        
     }
     
     //Removes the selected row from the table and the corresponding

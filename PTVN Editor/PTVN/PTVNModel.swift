@@ -112,7 +112,7 @@ class PTVN {
 //    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
     let prefixes = ["••", "~~", "^^", "(done dmw)"]
-    let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW"]
+    let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW", "Lvl Phn", "Lvl TM"]
     let objectiveBadBits = ["\n\nCV:", "\n\nEXTREMITIES:", "\n\nNEURO:", "\n\nSKIN:"]
     let objectiveGoodBits = ["\nCV:", "\nEXTREMITIES:", "\nNEURO:", "\nSKIN:"]
     let problemBadBits = ["Problems\\*\\*", "\\*problems\\*"]
@@ -214,6 +214,8 @@ class PTVN {
             results = results.replaceRegexPattern("Lvl WE\\s*", with: "")
             results = results.replaceRegexPattern("Lvl NPW\\s*", with: "")
             results = results.replaceRegexPattern("Lvl Y\\s*", with: "")
+            results = results.replaceRegexPattern("Lvl Phn\\s*", with: "")
+            results = results.replaceRegexPattern("Lvl TM\\s*", with: "")
             return results.removeWhiteSpace() /*assessment.cleanTheTextOf(prefixes)*/
         case .plan:
             var results = plan

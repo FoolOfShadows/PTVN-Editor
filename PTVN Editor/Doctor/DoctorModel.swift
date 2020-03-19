@@ -27,8 +27,8 @@ struct DataReview {
 		
 		for item in data {
 			switch item.0 {
-			case 1: resultArray.append("Labs reviewed")
-			case 2: resultArray.append( "Tests reviewed")
+			case 1: resultArray.append("Lab results reviewed with patient during visit.")
+			case 2: resultArray.append( "Test results reviewed with patient during visit.")
 			case 3: resultArray.append( "Out patient fasting labs ordered.")
 			case 4: resultArray.append( "Get records")
 			case 5: resultArray.append( "Continue current pain medication dosage")
