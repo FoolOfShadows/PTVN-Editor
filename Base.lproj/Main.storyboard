@@ -1705,9 +1705,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="RGn-0N-ol9"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="AJH-91-6W1">
                                                             <rect key="frame" x="-2" y="106" width="30" height="18"/>
@@ -1715,9 +1712,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="K4J-QG-9hD"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="0be-nI-3ec">
                                                             <rect key="frame" x="-2" y="86" width="30" height="18"/>
@@ -1725,9 +1719,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="xEt-4b-HOg"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="qkM-4j-afF">
                                                             <rect key="frame" x="-2" y="66" width="30" height="18"/>
@@ -1735,9 +1726,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="McJ-3G-BFf"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="tJP-fw-fK8">
                                                             <rect key="frame" x="-2" y="46" width="42" height="18"/>
@@ -1745,9 +1733,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="STQ-pt-DyF"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="2nR-j9-7EB">
                                                             <rect key="frame" x="-2" y="26" width="52" height="18"/>
@@ -1755,9 +1740,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="3eb-Uu-hce"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="cqt-kC-7SJ">
                                                             <rect key="frame" x="54" y="126" width="40" height="18"/>
@@ -1765,9 +1747,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="faI-Km-Woc"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="HvM-OJ-rCW">
                                                             <rect key="frame" x="54" y="106" width="40" height="18"/>
@@ -1775,9 +1754,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="wT7-q1-iBR"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="ArH-cX-tSH">
                                                             <rect key="frame" x="54" y="86" width="40" height="18"/>
@@ -1785,9 +1761,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="baZ-tt-pzd"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-az-ZSd">
                                                             <rect key="frame" x="54" y="66" width="31" height="18"/>
@@ -1795,9 +1768,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="AWH-sT-RQt"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="rYx-jR-jAb">
                                                             <rect key="frame" x="54" y="46" width="40" height="18"/>
@@ -1805,9 +1775,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="iEs-Wo-m3o"/>
-                                                            </connections>
                                                         </button>
                                                         <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="KlS-o5-4Va">
                                                             <rect key="frame" x="54" y="26" width="40" height="18"/>
@@ -1815,9 +1782,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="FsZ-Fe-aCZ"/>
-                                                            </connections>
                                                         </button>
                                                         <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-Qb-IrR">
                                                             <rect key="frame" x="-2" y="6" width="46" height="18"/>
@@ -1826,9 +1790,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="ADs-Dr-C9k"/>
-                                                            </connections>
                                                         </button>
                                                         <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="yor-NG-3fR">
                                                             <rect key="frame" x="54" y="6" width="42" height="18"/>
@@ -1837,9 +1798,6 @@
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
-                                                            <connections>
-                                                                <action selector="selectOnlyOne:" target="5gI-5U-AMq" id="JKc-7f-Dgu"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -12188,7 +12146,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="48.5" y="1" width="935" height="20"/>
+                                                            <rect key="frame" x="49" y="1" width="935" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
@@ -12223,7 +12181,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="0xf-SJ-a06">
-                                                            <rect key="frame" x="986.5" y="1" width="69" height="17"/>
+                                                            <rect key="frame" x="987" y="1" width="69" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button identifier="changeButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-NF-Ct9">
