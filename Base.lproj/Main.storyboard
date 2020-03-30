@@ -2929,7 +2929,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TKf-35-Z65">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="mRE-0R-5yG"/>
@@ -2940,7 +2940,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ink-Yv-QlM">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeBAnswer:" target="epQ-Hh-IVb" id="OxR-Mf-cQU"/>
@@ -3039,7 +3039,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="P92-rq-wXx">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="Qhp-68-evb"/>
@@ -3050,7 +3050,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1Su-rw-6aG">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionThreeCAnswer:" target="epQ-Hh-IVb" id="gxd-5B-hmj"/>
@@ -3076,7 +3076,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="Yes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N8W-CG-84k">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="FKH-Bu-Hx5"/>
@@ -3087,7 +3087,7 @@ Gw
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="check" title="No" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cID-6n-jgt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="menu" size="14"/>
+                                            <font key="font" metaFont="label" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="takeSectionTwoAnswer:" target="epQ-Hh-IVb" id="obS-iF-2np"/>
@@ -5818,7 +5818,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient complains of (TRUE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="mixed" allowsMixedState="YES" inset="2" id="pSt-sL-BH7" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="menu" size="14"/>
+                                    <font key="font" metaFont="label" size="14"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-1z-EUB">
@@ -5826,7 +5826,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="- Patient denies (FALSE)" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" allowsMixedState="YES" inset="2" id="zo1-TP-KHw" customClass="RedGreenCheckbox" customModule="PTVN_Editor" customModuleProvider="target">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="menu" size="14"/>
+                                    <font key="font" metaFont="label" size="14"/>
                                 </buttonCell>
                             </button>
                         </subviews>

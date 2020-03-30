@@ -605,7 +605,13 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             results = results.replacingOccurrences(of: "Lvl Phn", with: "Lvl Phn (\(phoneMin.stringValue))")
             results = results.replacingOccurrences(of: "Lvl TM", with: "Lvl TM (\(phoneMin.stringValue))")
         }
-        //print(results)
+        
+        if results.contains("Lvl Phn") {
+            theData.subjective = "Visit is being conducted as a telephone encounter for safety with the patient's consent during the COVID-19 pandemic. Patients identity verified.\n\n" + theData.subjective
+        } else if results.contains("Lvl TM") {
+            theData.subjective = "Visit is being conducted as a telemedicine encounter with the patient's consent for safety during the COVID-19 pandemic.\n\n" + theData.subjective
+        }
+        
         theData.assessment.addToExistingText(results, withSpace: false)
         
         //Reorganize the assessment so the Visit Level is at the bottom of the dx list
