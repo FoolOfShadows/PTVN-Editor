@@ -129,6 +129,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let educationResults = Education().processSectionData(getDataFromView(educationView))
         let injectionResults = Injections().processInjectionsUsing(getDataFromView(injectionsView))
         let preOpResults = PreOp().processSectionData(getDataFromView(preOpView))
+        let objectiveResults = DataReview().processObjectiveData(getDataFromView(snippetReviewView))
         
         
         let resultsArray = [dataReviewResults, snippetResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
@@ -145,6 +146,9 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         theData.plan.addToExistingText(results)
         if results.contains("1111F") {
             theData.assessment.addToExistingText("1111F")
+        }
+        if !objectiveResults.isEmpty {
+            theData.objective.addToExistingText(objectiveResults)
         }
 //        processAssessmentTable(self)
         

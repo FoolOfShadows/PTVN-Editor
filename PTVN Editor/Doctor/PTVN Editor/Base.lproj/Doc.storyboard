@@ -858,6 +858,14 @@ Gw
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="48" translatesAutoresizingMaskIntoConstraints="NO" id="xOm-6D-qCf">
+                                            <rect key="frame" x="18" y="158" width="67" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Tele PE" bezelStyle="regularSquare" imagePosition="left" inset="2" id="2fC-Oo-AXm">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
