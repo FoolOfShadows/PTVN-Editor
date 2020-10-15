@@ -85,7 +85,7 @@ struct DataReview {
         
         for item in data {
             switch item.0 {
-            case 48: resultArray.append("""
+            case 64: resultArray.append("""
 GENERAL: Alert, oriented; no acute distress, well developed, well nourished
 PSY: Normal mood, appropriate affect, normal judgment & insight
 HEAD: no visible lesions
@@ -95,6 +95,74 @@ THROAT: dentition fair
 NECK: trachea midline, no visible goiter
 CHEST: breathing non labored, No coughing observed, No audible wheeze heard
 NEURO: Normal speech
+""")
+            case 60: resultArray.append("""
+GENERAL: Alert, oriented x3; no acute distress, well developed, well nourished
+PSY: Normal mood, appropriate affect, normal judgment & insight
+HEAD: Normocephalic atraumatic, no lesions
+EYE: Pupils equal round, reactive to light & accommodation, extraocular muscles intact, no icterus, conjunctivae clear
+ENT: EARS: External auditory canals clear, tympanic membranes dull
+NOSE: Boggy nasal mucosa, normal septum and turbinates, no obstruction
+THROAT: Oropharynx Streaky, moist mucus membranes, no exudates, no lesions. dentition fair
+NECK: Supple, no masses, no lymphadenopathy, no bruits, no Jugular venous distention, trachea normal & midline, no thyromegaly
+CV: Heart: regular rhythm, normal rate, no murmur, no rubs, no gallops, normal point of maximal impulse, normal s1, normal s2
+CHEST: Non-tender, Lungs: no wheezes, no crackles, no rhonchi, normal fremitus, no egophony, breathing non labored
+ABDOMEN: Soft, non-distended, no tenderness, no rebound, no guarding, no hepatosplenomegaly, no masses, normal bowel sounds
+EXTREMITIES: No cyanosis, no clubbing, no edema, normal pulses, normal capillary refill
+SKIN: Warm, dry, normal turgor, no lesions, no rash
+MSK: Back-tender lumbar, strength 4/5, normal tone, normal range of motion, normal posture,
+NEURO: Deep Tendon Reflexes Diminished knees and ankles, diminished sensation, normal gait
+""")
+            case 61: resultArray.append("""
+GENERAL: Alert, oriented x3; no acute distress, well developed, well nourished
+PSY: Normal mood, appropriate affect, normal judgment & insight
+HEAD: Normocephalic atraumatic, no lesions
+EYE: Pupils equal round, reactive to light & accommodation, extraocular muscles intact, no icterus, conjunctivae clear
+ENT: EARS: External auditory canals clear, tympanic membranes dull
+NOSE: Boggy nasal mucosa, normal septum and turbinates, no obstruction
+THROAT: Oropharynx Streaky, moist mucus membranes, no exudates, no lesions. dentition fair
+NECK: Supple, no masses, no lymphadenopathy, no bruits, no Jugular venous distention, trachea normal & midline, no thyromegaly
+CV: Heart: regular rhythm, normal rate, no murmur,  no rubs, no gallops, normal point of maximal impulse, normal s1, normal s2
+CHEST: Non-tender, Lungs: clear, no wheezes, no crackles, no rhonchi, normal fremitus, no egophony, breathing non labored
+ABDOMEN: Soft, non-distended, no tenderness, no rebound, no guarding, no hepatosplenomegaly, no masses, normal bowel sounds
+EXTREMITIES: No cyanosis, no clubbing, no edema, normal pulses, normal capillary refill
+SKIN: Warm, dry, normal turgor, no lesions, no rash
+MSK: Non-tender, strength 5/5, normal tone, normal range of motion, normal posture
+NEURO: Cranial nerves intact, Nonfocal, normal sensation, normal gait
+""")
+            case 62: resultArray.append("""
+GENERAL: Alert, oriented x3; no acute distress, well developed, well nourished
+PSY: Normal mood, appropriate affect, normal judgment & insight
+HEAD: Normocephalic atraumatic, no lesions
+EYE: Pupils equal round, reactive to light & accommodation, extraocular muscles intact, no icterus, conjunctivae clear
+ENT: EARS: External auditory canals clear, tympanic membranes dull
+NOSE: Boggy nasal mucosa, normal septum and turbinates, no obstruction
+THROAT: Oropharynx Streaky, moist mucus membranes, no exudates, no lesions. dentition fair
+NECK: Supple, no masses, no lymphadenopathy, no bruits, no Jugular venous distention, trachea normal & midline, no thyromegaly
+CV: Heart: regular rhythm, normal rate, no murmur, no gallops, no rubs, normal point of maximal impulse, normal s1, normal s2
+CHEST: Non-tender, Lungs: clear, no wheezes, no crackles, no rhonchi, normal fremitus, no egophony, breathing non labored
+ABDOMEN: Soft, non-distended, no tenderness, no rebound, no guarding, no hepatosplenomegaly, no masses, normal bowel sounds
+EXTREMITIES: No cyanosis, no clubbing, no edema, normal pulses, normal capillary refill
+SKIN: Warm, dry, normal turgor, no lesions, no rash
+MSK: Neck and traps tender, strength 4/5, normal tone, stiff range of motion, normal posture
+NEURO: Nonfocal, normal sensation, normal gait
+""")
+            case 63: resultArray.append("""
+GENERAL: Alert, oriented x3; no acute distress, well developed, well nourished
+PSY: Normal mood, appropriate affect, normal judgment & insight
+HEAD: Normocephalic atraumatic, no lesions
+EYE: Pupils equal round, reactive to light & accommodation, extraocular muscles intact, no icterus, conjunctivae clear
+ENT: EARS: External auditory canals clear, tympanic membranes dull
+NOSE: Boggy nasal mucosa, normal septum and turbinates, no obstruction
+THROAT: Oropharynx Streaky, moist mucus membranes, no exudates, no lesions. dentition fair
+NECK: Supple, no masses, no lymphadenopathy, no bruits, no Jugular venous distention, trachea normal & midline, no thyromegaly
+CV: Heart: regular rhythm, normal rate, no murmur, no gallops, no rubs, normal point of maximal impulse, normal s1, normal s2
+CHEST: Non-tender, Lungs: clear, no wheezes, no crackles, no rhonchi, normal fremitus, no egophony, breathing non labored
+ABDOMEN: Soft, non-distended, no tenderness, no rebound, no guarding, no hepatosplenomegaly, no masses, normal bowel sounds
+EXTREMITIES: No cyanosis, no clubbing, no edema, normal pulses, normal capillary refill
+SKIN: Warm, dry, normal turgor, no lesions, no rash
+MSK: Non-tender, strength 5/5, normal tone, normal range of motion, normal posture
+NEURO: Nonfocal, normal sensation, normal gait
 """)
             default: continue
             }

@@ -235,4 +235,13 @@ private func getPrevDataFrom(_ source:String) -> String {
             }
         }
     }
+    
+    @IBAction func abnormalPE(_ sender:NSButton) {
+        let boxes = snippetReviewView.getListOfButtons()
+        for box in boxes {
+            if (box.tag > 59) && (box.title != sender.title) {
+                box.state = .off
+            }
+        }
+    }
 }
