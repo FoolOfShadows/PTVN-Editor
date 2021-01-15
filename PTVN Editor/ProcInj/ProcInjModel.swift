@@ -84,63 +84,63 @@ struct ProcInjModel {
             switch item.0 {
             case 1:
                 resultArray.append("Decadron 4 mg/1 ml + Kenalog 40 mg/1 ml \(item.1!), consent signed.")
-                charges.append("D/K")
+                charges.append("- D/K")
             case 2:
                 resultArray.append("Celestone 6 mg/1 ml \(item.1!), consent signed.")
-                charges.append("C")
+                charges.append("- C")
             case 3:
                 resultArray.append("Solumedrol 125 mg \(item.1!) consent signed.")
-                charges.append("Sol")
+                charges.append("- Sol")
             case 4:
                 resultArray.append("B12 1000 mcg/1 ml \(item.1!) consent signed.")
-                charges.append("B12")
+                charges.append("- B12")
             case 5:
                 resultArray.append("Phenergan 25 mg \(item.1!) consent signed.")
-                charges.append("Ph")
+                charges.append("- Ph")
             case 7:
                 resultArray.append("Testosterone Cypionate 200 mg/1 ml \(item.1!) consent signed.")
-                charges.append("Tst")
+                charges.append("- Tst")
             case 6:
                 resultArray.append("Toradol (Ketoralac) \(torDose) mg \(item.1!) consent signed.")
-                charges.append("Tor - \(torDose)")
+                charges.append("- Tor - \(torDose)")
             case 8:
                 resultArray.append("Estradiol Cypionate 5 mg/1ml \(item.1!) consent signed.")
-                charges.append("Est")
+                charges.append("- Est")
             case 9:
                 resultArray.append(getSiteSpecificArthroVerbiageFrom(item.1!))
             case 10:
                 resultArray.append("PPD (Purified Protein Derivative) Mantoux TB Skin Test 0.1 ml/5 TU \(item.1!), consent signed.")
-                charges.append("PPD")
+                charges.append("- PPD")
             case 11:
                 resultArray.append("Flu shot: \(vaccineType) 0.5 ml \(item.1!) consent signed education: VIS given.")
-                charges.append("Flu - \(vaccineType)")
+                charges.append("- Flu - \(vaccineType)")
             case 12:
                 resultArray.append("Pneumovax 23: 0.5 ml \(item.1!) consent signed education: VIS given.")
-                charges.append("PNV")
+                charges.append("- PNV")
             case 13:
                 resultArray.append("Tdap 0.5 ml \(item.1!) consent signed.")
-                charges.append("Tdap")
+                charges.append("- Tdap")
             case 14:
                 resultArray.append("Nubain 10 mg + Phenergan 25 mg \(item.1!) consent signed.")
-                charges.append("N/PH")
+                charges.append("- N/PH")
             case 15:
                 resultArray.append("Rocephin \(rocDose) Lidocaine \(item.1!) consent signed.")
-                charges.append("Roc - \(rocDose)")
+                charges.append("- Roc - \(rocDose)")
             case 16:
                 resultArray.append("DepoProvera 150 mg/1 ml \(item.1!) consent signed.")
-                charges.append("Depo")
+                charges.append("- Depo")
             case 17:
                 resultArray.append("Procrit/Epogen 10,000 u \(item.1!) consent signed.")
-                charges.append("Epo")
+                charges.append("- Epo")
             case 18:
                 resultArray.append("Arthrocentesis \(item.1!) medial flexed knee approach, with injection of 1 cc 1% lidocaine + Synvisc ONE, after cleansed and prepped with betadine and alcohol.  Pt tolerated procedure well. EBL: none. Consent signed.")
-                charges.append("Arth")
+                charges.append("- Arth")
             case 19:
                 resultArray.append("Trigger point injection with Lidocaine 1 ml + Celestone 6 mg/1 ml \(item.1!).")
-                charges.append("Trig")
+                charges.append("- Trig")
             case 21:
                 resultArray.append("\(hepVaccine) \(item.1!), consent signed, education: VIS given.")
-                charges.append("Hep - \(hepVaccine)")
+                charges.append("- Hep - \(hepVaccine)")
             case 22: resultArray.append(item.1!)
             default: continue
             }
@@ -172,32 +172,32 @@ struct ProcInjModel {
             switch item.0 {
             case 1:
                 resultArray.append("Pap smear")
-                charges.append("PAP")
+                charges.append("- PAP")
             case 2:
                 resultArray.append("Digital rectal exam")
-                charges.append("DRE")
+                charges.append("- DRE")
             case 3:
                 resultArray.append("Hemoccult Stool cards x 3 given for colon cancer screening.")
             case 4:
                 resultArray.append("Incision and drainage of abscess, consent signed")
-                charges.append("IND")
+                charges.append("- IND")
             case 5:
                 resultArray.append("EKG, consent signed.")
-                charges.append("EKG")
+                charges.append("- EKG")
             case 6:
                 resultArray.append("Ear lavage of \(item.1!), consent signed.")
-                charges.append("Ear Lavage - \(item.1!)")
+                charges.append("- Ear Lavage - \(item.1!)")
             case 7:
                 resultArray.append("Nebulizer treatment using \(determineNebTreatmentFrom(item.1!)) solution.")
             case 8:
                 resultArray.append("Cryo treatment x \(item.1!), consent signed.")
-                charges.append("Cryo - \(item.1!)")
+                charges.append("- Cryo - \(item.1!)")
             case 9:
                 resultArray.append("Skin tag removal x \(item.1!), consent signed.")
-                charges.append("Skin Tag - \(item.1!)")
+                charges.append("- Skin Tag - \(item.1!)")
             case 10:
                 resultArray.append("Suture/staple removal x \(item.1!), consent signed.")
-                charges.append("Suture/staple - \(item.1!)")
+                charges.append("- Suture/staple - \(item.1!)")
             default: continue
             }
         }
@@ -218,17 +218,17 @@ struct ProcInjModel {
             switch item.0 {
             case 1:
                 resultArray.append("Urine dip, consent signed.")
-                charges.append("UDIP")
+                charges.append("- UDIP")
             case 2:
                 resultArray.append("UCG, consent signed.")
-                charges.append("UCG")
+                charges.append("- UCG")
             case 3:
                 resultArray.append("UDS, consent signed.")
-                charges.append("UDS")
+                charges.append("- UDS")
             case 4: resultArray.append("m UDS, consent signed.")
             case 5:
                 resultArray.append("Rapid Flu A&B swab, consent signed.")
-                charges.append("FLU Swab")
+                charges.append("- FLU Swab")
 			case 26: resultArray.append("Flu swab tests positive for Influenza A")
 			case 27: resultArray.append("Flu swab tests positive for Influenza B")
 			case 6: resultArray.append("Flu swab tests negative for Influenza A")

@@ -511,6 +511,7 @@ enum refSurgChoices:String, CaseIterable {
     case pain = "Pain Managment"
     case Podiatrist
     case Urologist
+    case plastic = "Plastic Surgeon"
 }
 
 enum refTherChoices:String, CaseIterable {

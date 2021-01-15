@@ -56,7 +56,7 @@ class FollowUpVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource, 
             secondBit.state = .on
             getSecondFUPart(secondBit)
         }
-        weak var thirdFUBit = fu3Stack.getButtonsInView().filter {$0.title == "25"}[0]
+        weak var thirdFUBit = fu3Stack.getButtonsInView().filter {$0.title == "20"}[0]
         if let thirdBit = thirdFUBit {
             thirdBit.state = .on
             getThirdFUPart(thirdBit)
