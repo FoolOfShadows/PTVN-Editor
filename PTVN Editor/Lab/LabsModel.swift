@@ -67,6 +67,7 @@ struct Labs {
         case 44: return "Stool studies"
         case 45: return "Comprehensive hepatitis panel"
         case 46: return "Acute hepatitis panel"
+        case 50: return "Celiac panel (tTGG, tTGA, EMA, DGP, ARA, IgA Total)"
         default: return nil
         }
     }
@@ -119,6 +120,7 @@ struct Labs {
 		case 44: return "Stool Studies (Stool Culture, Ova & Parasites, C Diff Ag/Toxin, Fecal WBC)"
 		case 45: return "Comprehensive hepatitis panel"
 		case 46: return "Acute hepatitis panel"
+        case 50: return "Celiac Panel (Anti-tissue Transglutaminase Antibody (tTG) IgG and IgA, Endomysial Antibody (EMA), Anti-deamidated Gliadin Peptides (DGP), Antireticulin Antibodies (ARA), Immunoglobulin A (Total IgA))"
 		default: return nil
 		}
 	}
@@ -250,6 +252,7 @@ struct LabDxValues: populateComboBoxProtocol {
         case 46/*aheppnlDxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00"]
         case 47/*other1DxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00"]
         case 48/*other2DxValues*/: return ["", "Z79.899 MedUse", "Z79.891 MedOpi", "Z00.00"]
+        case 50: return ["", "Diarrhea", "Abdominal pain"]
         default: return ["Error assigning diagnosis values"]
         }
     }
