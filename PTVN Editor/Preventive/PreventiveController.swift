@@ -8,12 +8,11 @@
 
 import Cocoa
 
-class PreventiveController: NSViewController {
+
+class PreventiveController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
 	
 	@IBOutlet weak var winPrint: NSWindow!
-	//@IBOutlet var printTextView: NSTextView!
-	
-	
+
 	@IBOutlet weak var pnvTextView: NSTextField!
 	@IBOutlet weak var pnvNotDue: NSButton!
 	@IBOutlet weak var fluTextView: NSTextField!
@@ -58,46 +57,26 @@ class PreventiveController: NSViewController {
 	@IBOutlet weak var hivNotDue: NSButton!
 	@IBOutlet weak var nextMWVTextView: NSTextField!
 	
-    //@IBOutlet var previousPrevView: NSTextView!
+    @IBOutlet var previousPrevView: NSTextView!
+
     @IBOutlet weak var previousPrevScroll: NSScrollView!
-    var previousPrevView: NSTextView {
-        get {
-            return previousPrevScroll.contentView.documentView as! NSTextView
-        }
-    }
-    
-	
-	
-	var measures = [PreventiveMeasure]()
-    
+//    var previousPrevView: NSTextView {
+//        get {
+//            return previousPrevScroll.contentView.documentView as! NSTextView
+//        }
+//    }
+    var controllers = [NSControl]()
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
     
- 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pnvMeasure = PreventiveMeasure(measure: "Pneumococcal vaccination", date: pnvTextView!.stringValue, notDue: pnvNotDue.state)
-        let fluMeasure = PreventiveMeasure(measure: "Influenza vaccination", date: fluTextView!.stringValue, notDue: fluNotDue.state)
-        let hepBMeasure = PreventiveMeasure(measure: "Hepatitis B vaccination", date: hepBTextView!.stringValue, notDue: hepBNotDue.state)
-        let mamMeasure = PreventiveMeasure(measure: "Mammogram", date: mamTextView!.stringValue, notDue: mamNotDue.state)
-        let papMeasure = PreventiveMeasure(measure: "PAP smear", date: papTextView!.stringValue, notDue: papNotDue.state)
-        let dreMeasure = PreventiveMeasure(measure: "Digital rectal exam", date: dreTextView!.stringValue, notDue: dreNotDue.state)
-        let psaMeasure = PreventiveMeasure(measure: "PSA lab", date: psaTextView!.stringValue, notDue: psaNotDue.state)
-        let guaMeasure = PreventiveMeasure(measure: "Stool occult blood test", date: guaTextView!.stringValue, notDue: guaNotDue.state)
-        let flexSigMeasure = PreventiveMeasure(measure: "Flexible sigmoidoscopy exam", date: flexSigTextView!.stringValue, notDue: flexSigNotDue.state)
-        let clnMeasure = PreventiveMeasure(measure: "Screening colonoscopy", date: clnTextView!.stringValue, notDue: clnNotDue.state)
-        let enemaMeasure = PreventiveMeasure(measure: "Barium enema", date: enemaTextView!.stringValue, notDue: enemaNotDue.state)
-        let diabetesTrainingMeasure = PreventiveMeasure(measure: "Diabetes self-management training", date: diabetesTrainingTextView!.stringValue, notDue: diabetesTrainingNotDue.state)
-        let bmdMeasure = PreventiveMeasure(measure: "Bone mineral density test", date: bmdTextView!.stringValue, notDue: bmdNotDue.state)
-        let glaucomaMeasure = PreventiveMeasure(measure: "Glaucoma exam", date: glaucomaTextView!.stringValue, notDue: glaucomaNotDue.state)
-        let nutritionTherapyMeasure = PreventiveMeasure(measure: "Medical nutrition therapy for diabetes or renal disease", date: nutritionTherapyTextView!.stringValue, notDue: nutritionTherapyNotDue.state)
-        let cholesterolMeasure = PreventiveMeasure(measure: "Total cholesterol lab", date: cholesterolTextView!.stringValue, notDue: cholesterolNotDue.state)
-        let hdlMeasure = PreventiveMeasure(measure: "HDL lab", date: hdlTextView!.stringValue, notDue: hdlNotDue.state)
-        let triglyceridesMeasure = PreventiveMeasure(measure: "Triglycerides lab", date: triglyceridesTextView!.stringValue, notDue: triglyceridesNotDue.state)
-        let glucoseToleranceMeasure = PreventiveMeasure(measure: "Glucose tolerance test", date: glucoseToleranceTextView!.stringValue, notDue: glucoseToleranceNotDue.state)
-        let abUSNDMeasure = PreventiveMeasure(measure: "Abdominal aortic aneurysm screening", date: abUSNDTextView!.stringValue, notDue: abUSNDNotDue.state)
-        let hivMeasure = PreventiveMeasure(measure: "HIV screening", date: hivTextView!.stringValue, notDue: hivNotDue.state)
-        measures = [pnvMeasure, fluMeasure, hepBMeasure, mamMeasure, papMeasure, dreMeasure, psaMeasure, guaMeasure, flexSigMeasure, clnMeasure, enemaMeasure, diabetesTrainingMeasure, bmdMeasure, glaucomaMeasure, nutritionTherapyMeasure, cholesterolMeasure, hdlMeasure, triglyceridesMeasure, glucoseToleranceMeasure, abUSNDMeasure, hivMeasure]
+        controllers = [pnvTextView, pnvNotDue, fluTextView, fluNotDue, hepBTextView, hepBNotDue, mamTextView, mamNotDue, papTextView, papNotDue, dreTextView, dreNotDue, psaTextView, psaNotDue, guaTextView, guaNotDue, flexSigTextView, flexSigNotDue, clnTextView, clnNotDue, enemaTextView, enemaNotDue, diabetesTrainingTextView, diabetesTrainingNotDue, bmdTextView, bmdNotDue, glaucomaTextView, glaucomaNotDue, nutritionTherapyTextView, nutritionTherapyNotDue, cholesterolTextView, cholesterolNotDue, hdlTextView, hdlNotDue, triglyceridesTextView, triglyceridesNotDue, glucoseToleranceTextView, glucoseToleranceNotDue, abUSNDTextView, abUSNDNotDue, hivTextView, hivNotDue]
+        for controller in controllers {
+            if let textController = controller as? NSTextField {
+                textController.delegate = self
+            }
+        }
         setFontSizeOf(16, forFields: [previousPrevView])
         //previousPrevView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
         previousPrevView.string = getPrevDataFrom(theData.preventive)
@@ -111,20 +90,24 @@ class PreventiveController: NSViewController {
             theWindow.styleMask.remove(.resizable)
         }
     }
-	
-	func prepareMeasures() -> String {
-		var results = processMeasures(measures: measures)
-		if !nextMWVTextView.stringValue.isEmpty {
-			if !results.isEmpty {
-				results += "\n"
-			}
-			results += "Next Medicare Wellness Exam due after: \(nextMWVTextView.stringValue)"
-		}
-		return results
-	}
+    
+    func controlTextDidChange(_ obj: Notification) {
+        print("changing text")
+        guard let theTextField = obj.object as? NSTextField else { return }
+        
+        let tfTag = theTextField.tag
+        for controller in controllers {
+            if let matchingCheckBox = controller as? NSButton {
+                if matchingCheckBox.tag == tfTag {
+                    matchingCheckBox.state = .off
+                }
+            }
+        }
+    }
 	
 	@IBAction func processPreventiveMeasures(_ sender: NSButton) {
-		let results = prepareMeasures()
+		let results = prepPrenventiveMeasures()
+        
 		if !results.isEmpty {
             theData.plan.addToExistingText(results)
             
@@ -134,16 +117,65 @@ class PreventiveController: NSViewController {
             self.dismiss(self)
 		}
 	}
+    
+    func prepPrenventiveMeasures() -> String {
+        var results = String()
+        var resultMeasures = [String]()
+        
+        for controller in controllers {
+            if let converted = controller as? NSTextField {
+                if !converted.stringValue.isEmpty {
+                    resultMeasures.append(putTogetherData(tag: converted.tag, value: "due \(converted.stringValue)"))
+                }
+            } else if let converted = controller as? NSButton {
+                if converted.state.rawValue == 1 {
+                    resultMeasures.append(putTogetherData(tag: converted.tag, value: "not due"))
+                }
+            }
+        }
+        if !resultMeasures.isEmpty {
+            results = resultMeasures.joined(separator: "\n")
+        }
+        return results
+    }
+    
+    func putTogetherData(tag: Int, value: String) -> String {
+        switch tag {
+        case 1: return "Pneumococcal vaccination \(value)."
+        case 2: return "Influenza vaccination \(value)."
+        case 3: return "Hepatitis B vaccination \(value)."
+        case 4: return "Mamogram \(value)."
+        case 5: return "PAP smear \(value)."
+        case 6: return "Bone mineral density \(value)."
+        case 7: return "Digital rectal exam \(value)."
+        case 8: return "Prostate specific antigen (PSA) \(value)."
+        case 9: return "GUA \(value)."
+        case 10: return "Flexible sigmoidoscopy \(value)."
+        case 11: return "Screening colonoscopy \(value)."
+        case 12: return "Barium enema \(value)."
+        case 13: return "AAA sonogram screening \(value)."
+        case 14: return "Glaucoma screening \(value)."
+        case 15: return "Diabetic self-management training \(value)."
+        case 16: return "Medical nutrition therapy \(value)."
+        case 17: return "Total cholestroal (HDL) \(value)."
+        case 18: return "High density lipids (HDL) \(value)."
+        case 19: return "Triglycerides \(value)."
+        case 20: return "Fasting blood sugar/glucose tolerance test \(value)."
+        case 21: return "HIV screening \(value)."
+        default:
+            return "No usable values found"
+        }
+    }
 	
 	@IBAction func processClear(_ sender: AnyObject) {
-		processClearMeasures(measures: measures)
-		nextMWVTextView.stringValue = String()
+//		processClearMeasures(measures: measures)
+//		nextMWVTextView.stringValue = String()
 	}
 
 	
 	
 	@IBAction func takePrintMeasures(_ sender: AnyObject) {
-		var results = prepareMeasures()
+		var results = prepPrenventiveMeasures()
 		if !results.isEmpty {
             let pasteBoard = NSPasteboard.general
 			pasteBoard.clearContents()
@@ -172,5 +204,20 @@ class PreventiveController: NSViewController {
 		let myPrintOperation = NSPrintOperation(view: printTextView, printInfo: myPrintInfo)
 		myPrintOperation.run()
 	}
+    
+    @IBAction func updateCheckBoxValue(_ sender: NSButton) {
+        if sender.state == .on {
+            let tfTag = sender.tag
+            for controller in controllers {
+                if let matchingTextField = controller as? NSTextField {
+                    if matchingTextField.tag == tfTag {
+                        matchingTextField.stringValue = ""
+                    }
+                }
+            }
+        }
+        
+    }
+    }
 	
-}
+
