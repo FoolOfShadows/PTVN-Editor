@@ -68,9 +68,15 @@ class PreventiveController: NSViewController, NSTextFieldDelegate, NSControlText
     var controllers = [NSControl]()
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
+    var trackedData = TrackedMeasures(source: "")
+    
+    let dateFormatter = DateFormatter()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateFormat = "MM/dd/YYYY"
+        
         controllers = [pnvTextView, pnvNotDue, fluTextView, fluNotDue, hepBTextView, hepBNotDue, mamTextView, mamNotDue, papTextView, papNotDue, dreTextView, dreNotDue, psaTextView, psaNotDue, guaTextView, guaNotDue, flexSigTextView, flexSigNotDue, clnTextView, clnNotDue, enemaTextView, enemaNotDue, diabetesTrainingTextView, diabetesTrainingNotDue, bmdTextView, bmdNotDue, glaucomaTextView, glaucomaNotDue, nutritionTherapyTextView, nutritionTherapyNotDue, cholesterolTextView, cholesterolNotDue, hdlTextView, hdlNotDue, triglyceridesTextView, triglyceridesNotDue, glucoseToleranceTextView, glucoseToleranceNotDue, abUSNDTextView, abUSNDNotDue, hivTextView, hivNotDue]
         for controller in controllers {
             if let textController = controller as? NSTextField {
@@ -80,6 +86,23 @@ class PreventiveController: NSViewController, NSTextFieldDelegate, NSControlText
         setFontSizeOf(16, forFields: [previousPrevView])
         //previousPrevView.textStorage?.font = NSFont(name: "Times New Roman", size: 16)
         previousPrevView.string = getPrevDataFrom(theData.preventive)
+        trackedData = TrackedMeasures(source: theData.preventive)
+        pnvTextView.stringValue = trackedData.tmPNV
+        fluTextView.stringValue = trackedData.tmFLU
+        mamTextView.stringValue = trackedData.tmMGM
+        papTextView.stringValue = trackedData.tmPAP
+        clnTextView.stringValue = trackedData.tmCOLO
+        dreTextView.stringValue = trackedData.tmDRE
+        bmdTextView.stringValue = trackedData.tmBMD
+        glaucomaTextView.stringValue = trackedData.tmEYE
+        hivTextView.stringValue = trackedData.tmHIV
+        if let oneYear = Date().addingDays(366) {
+            nextMWVTextView.stringValue = "Next AWV should be \(dateFormatter.string(from: oneYear)) or later"
+        } else {
+            nextMWVTextView.stringValue = "Unable to calculate next visit date."
+        }
+        
+        
     }
     
     override func viewDidAppear() {
@@ -183,9 +206,7 @@ class PreventiveController: NSViewController, NSTextFieldDelegate, NSControlText
 			//Swift.print(results)
 		}
 		
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "MM/dd/YYYY"
-		let currentDate = dateFormatter.string(from: Date())
+        let currentDate = dateFormatter.string(from: Date())
 		
 		results = "Medicare Wellness Visit\nVisit Date:\(currentDate)\n\n\(theData.ptName)\n\n\(results)"
 		

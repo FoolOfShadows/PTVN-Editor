@@ -35,7 +35,6 @@
 		7964A238208F7DFF00B5790A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964A237208F7DFF00B5790A /* StringExtensions.swift */; };
 		7967689821F7745F000A836F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689621F7745F000A836F /* PreferencesViewController.swift */; };
 		7967689A21F7750D000A836F /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967689921F7750D000A836F /* PreferencesModel.swift */; };
-		7970B74223A9439B00F0DFCC /* PreventiveMeasureClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970B74123A9439B00F0DFCC /* PreventiveMeasureClass.swift */; };
 		79802486239EC3D0005DBBA2 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79802485239EC3D0005DBBA2 /* NoteView.swift */; };
 		798BBB4520939617002A28AA /* ESSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3D20939613002A28AA /* ESSController.swift */; };
 		798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BBB3E20939613002A28AA /* IncontinenceController.swift */; };
@@ -139,7 +138,6 @@
 		7964A237208F7DFF00B5790A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		7967689621F7745F000A836F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7967689921F7750D000A836F /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
-		7970B74123A9439B00F0DFCC /* PreventiveMeasureClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMeasureClass.swift; sourceTree = "<group>"; };
 		7973C3072339380300FF9812 /* PTVN Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PTVN Editor.entitlements"; sourceTree = "<group>"; };
 		79802485239EC3D0005DBBA2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		798BBB3D20939613002A28AA /* ESSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSController.swift; sourceTree = "<group>"; };
@@ -379,7 +377,6 @@
 			children = (
 				798BBB572093A000002A28AA /* PreventiveController.swift */,
 				798BBB5620939FFF002A28AA /* PreventiveModel.swift */,
-				7970B74123A9439B00F0DFCC /* PreventiveMeasureClass.swift */,
 			);
 			path = Preventive;
 			sourceTree = "<group>";
@@ -701,7 +698,6 @@
 				79CCA6A52090B73F00909285 /* PainViewController.swift in Sources */,
 				79349EA821765B420020F88B /* OrderedDictionary.swift in Sources */,
 				79CCA6A92090B73F00909285 /* LabsModel.swift in Sources */,
-				7970B74223A9439B00F0DFCC /* PreventiveMeasureClass.swift in Sources */,
 				7913205C2077C85100CB1537 /* AppDelegate.swift in Sources */,
 				79CCA6CF2090D49F00909285 /* CV Model.swift in Sources */,
 				79CCA6A82090B73F00909285 /* DMViewController.swift in Sources */,
@@ -897,7 +893,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -920,7 +916,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
