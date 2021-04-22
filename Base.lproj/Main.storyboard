@@ -817,6 +817,63 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22A-lN-FWq">
+                                <rect key="frame" x="367" y="680" width="122" height="18"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QRD-mH-3Fb">
+                                        <rect key="frame" x="0.0" y="0.0" width="23" height="18"/>
+                                        <buttonCell key="cell" type="inline" title="15" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Szy-jf-k29">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="smallSystemBold"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startTimer:" target="5gI-5U-AMq" id="Fnn-lF-Dnc"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KFY-IO-E5T">
+                                        <rect key="frame" x="31" y="0.0" width="25" height="18"/>
+                                        <buttonCell key="cell" type="inline" title="20" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="bHh-Sm-A9D">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="smallSystemBold"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startTimer:" target="5gI-5U-AMq" id="TCT-VE-Q8w"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-ql-fxf">
+                                        <rect key="frame" x="64" y="0.0" width="25" height="18"/>
+                                        <buttonCell key="cell" type="inline" title="25" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="xJ6-iK-NqM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="smallSystemBold"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startTimer:" target="5gI-5U-AMq" id="SLs-sy-MO2"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-pi-lr0">
+                                        <rect key="frame" x="97" y="0.0" width="25" height="18"/>
+                                        <buttonCell key="cell" type="inline" title="30" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="bGp-Y0-glG">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="smallSystemBold"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startTimer:" target="5gI-5U-AMq" id="ub4-so-3jB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NgB-4V-6xU">
                                 <rect key="frame" x="18" y="679" width="159" height="19"/>
                                 <constraints>
@@ -2664,6 +2721,15 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24S-Ug-eom">
+                                <rect key="frame" x="408" y="701" width="39" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="0" id="XP8-GN-u9E">
+                                    <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Cno-Pc-El3" firstAttribute="leading" secondItem="2Of-8B-yjS" secondAttribute="trailing" constant="-1" id="0AR-pI-Mu1"/>
@@ -2770,13 +2836,15 @@
                         <outlet property="socialView" destination="ap2-Mi-pnS" id="Z4o-cR-0h6"/>
                         <outlet property="subjectiveActivateSafari" destination="9Ru-eI-fG8" id="u2N-u2-S4U"/>
                         <outlet property="subjectiveView" destination="edD-ok-KbA" id="iOg-WU-fJ7"/>
+                        <outlet property="timerButtonStack" destination="22A-lN-FWq" id="Oa5-jq-cgN"/>
+                        <outlet property="timerView" destination="24S-Ug-eom" id="2UN-Zp-Np7"/>
                         <outlet property="visitLevelView" destination="jDt-dZ-J2r" id="v53-HK-zpr"/>
                         <segue destination="wo2-Ie-Dfm" kind="show" identifier="showNoteWindow" id="dIB-eO-aD0"/>
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="540.5"/>
+            <point key="canvasLocation" x="-58.5" y="540.5"/>
         </scene>
         <!--MoodVC-->
         <scene sceneID="SUq-zg-tG4">
@@ -12194,7 +12262,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="64" y="1" width="935" height="20"/>
+                                                            <rect key="frame" x="63.5" y="1" width="935" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
@@ -12229,7 +12297,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="0xf-SJ-a06">
-                                                            <rect key="frame" x="1002" y="1" width="35" height="17"/>
+                                                            <rect key="frame" x="1001.5" y="1" width="35" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button identifier="changeButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-NF-Ct9">

@@ -54,6 +54,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var assessmentActivateSafari: NSButton!
     @IBOutlet weak var planActivateSafari: NSButton!
     @IBOutlet weak var phoneMin: NSTextField!
+    @IBOutlet weak var timerView: NSTextField!
     
     var ccView: NSTextView {
         get {
@@ -81,6 +82,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     var noteWindow: NSWindow?
     
+    var visitTimer = Timer()
+    var timeDisplayed = 0
+    var scheduledTime = 20
+    @IBOutlet weak var timerButtonStack: NSStackView!
+    
     func updateSubjectiveWithNotes(_ notes: String) {
         //print("updating the view with \(notes)")
         subjectiveView.string.addToExistingText(notes)
@@ -105,6 +111,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timerView.drawsBackground = true
+        timerView.backgroundColor = .green
         
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
@@ -696,6 +705,44 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
 //            }
 //        }
         
+    }
+    
+    @IBAction func startTimer(_ sender: NSButton) {
+        if sender.state == .on {
+            if let buttons = timerButtonStack.subviews as? [NSButton] {
+                for button in buttons {
+                    if button.title != sender.title {
+                        button.state = .off
+                    }
+                }
+            }
+        visitTimer.invalidate()
+        timeDisplayed = 0
+        scheduledTime = Int(sender.title)!
+        timerView.stringValue = String(timeDisplayed)
+        timerView.backgroundColor = .green
+        visitTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RunTimer), userInfo: nil, repeats: true)
+        } else if sender.state == .off {
+            visitTimer.invalidate()
+            print(timerView.stringValue)
+            //FIXME: Figure out where to add the timer value to, how to label it, and make sure the PTVN data is updated
+            //ViewBeingAppendedTo.addToViewsExistingText("Visit Length: \(timerView.stringValue) minutes.")
+            //updateVarForView(ViewBeingAppendedTo)
+        }
+    }
+    
+    @objc func RunTimer() {
+        //visitTimer.invalidate()
+        timeDisplayed += 1
+        
+        switch timeDisplayed {
+        case (scheduledTime/3)..<((scheduledTime/3)*2): timerView.backgroundColor = .yellow
+        case ((scheduledTime/3)*2)..<(scheduledTime): timerView.backgroundColor = .orange
+        case let x where x >= scheduledTime: timerView.backgroundColor = .red
+        default: timerView.backgroundColor = .green
+        }
+        
+        timerView.stringValue = String(timeDisplayed)
     }
     
     deinit {
