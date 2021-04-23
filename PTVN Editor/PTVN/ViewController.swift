@@ -480,6 +480,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func copyPlan(_ sender: Any) {
+        theData.plan = theData.plan.replaceRegexPattern("\n\nVisit Length: \\d* minutes \\(\\d\\d\\).", with: "")
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.plan)).copyToPasteboard()
         if planActivateSafari.state == NSControl.StateValue.on {
             activateBrowser()
@@ -721,13 +722,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         scheduledTime = Int(sender.title)!
         timerView.stringValue = String(timeDisplayed)
         timerView.backgroundColor = .green
-        visitTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RunTimer), userInfo: nil, repeats: true)
+        visitTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(RunTimer), userInfo: nil, repeats: true)
         } else if sender.state == .off {
             visitTimer.invalidate()
-            print(timerView.stringValue)
-            //FIXME: Figure out where to add the timer value to, how to label it, and make sure the PTVN data is updated
-            //ViewBeingAppendedTo.addToViewsExistingText("Visit Length: \(timerView.stringValue) minutes.")
-            //updateVarForView(ViewBeingAppendedTo)
+            planView.addToViewsExistingText("\n\nVisit Length: \(timerView.stringValue) minutes (\(sender.title)).")
+            updateVarForView(planView)
         }
     }
     
@@ -736,10 +735,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         timeDisplayed += 1
         
         switch timeDisplayed {
-        case (scheduledTime/3)..<((scheduledTime/3)*2): timerView.backgroundColor = .yellow
-        case ((scheduledTime/3)*2)..<(scheduledTime): timerView.backgroundColor = .orange
+        case (scheduledTime/3)..<((scheduledTime/3)*2): timerView.backgroundColor = .green
+        case ((scheduledTime/3)*2)..<(scheduledTime): timerView.backgroundColor = .yellow
         case let x where x >= scheduledTime: timerView.backgroundColor = .red
-        default: timerView.backgroundColor = .green
+        default: timerView.backgroundColor = .purple
         }
         
         timerView.stringValue = String(timeDisplayed)
