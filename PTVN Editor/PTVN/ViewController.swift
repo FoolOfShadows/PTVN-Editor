@@ -113,7 +113,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         super.viewDidLoad()
         
         timerView.drawsBackground = true
-        timerView.backgroundColor = .green
+        timerView.backgroundColor = .purple
         
         //Set up the font settings for the text views
         let theUserFont:NSFont = NSFont.systemFont(ofSize: 18)
@@ -721,7 +721,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         timeDisplayed = 0
         scheduledTime = Int(sender.title)!
         timerView.stringValue = String(timeDisplayed)
-        timerView.backgroundColor = .green
+        timerView.backgroundColor = .purple
         visitTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(RunTimer), userInfo: nil, repeats: true)
         } else if sender.state == .off {
             visitTimer.invalidate()
