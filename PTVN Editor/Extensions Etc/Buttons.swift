@@ -9,6 +9,24 @@
 import Cocoa
 import QuartzCore
 
+//Code cribbed from https://daily-blog.netlify.app/questions/1896709/index.html.  Haven't played with it yet.
+@IBDesignable
+class ColoredLabel: NSTextFieldCell {
+    @IBInspectable var borderColor: NSColor = .clear
+        @IBInspectable var cornerRadius: CGFloat = 3
+
+        override func draw(withFrame cellFrame: NSRect, in controlView: NSView) {
+            let bounds = NSBezierPath(roundedRect: cellFrame, xRadius: cornerRadius, yRadius: cornerRadius)
+            bounds.addClip()
+            super.draw(withFrame: cellFrame, in: controlView)
+            if borderColor != .clear {
+                bounds.lineWidth = 2
+                borderColor.setStroke()
+                bounds.stroke()
+            }
+        }
+}
+
 //Creates a circular checkbox button that is white when OFF, red when ON, and green when MIXED.
 //The checkbox button cell needs to be set to this class rather than the button itself.
 //To keep the top of the circle from clipping the heigth of the

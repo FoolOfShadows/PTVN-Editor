@@ -217,22 +217,22 @@ enum radMRIAreas:String, CaseIterable {
 }
 
 enum radCTAreas:String, CaseIterable {
-    case brain = "angio brain"
-    case abrunoff = "angio abdomen/pelvis with runoff"
-    case head
-    case chest
-    case calcium = "coronary calcium"
-    case arteries = "coronary arteries"
     case abdomen
-    case sinus
-    case neck = "neck soft tissue"
-    case extremity
-    case myelogram
+    case pelvis
+    case abrunoff = "angio abdomen/pelvis with runoff"
+    case chest
+    case head = "head/brain"
+    case brain = "angio brain"
     case orbits
+    case sinus
     case face = "facial bones"
     case temple = "temporal bones"
+    case neck = "neck soft tissue"
     case spine
-    case pelvis
+    case myelogram
+    case extremity
+    case calcium = "coronary calcium"
+    case arteries = "coronary arteries"
     case enterography
     case colonography
 }
@@ -272,8 +272,8 @@ enum radMRAAreas:String, CaseIterable {
 
 enum radUSNDAreas:String, CaseIterable {
     case thyroid
-    case gallbladder = "gallbladder/RUQ"
     case abdominal = "complete abdominal"
+    case gallbladder = "gallbladder/RUQ"
     case kidneys
     case pelvic
     case transvaginal = "pelvic - transvaginal"
@@ -343,10 +343,10 @@ enum radContrast:String, CaseIterable {
 }
 
 enum radSpineSide:String, CaseIterable {
-    case C
-    case T
-    case L
-    case CTL
+    case C = "Cervical spine series"
+    case T = "Thoracic spine series"
+    case L = "Lumbosacral spine series"
+    case CTL = "Cervical, thoracic, and lumbosacral spine series"
 }
 
 enum radXraySpineSide:String, CaseIterable {
