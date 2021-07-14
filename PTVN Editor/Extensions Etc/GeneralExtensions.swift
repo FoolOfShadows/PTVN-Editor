@@ -302,8 +302,13 @@ extension NSBox {
     }
 }
 
-extension NSButton {
-    
+//Extension for working with arrays of NSButton
+extension Sequence where Iterator.Element == NSButton {
+    func turnButtonsOff() {
+        for button in self {
+            button.state = .off
+        }
+    }
 }
 
 

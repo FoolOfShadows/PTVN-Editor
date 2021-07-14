@@ -34,14 +34,15 @@ struct Extremities:PopulateComboBoxProtocol {
 		var resultArray = [String]()
 		
 		for item in data {
-			switch item.0 {
-			case 1: resultArray.append("no cyanosis")
-			case 2: resultArray.append("no clubbing")
-			case 3: resultArray.append("no edema")
-			case 4: resultArray.append("normal pulses")
-			case 5: resultArray.append("normal capillary refill")
-			case 6: resultArray.append("normal vibration sense")
-			case 7: resultArray.append("normal monofilament sensation")
+            guard let buttonTitle = item.1 else { continue }
+			switch buttonTitle {
+			case "Cyan": resultArray.append("no cyanosis")
+			case "Club": resultArray.append("no clubbing")
+			case "Edema": resultArray.append("no edema")
+			case "Pulses": resultArray.append("normal pulses")
+			case "CR": resultArray.append("normal capillary refill")
+			case "Vibe": resultArray.append("normal vibration sense")
+			case "Monfil": resultArray.append("normal monofilament sensation")
 			default: continue
 			}
 		}
@@ -52,6 +53,21 @@ struct Extremities:PopulateComboBoxProtocol {
 		
 		return results
 	}
+    
+    func processExtResultsForSection(_ section: String, from theArray: [String]) -> String {
+        var results = String()
+        
+        switch section {
+        case "Calluses", "Bunions", "Hammer Toes", "Onchomycosis", "Cyanosis":
+            results = "\(section): \(theArray.joined(separator: ", "))"
+        case "Vibration Sense", "Monofilament":
+            results = "\(section): \(theArray.joined(separator: ", "))"
+        default:
+            results = ""
+        }
+        
+        return results
+    }
 	
 
 }
@@ -157,6 +173,35 @@ struct Clubbing {
 		
 		return results
 	}
+}
+
+enum ExtSectionName: String {
+    case Calluses
+    case Bunions
+    case HammerToes = "Hammer Toes"
+    case Onchomycosis
+    case Cyanosis
+    case VibrationSense = "Vibration Sense"
+    case Monofilament
+}
+
+struct EvaluationItem {
+    var title:String
+    var right:Bool
+    var left:Bool
+    
+    func returnResults() -> String {
+        switch (left, right) {
+        case (true, true):
+            return "both true"
+        case (true, false):
+            return "true, false"
+        case (false, true):
+            return "false, true"
+        default:
+            return ""
+        }
+    }
 }
 
 struct Bunions {
