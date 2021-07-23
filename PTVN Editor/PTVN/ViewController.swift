@@ -537,7 +537,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
 //    }
     
     func switchToModule(module: FormButton) {
+        print("Button to click: \(module.rawValue)")
         let buttons = self.view.getListOfButtons()
+        let buttonNames = buttons.map {$0.title}
+        print("Button List: \(buttonNames)")
         let button = buttons.filter { $0.title == module.rawValue }[0]
         print(button.title)
         button.performClick(self)

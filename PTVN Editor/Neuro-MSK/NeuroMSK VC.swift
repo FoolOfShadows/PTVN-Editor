@@ -86,14 +86,21 @@ class NeuroMSK_VC: NSViewController, ProcessTabProtocol {
         clearAllViews()
 	}
 	
-	@IBAction func processNeuroMSKTab(_ sender: Any) {
+	@IBAction func processNeuroMSKTab(_ sender: NSButton) {
 		let results = processTab()
         theData.objective.addToExistingText(results)
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        self.dismiss(self)
+        //self.dismiss(self)
+        
+        if sender.title == "Process & Continue" {
+            self.dismiss(self)
+            currentPTVNDelegate?.switchToModule(module: FormButton.skinGynGUDRE)
+        } else {
+            self.dismiss(self)
+        }
 		//print(results)
 	}
 	

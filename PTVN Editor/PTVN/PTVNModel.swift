@@ -369,6 +369,11 @@ enum FormButton:String {
     case ros = "ROS"
     case pain = "Pain"
     case diabetes = "Diabetes"
+    case CVChestGILymph = "CV/Chest/GI/Lymph"
+    case extremities = "Extremities"
+    case neuromsk = "Neuro/MSK"
+    case skinGynGUDRE = "Skin/Gyn/GU/DRE"
+    case breast = "Breast"
 }
 
 struct FormButtons {

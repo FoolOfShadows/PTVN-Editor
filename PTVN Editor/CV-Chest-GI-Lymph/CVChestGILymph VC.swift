@@ -48,14 +48,21 @@ class CVChestGILymph_VC: NSViewController, NSTextFieldDelegate, NSControlTextEdi
     }
 	
 	
-	@IBAction func processCVTab(_ sender: Any) {
+	@IBAction func processCVTab(_ sender: NSButton) {
 		let results = processTab()
         theData.objective.addToExistingText(results)
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        self.dismiss(self)
+        //self.dismiss(self)
+        
+        if sender.title == "Process & Continue" {
+            self.dismiss(self)
+            currentPTVNDelegate?.switchToModule(module: FormButton.extremities)
+        } else {
+            self.dismiss(self)
+        }
 		//print(results)
 	}
 	

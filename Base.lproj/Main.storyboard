@@ -2351,7 +2351,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-0f-vza" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                <rect key="frame" x="529" y="676" width="144" height="25"/>
+                                <rect key="frame" x="533" y="676" width="144" height="25"/>
                                 <buttonCell key="cell" type="square" title="Gen/Psy/HE/ENT/Neck" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="foy-YM-wsZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -2369,7 +2369,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-E6-E8G" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                <rect key="frame" x="672" y="676" width="128" height="25"/>
+                                <rect key="frame" x="676" y="676" width="128" height="25"/>
                                 <buttonCell key="cell" type="square" title="CV/Chest/GI/Lymph" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xkA-AJ-EJD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -2387,8 +2387,8 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ANE-uu-bBG" customClass="FlatButton" customModule="PTVN_Editor" customModuleProvider="target">
-                                <rect key="frame" x="799" y="676" width="82" height="25"/>
-                                <buttonCell key="cell" type="square" title="Extremeties" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dic-6P-rVB">
+                                <rect key="frame" x="803" y="676" width="78" height="25"/>
+                                <buttonCell key="cell" type="square" title="Extremities" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dic-6P-rVB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -12262,7 +12262,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="wLi-h6-C6a">
-                                                            <rect key="frame" x="63.5" y="1" width="935" height="20"/>
+                                                            <rect key="frame" x="64" y="1" width="935" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-bl-cLf">
@@ -12297,7 +12297,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="0xf-SJ-a06">
-                                                            <rect key="frame" x="1001.5" y="1" width="35" height="17"/>
+                                                            <rect key="frame" x="1002" y="1" width="35" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button identifier="changeButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-NF-Ct9">

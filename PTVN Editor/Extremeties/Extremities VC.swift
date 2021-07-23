@@ -8,10 +8,14 @@
 
 import Cocoa
 
-class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate, NSControlTextEditingDelegate/*, NSSpeechRecognizerDelegate*/ {
+class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate, NSControlTextEditingDelegate /*, NSSpeechRecognizerDelegate*/ {
+    
 	var selfView = NSView()
 	
-
+    @IBOutlet weak var cyanNormalCB: NSButton!
+    @IBOutlet weak var vibeNormalCB: NSButton!
+    @IBOutlet weak var monoNormalCB: NSButton!
+    
     
     
     @IBOutlet weak var extSectionsView: NSView!
@@ -259,43 +263,43 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	
 	@IBAction func clearTab(_ sender: Any) {
 		clearExtremitiesTab()
-        clearAreaNonSiteViews()
+        //clearAreaNonSiteViews()
 	}
     
     
-    private func clearAreaNonSiteViews() {
-//        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox, leftCallusAreaBox, rightCallusAreaBox]
-//        for box in boxes {
-//            box.subviews.forEach({ $0.removeFromSuperview() } )
-//        }
-        extSectionsView.subviews.forEach({ if let theSub = $0 as? NSBox {
-            if theSub.title != "Issue" {
-            $0.removeFromSuperview()
-            }
-            }
-        })
-        sideBox = NSBox()
-        edemaTypeBox = NSBox()
-        edemaPittingBox = NSBox()
-        edemaAreaBox = NSBox()
-        edemaModifierBox = NSBox()
-        edemaModifierBox = NSBox()
-        extremitiesBox = NSBox()
-        leftDigitsBox = NSBox()
-        rightDigitsBox = NSBox()
-        leftSenseStrengthBox = NSBox()
-        leftSenseAreaBox = NSBox()
-        rightSenseStrengthBox = NSBox()
-        rightSenseAreaBox = NSBox()
-        leftCallusAreaBox = NSBox()
-        rightCallusAreaBox = NSBox()
-        medialBunionBox = NSBox()
-        lateralBunionBox = NSBox()
-    }
+//    private func clearAreaNonSiteViews() {
+////        boxes = [edemaTypeBox, edemaPittingBox, sideBox, edemaAreaBox, edemaModifierBox, extremitiesBox, leftDigitsBox, rightDigitsBox, leftSenseStrengthBox, leftSenseAreaBox, rightSenseStrengthBox, rightSenseAreaBox, leftCallusAreaBox, rightCallusAreaBox]
+////        for box in boxes {
+////            box.subviews.forEach({ $0.removeFromSuperview() } )
+////        }
+//        extSectionsView.subviews.forEach({ if let theSub = $0 as? NSBox {
+//            if theSub.title != "Issue" {
+//            $0.removeFromSuperview()
+//            }
+//            }
+//        })
+//        sideBox = NSBox()
+//        edemaTypeBox = NSBox()
+//        edemaPittingBox = NSBox()
+//        edemaAreaBox = NSBox()
+//        edemaModifierBox = NSBox()
+//        edemaModifierBox = NSBox()
+//        extremitiesBox = NSBox()
+//        leftDigitsBox = NSBox()
+//        rightDigitsBox = NSBox()
+//        leftSenseStrengthBox = NSBox()
+//        leftSenseAreaBox = NSBox()
+//        rightSenseStrengthBox = NSBox()
+//        rightSenseAreaBox = NSBox()
+//        leftCallusAreaBox = NSBox()
+//        rightCallusAreaBox = NSBox()
+//        medialBunionBox = NSBox()
+//        lateralBunionBox = NSBox()
+//    }
     
     @IBAction func setAreaSelections(_ sender:NSButton) {
         if sender.state == .on {
-            clearAreaNonSiteViews()
+            //clearAreaNonSiteViews()
             if let buttons = sender.superview?.subviews {
                 for button in buttons {
                     if (button as! NSButton).title != sender.title {
@@ -353,7 +357,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             default: return
             }
         } else if sender.state == .off {
-            clearAreaNonSiteViews()
+            //clearAreaNonSiteViews()
         }
         
     }
@@ -436,15 +440,21 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         //extTextView.addToViewsExistingText("\(issueBox.getActiveButtonInView().capitalized) - \(returnValues.joined(separator: "; "))")
     }
 	
-	@IBAction func processExtremitiesTab(_ sender: Any) {
+	@IBAction func processExtremitiesTab(_ sender: NSButton) {
 		let results = processTab()
         theData.objective.addToExistingText(results)
         
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        self.dismiss(self)
+        //self.dismiss(self)
 		//print(results)
+        if sender.title == "Process & Continue" {
+            self.dismiss(self)
+            currentPTVNDelegate?.switchToModule(module: FormButton.neuromsk)
+        } else {
+            self.dismiss(self)
+        }
 	}
 	
 	func processTab() -> String {
@@ -598,9 +608,9 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             case 2: bunionResults.append(buttonName)
             case 3: hammerToesResults.append(buttonName)
             case 4: onychomycosisResults.append(buttonName)
-            case 5: cyanosisResults.append(buttonName)
-            case 6: vibrationSenseResults.append(buttonName)
-            case 7: monofilamentResults.append(buttonName)
+            case 5: cyanosisResults.append(buttonName); cyanNormalCB.state = .off
+            case 6: vibrationSenseResults.append(buttonName); vibeNormalCB.state = .off
+            case 7: monofilamentResults.append(buttonName); monoNormalCB.state = .off
             default: print("no tag found")
                 
             }

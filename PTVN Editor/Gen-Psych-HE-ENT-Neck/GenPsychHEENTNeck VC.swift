@@ -41,7 +41,7 @@ class GenPsychHEENTNeck_VC: NSViewController, ProcessTabProtocol {
         }
     }
 	
-	@IBAction func processGenTab(_ sender: Any) {
+	@IBAction func processGenTab(_ sender: NSButton) {
 		let results = processTab()
 		//print(results)
         theData.objective.addToExistingText(results)
@@ -49,7 +49,14 @@ class GenPsychHEENTNeck_VC: NSViewController, ProcessTabProtocol {
         let firstVC = presentingViewController as! ViewController
         firstVC.theData = theData
         currentPTVNDelegate?.returnPTVNValues(sender: self)
-        self.dismiss(self)
+        //self.dismiss(self)
+        if sender.title == "Process & Continue" {
+            self.dismiss(self)
+            currentPTVNDelegate?.switchToModule(module: FormButton.CVChestGILymph)
+        } else {
+            self.dismiss(self)
+        }
+        
 	}
 	
 	func processTab() -> String {
