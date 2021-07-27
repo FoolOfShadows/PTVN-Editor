@@ -73,6 +73,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var document = Document()
     
     var windowCloseDelegate:WindowCloseProtocol?
+    var timerRunningDelegate:CatchTimerOnCloseProtocol?
     
     var noteWindowOpen:Bool = false {
         didSet {
@@ -83,6 +84,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var noteWindow: NSWindow?
     
     var visitTimer = Timer()
+    //var timerRunning = false
     var timeDisplayed = 0
     var scheduledTime = 20
     @IBOutlet weak var timerButtonStack: NSStackView!
@@ -719,6 +721,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                         button.state = .off
                     }
                 }
+                timerRunningDelegate?.visitTimerRunning(true)
             }
         visitTimer.invalidate()
         timeDisplayed = 0
@@ -728,6 +731,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         visitTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(RunTimer), userInfo: nil, repeats: true)
         } else if sender.state == .off {
             visitTimer.invalidate()
+            timerRunningDelegate?.visitTimerRunning(false)
             planView.addToViewsExistingText("\n\nVisit Length: \(timerView.stringValue) minutes (\(sender.title)).")
             updateVarForView(planView)
         }
@@ -747,6 +751,24 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         timerView.stringValue = String(timeDisplayed)
     }
     
+//    override func viewWillDisappear() {
+//        print("Removing view.  Timer running = \(timerRunning).")
+//        if timerRunning == true {
+//            var timerButton = "No button selected?"
+//            if let buttons = timerButtonStack.subviews as? [NSButton] {
+//                for button in buttons {
+//                    if button.state == .on {
+//                        timerButton = button.title
+//                    }
+//                }
+//            }
+//            print("Timer button name: \(timerButton)")
+//            visitTimer.invalidate()
+//            planView.addToViewsExistingText("\n\nVisit Length: \(timerView.stringValue) minutes (\(timerButton)).")
+//            updateVarForView(planView)
+//            print("Done updating: \(planView.string)")
+//        }
+//    }
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

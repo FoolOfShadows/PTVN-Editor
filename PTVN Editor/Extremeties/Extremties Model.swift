@@ -15,6 +15,7 @@ struct Extremities:PopulateComboBoxProtocol {
 	//let cbEdema = ["", "toes", "foot", "ankle", "calf", "knee", "thigh", "hip", "groin", "gluteal", "hand", "wrist", "forearm", "elbow", "upper arm", "shoulder"]
 	let cbPulsesLocation = ["", "dorsalis pedis", "posterior tibial", "popliteal", "femoral", "radial", "ulnar", "brachial"]
 	let cbCRQuant = ["", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5"]
+    let puVeriSpiderLocation = ["", "toes", "heel", "foot", "ankle", "calf", "knee", "thigh", "abdomen"]
 	
 	func matchValuesFrom(_ id: Int) -> [String]? {
 		switch id {
@@ -25,6 +26,7 @@ struct Extremities:PopulateComboBoxProtocol {
 		//case 43: return cbEdema
 		case 50, 52: return cbPulses
 		case 51, 53: return cbPulsesLocation
+        case 54, 55: return puVeriSpiderLocation
 		default: return ["No matching values found."]
 		}
 	}
@@ -61,6 +63,8 @@ struct Extremities:PopulateComboBoxProtocol {
         case "Calluses", "Bunions", "Hammer Toes", "Onchomycosis", "Cyanosis":
             results = "\(section): \(theArray.joined(separator: ", "))"
         case "Vibration Sense", "Monofilament":
+            results = "\(section): \(theArray.joined(separator: ", "))"
+        case "Varicose veins", "Spider veins":
             results = "\(section): \(theArray.joined(separator: ", "))"
         default:
             results = ""
@@ -183,6 +187,8 @@ enum ExtSectionName: String {
     case Cyanosis
     case VibrationSense = "Vibration Sense"
     case Monofilament
+    case Varicose = "Varicose veins"
+    case Spider = "Spider veins"
 }
 
 struct EvaluationItem {

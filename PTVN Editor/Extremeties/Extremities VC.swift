@@ -153,6 +153,11 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     @IBOutlet weak var mfRAbsentCB: NSButton!
     var monofilamentCheckBoxes:[NSButton] = []
     
+    @IBOutlet weak var vericoseLPU: NSPopUpButton!
+    @IBOutlet weak var vericoseRPU: NSPopUpButton!
+    @IBOutlet weak var spiderLPU: NSPopUpButton!
+    @IBOutlet weak var spiderRPU: NSPopUpButton!
+    var vericoseSpiderPopups:[NSButton] = []
     
     
     //    var extTextView: NSTextView {
@@ -173,6 +178,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     var cyanosisResults:[String] = []
     var vibrationSenseResults:[String] = []
     var monofilamentResults:[String] = []
+    var varicoseResults:[String] = []
+    var spiderResults:[String] = []
     
     var edemaTypeBox = NSBox()
     var edemaPittingBox = NSBox()
@@ -226,8 +233,9 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         cyanosisCheckBoxes = [cyanosisL1ToeCB, cyanosisR1ToeCB, cyanosisL2ToeCB, cyanosisR2ToeCB, cyanosisL3ToeCB, cyanosisR3ToeCB, cyanosisL4ToeCB, cyanosisR4ToeCB, cyanosisL5ToeCB, cyanosisR5ToeCB, cyanosisLAllToesCB, cyanosisRAllToesCB]
         vibrationSenseCheckBoxes = [vsLToesCB, vsRToesCB, vsLHeelCB, vsRHeelCB, vsLFootCB, vsRFootCB, vsLAnkleCB, vsRAnkleCB, vsLCalfCB, vsRCalfCB, vsLKneeCB, vsRKneeCB, vsLThighCB, vsRThighCB, vsLAbdomenCB, vsRAbdomenCB, vsLDecreasedCB, vsRDecreasedCB, vsLAbsentCB, vsRAbsentCB]
         monofilamentCheckBoxes = [mfLToesCB, mfRToesCB, mfLHeelCB, mfRHeelCB, mfLFootCB, mfRFootCB, mfLAnkleCB, mfRAnkleCB, mfLCalfCB, mfRCalfCB, mfLKneeCB, mfRKneeCB, mfLThighCB, mfRThighCB, mfLAbdomenCB, mfRAbdomenCB, mfLDecreasedCB, mfRDecreasedCB, mfLAbsentCB, mfRAbsentCB]
+        vericoseSpiderPopups = [vericoseLPU, vericoseRPU, spiderLPU, spiderRPU]
         
-        let allCheckBoxes = callusCheckBoxes + bunionCheckBoxes + hammerToesCheckBoxes + onychomycosisCheckBoxes + cyanosisCheckBoxes + vibrationSenseCheckBoxes + monofilamentCheckBoxes
+        let allCheckBoxes = callusCheckBoxes + bunionCheckBoxes + hammerToesCheckBoxes + onychomycosisCheckBoxes + cyanosisCheckBoxes + vibrationSenseCheckBoxes + monofilamentCheckBoxes + vericoseSpiderPopups
         allCheckBoxes.turnButtonsOff()
 
         addAlternateTitles()
@@ -488,6 +496,12 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         if !monofilamentResults.isEmpty {
             resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Monofilament.rawValue, from: monofilamentResults))
         }
+        if !varicoseResults.isEmpty {
+            resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Varicose.rawValue, from: varicoseResults))
+        }
+        if !spiderResults.isEmpty {
+            resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Spider.rawValue, from: spiderResults))
+        }
         
 		resultArray = resultArray.filter {!$0.isEmpty}
 		if !resultArray.isEmpty {
@@ -599,7 +613,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 	}
     
     @objc func selectExamSite(_ sender: NSButton) {
-        // Tag matching list: 1 - Calluses, 2 - Bunions, 3 - Hammer Toes, 4 - Onychomycosis, 5 - Cyanosis, 6 - Vibration Sense, 7 - Monofilament
+        // Tag matching list: 1 - Calluses, 2 - Bunions, 3 - Hammer Toes, 4 - Onychomycosis, 5 - Cyanosis, 6 - Vibration Sense, 7 - Monofilament, 54 - Vericose veins, 55 - Spider veins
         let buttonName = sender.alternateTitle
         let buttonTag = sender.tag
         if sender.state == .on {
@@ -611,6 +625,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             case 5: cyanosisResults.append(buttonName); cyanNormalCB.state = .off
             case 6: vibrationSenseResults.append(buttonName); vibeNormalCB.state = .off
             case 7: monofilamentResults.append(buttonName); monoNormalCB.state = .off
+            case 54: varicoseResults.append("\(buttonName) \(sender.title)")
+            case 55: spiderResults.append("\(buttonName) \(sender.title)")
             default: print("no tag found")
                 
             }
@@ -625,6 +641,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             case 5: cyanosisResults = cyanosisResults.filter {$0 != buttonName}
             case 6: vibrationSenseResults = vibrationSenseResults.filter {$0 != buttonName}
             case 7: monofilamentResults = monofilamentResults.filter {$0 != buttonName}
+            case 54: varicoseResults = varicoseResults.filter {$0 != buttonName}
+            case 55: spiderResults = spiderResults.filter {$0 != buttonName}
             default: print("no tag found")
             }
         }
@@ -748,7 +766,12 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         for item in [vsLAbsentCB, vsRAbsentCB, mfLAbsentCB, mfRAbsentCB] {
             item?.alternateTitle = "absent sensation"
         }
-        
+        for item in [vericoseLPU, spiderLPU] {
+            item?.alternateTitle = "left"
+        }
+        for item in [vericoseRPU, spiderRPU] {
+            item?.alternateTitle = "right"
+        }
     }
 
 }
