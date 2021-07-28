@@ -179,6 +179,35 @@ struct Clubbing {
 	}
 }
 
+struct Edema {
+    var side = ""
+    var amount = ""
+    var pitting = ""
+    var modifier = ""
+    var area = ""
+    
+    func edemaResults() -> String {
+        var results:[String] = []
+        if amount != "" {
+            results.append("Degree: \(amount)")
+        }
+        if pitting != "" {
+            results.append("Pitting: \(pitting)")
+        }
+        if side != "" {
+            results.append("Side: \(side)")
+        }
+        if area != "" {
+            results.append("Area: \(area)")
+        }
+        if modifier != "" {
+            results.append("Modifier: \(modifier)")
+        }
+        
+        return results.joined(separator: ", ")
+    }
+}
+
 enum ExtSectionName: String {
     case Calluses
     case Bunions

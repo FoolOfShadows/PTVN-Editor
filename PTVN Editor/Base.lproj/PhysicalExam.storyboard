@@ -4491,464 +4491,8 @@ Gw
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <box fixedFrame="YES" borderType="line" title="Degree" translatesAutoresizingMaskIntoConstraints="NO" id="CGm-9C-cig">
-                                <rect key="frame" x="470" y="522" width="118" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="9dt-G5-pBU">
-                                    <rect key="frame" x="3" y="3" width="112" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8S-S5-Dj5">
-                                            <rect key="frame" x="22" y="138" width="10" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="L" id="jLX-uD-LSq">
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mkA-1D-vpb">
-                                            <rect key="frame" x="80" y="139" width="11" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="R" id="I5b-yU-BsQ">
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wD-1y-5Dz">
-                                            <rect key="frame" x="20" y="44" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6xp-YQ-ZDa">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zka-6M-UfU">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-15-10q">
-                                                    <rect key="frame" x="24" y="0.0" width="25" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="+3" id="jf1-Gi-R1W">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMI-CJ-Yx3">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eyd-fj-sS2">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-1A-JiC">
-                                            <rect key="frame" x="20" y="20" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-mj-fsh">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zA8-oW-ZoJ">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zb-D9-cA4">
-                                                    <rect key="frame" x="24" y="0.0" width="25" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="+4" id="8aM-MW-iMK">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vmk-2z-CQh">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="smw-sG-hcf">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2U-HN-Lbm">
-                                            <rect key="frame" x="20" y="92" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="en4-F8-bBn">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vbe-Lw-KGg">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9l-m4-r5F">
-                                                    <rect key="frame" x="25" y="0.0" width="23" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="+1" id="xYn-sM-EX9">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGm-FV-p4r">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="k5D-wG-qbe">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H44-Z9-e1W">
-                                            <rect key="frame" x="20" y="68" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-Ib-DGq">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="8HZ-QS-WzY">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEf-cQ-Nzw">
-                                                    <rect key="frame" x="25" y="0.0" width="24" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="+2" id="86F-C2-3Ha">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-fC-LME">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="D1b-QR-YvT">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alP-Qr-SVh">
-                                            <rect key="frame" x="20" y="116" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tgr-L2-WNL">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wXm-ZC-C07">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-Xj-2sd">
-                                                    <rect key="frame" x="15" y="0.0" width="42" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Trace" id="uVG-nD-Ha2">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3X6-9B-8fk">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1rN-W6-anU">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                    </subviews>
-                                </view>
-                            </box>
-                            <box fixedFrame="YES" borderType="line" title="Pitting" translatesAutoresizingMaskIntoConstraints="NO" id="lQT-Qz-Lap">
-                                <rect key="frame" x="590" y="571" width="118" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="i5D-WT-0yT">
-                                    <rect key="frame" x="3" y="3" width="112" height="103"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3d8-T6-Huc">
-                                            <rect key="frame" x="22" y="88" width="10" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="L" id="aTx-B0-TqR">
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Q-YS-dKD">
-                                            <rect key="frame" x="80" y="89" width="11" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="R" id="Ejf-eV-Z27">
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvJ-1j-UPM">
-                                            <rect key="frame" x="20" y="44" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSl-Y0-EVr">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Zdr-7C-6Fp">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqS-tO-1eT">
-                                                    <rect key="frame" x="15" y="0.0" width="43" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Slight" id="2qk-gZ-GcG">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dYz-i2-1N1">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bVA-CE-Pm5">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xvg-KD-ucG">
-                                            <rect key="frame" x="20" y="20" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoe-Uf-RLr">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eAx-w3-FIz">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4p3-rs-wqh">
-                                                    <rect key="frame" x="21" y="0.0" width="33" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Non" id="ShL-WO-7JX">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDa-yk-Nzi">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ZU6-Ii-ngz">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqp-9p-Hb6">
-                                            <rect key="frame" x="20" y="68" width="72" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="009-mG-jZB">
-                                                    <rect key="frame" x="56" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xx6-ZY-qJ7">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weh-Qy-aVS">
-                                                    <rect key="frame" x="12" y="0.0" width="48" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Pitting" id="TIp-hT-QKc">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0BX-rP-tEd">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Xhh-R1-f4O">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                            </subviews>
-                                        </customView>
-                                    </subviews>
-                                </view>
-                            </box>
-                            <box fixedFrame="YES" borderType="line" title="Modifier" translatesAutoresizingMaskIntoConstraints="NO" id="UZ3-CK-ucy">
-                                <rect key="frame" x="710" y="550" width="149" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="9yc-Xv-38I">
-                                    <rect key="frame" x="3" y="3" width="143" height="124"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ZN-ZL-BkL">
-                                            <rect key="frame" x="20" y="42" width="103" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chX-Gy-myP">
-                                                    <rect key="frame" x="87" y="-1" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="GiG-yi-NRT">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URz-50-w9v">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="SUl-En-7md">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51Y-VP-m5Q">
-                                                    <rect key="frame" x="29" y="1" width="46" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Venus" id="zaX-qO-Awd">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIb-3A-ta5">
-                                            <rect key="frame" x="20" y="66" width="103" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-4c-1E9">
-                                                    <rect key="frame" x="87" y="-1" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="i5o-jz-olv">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLV-cq-ZrE">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="GpV-LI-N8j">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znL-w9-yBA">
-                                                    <rect key="frame" x="27" y="1" width="49" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Lymph" id="bFX-h5-z1n">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hm4-GO-8hJ">
-                                            <rect key="frame" x="20" y="88" width="103" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-7l-52h">
-                                                    <rect key="frame" x="87" y="-1" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hui-v0-cRf">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMU-jh-Qby">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kWK-8x-oqA">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-ml-7XE">
-                                                    <rect key="frame" x="25" y="1" width="53" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Brawny" id="B4B-Mm-fMk">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-Vv-SnM">
-                                            <rect key="frame" x="20" y="20" width="103" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIg-hj-P9m">
-                                                    <rect key="frame" x="87" y="-1" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VpT-48-wjr">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-YE-iNd">
-                                                    <rect key="frame" x="-2" y="-2" width="18" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="feU-ZY-ubo">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohU-Lk-x3m">
-                                                    <rect key="frame" x="22" y="1" width="60" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Cellulitis" id="CDA-Zg-Gae">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
-                                        </customView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-XR-WvO">
-                                            <rect key="frame" x="23" y="108" width="10" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="L" id="BdM-xp-MCc">
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-jR-SQF">
-                                            <rect key="frame" x="110" y="108" width="11" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="R" id="0z9-7N-3TN">
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </subviews>
-                                </view>
-                            </box>
                             <box fixedFrame="YES" borderType="line" title="Bunions" translatesAutoresizingMaskIntoConstraints="NO" id="CFR-Zf-Hsm">
-                                <rect key="frame" x="170" y="304" width="118" height="122"/>
+                                <rect key="frame" x="170" y="258" width="118" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="H4e-wO-l1w">
                                     <rect key="frame" x="3" y="3" width="112" height="104"/>
@@ -5069,7 +4613,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Hammer Toes" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-iS-WiP">
-                                <rect key="frame" x="170" y="106" width="118" height="194"/>
+                                <rect key="frame" x="170" y="60" width="118" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="oq5-x1-HeU">
                                     <rect key="frame" x="3" y="3" width="112" height="176"/>
@@ -5283,7 +4827,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Onc" translatesAutoresizingMaskIntoConstraints="NO" id="KBL-37-Fia">
-                                <rect key="frame" x="290" y="232" width="118" height="194"/>
+                                <rect key="frame" x="290" y="186" width="118" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="8Gq-zA-xew">
                                     <rect key="frame" x="3" y="3" width="112" height="176"/>
@@ -5497,7 +5041,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Calluses" translatesAutoresizingMaskIntoConstraints="NO" id="3D7-YY-yPq">
-                                <rect key="frame" x="50" y="112" width="118" height="314"/>
+                                <rect key="frame" x="50" y="66" width="118" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="N4z-Td-hGk">
                                     <rect key="frame" x="3" y="3" width="112" height="296"/>
@@ -5881,7 +5425,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Vibration Sense" translatesAutoresizingMaskIntoConstraints="NO" id="Ikt-jN-1XS">
-                                <rect key="frame" x="530" y="136" width="118" height="290"/>
+                                <rect key="frame" x="530" y="90" width="118" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="QyG-zn-GKI">
                                     <rect key="frame" x="3" y="3" width="112" height="272"/>
@@ -6219,7 +5763,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Monofilament" translatesAutoresizingMaskIntoConstraints="NO" id="Kze-yj-2S4">
-                                <rect key="frame" x="653" y="136" width="118" height="290"/>
+                                <rect key="frame" x="653" y="90" width="118" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="Xqp-PK-ogI">
                                     <rect key="frame" x="3" y="3" width="112" height="272"/>
@@ -6557,7 +6101,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Cyanosis" translatesAutoresizingMaskIntoConstraints="NO" id="Gko-4o-NrA">
-                                <rect key="frame" x="410" y="232" width="118" height="194"/>
+                                <rect key="frame" x="410" y="186" width="118" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="a2e-6V-Gpv">
                                     <rect key="frame" x="3" y="3" width="112" height="176"/>
@@ -6771,7 +6315,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Vericose" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-Pd-wKa">
-                                <rect key="frame" x="290" y="120" width="118" height="108"/>
+                                <rect key="frame" x="290" y="74" width="118" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="NOj-5h-Shl">
                                     <rect key="frame" x="3" y="3" width="112" height="90"/>
@@ -6829,7 +6373,7 @@ Gw
                                 </view>
                             </box>
                             <box fixedFrame="YES" borderType="line" title="Spider" translatesAutoresizingMaskIntoConstraints="NO" id="fRw-qO-P1i">
-                                <rect key="frame" x="410" y="120" width="118" height="108"/>
+                                <rect key="frame" x="410" y="74" width="118" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="gei-QO-qhy">
                                     <rect key="frame" x="3" y="3" width="112" height="90"/>
@@ -6886,6 +6430,439 @@ Gw
                                     </subviews>
                                 </view>
                             </box>
+                            <box fixedFrame="YES" borderType="line" title="Edema" translatesAutoresizingMaskIntoConstraints="NO" id="IUe-rS-Bpn">
+                                <rect key="frame" x="450" y="384" width="403" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="uK0-0g-lhU">
+                                    <rect key="frame" x="3" y="3" width="397" height="281"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-O8-xj5">
+                                            <rect key="frame" x="89" y="107" width="76" height="85"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rMU-jh-Qby">
+                                                    <rect key="frame" x="-2" y="68" width="71" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Brawny" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kWK-8x-oqA">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="5lK-34-4XH"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fLV-cq-ZrE">
+                                                    <rect key="frame" x="-2" y="45" width="67" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Lymph" bezelStyle="regularSquare" imagePosition="left" inset="2" id="GpV-LI-N8j">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="IYy-kL-6pt"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="URz-50-w9v">
+                                                    <rect key="frame" x="-2" y="22" width="64" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Venus" bezelStyle="regularSquare" imagePosition="left" inset="2" id="SUl-En-7md">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="xDE-T1-Fep"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-YE-iNd">
+                                                    <rect key="frame" x="-2" y="-1" width="78" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Cellulitis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="feU-ZY-ubo">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="hmT-CL-9cj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-Jc-enM">
+                                            <rect key="frame" x="20" y="107" width="58" height="108"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3X6-9B-8fk">
+                                                    <rect key="frame" x="-2" y="91" width="60" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Trace" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1rN-W6-anU">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="dKS-f5-CLK"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cGm-FV-p4r">
+                                                    <rect key="frame" x="-2" y="68" width="41" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="+1" bezelStyle="regularSquare" imagePosition="left" inset="2" id="k5D-wG-qbe">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="Kh3-3G-Oc6"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-fC-LME">
+                                                    <rect key="frame" x="-2" y="45" width="42" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="+2" bezelStyle="regularSquare" imagePosition="left" inset="2" id="D1b-QR-YvT">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="aRN-X8-YkG"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hMI-CJ-Yx3">
+                                                    <rect key="frame" x="-2" y="22" width="43" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="+3" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eyd-fj-sS2">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="9n8-cn-lBC"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vmk-2z-CQh">
+                                                    <rect key="frame" x="-2" y="-1" width="43" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="+4" bezelStyle="regularSquare" imagePosition="left" inset="2" id="smw-sG-hcf">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="PPJ-Y2-l8g"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7US-fd-Dck">
+                                            <rect key="frame" x="89" y="199" width="64" height="62"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0BX-rP-tEd">
+                                                    <rect key="frame" x="-2" y="45" width="66" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Pitting" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Xhh-R1-f4O">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="s3R-Fm-a2p"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dYz-i2-1N1">
+                                                    <rect key="frame" x="-2" y="22" width="61" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Slight" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bVA-CE-Pm5">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="bIl-7U-DFZ"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FDa-yk-Nzi">
+                                                    <rect key="frame" x="-2" y="-1" width="51" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Non" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ZU6-Ii-ngz">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="eCI-dv-2Hu"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ivf-In-OpB">
+                                            <rect key="frame" x="20" y="223" width="56" height="38"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gky-95-xcK">
+                                                    <rect key="frame" x="-2" y="21" width="50" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Left" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hVO-DZ-W5u">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="IUA-Nx-o6J"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wht-QF-yBm">
+                                                    <rect key="frame" x="-2" y="-1" width="58" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Right" bezelStyle="regularSquare" imagePosition="left" inset="2" id="KKU-DI-qqr">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="Svr-Nq-2Lm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BV3-vN-4af">
+                                            <rect key="frame" x="183" y="107" width="157" height="154"/>
+                                            <subviews>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zws-0R-7kQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="154"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-c3-gRB">
+                                                            <rect key="frame" x="-2" y="137" width="54" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Foot" bezelStyle="regularSquare" imagePosition="left" inset="2" id="e6s-BU-BEC">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="Eqt-nb-BL3"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Po-Ng-jhP">
+                                                            <rect key="frame" x="-2" y="114" width="60" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Ankle" bezelStyle="regularSquare" imagePosition="left" inset="2" id="9on-uv-bkt">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="pxm-5p-rxr"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s1Z-DN-7UO">
+                                                            <rect key="frame" x="-2" y="91" width="51" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Calf" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jUj-nS-pPy">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="iag-Ao-egB"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vce-Al-phb">
+                                                            <rect key="frame" x="-2" y="68" width="57" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Knee" bezelStyle="regularSquare" imagePosition="left" inset="2" id="OJ0-3h-woE">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="C16-6S-uXR"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-0p-xr5">
+                                                            <rect key="frame" x="-2" y="45" width="61" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Thigh" bezelStyle="regularSquare" imagePosition="left" inset="2" id="40f-z2-PKg">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="0oA-e0-Hiz"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p26-Ud-RxQ">
+                                                            <rect key="frame" x="-2" y="22" width="47" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Hip" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aX0-GT-4HC">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="hb5-I9-4Mc"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-Fq-wm3">
+                                                            <rect key="frame" x="-2" y="-1" width="59" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Groin" bezelStyle="regularSquare" imagePosition="left" inset="2" id="26I-jR-4N8">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="4OO-G1-VGV"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPn-Ir-LFW">
+                                                    <rect key="frame" x="67" y="0.0" width="90" height="154"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g8S-84-fLZ">
+                                                            <rect key="frame" x="-2" y="137" width="69" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Gluteal" bezelStyle="regularSquare" imagePosition="left" inset="2" id="BRk-Fc-srT">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="eab-N8-8xp"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mc6-zf-Wah">
+                                                            <rect key="frame" x="-2" y="114" width="59" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Hand" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MNh-lf-KHB">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="UtP-v1-xbg"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s9J-Wp-8NV">
+                                                            <rect key="frame" x="-2" y="91" width="58" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Wrist" bezelStyle="regularSquare" imagePosition="left" inset="2" id="YBb-Y7-50V">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="14R-5U-SMD"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GJh-A0-Whk">
+                                                            <rect key="frame" x="-2" y="68" width="77" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Forearm" bezelStyle="regularSquare" imagePosition="left" inset="2" id="gVf-0j-VIM">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="5Dy-xR-jeY"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v89-ak-uSe">
+                                                            <rect key="frame" x="-2" y="45" width="63" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Elbow" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Bb2-tY-kPX">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="pUs-UT-5oN"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PNY-Lz-9n7">
+                                                            <rect key="frame" x="-2" y="22" width="92" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Upper Arm" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pBV-Om-piF">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="z35-0j-8Vv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="35k-PL-ZFZ">
+                                                            <rect key="frame" x="-2" y="-1" width="81" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Shoulder" bezelStyle="regularSquare" imagePosition="left" inset="2" id="uGb-fy-HjA">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="selectEdemaValues:" target="Cm0-Yy-7Gs" id="Ouc-rd-QHD"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zat-hU-mTy">
+                                            <rect key="frame" x="351" y="105" width="26" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lTH-ux-CMW">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="addEdemaResult:" target="Cm0-Yy-7Gs" id="Rfu-QS-q0L"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpd-5Z-iNC">
+                                            <rect key="frame" x="20" y="20" width="357" height="77"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Edema results" drawsBackground="YES" id="ixR-pJ-UFl">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
@@ -6931,6 +6908,40 @@ Gw
                         <outlet property="cyanosisR4ToeCB" destination="kfV-yS-HX4" id="ROP-Ku-eoD"/>
                         <outlet property="cyanosisR5ToeCB" destination="KFK-Ym-5Yz" id="PRU-XV-brY"/>
                         <outlet property="cyanosisRAllToesCB" destination="OeH-9T-ERd" id="ah1-bk-D1g"/>
+                        <outlet property="edemaAmountSV" destination="Kzh-Jc-enM" id="ZfQ-oE-25b"/>
+                        <outlet property="edemaAnkleCB" destination="9Po-Ng-jhP" id="RrB-ff-CXf"/>
+                        <outlet property="edemaAreaSV" destination="BV3-vN-4af" id="kDY-es-FrC"/>
+                        <outlet property="edemaBrawnyCB" destination="rMU-jh-Qby" id="hsk-bn-Tqd"/>
+                        <outlet property="edemaCalfCB" destination="s1Z-DN-7UO" id="BJs-Mu-hMz"/>
+                        <outlet property="edemaCellulitisCB" destination="nzc-YE-iNd" id="JG9-Hh-Wd2"/>
+                        <outlet property="edemaElbowCB" destination="v89-ak-uSe" id="Pc5-fU-BzO"/>
+                        <outlet property="edemaFootCB" destination="8NM-c3-gRB" id="ta8-GN-GnK"/>
+                        <outlet property="edemaForearmCB" destination="GJh-A0-Whk" id="YAh-J5-6Y9"/>
+                        <outlet property="edemaGlutealCB" destination="g8S-84-fLZ" id="bCD-8d-4kd"/>
+                        <outlet property="edemaGroinCB" destination="SvE-Fq-wm3" id="Wpf-NB-Gcd"/>
+                        <outlet property="edemaHandCB" destination="mc6-zf-Wah" id="jSD-TV-DSm"/>
+                        <outlet property="edemaHipCB" destination="p26-Ud-RxQ" id="JIJ-HE-w1c"/>
+                        <outlet property="edemaKneeCB" destination="Vce-Al-phb" id="x1N-JP-9m4"/>
+                        <outlet property="edemaLSideCB" destination="gky-95-xcK" id="elp-2b-9Td"/>
+                        <outlet property="edemaLymphCB" destination="fLV-cq-ZrE" id="S6y-Kg-GKb"/>
+                        <outlet property="edemaModifierSV" destination="4iA-O8-xj5" id="EkK-3u-vCk"/>
+                        <outlet property="edemaNonCB" destination="FDa-yk-Nzi" id="jBx-8J-rMB"/>
+                        <outlet property="edemaPittingCB" destination="0BX-rP-tEd" id="Hm9-Ad-YwQ"/>
+                        <outlet property="edemaPittingSV" destination="7US-fd-Dck" id="F4g-Ea-pgS"/>
+                        <outlet property="edemaPlus1CB" destination="cGm-FV-p4r" id="kIF-jh-LhJ"/>
+                        <outlet property="edemaPlus2CB" destination="z2j-fC-LME" id="xA8-30-lmd"/>
+                        <outlet property="edemaPlus3CB" destination="hMI-CJ-Yx3" id="cbG-0j-9WC"/>
+                        <outlet property="edemaPlus4CB" destination="Vmk-2z-CQh" id="Ic7-qc-TIL"/>
+                        <outlet property="edemaRSideCB" destination="Wht-QF-yBm" id="JWn-Ri-9Ns"/>
+                        <outlet property="edemaResultsTextField" destination="wpd-5Z-iNC" id="v0h-AH-W6h"/>
+                        <outlet property="edemaShoulderCB" destination="35k-PL-ZFZ" id="8sl-Ud-rdg"/>
+                        <outlet property="edemaSideSV" destination="Ivf-In-OpB" id="Gl4-aT-6tp"/>
+                        <outlet property="edemaSlightCB" destination="dYz-i2-1N1" id="YkX-0B-AnQ"/>
+                        <outlet property="edemaThighCB" destination="gdi-0p-xr5" id="2Tq-7x-1fq"/>
+                        <outlet property="edemaTraceCB" destination="3X6-9B-8fk" id="V3S-7w-NhF"/>
+                        <outlet property="edemaUpperArmCB" destination="PNY-Lz-9n7" id="4Na-5Z-Rw6"/>
+                        <outlet property="edemaVenusCB" destination="URz-50-w9v" id="TY4-sg-1ME"/>
+                        <outlet property="edemaWristCB" destination="s9J-Wp-8NV" id="Dup-B3-a17"/>
                         <outlet property="hammerToesL1ToeCB" destination="yZL-WT-RAg" id="ra2-8J-VSz"/>
                         <outlet property="hammerToesL2ToeCB" destination="GRU-fp-iOd" id="RIN-pQ-1b1"/>
                         <outlet property="hammerToesL3ToeCB" destination="6vX-U9-tzz" id="vh5-xL-y7d"/>

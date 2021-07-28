@@ -159,6 +159,44 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     @IBOutlet weak var spiderRPU: NSPopUpButton!
     var vericoseSpiderPopups:[NSButton] = []
     
+    @IBOutlet weak var edemaLSideCB: NSButton!
+    @IBOutlet weak var edemaRSideCB: NSButton!
+    @IBOutlet weak var edemaTraceCB: NSButton!
+    @IBOutlet weak var edemaPlus1CB: NSButton!
+    @IBOutlet weak var edemaPlus2CB: NSButton!
+    @IBOutlet weak var edemaPlus3CB: NSButton!
+    @IBOutlet weak var edemaPlus4CB: NSButton!
+    @IBOutlet weak var edemaPittingCB: NSButton!
+    @IBOutlet weak var edemaSlightCB: NSButton!
+    @IBOutlet weak var edemaNonCB: NSButton!
+    @IBOutlet weak var edemaBrawnyCB: NSButton!
+    @IBOutlet weak var edemaLymphCB: NSButton!
+    @IBOutlet weak var edemaVenusCB: NSButton!
+    @IBOutlet weak var edemaCellulitisCB: NSButton!
+    @IBOutlet weak var edemaFootCB: NSButton!
+    @IBOutlet weak var edemaAnkleCB: NSButton!
+    @IBOutlet weak var edemaCalfCB: NSButton!
+    @IBOutlet weak var edemaKneeCB: NSButton!
+    @IBOutlet weak var edemaThighCB: NSButton!
+    @IBOutlet weak var edemaHipCB: NSButton!
+    @IBOutlet weak var edemaGroinCB: NSButton!
+    @IBOutlet weak var edemaGlutealCB: NSButton!
+    @IBOutlet weak var edemaHandCB: NSButton!
+    @IBOutlet weak var edemaWristCB: NSButton!
+    @IBOutlet weak var edemaForearmCB: NSButton!
+    @IBOutlet weak var edemaElbowCB: NSButton!
+    @IBOutlet weak var edemaUpperArmCB: NSButton!
+    @IBOutlet weak var edemaShoulderCB: NSButton!
+    var edemaCheckBoxes:[NSButton] = []
+    
+    @IBOutlet weak var edemaResultsTextField: NSTextField!
+    
+    
+    @IBOutlet weak var edemaSideSV: NSStackView!
+    @IBOutlet weak var edemaAmountSV: NSStackView!
+    @IBOutlet weak var edemaPittingSV: NSStackView!
+    @IBOutlet weak var edemaModifierSV: NSStackView!
+    @IBOutlet weak var edemaAreaSV: NSStackView!
     
     //    var extTextView: NSTextView {
 //        get {
@@ -170,6 +208,8 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             return pulsesScroll.contentView.documentView as! NSTextView
         }
     }
+    
+    var edemaResults = Edema()
     
     var callusResults:[String] = []
     var bunionResults:[String] = []
@@ -234,6 +274,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         vibrationSenseCheckBoxes = [vsLToesCB, vsRToesCB, vsLHeelCB, vsRHeelCB, vsLFootCB, vsRFootCB, vsLAnkleCB, vsRAnkleCB, vsLCalfCB, vsRCalfCB, vsLKneeCB, vsRKneeCB, vsLThighCB, vsRThighCB, vsLAbdomenCB, vsRAbdomenCB, vsLDecreasedCB, vsRDecreasedCB, vsLAbsentCB, vsRAbsentCB]
         monofilamentCheckBoxes = [mfLToesCB, mfRToesCB, mfLHeelCB, mfRHeelCB, mfLFootCB, mfRFootCB, mfLAnkleCB, mfRAnkleCB, mfLCalfCB, mfRCalfCB, mfLKneeCB, mfRKneeCB, mfLThighCB, mfRThighCB, mfLAbdomenCB, mfRAbdomenCB, mfLDecreasedCB, mfRDecreasedCB, mfLAbsentCB, mfRAbsentCB]
         vericoseSpiderPopups = [vericoseLPU, vericoseRPU, spiderLPU, spiderRPU]
+        edemaCheckBoxes = [edemaLSideCB, edemaRSideCB, edemaTraceCB, edemaPlus1CB, edemaPlus2CB, edemaPlus3CB, edemaPlus4CB, edemaPittingCB, edemaSlightCB, edemaNonCB, edemaBrawnyCB, edemaLymphCB, edemaVenusCB, edemaCellulitisCB, edemaFootCB, edemaAnkleCB, edemaCalfCB, edemaKneeCB, edemaThighCB, edemaHipCB, edemaGroinCB, edemaGlutealCB, edemaHandCB, edemaWristCB, edemaForearmCB, edemaElbowCB, edemaUpperArmCB, edemaShoulderCB]
         
         let allCheckBoxes = callusCheckBoxes + bunionCheckBoxes + hammerToesCheckBoxes + onychomycosisCheckBoxes + cyanosisCheckBoxes + vibrationSenseCheckBoxes + monofilamentCheckBoxes + vericoseSpiderPopups
         allCheckBoxes.turnButtonsOff()
@@ -474,7 +515,9 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 //		resultArray.append(Bunions().processSectionFrom(getActiveButtonInfoIn(view: bunionView)))
 //		resultArray.append(Callus().processSectionFrom(getActiveButtonInfoIn(view: callusView)))
         //resultArray.append(extTextView.string.components(separatedBy: "\n").joined(separator: ", "))
-        
+        if !edemaResultsTextField.stringValue.isEmpty {
+            resultArray.append("Edema: \(edemaResultsTextField.stringValue)")
+        }
         if !callusResults.isEmpty {
             resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Calluses.rawValue, from: callusResults))
         }
@@ -534,7 +577,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         if sender.state != .off {
             let theButtons = selfView.getButtonsInView()
             switch sender.tag {
-            case 40:
+            case 0, 40:
                 theButtons.filter ({$0.tag == 3})[0].state = .off
             case 50, 52:
                 theButtons.filter ({$0.tag == 4})[0].state = .off
@@ -611,6 +654,40 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
 			rCRCombo.stringValue = lCRCombo.stringValue
 		}
 	}
+    
+    @IBAction func selectEdemaValues(_ sender: NSButton) {
+        if sender.state == .on {
+            switch sender.title {
+            case "Left", "Right": edemaResults.side = sender.title.lowercased(); selectOnlyOne(sender)
+            case "Trace", "+1", "+2", "+3", "+4": edemaResults.amount = sender.title.lowercased(); selectOnlyOne(sender)
+            case "Pitting", "Slight", "Non": edemaResults.pitting = sender.title.lowercased(); selectOnlyOne(sender)
+            case "Brawny", "Lymph", "Venus", "Cellulitis": edemaResults.modifier = sender.title.lowercased(); selectOnlyOne(sender)
+            case "Foot", "Ankle", "Calf", "Knee", "Thigh", "Hip", "Groin", "Gluteal", "Hand", "Wrist", "Forearm", "Elbow", "Upper Arm", "Shoulder":
+                edemaResults.area = sender.title.lowercased()
+                selectOnlyOne(sender)
+            default: return
+            }
+        } else if sender.state == .off {
+            switch sender.title {
+            case "Left", "Right": edemaResults.side = ""
+            case "Trace", "+1", "+2", "+3", "+4": edemaResults.amount = ""
+            case "Pitting", "Slight", "Non": edemaResults.pitting = ""
+            case "Brawny", "Lymph", "Venus", "Cellulitis": edemaResults.modifier = ""
+            case "Foot", "Ankle", "Calf", "Knee", "Thigh", "Hip", "Groin", "Gluteal", "Hand", "Wrist", "Forearm", "Elbow", "Upper Arm", "Shoulder":
+                edemaResults.area = ""
+            default: return
+            }
+        }
+    }
+    
+    @IBAction func addEdemaResult(_ sender: Any) {
+        let startingResults = edemaResultsTextField.stringValue
+        if startingResults.isEmpty {
+            edemaResultsTextField.stringValue = edemaResults.edemaResults()
+        } else {
+            edemaResultsTextField.stringValue = "\(startingResults)\n\(edemaResults.edemaResults())"
+        }
+    }
     
     @objc func selectExamSite(_ sender: NSButton) {
         // Tag matching list: 1 - Calluses, 2 - Bunions, 3 - Hammer Toes, 4 - Onychomycosis, 5 - Cyanosis, 6 - Vibration Sense, 7 - Monofilament, 54 - Vericose veins, 55 - Spider veins
