@@ -22,7 +22,7 @@ protocol notesDelegate: class {
     var noteWindow:NSWindow? { get set }
 }
 
-class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, ptvnDelegate, browerChoiceDelegate, notesDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, NSTableViewDataSource, NSTableViewDelegate, NSComboBoxDelegate, ptvnDelegate, browerChoiceDelegate, notesDelegate {
 
     @IBOutlet weak var ptNameView: NSTextField!
     @IBOutlet weak var ptDOBView: NSTextField!
@@ -47,7 +47,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBOutlet weak var visitLevelView: NSView!
     @IBOutlet var planView: NSTextView!
     @IBOutlet var dxView: NSTextView!
-    @IBOutlet weak var commonMedsPopup: NSPopUpButton!
+    @IBOutlet weak var commonMedsCombo: NSComboBox!
+    //@IBOutlet weak var commonMedsPopup: NSPopUpButton!
     @IBOutlet weak var pharmacyView: NSTextField!
     @IBOutlet weak var subjectiveActivateSafari: NSButton!
     @IBOutlet weak var objectiveActivateSafari: NSButton!
@@ -150,6 +151,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         planView.delegate = self
         pharmacyView.delegate = self
         dxView.delegate = self
+        commonMedsCombo.delegate = self
+        
         
         //Set up selections in lists with data from text file
         if let fluList = getSectionDataStartingFrom("START FLU", andEndingWith: "END FLU") {
@@ -188,7 +191,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         self.assessmentTableView.reloadData()
         //chosenAssessmentList = assessmentList
         updateView()
-        commonMedsPopup.clearPopUpButton(menuItems: commonMedsList)
+        commonMedsCombo.clearComboBox(menuItems: commonMedsList)
+        //commonMedsPopup.clearPopUpButton(menuItems: commonMedsList)
         
         changeBrowserLabel()
     }
@@ -213,6 +217,20 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         updateVarForField(theView)
         document.updateChangeCount(.changeDone)
     }
+    
+//    func comboBoxSelectionDidChange(_ notification: Notification) {
+//        if commonMedsCombo.stringValue != "" {
+//            let newMed = "~~" + commonMedsCombo.stringValue.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+//            if planView.string.contains("Prescribed this visit:") {
+//                planView.string = planView.string.replacingOccurrences(of: "Prescribed this visit:", with: "Prescribed this visit:\n\(newMed)")
+//            } else {
+//                planView.addToViewsExistingText("Prescribed this visit:\n\(newMed)")
+//            }
+//            updateVarForView(planView)
+//            //            let currentMeds = medicationView.string
+//            //            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
+//        }
+//    }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let theSegue = segue.identifier {
@@ -682,8 +700,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func addMed(_ sender: Any) {
-        if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
-            let newMed = "~~" + commonMedsPopup.titleOfSelectedItem!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        //if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
+        if commonMedsCombo.stringValue != "" {
+            //let newMed = "~~" + commonMedsPopup.titleOfSelectedItem!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            let newMed = "~~" + commonMedsCombo.stringValue.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             if planView.string.contains("Prescribed this visit:") {
                 planView.string = planView.string.replacingOccurrences(of: "Prescribed this visit:", with: "Prescribed this visit:\n\(newMed)")
             } else {
