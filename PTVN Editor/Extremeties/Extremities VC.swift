@@ -161,6 +161,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     
     @IBOutlet weak var edemaLSideCB: NSButton!
     @IBOutlet weak var edemaRSideCB: NSButton!
+    @IBOutlet weak var edemaBSideCB: NSButton!
     @IBOutlet weak var edemaTraceCB: NSButton!
     @IBOutlet weak var edemaPlus1CB: NSButton!
     @IBOutlet weak var edemaPlus2CB: NSButton!
@@ -658,7 +659,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
     @IBAction func selectEdemaValues(_ sender: NSButton) {
         if sender.state == .on {
             switch sender.title {
-            case "Left", "Right": edemaResults.side = sender.title.lowercased(); selectOnlyOne(sender)
+            case "Left", "Right", "Both": edemaResults.side = sender.title.lowercased(); selectOnlyOne(sender)
             case "Trace", "+1", "+2", "+3", "+4": edemaResults.amount = sender.title.lowercased(); selectOnlyOne(sender)
             case "Pitting", "Slight", "Non": edemaResults.pitting = sender.title.lowercased(); selectOnlyOne(sender)
             case "Brawny", "Lymph", "Venus", "Cellulitis": edemaResults.modifier = sender.title.lowercased(); selectOnlyOne(sender)
@@ -669,7 +670,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             }
         } else if sender.state == .off {
             switch sender.title {
-            case "Left", "Right": edemaResults.side = ""
+            case "Left", "Right", "Both": edemaResults.side = ""
             case "Trace", "+1", "+2", "+3", "+4": edemaResults.amount = ""
             case "Pitting", "Slight", "Non": edemaResults.pitting = ""
             case "Brawny", "Lymph", "Venus", "Cellulitis": edemaResults.modifier = ""
