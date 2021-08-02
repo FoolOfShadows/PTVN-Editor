@@ -67,7 +67,7 @@ struct PhysicalAssessment {
         //two returns, two or more capital letters together with a colon (the next heading)
         //or the end of the section.  It also includes a negative assertion to ignore the
         //subheading "EARS:"
-        return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!EARS:)(?<!EAC:)(?<!ABDOMEN:)(?<!BS:)").removeWhiteSpace().cleanTheTextOf(bitsToClean)
+        return objectiveText.simpleRegExMatch("(?s)\(header).*?(\\n\\n|[A-Z]{2,}?:|\\z)(?<!EARS:)(?<!EAC:)(?<!ABDOMEN:)(?<!BS:)(?<!BLE:)(?<!BUE:)(?<!LLE:)(?<!LUE:)(?<!RLE:)(?<!RUE:)").removeWhiteSpace().cleanTheTextOf(bitsToClean)
         }
     }
     

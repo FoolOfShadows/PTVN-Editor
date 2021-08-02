@@ -212,7 +212,7 @@ enum ExtSectionName: String {
     case Calluses
     case Bunions
     case HammerToes = "Hammer Toes"
-    case Onchomycosis
+    case Onychomycosis
     case Cyanosis
     case VibrationSense = "Vibration Sense"
     case Monofilament

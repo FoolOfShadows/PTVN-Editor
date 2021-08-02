@@ -529,7 +529,7 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
             resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.HammerToes.rawValue, from: hammerToesResults))
         }
         if !onychomycosisResults.isEmpty {
-            resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Onchomycosis.rawValue, from: onychomycosisResults))
+            resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Onychomycosis.rawValue, from: onychomycosisResults))
         }
         if !cyanosisResults.isEmpty {
             resultArray.append(Extremities().processExtResultsForSection(ExtSectionName.Cyanosis.rawValue, from: cyanosisResults))
@@ -726,6 +726,49 @@ class Extremities_VC: NSViewController, ProcessTabProtocol, NSTextFieldDelegate,
         }
         print("Button title: \(buttonName)\nBox tag: \(buttonTag)")
     }
+    
+    @IBAction func applyTemplate(_ sender: NSButton) {
+        switch sender.title {
+        case "Ed":
+            edemaPlus1CB.state = .on; selectEdemaValues(edemaPlus1CB)
+            edemaPittingCB.state = .on; selectEdemaValues(edemaPittingCB)
+            edemaBSideCB.state = .on; selectEdemaValues(edemaBSideCB)
+            edemaAnkleCB.state = .on; selectEdemaValues(edemaAnkleCB)
+        case "Cal":
+            callusL1ToeCB.state = .on; selectExamSite(callusL1ToeCB)
+            callusLMedialCB.state = .on; selectExamSite(callusLMedialCB)
+            callusR1ToeCB.state = .on; selectExamSite(callusR1ToeCB)
+            callusRMedialCB.state = .on; selectExamSite(callusRMedialCB)
+        case "Bun":
+            bunionsLMedialCB.state = .on; selectExamSite(bunionsLMedialCB)
+            bunionsRMedialCB.state = .on; selectExamSite(bunionsRMedialCB)
+        case "Onc":
+            onychomycosisL1ToeCB.state = .on; selectExamSite(onychomycosisL1ToeCB)
+            onychomycosisR1ToeCB.state = .on; selectExamSite(onychomycosisR1ToeCB)
+        case "Cy":
+            cyanosisLAllToesCB.state = .on; selectExamSite(cyanosisLAllToesCB)
+            cyanosisRAllToesCB.state = .on; selectExamSite(cyanosisRAllToesCB)
+        case "Spider":
+            spiderLPU.selectItem(withTitle: "ankle"); selectExamSite(spiderLPU)
+            spiderRPU.selectItem(withTitle: "ankle"); selectExamSite(spiderRPU)
+        case "Veri":
+            vericoseLPU.selectItem(withTitle: "calf"); selectExamSite(vericoseLPU)
+            vericoseRPU.selectItem(withTitle: "calf"); selectExamSite(vericoseRPU)
+        case "Vibe":
+            vsLFootCB.state = .on; selectExamSite(vsLFootCB)
+            vsLDecreasedCB.state = .on; selectExamSite(vsLDecreasedCB)
+            vsRFootCB.state = .on; selectExamSite(vsRFootCB)
+            vsRDecreasedCB.state = .on; selectExamSite(vsRDecreasedCB)
+        case "Mono":
+            mfLToesCB.state = .on; selectExamSite(mfLToesCB)
+            mfLAbsentCB.state = .on; selectExamSite(mfLAbsentCB)
+            mfRToesCB.state = .on; selectExamSite(mfRToesCB)
+            mfRAbsentCB.state = .on; selectExamSite(mfRAbsentCB)
+        default:
+            return
+        }
+    }
+    
     
     
     @objc func selectAllNormsInView() {
