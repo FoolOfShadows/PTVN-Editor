@@ -10,7 +10,7 @@ import Cocoa
 
 struct OurSpellChecker {
     
-    let basicCleaningDataFilePath = "\(NSHomeDirectory())/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/PTVN2PFCleaningDataBasic.txt"
+    let basicCleaningDataFilePath = "\(NSHomeDirectory())/Sync/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/PTVN2PFCleaningDataBasic.txt"
     let otherCleaningDataFilePath = "\(NSHomeDirectory())/Resilio/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/PTVN2PFCleaningDataBasic.txt"
     
     //Set the cleaning dictionaries with the contents of the text files

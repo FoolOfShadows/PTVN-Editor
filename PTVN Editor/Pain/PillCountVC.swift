@@ -119,6 +119,6 @@ class PillCountVC: NSViewController, NSTextFieldDelegate, NSControlTextEditingDe
         }
         let newFileManager = FileManager.default
         let savePath = NSHomeDirectory()
-        newFileManager.createFile(atPath: "\(savePath)/WPCMSharedFiles/zruss Review/11 Pill Count Data/\(fileName)", contents: pillCountFile, attributes: nil)
+        newFileManager.createFile(atPath: "\(savePath)/Sync/WPCMSharedFiles/zruss Review/11 Pill Count Data/\(fileName)", contents: pillCountFile, attributes: nil)
     }
 }
