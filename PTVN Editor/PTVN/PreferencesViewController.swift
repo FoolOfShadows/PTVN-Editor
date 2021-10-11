@@ -22,7 +22,7 @@ class PreferencesViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         //let browsers = BrowserList.allCases.map { $0.rawValue }
-        browserList.clearPopUpButton(menuItems: ["Safari", "Chrome", "Firefox"])
+        browserList.clearPopUpButton(menuItems: ["Safari", "Chrome", "Firefox", "Browser"])
     }
     
     override func viewWillAppear() {

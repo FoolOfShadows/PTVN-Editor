@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D266C7A26E9132C0031402D /* ScriptScraperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D266C7926E9132C0031402D /* ScriptScraperModel.swift */; };
 		7901799A23EC8F1A006E8312 /* ChangeMedsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */; };
 		7906DEE8208E123900CD11A1 /* ROSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE6208E123900CD11A1 /* ROSModel.swift */; };
 		7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE7208E123900CD11A1 /* ROSViewController.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D266C7926E9132C0031402D /* ScriptScraperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptScraperModel.swift; sourceTree = "<group>"; };
 		7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMedsVC.swift; sourceTree = "<group>"; };
 		7906DEE6208E123900CD11A1 /* ROSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSModel.swift; sourceTree = "<group>"; };
 		7906DEE7208E123900CD11A1 /* ROSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				7967689921F7750D000A836F /* PreferencesModel.swift */,
 				79624E0B239AA60000E57372 /* NoteWindowVC.swift */,
 				79802485239EC3D0005DBBA2 /* NoteView.swift */,
+				5D266C7926E9132C0031402D /* ScriptScraperModel.swift */,
 			);
 			path = PTVN;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				79CCA6A42090B73F00909285 /* HPIViewController.swift in Sources */,
 				79CCA6DC2090D5F600909285 /* Extremties Model.swift in Sources */,
 				7913205E2077C85100CB1537 /* ViewController.swift in Sources */,
+				5D266C7A26E9132C0031402D /* ScriptScraperModel.swift in Sources */,
 				79CCA6A32090B73F00909285 /* RadRefViewController.swift in Sources */,
 				79CCA6AB2090B73F00909285 /* WWEModel.swift in Sources */,
 				79CCA6F12090DC4E00909285 /* MSK Model.swift in Sources */,
@@ -895,7 +899,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -903,7 +907,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.88;
+				MARKETING_VERSION = 1.89;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -918,7 +922,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -926,7 +930,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.88;
+				MARKETING_VERSION = 1.89;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

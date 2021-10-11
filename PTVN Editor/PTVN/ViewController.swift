@@ -9,14 +9,14 @@
 import Cocoa
 import Quartz
 
-protocol ptvnDelegate: class {
+protocol ptvnDelegate: AnyObject {
     func returnPTVNValues(sender: NSViewController)
     func switchToModule(module: FormButton)
 }
-protocol browerChoiceDelegate: class {
+protocol browerChoiceDelegate: AnyObject {
     func changeBrowserLabel()
 }
-protocol notesDelegate: class {
+protocol notesDelegate: AnyObject {
     func updateSubjectiveWithNotes(_ notes: String)
     var noteWindowOpen:Bool { get set }
     var noteWindow:NSWindow? { get set }
@@ -75,6 +75,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     var windowCloseDelegate:WindowCloseProtocol?
     var timerRunningDelegate:CatchTimerOnCloseProtocol?
+    var scriptScrapingDelegate:ScrapeScriptsOnCloseProtocol?
     
     var noteWindowOpen:Bool = false {
         didSet {
@@ -129,6 +130,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //Set up the table of previous assessments on the Assessment & Plan tab
         self.assessmentTableView.delegate = self
         self.assessmentTableView.dataSource = self
+        
         
         
         //Set up delegation for the text views and fields to be able to respond to typing
@@ -398,6 +400,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         //save on closing notice
         updateView()
         document.updateChangeCount(.changeDone)
+        
+        let firstVC = presentingViewController as! ViewController
+        firstVC.theData = theData
+        scriptScrapingDelegate?.scrapeScripts(sender: self)
     }
 
     
@@ -501,6 +507,8 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     @IBAction func copyPlan(_ sender: Any) {
         theData.plan = theData.plan.replaceRegexPattern("\n\nVisit Length: \\d* minutes \\(\\d\\d\\).", with: "")
+        clearMeds(self)
+        clearRads(self)
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.plan)).copyToPasteboard()
         if planActivateSafari.state == NSControl.StateValue.on {
             activateBrowser()
@@ -581,9 +589,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     @IBAction func clearMeds(_ sender: Any) {
         //if theData.plan.contains("~~"){
             //theData.plan = theData.plan.cleanTheTextOf(["~~"])
-            theData.plan = theData.plan.replacingOccurrences(of: "~~", with: "DONE - ")
-            theData.plan = theData.plan.replacingOccurrences(of: "`~", with: "DONE - ")
-            theData.plan = theData.plan.replacingOccurrences(of: "``", with: "UPDATED - ")
+            theData.plan = theData.plan.replacingOccurrences(of: "~~", with: ""/*"DONE - "*/)
+            theData.plan = theData.plan.replacingOccurrences(of: "`~", with: ""/*"DONE - "*/)
+            theData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
+        theData.plan = theData.plan.replacingOccurrences(of: "^^", with: ""/*"UPDATED - "*/)
             updateView()
             document.updateChangeCount(.changeDone)
         //}
@@ -591,7 +600,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     @IBAction func clearRads(_ sender: Any) {
         if theData.plan.contains("••"){
-            theData.plan = theData.plan.replacingOccurrences(of: "••", with: "DONE - ")
+            theData.plan = theData.plan.replacingOccurrences(of: "••", with: ""/*"DONE - "*/)
             updateView()
             document.updateChangeCount(.changeDone)
         }
@@ -612,6 +621,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         var browser = defaults.string(forKey: "browser") ?? "Safari"
         if browser == "Chrome" {
             browser = "Google Chrome"
+        }
+        if browser == "Browser" {
+            browser = "PF Browser Beta"
         }
         NSWorkspace.shared.openFile("/Applications/\(browser).app")
     }
@@ -772,23 +784,53 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
 //    override func viewWillDisappear() {
-//        print("Removing view.  Timer running = \(timerRunning).")
-//        if timerRunning == true {
-//            var timerButton = "No button selected?"
-//            if let buttons = timerButtonStack.subviews as? [NSButton] {
-//                for button in buttons {
-//                    if button.state == .on {
-//                        timerButton = button.title
-//                    }
-//                }
-//            }
-//            print("Timer button name: \(timerButton)")
-//            visitTimer.invalidate()
-//            planView.addToViewsExistingText("\n\nVisit Length: \(timerView.stringValue) minutes (\(timerButton)).")
-//            updateVarForView(planView)
-//            print("Done updating: \(planView.string)")
+//        //print("View is disappearing.")
+//        
+//        var labelDate:String {
+//            let currentDate = Date()
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyMMdd-HH-mm"
+//            return formatter.string(from: currentDate)
+//        }
+//        
+//        let scrappedScripts = theData.scrapeForScripts()
+//        if scrappedScripts != "" {
+//            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) SCRIPT \(labelDate).txt"
+//            let saveLocation = "Sync/WPCMSharedFiles/zTina Review/01 The Script Corral"
+//            let finalResults = scrappedScripts
+//            let ptvnData = finalResults.data(using: String.Encoding.utf8)
+//            let newFileManager = FileManager.default
+//            let savePath = NSHomeDirectory()
+//            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
+//            //theData.plan = theData.plan.cleanTheTextOf(["~~", "``", "`~"])
+//        }
+//        
+//        let scrappedRefs = theData.scrapeForRefs()
+//        if scrappedRefs != "" {
+//            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) REFSCRP \(labelDate).txt"
+//            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/Referrals"
+//            let finalResults = scrappedRefs
+//            let ptvnData = finalResults.data(using: String.Encoding.utf8)
+//            let newFileManager = FileManager.default
+//            let savePath = NSHomeDirectory()
+//            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
+//            //theData.plan = theData.plan.cleanTheTextOf(["••"])
+//        }
+//        
+//        let scrappedPMH = theData.scrapeForPMH()
+//        if scrappedPMH != "" {
+//            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) PMHSCRP \(labelDate).txt"
+//            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/PMH Updates"
+//            let finalResults = scrappedPMH
+//            let ptvnData = finalResults.data(using: String.Encoding.utf8)
+//            let newFileManager = FileManager.default
+//            let savePath = NSHomeDirectory()
+//            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
+//            //theData.plan = theData.plan.cleanTheTextOf(["^^"])
 //        }
 //    }
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

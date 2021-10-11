@@ -248,6 +248,75 @@ class PTVN {
         return actualChanges.joined(separator: "\n")
     }
     
+    func scrapeForScripts() -> String {
+        var scriptLines = [String]()
+        
+        let theLines = self.plan.components(separatedBy: "\n")
+        for line in theLines {
+            if line.contains("~~") {
+                let cleanLine = "RX ONLY: \(line.cleanTheTextOf(["~~"]))"
+                scriptLines.append(cleanLine)
+            } else if line.contains("``") {
+                let cleanLine = "UPDATE ML ONLY: \(line.cleanTheTextOf(["``"]))"
+                scriptLines.append(cleanLine)
+            } else if line.contains("`~") {
+                let cleanLine = "RX and UPDATE ML: \(line.cleanTheTextOf(["`~"]))"
+                scriptLines.append(cleanLine)
+            }
+        }
+        if !scriptLines.isEmpty {
+            return """
+            Scripts for \(self.ptName) DOB: \(self.ptDOB)
+            From appointment on \(self.visitDate)
+            
+            \(scriptLines.joined(separator: "\n"))
+            """
+        }
+        return ""
+    }
+    
+    func scrapeForRefs() -> String {
+        var testRefLines = [String]()
+        
+        let theLines = self.plan.components(separatedBy: "\n")
+        for line in theLines {
+            if line.contains("••") {
+                let cleanLine = line.cleanTheTextOf(["••"])
+                testRefLines.append(cleanLine)
+            }
+        }
+        if !testRefLines.isEmpty {
+            return """
+            Referrals/Tests for \(self.ptName) DOB: \(self.ptDOB)
+            From appointment on \(self.visitDate)
+            
+            \(testRefLines.joined(separator: "\n"))
+            """
+        }
+        return ""
+    }
+    
+    func scrapeForPMH() -> String {
+        var pmhLines = [String]()
+        
+        let theLines = self.plan.components(separatedBy: "\n")
+        for line in theLines {
+            if line.contains("^^") {
+                let cleanLine = line.cleanTheTextOf(["^^"])
+                pmhLines.append(cleanLine)
+            }
+        }
+        if !pmhLines.isEmpty {
+            return """
+            PMH updates for \(self.ptName) DOB: \(self.ptDOB)
+            From appointment on \(self.visitDate)
+            
+            \(pmhLines.joined(separator: "\n"))
+            """
+        }
+        return ""
+    }
+    
     //If the MA has copied meds data from Practice Fusion to paste
     //into the med section, it will need to be cleaned up.
     var saveValue:String {return """

@@ -37,12 +37,28 @@ class Document: NSDocument {
     }
 
     override func data(ofType typeName: String) throws -> Data {
-        //Write data to a file
+        //Get the plan from the current view controller instance of the PTVN data, scrape it for refills, referrals, etc, then clear the symbols marking those items
+        if let baseData = viewController?.theData {
+            doScrappingOfData(theData: baseData)
+            baseData.plan = theData.plan.replacingOccurrences(of: "~~", with: ""/*"DONE - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "`~", with: ""/*"DONE - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "^^", with: ""/*"UPDATED - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "••", with: ""/*"DONE - "*/)
+        }
+        //Finish encoding the data for saving, calling the view controllers saveValue method on the now processed data
         if let theData = viewController?.theData.saveValue, let contents = theData.data(using: String.Encoding.utf8) {
                 return contents
         }
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
+//    override func data(ofType typeName: String) throws -> Data {
+//        //Write data to a file
+//        if let theData = viewController?.theData.saveValue, let contents = theData.data(using: String.Encoding.utf8) {
+//                return contents
+//        }
+//        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+//    }
 
     override func read(from data: Data, ofType typeName: String) throws {
         //Load data from file
@@ -56,6 +72,50 @@ class Document: NSDocument {
         //throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
     
+    func doScrappingOfData(theData:PTVN) {
+        var labelDate:String {
+            let currentDate = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyMMdd-HH-mm"
+            return formatter.string(from: currentDate)
+        }
+        
+        let scrappedScripts = theData.scrapeForScripts()
+        if scrappedScripts != "" {
+            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) SCRIPT \(labelDate).txt"
+            let saveLocation = "Sync/WPCMSharedFiles/zTina Review/01 The Script Corral"
+            let finalResults = scrappedScripts
+            let ptvnData = finalResults.data(using: String.Encoding.utf8)
+            let newFileManager = FileManager.default
+            let savePath = NSHomeDirectory()
+            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
+            //theData.plan = theData.plan.cleanTheTextOf(["~~", "``", "`~"])
+        }
+        
+        let scrappedRefs = theData.scrapeForRefs()
+        if scrappedRefs != "" {
+            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) REFSCRP \(labelDate).txt"
+            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/Referrals"
+            let finalResults = scrappedRefs
+            let ptvnData = finalResults.data(using: String.Encoding.utf8)
+            let newFileManager = FileManager.default
+            let savePath = NSHomeDirectory()
+            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
+            //theData.plan = theData.plan.cleanTheTextOf(["••"])
+        }
+        
+        let scrappedPMH = theData.scrapeForPMH()
+        if scrappedPMH != "" {
+            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) PMHSCRP \(labelDate).txt"
+            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/PMH Updates"
+            let finalResults = scrappedPMH
+            let ptvnData = finalResults.data(using: String.Encoding.utf8)
+            let newFileManager = FileManager.default
+            let savePath = NSHomeDirectory()
+            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
+            //theData.plan = theData.plan.cleanTheTextOf(["^^"])
+        }
+    }
     
 
 

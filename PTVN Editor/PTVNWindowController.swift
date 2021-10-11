@@ -16,10 +16,22 @@ protocol CatchTimerOnCloseProtocol {
     func visitTimerRunning(_ state:Bool)
 }
 
+protocol ScrapeScriptsOnCloseProtocol {
+    func scrapeScripts(sender: NSViewController)
+}
+
 final class PTVNWindowController: NSWindowController, NSWindowDelegate, WindowCloseProtocol, CatchTimerOnCloseProtocol {
+//    func scrapeScripts(sender: NSViewController) {
+//        print("Hiya.  We should do something here.")
+//    }
+//
+//    func scraping() {
+//        print("Here's where we really do the work.")
+//    }
     
     var windowOpen: Bool = false
     var timerRunning: Bool = false
+    var theData = PTVN(theText: "")
     
     
     
@@ -31,6 +43,7 @@ final class PTVNWindowController: NSWindowController, NSWindowDelegate, WindowCl
         let vc = window!.contentViewController as! ViewController
         vc.windowCloseDelegate = self
         vc.timerRunningDelegate = self
+        //vc.scriptScrapingDelegate = self
         
         
     }
@@ -41,6 +54,13 @@ final class PTVNWindowController: NSWindowController, NSWindowDelegate, WindowCl
     func visitTimerRunning(_ state: Bool) {
         timerRunning = state
     }
+    
+//    func windowWillClose(_ notification: Notification) {
+//        if theData.plan.contains("••") {
+//            print("checking for scripts")
+//            scraping()
+//        }
+//    }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         if timerRunning == true {
