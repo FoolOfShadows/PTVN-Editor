@@ -268,8 +268,10 @@ class PTVN {
             return """
             Scripts for \(self.ptName) DOB: \(self.ptDOB)
             From appointment on \(self.visitDate)
+            Pharmacy: \(self.pharmacy)
             
-            \(scriptLines.joined(separator: "\n"))
+            
+            \(scriptLines.joined(separator: "\n\n"))
             """
         }
         return ""
@@ -290,7 +292,8 @@ class PTVN {
             Referrals/Tests for \(self.ptName) DOB: \(self.ptDOB)
             From appointment on \(self.visitDate)
             
-            \(testRefLines.joined(separator: "\n"))
+            
+            \(testRefLines.joined(separator: "\n\n"))
             """
         }
         return ""
@@ -311,7 +314,8 @@ class PTVN {
             PMH updates for \(self.ptName) DOB: \(self.ptDOB)
             From appointment on \(self.visitDate)
             
-            \(pmhLines.joined(separator: "\n"))
+            
+            \(pmhLines.joined(separator: "\n\n"))
             """
         }
         return ""
