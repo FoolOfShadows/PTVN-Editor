@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    //Tells the application not to open a blank document when it first opens
+    //Tells the application to NOT open a blank document when it first opens
     func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {
         return false
     }

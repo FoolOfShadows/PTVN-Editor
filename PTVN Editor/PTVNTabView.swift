@@ -14,6 +14,7 @@ class PTVNTabView: NSTabView {
         super.draw(dirtyRect)
     }
     
+    //Used by the main ViewController to switch tabs from the menu bar
     @IBAction func switchToTab(_ sender: NSMenuItem) {
         switch sender.title {
         case "Subjective":

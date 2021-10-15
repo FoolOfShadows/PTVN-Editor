@@ -19,8 +19,6 @@ class Document: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
-        
-        
     }
 
     //Setting this to false so the document requests approval for saving after
@@ -36,6 +34,7 @@ class Document: NSDocument {
         self.addWindowController(windowController)
     }
 
+    //Save the data
     override func data(ofType typeName: String) throws -> Data {
         //Get the plan from the current view controller instance of the PTVN data, scrape it for refills, referrals, etc, then clear the symbols marking those items
         if let baseData = viewController?.theData {
@@ -45,6 +44,7 @@ class Document: NSDocument {
             baseData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
             baseData.plan = theData.plan.replacingOccurrences(of: "^^", with: ""/*"UPDATED - "*/)
             baseData.plan = theData.plan.replacingOccurrences(of: "••", with: ""/*"DONE - "*/)
+            viewController?.updateView()
         }
         //Finish encoding the data for saving, calling the view controllers saveValue method on the now processed data
         if let theData = viewController?.theData.saveValue, let contents = theData.data(using: String.Encoding.utf8) {
@@ -52,13 +52,6 @@ class Document: NSDocument {
         }
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
-//    override func data(ofType typeName: String) throws -> Data {
-//        //Write data to a file
-//        if let theData = viewController?.theData.saveValue, let contents = theData.data(using: String.Encoding.utf8) {
-//                return contents
-//        }
-//        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-//    }
 
     override func read(from data: Data, ofType typeName: String) throws {
         //Load data from file
@@ -69,9 +62,11 @@ class Document: NSDocument {
                 theData.subjective = "You have tried to open an older style PTVN file or a non-PTVN text file."
             }
         }
+        //Not sure how to use this error
         //throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
     
+    //Scrape marked tasks out of the PTVN and create new, secondary files in specific places for employees to act on.
     func doScrappingOfData(theData:PTVN) {
         var labelDate:String {
             let currentDate = Date()
@@ -89,7 +84,6 @@ class Document: NSDocument {
             let newFileManager = FileManager.default
             let savePath = NSHomeDirectory()
             newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
-            //theData.plan = theData.plan.cleanTheTextOf(["~~", "``", "`~"])
         }
         
         let scrappedRefs = theData.scrapeForRefs()
@@ -101,7 +95,6 @@ class Document: NSDocument {
             let newFileManager = FileManager.default
             let savePath = NSHomeDirectory()
             newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
-            //theData.plan = theData.plan.cleanTheTextOf(["••"])
         }
         
         let scrappedPMH = theData.scrapeForPMH()
@@ -113,11 +106,8 @@ class Document: NSDocument {
             let newFileManager = FileManager.default
             let savePath = NSHomeDirectory()
             newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
-            //theData.plan = theData.plan.cleanTheTextOf(["^^"])
         }
     }
     
-
-
 }
 

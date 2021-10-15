@@ -16,25 +16,17 @@ protocol CatchTimerOnCloseProtocol {
     func visitTimerRunning(_ state:Bool)
 }
 
-protocol ScrapeScriptsOnCloseProtocol {
-    func scrapeScripts(sender: NSViewController)
-}
+//protocol ScrapeScriptsOnCloseProtocol {
+//    func scrapeScripts(sender: NSViewController)
+//}
 
 final class PTVNWindowController: NSWindowController, NSWindowDelegate, WindowCloseProtocol, CatchTimerOnCloseProtocol {
-//    func scrapeScripts(sender: NSViewController) {
-//        print("Hiya.  We should do something here.")
-//    }
-//
-//    func scraping() {
-//        print("Here's where we really do the work.")
-//    }
     
     var windowOpen: Bool = false
     var timerRunning: Bool = false
     var theData = PTVN(theText: "")
     
-    
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
         //Need this to allow the program to remember last window location when reopening
@@ -43,9 +35,6 @@ final class PTVNWindowController: NSWindowController, NSWindowDelegate, WindowCl
         let vc = window!.contentViewController as! ViewController
         vc.windowCloseDelegate = self
         vc.timerRunningDelegate = self
-        //vc.scriptScrapingDelegate = self
-        
-        
     }
     
     func setWindowCloseValue(_ close: Bool) {
@@ -55,13 +44,7 @@ final class PTVNWindowController: NSWindowController, NSWindowDelegate, WindowCl
         timerRunning = state
     }
     
-//    func windowWillClose(_ notification: Notification) {
-//        if theData.plan.contains("••") {
-//            print("checking for scripts")
-//            scraping()
-//        }
-//    }
-    
+    //Examine certain states of the open file when the user is closing it to halt the close process and notify the user they have a process still active which needs to be manually stopped.
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         if timerRunning == true {
             let theAlert = NSAlert()

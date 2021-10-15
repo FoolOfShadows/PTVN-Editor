@@ -58,8 +58,6 @@ enum SectionDelimiters:String {
     case pharmacyEnd = "PHARMACY#"
     case otherStart = "#OTHER"
     case otherEnd = "OTHER#"
-//    case followupStart = "#FOLLOWUP"
-//    case followupEnd = "FOLLOWUP#"
 }
 
 enum SOAPSections {
@@ -81,14 +79,8 @@ class PTVN {
         formatter.dateStyle = DateFormatter.Style.short
         return formatter.string(from: currentDate)
     }
-//    var labelDate:String {
-//        formatter.dateFormat = "yyMMdd"
-//        return formatter.string(from: currentDate)
-//    }
-    
     var visitDate = String()
     var ptName = String()
-    //var ptLabelName:String {return getFileLabellingName(ptInnerName)}
     var ptAge = String()
     var ptDOB = String()
     var cc = String()
@@ -108,8 +100,6 @@ class PTVN {
     var subjective = String()
     var plan = String()
     var pharmacy = String()
-//    var lastAppointment:String {return getLastAptInfoFrom(theText)}
-//    var nextAppointment:String {return getNextAptInfoFrom(theText)}
     
     let prefixes = ["••", "~~", "^^", "(done dmw)"]
     let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW", "Lvl Phn", "Lvl TM"]
@@ -121,7 +111,6 @@ class PTVN {
         self.theText = theText
         self.visitDate = theText.simpleRegExMatch(Regexes().visitDate).cleanTheTextOf([SectionDelimiters.visitDateStart.rawValue, SectionDelimiters.visitDateEnd.rawValue])
         self.ptName = theText.simpleRegExMatch(Regexes().name).cleanTheTextOf([SectionDelimiters.patientNameStart.rawValue, SectionDelimiters.patientNameEnd.rawValue])
-        //var ptLabelName:String {return getFileLabellingName(ptInnerName)}
         self.ptAge = theText.simpleRegExMatch(Regexes().age).cleanTheTextOf([SectionDelimiters.patientAgeStart.rawValue, SectionDelimiters.patientAgeEnd.rawValue])
         self.ptDOB = theText.simpleRegExMatch(Regexes().dob).cleanTheTextOf([SectionDelimiters.patientDOBStart.rawValue, SectionDelimiters.patientDOBEnd.rawValue])
         self.cc = theText.simpleRegExMatch(Regexes().cc).cleanTheTextOf([SectionDelimiters.ccStart.rawValue, SectionDelimiters.ccEnd.rawValue])
@@ -159,7 +148,6 @@ class PTVN {
             if !cc.isEmpty {
                 subjectives.append("CHIEF COMPLAINT:\n\(cc)")
             }
-            
             if !problems.isEmpty {
                 probTemp = "PROBLEMS:\n\(problems)"
             }
@@ -250,7 +238,7 @@ class PTVN {
     
     func scrapeForScripts() -> String {
         var scriptLines = [String]()
-        
+
         let theLines = self.plan.components(separatedBy: "\n")
         for line in theLines {
             if line.contains("~~") {
@@ -269,8 +257,8 @@ class PTVN {
             Scripts for \(self.ptName) DOB: \(self.ptDOB)
             From appointment on \(self.visitDate)
             Pharmacy: \(self.pharmacy)
-            
-            
+
+
             \(scriptLines.joined(separator: "\n\n"))
             """
         }

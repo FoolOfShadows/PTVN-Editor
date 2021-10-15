@@ -67,15 +67,12 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var assessmentList = [String]()
     var chosenAssessmentList = [String]()
     
-//    var followupInfo = (first:String(), second:String(), third:String())
-    
     //Instantiate a PTVN instance
     var theData = PTVN(theText: "")
     var document = Document()
     
     var windowCloseDelegate:WindowCloseProtocol?
     var timerRunningDelegate:CatchTimerOnCloseProtocol?
-    var scriptScrapingDelegate:ScrapeScriptsOnCloseProtocol?
     
     var noteWindowOpen:Bool = false {
         didSet {
@@ -86,7 +83,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var noteWindow: NSWindow?
     
     var visitTimer = Timer()
-    //var timerRunning = false
     var timeDisplayed = 0
     var scheduledTime = 20
     @IBOutlet weak var timerButtonStack: NSStackView!
@@ -131,8 +127,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         self.assessmentTableView.delegate = self
         self.assessmentTableView.dataSource = self
         
-        
-        
         //Set up delegation for the text views and fields to be able to respond to typing
         ccView.delegate = self
         medsView.delegate = self
@@ -167,11 +161,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             whereFlu = [""] + whereFluList
         }
         if let declinesFluList = getSectionDataStartingFrom("START DECLINES FLU", andEndingWith: "END DECLINES FLU") {
-            //print("\n\n\n\(declinesFluList)\n\n\n")
             declinesFlu = [""] + declinesFluList
         }
         
-        //Set up notification center for switching forms
+        //Set up notification center for switching forms - I don't think I'm doing this here
         let nc = NotificationCenter.default
 //        nc.addObserver(self, selector: #selector(switchForm), name: Notification.Name("SwitchForm"), object: nil)
         //Set up notification center for changing browser label
@@ -187,14 +180,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
         //Populate assessmentTableView with Problems subsection of the Subjective section
         let problems = theData.problems
-        //print(problems)
         assessmentList = problems.convertListToArray()
-        //print(assessmentList)
         self.assessmentTableView.reloadData()
-        //chosenAssessmentList = assessmentList
         updateView()
         commonMedsCombo.clearComboBox(menuItems: commonMedsList)
-        //commonMedsPopup.clearPopUpButton(menuItems: commonMedsList)
         
         changeBrowserLabel()
     }
@@ -214,33 +203,19 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         updateVarForView(theView)
     }
     
-    /*override*/ func controlTextDidChange(_ obj: Notification) {
+    func controlTextDidChange(_ obj: Notification) {
         guard let theView = obj.object as? NSTextField else { return }
         updateVarForField(theView)
         document.updateChangeCount(.changeDone)
     }
-    
-//    func comboBoxSelectionDidChange(_ notification: Notification) {
-//        if commonMedsCombo.stringValue != "" {
-//            let newMed = "~~" + commonMedsCombo.stringValue.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-//            if planView.string.contains("Prescribed this visit:") {
-//                planView.string = planView.string.replacingOccurrences(of: "Prescribed this visit:", with: "Prescribed this visit:\n\(newMed)")
-//            } else {
-//                planView.addToViewsExistingText("Prescribed this visit:\n\(newMed)")
-//            }
-//            updateVarForView(planView)
-//            //            let currentMeds = medicationView.string
-//            //            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
-//        }
-//    }
-    
+
+    //Set up the segues to the various secondary window views as a switch statement keying off the name of the segue being activated by the the action element in the interface
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let theSegue = segue.identifier {
             switch theSegue {
             case "showDoctor":
                 if let toViewController = segue.destinationController as? DoctorViewController {
-                    //For the delegate to work, it needs to be assigned here
-                    //rather than in view did load.  Because it's a modal window?
+                    //The delegation for a view opened via segue gets assigned here, in the segue
                     toViewController.currentPTVNDelegate = self
                     toViewController.theData = theData
                 }
@@ -352,8 +327,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             case "showCheckOut":
                 if let toViewController = segue.destinationController as? CheckOutVC {
                     toViewController.currentPTVNDelegate = self
-                    //theData.plan.addToExistingText(theData.followupInfo)
-                    //returnPTVNValues(sender: self)
                     toViewController.theData = theData
                 }
             case "showMood":
@@ -377,7 +350,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                     toViewController.theData = theData
                 }
             case "showNoteWindow":
-                //print("segueing from main VC")
                 if let toViewController = segue.destinationController as? NoteWindowVC {
                     toViewController.currentNoteDelegate = self
                 }
@@ -396,14 +368,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     func returnPTVNValues(sender: NSViewController) {
         //print("Returning PTVN Values from \(sender.title)")
         //Because the document's not catching changes returned from the forms
-        //it's change count has to be manually updated here to trigger
+        //it's change count has to be manually updated here to trigger the
         //save on closing notice
         updateView()
         document.updateChangeCount(.changeDone)
-        
-        let firstVC = presentingViewController as! ViewController
-        firstVC.theData = theData
-        scriptScrapingDelegate?.scrapeScripts(sender: self)
     }
 
     
@@ -419,7 +387,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         rosView.string = theData.ros
         problemView.string = theData.problems
         subjectiveView.string = theData.subjective
-        //print(theData.preventive)
         preventiveView.string = theData.preventive
         pmhView.string = theData.pmh
         nutritionView.string = theData.nutrition
@@ -432,8 +399,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         planView.string = theData.plan
         pharmacyView.stringValue = theData.pharmacy
         dxView.string = theData.diagnoses
-        //self.assessmentTableView.reloadData()
-        //document.updateChangeCount(.changeDone)
     }
     
     //Update the instance of the PTVN with data being entered into the main document view
@@ -442,7 +407,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         switch view {
         case medsView:
             theData.medicines = medsView.string
-            //print(theData.medicines)
         case rosView:
             theData.ros = rosView.string
         case problemView:
@@ -473,8 +437,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             theData.plan = planView.string
         case dxView:
             theData.diagnoses = dxView.string
-//        case pharmacyView:
-//            theData.pharmacy = pharmacyView.stringValue
         default: return
         }
         document.updateChangeCount(.changeDone)
@@ -484,6 +446,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         theData.pharmacy = pharmacyView.stringValue
     }
     
+    //Copy the desired selection from the PTVN, do some basic text cleaning, and activate the browser chosen in preferences.  These actions are specifically for people transferring data from a PTVN file via this program into the PracticeFusion web interface.
     @IBAction func copyObjective(_ sender: Any) {
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.objective)).copyToPasteboard()
         if objectiveActivateSafari.state == NSControl.StateValue.on {
@@ -535,7 +498,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func clearPMHPrefixes(_ sender: Any) {
-        //Because the cleanTheTextOf methods has the regex option on
+        //Because the cleanTheTextOf methods has the regex option on,
         //the carots have to be escaped in the badBits or they won't
         //be recognized
         let badBits = ["\\^\\^"]
@@ -549,21 +512,14 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         document.updateChangeCount(.changeDone)
     }
 
+    //Used to add a notation that the charges on a PTVN have been processed into PracticeFusion.  This text is used by staff using other programs to locate unprocessed PTVN files with programs like HoudahSpot or the Finder's built in search.
     @IBAction func markAsCharged(_ sender: Any) {
         assessmentView.addToViewsExistingText("(done dmw)")
         updateVarForView(assessmentView)
         document.updateChangeCount(.changeDone)
     }
     
-    //Lets MA jump directly to the next eval form
-//    @objc func switchForm() {
-//        //print("Notification received")
-//        let buttons = self.view.getListOfButtons()
-//        let button = buttons.filter { $0.title == FormButtons.formName }[0]
-//        print(button.title)
-//        button.performClick(self)
-//    }
-    
+    //Lets MA jump directly to the next check in evaluation module
     func switchToModule(module: FormButton) {
         print("Button to click: \(module.rawValue)")
         let buttons = self.view.getListOfButtons()
@@ -583,21 +539,19 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         objectiveActivateSafari.title = "And Activate \(browser)"
         assessmentActivateSafari.title = "And Activate \(browser)"
         planActivateSafari.title = "And Activate \(browser)"
-        //print("Delegate notification received, browser set to \(browser), and title set to \(subjectiveActivateSafari.title)")
     }
     
+    //Clears the symbol sets used to mark certain action items in the plan as need to be pulled out and worked on by the staff, after those tasks have been noted.
     @IBAction func clearMeds(_ sender: Any) {
-        //if theData.plan.contains("~~"){
-            //theData.plan = theData.plan.cleanTheTextOf(["~~"])
-            theData.plan = theData.plan.replacingOccurrences(of: "~~", with: ""/*"DONE - "*/)
-            theData.plan = theData.plan.replacingOccurrences(of: "`~", with: ""/*"DONE - "*/)
-            theData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
+        theData.plan = theData.plan.replacingOccurrences(of: "~~", with: ""/*"DONE - "*/)
+        theData.plan = theData.plan.replacingOccurrences(of: "`~", with: ""/*"DONE - "*/)
+        theData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
         theData.plan = theData.plan.replacingOccurrences(of: "^^", with: ""/*"UPDATED - "*/)
-            updateView()
-            document.updateChangeCount(.changeDone)
-        //}
+        updateView()
+        document.updateChangeCount(.changeDone)
     }
     
+    //Does the same as above for radiology items
     @IBAction func clearRads(_ sender: Any) {
         if theData.plan.contains("••"){
             theData.plan = theData.plan.replacingOccurrences(of: "••", with: ""/*"DONE - "*/)
@@ -606,6 +560,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
     
+    //Used for check boxes and push buttons grouped together in a view when only one button should be active at a time.  It itdentifies which has been activated and turns off all the other buttons in the group
     @IBAction func selectOnlyOne(_ sender: NSButton) {
         if let buttons = sender.superview?.subviews as? [NSButton] {
             for button in buttons {
@@ -616,6 +571,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
     }
     
+    //Works in conjunction with the collection of copy methods to more easily move data from the PTVN Editor to PracticeFusion
     func activateBrowser() {
         let defaults = UserDefaults.standard
         var browser = defaults.string(forKey: "browser") ?? "Safari"
@@ -627,6 +583,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         }
         NSWorkspace.shared.openFile("/Applications/\(browser).app")
     }
+    
     
     //MARK: Table Handling Functions
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -643,6 +600,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         return result
     }
     
+    //Get the selections from the Assessment Table and process them into the plan section
     @IBAction func processAssessmentTable(_ sender: Any) {
         
         var results = Assessment().processAssessmentUsingArray(chosenAssessmentList, and: visitLevelView.getListOfButtons().filter {$0.state == .on}.map {$0.title})
@@ -712,9 +670,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func addMed(_ sender: Any) {
-        //if !commonMedsPopup.titleOfSelectedItem!.isEmpty {
         if commonMedsCombo.stringValue != "" {
-            //let newMed = "~~" + commonMedsPopup.titleOfSelectedItem!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             let newMed = "~~" + commonMedsCombo.stringValue.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             if planView.string.contains("Prescribed this visit:") {
                 planView.string = planView.string.replacingOccurrences(of: "Prescribed this visit:", with: "Prescribed this visit:\n\(newMed)")
@@ -722,29 +678,20 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
                 planView.addToViewsExistingText("Prescribed this visit:\n\(newMed)")
             }
             updateVarForView(planView)
-            //            let currentMeds = medicationView.string
-            //            medicationView.string = commonMedsPopup.titleOfSelectedItem! + currentMeds
         }
     }
     
+    //Creates a message based on the name of the patient whose file is being worked on and text which has been copied from the PTVN file, then activates the DocsInk messaging program so the message can be pasted in to a chat and sent.
     @IBAction func createMessage(_ sender: Any) {
-      
         let ptName = ptNameView.stringValue
         let thePasteBoard = NSPasteboard.general
         if var contents = thePasteBoard.pasteboardItems?.first?.string(forType: .string) {
             "\(ptName) - \(contents)".copyToPasteboard()
         }
         NSWorkspace.shared.openFile("/Applications/DocsInk.app")
-//        var theValues = [String]()
-//        let theLines = problemView.string.components(separatedBy: "/n")
-//        for line in theLines {
-//            if line.contains("••") || line.contains("~~") {
-//                theValues.append(line)
-//            }
-//        }
-        
     }
     
+    //Starts a timer the doctor can use to track her time in the room
     @IBAction func startTimer(_ sender: NSButton) {
         if sender.state == .on {
             if let buttons = timerButtonStack.subviews as? [NSButton] {
@@ -782,54 +729,6 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         
         timerView.stringValue = String(timeDisplayed)
     }
-    
-//    override func viewWillDisappear() {
-//        //print("View is disappearing.")
-//        
-//        var labelDate:String {
-//            let currentDate = Date()
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "yyMMdd-HH-mm"
-//            return formatter.string(from: currentDate)
-//        }
-//        
-//        let scrappedScripts = theData.scrapeForScripts()
-//        if scrappedScripts != "" {
-//            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) SCRIPT \(labelDate).txt"
-//            let saveLocation = "Sync/WPCMSharedFiles/zTina Review/01 The Script Corral"
-//            let finalResults = scrappedScripts
-//            let ptvnData = finalResults.data(using: String.Encoding.utf8)
-//            let newFileManager = FileManager.default
-//            let savePath = NSHomeDirectory()
-//            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
-//            //theData.plan = theData.plan.cleanTheTextOf(["~~", "``", "`~"])
-//        }
-//        
-//        let scrappedRefs = theData.scrapeForRefs()
-//        if scrappedRefs != "" {
-//            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) REFSCRP \(labelDate).txt"
-//            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/Referrals"
-//            let finalResults = scrappedRefs
-//            let ptvnData = finalResults.data(using: String.Encoding.utf8)
-//            let newFileManager = FileManager.default
-//            let savePath = NSHomeDirectory()
-//            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
-//            //theData.plan = theData.plan.cleanTheTextOf(["••"])
-//        }
-//        
-//        let scrappedPMH = theData.scrapeForPMH()
-//        if scrappedPMH != "" {
-//            let fileName = "\(getFileLabellingNameFrom(theData.ptName)) PMHSCRP \(labelDate).txt"
-//            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/PMH Updates"
-//            let finalResults = scrappedPMH
-//            let ptvnData = finalResults.data(using: String.Encoding.utf8)
-//            let newFileManager = FileManager.default
-//            let savePath = NSHomeDirectory()
-//            newFileManager.createFile(atPath: "\(savePath)/\(saveLocation)/\(fileName)", contents: ptvnData, attributes: nil)
-//            //theData.plan = theData.plan.cleanTheTextOf(["^^"])
-//        }
-//    }
-    
     
     deinit {
         NotificationCenter.default.removeObserver(self)
