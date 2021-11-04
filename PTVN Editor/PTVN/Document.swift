@@ -39,11 +39,11 @@ class Document: NSDocument {
         //Get the plan from the current view controller instance of the PTVN data, scrape it for refills, referrals, etc, then clear the symbols marking those items
         if let baseData = viewController?.theData {
             doScrappingOfData(theData: baseData)
-            baseData.plan = theData.plan.replacingOccurrences(of: "~~ ", with: "~~»"/*"DONE - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "`~ ", with: "`~»"/*"DONE - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "`` ", with: "``»"/*"UPDATED - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "^^ ", with: "^^»"/*"UPDATED - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "•• ", with: "••»"/*"DONE - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "~~(?!»)", with: "~~»", options: .regularExpression)
+            baseData.plan = theData.plan.replacingOccurrences(of: "`~(?!»)", with: "`~»", options: .regularExpression)
+            baseData.plan = theData.plan.replacingOccurrences(of: "``(?!»)", with: "``»", options: .regularExpression)
+            baseData.plan = theData.plan.replacingOccurrences(of: "\\^\\^(?!»)", with: "\\^\\^»", options: .regularExpression)
+            baseData.plan = theData.plan.replacingOccurrences(of: "••(?!»)", with: "••»", options: .regularExpression)
             viewController?.updateView()
         }
         //Finish encoding the data for saving, calling the view controllers saveValue method on the now processed data
