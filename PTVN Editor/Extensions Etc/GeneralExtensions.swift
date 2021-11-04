@@ -568,7 +568,7 @@ func getPrefDataFrom(_ filePath:String) -> String? {
 
 func getSectionDataStartingFrom(_ start:String, andEndingWith stop:String) -> [String]? {
     var returnData = [String]()
-    guard let rawData = getPrefDataFrom("\(NSHomeDirectory())/Sync/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/LIROSPrefFile.txt") else {return nil}
+    guard let rawData = getPrefDataFrom("\(NSHomeDirectory())/\(FilePath.baseFolder.rawValue)/WPCM Software Bits/00 CAUTION - Data Files/LIROSPrefFile.txt") else {return nil}
     if let sectionData = rawData.findRegexMatchBetween(start, and: stop) {
         let cleanData = sectionData.removeWhiteSpace()
         returnData = cleanData.components(separatedBy: "\n")

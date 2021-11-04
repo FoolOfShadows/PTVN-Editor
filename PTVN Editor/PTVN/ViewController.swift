@@ -462,7 +462,9 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     }
     
     @IBAction func copyAssessment(_ sender: Any) {
-        spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.assessment)).copyToPasteboard()
+        //I'm disconnecting the copying of this section from the existing text cleaning functions due to clashes of 
+        theData.returnSOAPSection(.assessment).copyToPasteboard()
+        //spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.assessment)).copyToPasteboard()
         if assessmentActivateSafari.state == NSControl.StateValue.on {
             activateBrowser()
         }

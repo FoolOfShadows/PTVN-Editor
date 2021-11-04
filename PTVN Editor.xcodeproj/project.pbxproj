@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D266C7A26E9132C0031402D /* ScriptScraperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D266C7926E9132C0031402D /* ScriptScraperModel.swift */; };
+		5D71CF8E272C585800C4093C /* GeneralEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D71CF8D272C585800C4093C /* GeneralEnums.swift */; };
 		7901799A23EC8F1A006E8312 /* ChangeMedsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */; };
 		7906DEE8208E123900CD11A1 /* ROSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE6208E123900CD11A1 /* ROSModel.swift */; };
 		7906DEE9208E123900CD11A1 /* ROSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906DEE7208E123900CD11A1 /* ROSViewController.swift */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		5D266C7926E9132C0031402D /* ScriptScraperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptScraperModel.swift; sourceTree = "<group>"; };
+		5D71CF8D272C585800C4093C /* GeneralEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEnums.swift; sourceTree = "<group>"; };
 		7901799923EC8F1A006E8312 /* ChangeMedsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMedsVC.swift; sourceTree = "<group>"; };
 		7906DEE6208E123900CD11A1 /* ROSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSModel.swift; sourceTree = "<group>"; };
 		7906DEE7208E123900CD11A1 /* ROSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROSViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				79DDB9EA208786BE00E01853 /* GeneralExtensions.swift */,
 				79DDB9EB208786BE00E01853 /* Buttons.swift */,
 				7964A237208F7DFF00B5790A /* StringExtensions.swift */,
+				5D71CF8D272C585800C4093C /* GeneralEnums.swift */,
 			);
 			path = "Extensions Etc";
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				798CA1C520BEEB5700FA3D22 /* MedicineReviewVC.swift in Sources */,
 				79CCA6A62090B73F00909285 /* HPIModel.swift in Sources */,
 				798BBB4B20939617002A28AA /* MemoryModel.swift in Sources */,
+				5D71CF8E272C585800C4093C /* GeneralEnums.swift in Sources */,
 				798BBB4620939617002A28AA /* IncontinenceController.swift in Sources */,
 				79CCA6F22090DC4E00909285 /* Neuro Model.swift in Sources */,
 				79CCA6C62090D16500909285 /* GenPsychHEENTNeck VC.swift in Sources */,
@@ -899,7 +903,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -907,7 +911,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.89;
+				MARKETING_VERSION = 1.90;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -922,7 +926,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VY6BVT84SC;
 				INFOPLIST_FILE = "PTVN Editor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -930,7 +934,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.89;
+				MARKETING_VERSION = 1.90;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fulgentwake.PTVN-Editor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

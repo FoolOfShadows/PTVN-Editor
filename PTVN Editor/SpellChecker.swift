@@ -10,12 +10,12 @@ import Cocoa
 
 struct OurSpellChecker {
     
-    let basicCleaningDataFilePath = "\(NSHomeDirectory())/Sync/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/PTVN2PFCleaningDataBasic.txt"
-    let otherCleaningDataFilePath = "\(NSHomeDirectory())/Resilio/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/PTVN2PFCleaningDataBasic.txt"
+    let basicCleaningDataFilePath = "\(NSHomeDirectory())/\(FilePath.baseFolder.rawValue)/\(FilePath.textCleaningFile.rawValue)"
+    //let otherCleaningDataFilePath = "\(NSHomeDirectory())/Resilio/WPCMSharedFiles/WPCM Software Bits/00 CAUTION - Data Files/PTVN2PFCleaningDataBasic.txt"
     
     //Set the cleaning dictionaries with the contents of the text files
     //If the text files can't be found, use the hard coded values
-    var misspelledWordDict:[String:String] { return setCleaningDataFrom(basicCleaningDataFilePath) ??  setCleaningDataFrom(otherCleaningDataFilePath) ?? [
+    var misspelledWordDict:[String:String] { return setCleaningDataFrom(basicCleaningDataFilePath) ?? [
         "pvd":"peripheral vascular disease",
         "htn":"hypertension",
         "dm":"diabetes mellitus",

@@ -58,6 +58,8 @@ enum SectionDelimiters:String {
     case pharmacyEnd = "PHARMACY#"
     case otherStart = "#OTHER"
     case otherEnd = "OTHER#"
+    case checkOutStart = "#CHECKOUT"
+    case checkOutEnd = "CHECKOUT#"
 }
 
 enum SOAPSections {
@@ -100,6 +102,7 @@ class PTVN {
     var subjective = String()
     var plan = String()
     var pharmacy = String()
+    var checkOutInfo = String()
     
     let prefixes = ["••", "~~", "^^", "(done dmw)"]
     let levels = ["Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl WE", "Lvl NPW", "Lvl Phn", "Lvl TM"]
@@ -130,6 +133,7 @@ class PTVN {
         self.subjective = theText.simpleRegExMatch(Regexes().subjective).cleanTheTextOf([SectionDelimiters.subjectiveStart.rawValue, SectionDelimiters.subjectiveEnd.rawValue, self.problems, SectionDelimiters.problemsStart.rawValue, SectionDelimiters.problemsEnd.rawValue])
         self.plan = theText.simpleRegExMatch(Regexes().plan).cleanTheTextOf([SectionDelimiters.planStart.rawValue, SectionDelimiters.planEnd.rawValue])
         self.pharmacy = theText.simpleRegExMatch(Regexes().pharmacy).cleanTheTextOf([SectionDelimiters.pharmacyStart.rawValue, SectionDelimiters.pharmacyEnd.rawValue])
+        self.checkOutInfo = theText.simpleRegExMatch(Regexes().checkOut).cleanTheTextOf([SectionDelimiters.checkOutStart.rawValue, SectionDelimiters.checkOutEnd.rawValue])
     }
     
     func visitLongDate() -> String {
@@ -241,13 +245,13 @@ class PTVN {
 
         let theLines = self.plan.components(separatedBy: "\n")
         for line in theLines {
-            if line.contains("~~") {
+            if line.contains("~~") && !line.contains("»") {
                 let cleanLine = "RX ONLY: \(line.cleanTheTextOf(["~~"]))"
                 scriptLines.append(cleanLine)
-            } else if line.contains("``") {
+            } else if line.contains("``") && !line.contains("»") {
                 let cleanLine = "UPDATE ML ONLY: \(line.cleanTheTextOf(["``"]))"
                 scriptLines.append(cleanLine)
-            } else if line.contains("`~") {
+            } else if line.contains("`~") && !line.contains("»") {
                 let cleanLine = "RX and UPDATE ML: \(line.cleanTheTextOf(["`~"]))"
                 scriptLines.append(cleanLine)
             }
@@ -270,7 +274,7 @@ class PTVN {
         
         let theLines = self.plan.components(separatedBy: "\n")
         for line in theLines {
-            if line.contains("••") {
+            if line.contains("••") && !line.contains("»") {
                 let cleanLine = line.cleanTheTextOf(["••"])
                 testRefLines.append(cleanLine)
             }
@@ -292,7 +296,7 @@ class PTVN {
         
         let theLines = self.plan.components(separatedBy: "\n")
         for line in theLines {
-            if line.contains("^^") {
+            if line.contains("^^") && !line.contains("»") {
                 let cleanLine = line.cleanTheTextOf(["^^"])
                 pmhLines.append(cleanLine)
             }
@@ -379,6 +383,10 @@ class PTVN {
         \(SectionDelimiters.diagnosisStart.rawValue)
         \(diagnoses)
         \(SectionDelimiters.diagnosisEnd.rawValue)
+        
+        \(SectionDelimiters.checkOutStart.rawValue)
+        \(checkOutInfo)
+        \(SectionDelimiters.checkOutEnd.rawValue)
 
         \(SectionDelimiters.patientNameStart.rawValue)
         \(ptName)
@@ -421,6 +429,7 @@ class PTVN {
         let subjective = "(?s)\(SectionDelimiters.problemsEnd.rawValue).*\(SectionDelimiters.subjectiveEnd.rawValue)"
         let plan = "(?s)\(SectionDelimiters.planStart.rawValue).*\(SectionDelimiters.planEnd.rawValue)"
         let pharmacy = "(?s)\(SectionDelimiters.pharmacyStart.rawValue).*\(SectionDelimiters.pharmacyEnd.rawValue)"
+        let checkOut = "(?s)\(SectionDelimiters.checkOutStart.rawValue).*\(SectionDelimiters.checkOutEnd.rawValue)"
     }
 
     

@@ -77,18 +77,18 @@ notesView.string = prepDataForView()
             medValues = theData.medicines.replacingOccurrences(of: "DISCONTINUED THIS VIST:", with: "Medications being discontinued at this visit:")
             medValues = "Medications active for this visit:\n\(medValues)"
         }
-        let refills = theData.plan.getLinesStartingWith("~~").joined(separator: "\n").cleanTheTextOf(["~~"])
+        let refills = theData.plan.getLinesStartingWith("~~").joined(separator: "\n").cleanTheTextOf(["~~", "»"])
         if !refills.isEmpty {
             refillValues = "Medications being prescribed/refilled this visit:\n(New medications will be called in within 4 hours of your visit, refills by the end of the day)\n\(refills)"
         }
-        let refrad = theData.plan.getLinesStartingWith("••").joined(separator: "\n").cleanTheTextOf(["••"])
+        let refrad = theData.plan.getLinesStartingWith("••").joined(separator: "\n").cleanTheTextOf(["••", "»"])
         if !refrad.isEmpty {
             radValues = "Referrals/Radiology being ordered:\n(We will call you when the test or referral has been scheduled)\n\(refrad)"
         }
         var changedMeds = theData.plan.getLinesStartingWith("``")
         changedMeds += theData.plan.getLinesStartingWith("`~")
         if !changedMeds.isEmpty {
-            changedMedValues = "Medications changed this visit:\n\(changedMeds.joined(separator: "\n").cleanTheTextOf(["``", "`~"]))"
+            changedMedValues = "Medications changed this visit:\n\(changedMeds.joined(separator: "\n").cleanTheTextOf(["``", "`~", "»"]))"
         }
         let assessment = theData.assessment.removeWhiteSpace()
         if !assessment.isEmpty {
@@ -96,7 +96,7 @@ notesView.string = prepDataForView()
         }
         let followup = theData.plan.getLinesStartingWith("`•")
         if !followup.isEmpty {
-            followupValues = followup[0].cleanTheTextOf(["`•"])
+            followupValues = followup[0].cleanTheTextOf(["`•", "»"])
         }
         let objective = theData.objective
         //if !objective.isEmpty {

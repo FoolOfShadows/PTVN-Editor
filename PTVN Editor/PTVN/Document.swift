@@ -39,11 +39,11 @@ class Document: NSDocument {
         //Get the plan from the current view controller instance of the PTVN data, scrape it for refills, referrals, etc, then clear the symbols marking those items
         if let baseData = viewController?.theData {
             doScrappingOfData(theData: baseData)
-            baseData.plan = theData.plan.replacingOccurrences(of: "~~", with: ""/*"DONE - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "`~", with: ""/*"DONE - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "^^", with: ""/*"UPDATED - "*/)
-            baseData.plan = theData.plan.replacingOccurrences(of: "••", with: ""/*"DONE - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "~~ ", with: "~~»"/*"DONE - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "`~ ", with: "`~»"/*"DONE - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "`` ", with: "``»"/*"UPDATED - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "^^ ", with: "^^»"/*"UPDATED - "*/)
+            baseData.plan = theData.plan.replacingOccurrences(of: "•• ", with: "••»"/*"DONE - "*/)
             viewController?.updateView()
         }
         //Finish encoding the data for saving, calling the view controllers saveValue method on the now processed data
@@ -76,9 +76,12 @@ class Document: NSDocument {
         }
         
         let scrappedScripts = theData.scrapeForScripts()
+        //let defaults = UserDefaults.standard
+        //let baseLocation = defaults.string(forKey: UserDefaultKeyTitles.baseFolderPath.rawValue) ?? "WPCM Dropbox/WPCMSharedFiles"
         if scrappedScripts != "" {
             let fileName = "\(getFileLabellingNameFrom(theData.ptName)) SCRIPT \(labelDate).txt"
-            let saveLocation = "Sync/WPCMSharedFiles/zTina Review/01 The Script Corral"
+            let saveLocation = "\(FilePath.baseFolder.rawValue)/\(FilePath.scrapedScripts.rawValue)"
+            //let saveLocation = "Sync/WPCMSharedFiles/zTina Review/01 The Script Corral"
             let finalResults = scrappedScripts
             let ptvnData = finalResults.data(using: String.Encoding.utf8)
             let newFileManager = FileManager.default
@@ -89,7 +92,8 @@ class Document: NSDocument {
         let scrappedRefs = theData.scrapeForRefs()
         if scrappedRefs != "" {
             let fileName = "\(getFileLabellingNameFrom(theData.ptName)) REFSCRP \(labelDate).txt"
-            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/Referrals"
+            let saveLocation = "\(FilePath.baseFolder.rawValue)/\(FilePath.scrapedRefs.rawValue)"
+            //let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/Referrals"
             let finalResults = scrappedRefs
             let ptvnData = finalResults.data(using: String.Encoding.utf8)
             let newFileManager = FileManager.default
@@ -100,7 +104,8 @@ class Document: NSDocument {
         let scrappedPMH = theData.scrapeForPMH()
         if scrappedPMH != "" {
             let fileName = "\(getFileLabellingNameFrom(theData.ptName)) PMHSCRP \(labelDate).txt"
-            let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/PMH Updates"
+            let saveLocation = "\(FilePath.baseFolder.rawValue)/\(FilePath.scrapedPHM.rawValue)"
+            //let saveLocation = "Sync/WPCMSharedFiles/Scraped Data/PMH Updates"
             let finalResults = scrappedPMH
             let ptvnData = finalResults.data(using: String.Encoding.utf8)
             let newFileManager = FileManager.default
