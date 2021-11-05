@@ -474,6 +474,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         theData.plan = theData.plan.replaceRegexPattern("\n\nVisit Length: \\d* minutes \\(\\d\\d\\).", with: "")
         clearMeds(self)
         clearRads(self)
+        theData.plan = theData.plan.cleanTheTextOf(["\\^\\^»", "\\^\\^"])
         spellChecker.correctMisspelledWordsIn(theData.returnSOAPSection(.plan)).copyToPasteboard()
         if planActivateSafari.state == NSControl.StateValue.on {
             activateBrowser()
@@ -545,7 +546,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     
     //Clears the symbol sets used to mark certain action items in the plan as need to be pulled out and worked on by the staff, after those tasks have been noted.
     @IBAction func clearMeds(_ sender: Any) {
-        theData.plan = theData.plan.cleanTheTextOf(["~~", "~~»", "`~", "`~»", "``", "``»", "^^", "^^»"])
+        theData.plan = theData.plan.cleanTheTextOf(["~~»", "`~»", "``»", "~~", "`~", "``"])
 //        theData.plan = theData.plan.replacingOccurrences(of: "~~", with: ""/*"DONE - "*/)
 //        theData.plan = theData.plan.replacingOccurrences(of: "`~", with: ""/*"DONE - "*/)
 //        theData.plan = theData.plan.replacingOccurrences(of: "``", with: ""/*"UPDATED - "*/)
@@ -557,7 +558,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     //Does the same as above for radiology items
     @IBAction func clearRads(_ sender: Any) {
         if theData.plan.contains("••"){
-            theData.plan = theData.plan.cleanTheTextOf(["••", "••»"])
+            theData.plan = theData.plan.cleanTheTextOf(["••»", "••"])
             //theData.plan = theData.plan.replacingOccurrences(of: "••", with: ""/*"DONE - "*/)
             updateView()
             document.updateChangeCount(.changeDone)
