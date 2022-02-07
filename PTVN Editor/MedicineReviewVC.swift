@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol ChangeMedDelegate: class {
+protocol ChangeMedDelegate: AnyObject {
     var currentMed:String { get set }
     var changedMeds:[String] { get set }
     var theData:PTVN { get set }
@@ -30,6 +30,8 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     weak var currentPTVNDelegate: ptvnDelegate?
     var theData = PTVN(theText: "")
+    //This array holds the values for the checkboxes in the table to fix a bug where they checkboxes weren't holding their state when the table was scrolled, or were sharing their state with other rows which hadn't been acted on when scrolling.  The number of values in the array are created based on the number of items in the medListArray
+    var checkBoxState = [NSButton.StateValue]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,35 +47,54 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         //print("medListArray Count = \(medListArray.count)")
+        checkBoxState = Array(repeating: NSButton.StateValue.off, count: medListArray.count)
         return medListArray.count
     }
     
     func getArrayFrom(_ medsString:String) -> [String] {
         var returnArray = medsString.removeWhiteSpace().components(separatedBy: "\n").filter { $0 != "" && $0 != "  "}
         returnArray = returnArray.map { $0.replacingOccurrences(of: "- ", with: "") }
-        
         return returnArray
     }
     
     
     //Set up the tableview with the data from the medList array
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
+//        guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
+//        vw.textField?.stringValue = medListArray[row]
+//        return vw
         
-        vw.textField?.stringValue = medListArray[row]
         
-        
-        return vw
+        //The simple set up above broke with macOS Monterey and required a more detailed creation of the table
+        if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "textViewColumn") {
+            let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "textViewCell")
+            guard let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? NSTableCellView else { return nil }
+            cellView.textField?.stringValue = medListArray[row]
+            return cellView
+        } else if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "checkBoxColumn") {
+            let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "checkBoxCell")
+            guard let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? NSTableCellView else { return nil }
+            let theCheckBox = cellView.subviews[0] as! NSButton
+            theCheckBox.state = checkBoxState[row]
+            return cellView
+        } else if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "changeButtonColumn") {
+            let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "changeButtonCell")
+            guard let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? NSTableCellView else { return nil }
+            return cellView
+        }
+        return nil
+
     }
     
     
     
     @IBAction func getDataFromSelectedRow(_ sender:Any) {
         let currentRow = currentMedsTableView.row(for: sender as! NSView)
-        
         if (sender as! NSButton).state == .on {
             chosenMeds.append(medListArray[currentRow])
+            checkBoxState[currentRow] = .on
         } else if (sender as! NSButton).state == .off {
+            checkBoxState[currentRow] = .off
             chosenMeds = chosenMeds.filter { $0 != medListArray[currentRow] }
         }
         //print(chosenMeds)
@@ -101,6 +122,8 @@ class MedicineReviewVC: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         var results = medListArray.filter { !chosenMeds.contains($0) }.joined(separator: "\n")
         print("Med List Array Results: \(results)")
         if !results.isEmpty {
+            //FIX ME: Add method for adding discontinued meds to Plan section
+            theData.plan.addToExistingText("DISCONTINUED THIS VIST:\n\(results.addCharacterToBeginningOfEachLine("- "))")
             results = "\n\n DISCONTINUED THIS VIST:\n\(results.addCharacterToBeginningOfEachLine("- "))"
         }
         if !chosenMeds.isEmpty {
