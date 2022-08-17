@@ -24,7 +24,7 @@ class Document: NSDocument {
     //Setting this to false so the document requests approval for saving after
     //any changes are made to it.
     override class var autosavesInPlace: Bool {
-        return true
+        return false
     }
 
     override func makeWindowControllers() {
@@ -71,7 +71,7 @@ class Document: NSDocument {
         var labelDate:String {
             let currentDate = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyMMdd-HH-mm"
+            formatter.dateFormat = "yyMMdd-HH-mm-ss"
             return formatter.string(from: currentDate)
         }
         
