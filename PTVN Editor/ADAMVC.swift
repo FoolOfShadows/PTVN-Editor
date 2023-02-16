@@ -49,7 +49,7 @@ class ADAMVC: NSViewController {
         default: break
         }
         if score > 2 {
-            resultsLabel.stringValue = "possibly low testosterone"
+            resultsLabel.stringValue = "possible low testosterone"
         } else {
             resultsLabel.stringValue = "normal testosterone"
         }
