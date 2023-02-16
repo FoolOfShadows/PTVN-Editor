@@ -85,6 +85,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
     var visitTimer = Timer()
     var timeDisplayed = 0
     var scheduledTime = 20
+    var visitStartTime = "00:00"
     @IBOutlet weak var timerButtonStack: NSStackView!
     
     func updateSubjectiveWithNotes(_ notes: String) {
@@ -709,6 +710,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
             }
         visitTimer.invalidate()
         timeDisplayed = 0
+            let currentDate = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
+            visitStartTime = dateFormatter.string(from: currentDate)
         scheduledTime = Int(sender.title)!
         timerView.stringValue = String(timeDisplayed)
         timerView.backgroundColor = .purple
@@ -716,7 +721,7 @@ class ViewController: NSViewController, NSTextViewDelegate, NSTextFieldDelegate,
         } else if sender.state == .off {
             visitTimer.invalidate()
             timerRunningDelegate?.visitTimerRunning(false)
-            planView.addToViewsExistingText("\n\nVisit Length: \(timerView.stringValue) minutes (\(sender.title)).")
+            planView.addToViewsExistingText("\n\nVisit Length: \(timerView.stringValue) minutes (\(sender.title)). Start time: \(visitStartTime).")
             updateVarForView(planView)
         }
     }

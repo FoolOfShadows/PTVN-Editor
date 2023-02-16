@@ -67,5 +67,7 @@ class ADAMVC: NSViewController {
     }
     
     @IBAction func clearADAM(_ sender: Any) {
+        let theButtons = getButtonsInView(yesNoStack)
+        setCheckboxesToOff(checkBoxes: theButtons)
     }
 }
