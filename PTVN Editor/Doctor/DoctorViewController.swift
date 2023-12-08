@@ -23,6 +23,7 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var educationView: NSBox!
     @IBOutlet weak var injectionsView: NSBox!
     @IBOutlet weak var preOpView: NSBox!
+    @IBOutlet weak var preventiveView: NSBox!
 //    @IBOutlet weak var commonMedsPopup: NSPopUpButton!
     //@IBOutlet weak var medicationView: NSTextView!
 //    @IBOutlet weak var medicationScroll: NSScrollView!
@@ -130,9 +131,10 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         let injectionResults = Injections().processInjectionsUsing(getDataFromView(injectionsView))
         let preOpResults = PreOp().processSectionData(getDataFromView(preOpView))
         let objectiveResults = DataReview().processObjectiveData(getDataFromView(snippetReviewView))
+        let preventiveResults = Preventive().processPreventiveData(getDataFromView(preventiveView))
         
         
-        let resultsArray = [dataReviewResults, snippetResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults]
+        let resultsArray = [dataReviewResults, snippetResults, labViewResults, proceduresResults, educationResults, injectionResults, preOpResults, preventiveResults]
         
 //        if !medicationView.string.isEmpty {
 //            let medArray = medicationView.string.convertListToArray()
@@ -145,7 +147,13 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         
         theData.plan.addToExistingText(results)
         if results.contains("1111F") {
-            theData.assessment.addToExistingText("1111F")
+            theData.assessment.addToExistingText("1111F", withSpace: false)
+        }
+        if results.contains("1101F") {
+            theData.assessment.addToExistingText("1101F", withSpace: false)
+        }
+        if results.contains("3288F") {
+            theData.assessment.addToExistingText("3288F", withSpace: false)
         }
         if !objectiveResults.isEmpty {
             theData.objective.addToExistingText(objectiveResults)
@@ -231,6 +239,16 @@ private func getPrevDataFrom(_ source:String) -> String {
                 let noneBox = boxes.filter { $0.tag == 1 }
                 noneBox[0].state = .off
             } else if box.title != sender.title {
+                box.state = .off
+            }
+        }
+    }
+    
+    @IBAction func getUpAndGoSelection(_ sender:NSButton) {
+        let boxes = preventiveView.getListOfButtons()
+        let activeBoxTag = sender.tag
+        for box in boxes {
+            if box.tag != activeBoxTag {
                 box.state = .off
             }
         }

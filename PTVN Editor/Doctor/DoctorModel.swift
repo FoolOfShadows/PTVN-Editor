@@ -232,6 +232,28 @@ struct Lab:StructsWithDescriptionOutput {
     }
 }
 
+struct Preventive:StructsWithDescriptionOutput {
+    func getOutputFor(_ id: Int) -> String? {
+        switch id {
+        case 1: return "Get Up & Go test was steady and took less than 30 seconds. (1101F)"
+        case 2: return "Get Up & Go test was unsteady or took longer than 30 seconds. (1101F)"
+        case 5: return "Get Up & Go test was steady and took less than 30 seconds. (1101F, 3288F)"
+        case 6: return "Get Up & Go test was unsteady or took longer than 30 seconds. (1101F, 3288F)"
+        default: return nil
+        }
+    }
+    
+    func processPreventiveData(_ data:[(Int, String?)]) -> String {
+        var finalResult = String()
+        let resultsStrings = getDescriptionOfItem(data, fromStruct: self) ?? [String]()
+        
+        if !resultsStrings.isEmpty {
+            finalResult = "\(resultsStrings.joined(separator: ", "))."
+        }
+        return finalResult
+    }
+}
+
 struct Procedures {
     
     func processProceduresUsing(_ data:[(Int, String?)]) -> String {
