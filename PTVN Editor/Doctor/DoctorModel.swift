@@ -237,8 +237,8 @@ struct Preventive:StructsWithDescriptionOutput {
         switch id {
         case 1: return "Get Up & Go test was steady and took less than 30 seconds. (1101F)"
         case 2: return "Get Up & Go test was unsteady or took longer than 30 seconds. (1101F)"
-        case 5: return "Get Up & Go test was steady and took less than 30 seconds. (1101F, 3288F)"
-        case 6: return "Get Up & Go test was unsteady or took longer than 30 seconds. (1101F, 3288F)"
+        case 5: return "Get Up & Go test was steady and took less than 30 seconds. (3288F, 1100F)"
+        case 6: return "Get Up & Go test was unsteady or took longer than 30 seconds. (3288F, 1100F)"
         default: return nil
         }
     }

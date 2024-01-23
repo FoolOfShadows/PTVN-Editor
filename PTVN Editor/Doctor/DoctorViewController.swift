@@ -155,6 +155,9 @@ class DoctorViewController: NSViewController, NSTableViewDataSource, NSTableView
         if results.contains("3288F") {
             theData.assessment.addToExistingText("3288F", withSpace: false)
         }
+        if results.contains("1100F") {
+            theData.assessment.addToExistingText("1100F", withSpace: false)
+        }
         if !objectiveResults.isEmpty {
             theData.objective.addToExistingText(objectiveResults)
         }
